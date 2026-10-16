@@ -1,0 +1,96 @@
+# Author: André Henrique (@mrhenrike) | https://github.com/mrhenrike
+
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "adxpl-forge"
+version = "1.0.0"
+description = "ADXPL-Forge (AXF) — Active Directory attack and audit framework. BloodHound, Kerberoasting, ADCS, DCSync, NTLM relay."
+readme = { file = "README.md", content-type = "text/markdown" }
+license = { text = "MIT" }
+authors = [
+    { name = "André Henrique", email = "henrique.santos@uniaogeek.com.br" },
+]
+maintainers = [
+    { name = "André Henrique", email = "henrique.santos@uniaogeek.com.br" },
+]
+keywords = [
+    "security", "pentesting", "active-directory", "ad-security", "red-team",
+    "bloodhound", "kerberoasting", "as-rep-roasting", "adcs", "certipy",
+    "dcsync", "ntlm-relay", "pass-the-hash", "golden-ticket", "silver-ticket",
+    "exploit", "cve", "mitre-attack", "xpl-forge",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Information Technology",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: System Administrators",
+    "Natural Language :: English",
+    "Natural Language :: Portuguese (Brazilian)",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Security",
+    "Topic :: System :: Networking",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "impacket>=0.12.0",
+    "ldap3>=2.9",
+    "requests>=2.31.0,<3.0",
+    "rich>=13.0",
+    "dnspython>=2.4",
+]
+
+[project.optional-dependencies]
+bloodhound = [
+    "bloodhound>=1.7",
+    "neo4j>=5.0",
+]
+certipy = [
+    "certipy-ad>=4.8",
+]
+relay = [
+    "pycryptodome>=3.20",
+]
+dev = [
+    "pytest>=7.0",
+    "ruff>=0.4",
+    "bandit>=1.7",
+    "build>=1.0",
+]
+full = [
+    "bloodhound>=1.7",
+    "neo4j>=5.0",
+    "certipy-ad>=4.8",
+    "pycryptodome>=3.20",
+]
+
+[project.urls]
+Homepage      = "https://github.com/mrhenrike/ADXPL-Forge"
+Repository    = "https://github.com/mrhenrike/ADXPL-Forge"
+Documentation = "https://github.com/mrhenrike/ADXPL-Forge/wiki"
+"Bug Tracker" = "https://github.com/mrhenrike/ADXPL-Forge/issues"
+
+[project.scripts]
+axf   = "adxpl.__main__:main"
+adxpl = "adxpl.__main__:main"
+
+[tool.setuptools]
+license-files = []
+
+[tool.setuptools.packages.find]
+where   = ["."]
+include = ["adxpl*"]
+
+[tool.setuptools.package-data]
+"adxpl.resources" = ["*.json", "*.yaml"]
