@@ -277,6 +277,7 @@ def _build_parser() -> argparse.ArgumentParser:
         "kerb-session-abuse", "pac-abuse",
         "kerb-dns-relay", "smb-reflection",
         "netlogon-rce-2026", "adds-rce-2026",
+        "ms09-050",
     ])
     _add_common(exploit_p)
     exploit_p.add_argument("--listener", help="Capture/relay host")
@@ -343,7 +344,7 @@ def _build_parser() -> argparse.ArgumentParser:
     # -- exchange --
     exchange_p = sub.add_parser("exchange", help="Exchange / infrastructure modules")
     exchange_p.add_argument("module", choices=[
-        "privexchange", "proxylogon", "proxyshell",
+        "privexchange", "proxylogon", "proxyshell", "wsus-abuse",
     ])
     _add_common(exchange_p)
     exchange_p.add_argument("--listener", help="Attacker listener IP")
@@ -358,7 +359,7 @@ def _build_parser() -> argparse.ArgumentParser:
     # -- azuread --
     azure_p = sub.add_parser("azuread", help="Azure AD / Entra ID modules")
     azure_p.add_argument("module", choices=[
-        "azuread-enum", "azuread-tokens",
+        "azuread-enum", "azuread-tokens", "stormspotter",
     ])
     _add_common(azure_p, target_required=False)
 
