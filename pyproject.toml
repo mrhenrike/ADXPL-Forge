@@ -6,8 +6,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "adxpl-forge"
-version = "1.0.0"
-description = "ADXPL-Forge (AXF) — Active Directory attack and audit framework. BloodHound, Kerberoasting, ADCS, DCSync, NTLM relay."
+version = "2.0.0"
+description = "ADXPL-Forge (AXF) — Active Directory attack and audit framework with 219 modules across 25 categories. Enumeration, Kerberos, ADCS, lateral movement, credential theft, coercion, relay, ACL abuse, trust attacks, privilege escalation, kernel exploits, CVE exploits, LOLBins, evasion, BYOVD, emulation, and more."
 readme = { file = "README.md", content-type = "text/markdown" }
 license = { text = "MIT" }
 authors = [
@@ -20,10 +20,14 @@ keywords = [
     "security", "pentesting", "active-directory", "ad-security", "red-team",
     "bloodhound", "kerberoasting", "as-rep-roasting", "adcs", "certipy",
     "dcsync", "ntlm-relay", "pass-the-hash", "golden-ticket", "silver-ticket",
-    "exploit", "cve", "mitre-attack", "xpl-forge",
+    "exploit", "cve", "mitre-attack", "xpl-forge", "lateral-movement",
+    "privilege-escalation", "credential-theft", "coercion", "relay-attack",
+    "acl-abuse", "trust-attack", "lolbins", "evasion", "byovd",
+    "kernel-exploit", "purple-team", "emulation", "sccm", "exchange",
+    "azure-ad", "impacket",
 ]
 classifiers = [
-    "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
     "Environment :: Console",
     "Intended Audience :: Developers",
     "Intended Audience :: Information Technology",
