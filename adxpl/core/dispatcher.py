@@ -194,6 +194,7 @@ _MODULE_MAP = {
         "smb-reflection": "adxpl.modules.exploit.smb_reflection",
         "netlogon-rce-2026": "adxpl.modules.exploit.netlogon_rce_2026",
         "adds-rce-2026": "adxpl.modules.exploit.adds_rce_2026",
+        "ms09-050": "adxpl.modules.exploit.ms09_050",
     },
     "kernel": {
         "token-steal": "adxpl.modules.kernel.token_steal",
@@ -241,6 +242,7 @@ _MODULE_MAP = {
         "privexchange": "adxpl.modules.exchange.privexchange",
         "proxylogon": "adxpl.modules.exchange.proxylogon_exploit",
         "proxyshell": "adxpl.modules.exchange.proxyshell_exploit",
+        "wsus-abuse": "adxpl.modules.exchange.wsus_abuse",
     },
     "sccm": {
         "sccm-enum": "adxpl.modules.sccm.sccm_enum",
@@ -249,6 +251,7 @@ _MODULE_MAP = {
     "azuread": {
         "azuread-enum": "adxpl.modules.azuread.azuread_enum",
         "azuread-tokens": "adxpl.modules.azuread.azuread_tokens",
+        "stormspotter": "adxpl.modules.azuread.stormspotter",
     },
     "impacket": {
         "reg": "adxpl.modules.impacket.impacket_reg",
