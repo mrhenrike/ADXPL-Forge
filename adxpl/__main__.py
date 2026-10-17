@@ -37,6 +37,8 @@ def _build_parser() -> argparse.ArgumentParser:
         "gpo-enum", "trust-map", "adcs-enum", "delegation-enum",
         "laps-dump", "gmsa-dump", "adrecon", "dns-enum", "maq-enum",
         "plumhound", "ad-miner", "adacl-scanner",
+        "windapsearch", "ldapdomaindump", "pywerview",
+        "acl-scanner", "adalanche",
     ])
     _add_common(enum_p)
     enum_p.add_argument("--collection", default="Default",
@@ -49,6 +51,7 @@ def _build_parser() -> argparse.ArgumentParser:
         "kerberoast", "kerberoast-adv", "asreproast", "adcs", "dcsync",
         "zerologon", "golden-ticket", "silver-ticket", "diamond-ticket",
         "sapphire-ticket", "bad-successor",
+        "unconstrained-deleg", "constrained-deleg",
     ])
     _add_common(attack_p)
     attack_p.add_argument("--krbtgt-hash", help="krbtgt hash")
@@ -67,6 +70,7 @@ def _build_parser() -> argparse.ArgumentParser:
     lateral_p.add_argument("module", choices=[
         "pth", "ptt", "overpass-the-hash", "wmi-exec", "psexec", "smbexec",
         "evil-winrm", "dcomexec", "mssql-exec", "atexec", "rdp-hijack",
+        "ssh-lateral",
     ])
     _add_common(lateral_p)
     lateral_p.add_argument("--shell", action="store_true",
@@ -84,6 +88,7 @@ def _build_parser() -> argparse.ArgumentParser:
         "golden-ticket", "silver-ticket", "skeleton-key",
         "dsrm-backdoor", "dsrm-password", "sid-history",
         "diamond-ticket-persist", "dcshadow", "gpo-abuse",
+        "admin-sd-holder", "machine-account",
     ])
     _add_common(persist_p)
     persist_p.add_argument("--krbtgt-hash", help="krbtgt hash")
@@ -99,6 +104,7 @@ def _build_parser() -> argparse.ArgumentParser:
         "lsassy", "donpapi", "dploot", "pypykatz", "secretsdump",
         "dpapi-decrypt", "gpp-decrypt", "lsass-methods",
         "ntds-extract", "sam-dump", "cached-creds", "vault-extract",
+        "wifi-creds",
     ])
     _add_common(cred_p, target_required=False)
     cred_p.add_argument("--method", default="comsvcs", help="Dump method")
@@ -126,6 +132,7 @@ def _build_parser() -> argparse.ArgumentParser:
     relay_p = sub.add_parser("relay", help="NTLM/Kerberos relay modules")
     relay_p.add_argument("module", choices=[
         "ntlmrelayx", "krbrelayx", "adcs-relay", "mitm6", "ntlm-theft",
+        "responder",
     ])
     _add_common(relay_p, target_required=False)
     relay_p.add_argument("--relay-target", help="Relay target host")
@@ -142,6 +149,7 @@ def _build_parser() -> argparse.ArgumentParser:
     acl_p.add_argument("module", choices=[
         "dacl-edit", "writedacl", "writeowner", "add-computer",
         "rbcd", "shadow-cred", "generic-write",
+        "force-change-pwd", "bloodyad-ops",
     ])
     _add_common(acl_p)
     acl_p.add_argument("--target-dn", help="Target distinguished name")
@@ -366,7 +374,7 @@ def _build_parser() -> argparse.ArgumentParser:
     # -- impacket --
     impacket_p = sub.add_parser("impacket", help="Impacket arsenal modules")
     impacket_p.add_argument("module", choices=[
-        "reg",
+        "reg", "dacledit", "addcomputer", "finddeleg", "ntlmrelayx",
     ])
     _add_common(impacket_p)
 
