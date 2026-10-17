@@ -19,80 +19,276 @@ def _build_parser() -> argparse.ArgumentParser:
 
     sub = p.add_subparsers(dest="command")
 
+    # -- common args helper --
+    def _add_common(sp: argparse.ArgumentParser, *, target_required: bool = True) -> None:
+        sp.add_argument("--target", "-t", required=target_required,
+                        help="Target IP/hostname")
+        sp.add_argument("--domain", "-d", required=True,
+                        help="AD domain (e.g. corp.local)")
+        sp.add_argument("--username", "-u", help="Domain username")
+        sp.add_argument("--password", "-p", help="Domain password")
+        sp.add_argument("--hashes", help="NTLM hash (LM:NT)")
+        sp.add_argument("--dc-ip", help="Domain controller IP")
+        sp.add_argument("--output", "-o", default=".", help="Output path")
+
     # -- enum --
     enum_p = sub.add_parser("enum", help="AD enumeration modules")
     enum_p.add_argument("module", choices=[
-        "bloodhound", "ldap-enum", "spn-scan", "gpo-enum", "trust-map",
+        "bloodhound", "bloodhound-collect", "ldap-enum", "spn-scan",
+        "gpo-enum", "trust-map", "adcs-enum", "delegation-enum",
+        "laps-dump", "gmsa-dump",
     ])
-    enum_p.add_argument("--target", "-t", required=True,
-                        help="Domain controller IP/hostname")
-    enum_p.add_argument("--domain", "-d", required=True,
-                        help="AD domain (e.g. corp.local)")
-    enum_p.add_argument("--username", "-u", help="Domain username")
-    enum_p.add_argument("--password", "-p", help="Domain password")
-    enum_p.add_argument("--hashes", help="NTLM hash (LM:NT)")
-    enum_p.add_argument("--output", "-o", default=".", help="Output directory")
+    _add_common(enum_p)
+    enum_p.add_argument("--collection", default="Default",
+                        help="BloodHound collection method")
+    enum_p.add_argument("--target-computer", help="Target computer for LAPS")
 
     # -- attack --
     attack_p = sub.add_parser("attack", help="AD attack modules")
     attack_p.add_argument("module", choices=[
-        "kerberoast", "asreproast", "adcs", "dcsync", "zerologon",
+        "kerberoast", "kerberoast-adv", "asreproast", "adcs", "dcsync",
+        "zerologon", "golden-ticket", "silver-ticket", "diamond-ticket",
     ])
-    attack_p.add_argument("--target", "-t", required=True)
-    attack_p.add_argument("--domain", "-d", required=True)
-    attack_p.add_argument("--username", "-u")
-    attack_p.add_argument("--password", "-p")
-    attack_p.add_argument("--hashes")
-    attack_p.add_argument("--output", "-o", default=".")
+    _add_common(attack_p)
+    attack_p.add_argument("--krbtgt-hash", help="krbtgt hash")
+    attack_p.add_argument("--service-hash", help="Service account hash")
+    attack_p.add_argument("--domain-sid", help="Domain SID")
+    attack_p.add_argument("--spn", help="Target SPN")
+    attack_p.add_argument("--impersonate", default="Administrator")
+    attack_p.add_argument("--target-user", help="Target specific user")
+    attack_p.add_argument("--etype", default="23", help="Encryption type")
+    attack_p.add_argument("--opsec", action="store_true",
+                          help="OPSEC-safe mode (adminCount=1 only)")
+    attack_p.add_argument("--users-file", help="User list file")
 
     # -- lateral --
     lateral_p = sub.add_parser("lateral", help="Lateral movement modules")
     lateral_p.add_argument("module", choices=[
         "pth", "ptt", "overpass-the-hash", "wmi-exec", "psexec", "smbexec",
-        "evil-winrm", "dcomexec",
+        "evil-winrm", "dcomexec", "mssql-exec",
     ])
-    lateral_p.add_argument("--target", "-t", required=True)
-    lateral_p.add_argument("--domain", "-d", required=True)
-    lateral_p.add_argument("--username", "-u")
-    lateral_p.add_argument("--password", "-p")
-    lateral_p.add_argument("--hashes")
+    _add_common(lateral_p)
     lateral_p.add_argument("--shell", action="store_true",
-                           help="Spawn interactive reverse shell after execution")
-    lateral_p.add_argument("--lhost", help="Listener IP for reverse shell")
-    lateral_p.add_argument("--lport", type=int, default=4444,
-                           help="Listener port (default: 4444)")
-    lateral_p.add_argument("--shell-type", dest="shell_type", default="powershell",
-                           help="Shell payload type (default: powershell)")
-    lateral_p.add_argument("--winrm-port", type=int, default=5985,
-                           help="WinRM port for evil-winrm (default: 5985)")
-    lateral_p.add_argument("--ssl", action="store_true",
-                           help="Use HTTPS for WinRM")
-    lateral_p.add_argument("--dcom-object", dest="dcom_object", default="mmc",
-                           choices=["mmc", "shellbrowserwindow"],
-                           help="DCOM object for dcomexec (default: mmc)")
+                           help="Spawn interactive reverse shell")
+    lateral_p.add_argument("--lhost", help="Listener IP")
+    lateral_p.add_argument("--lport", type=int, default=4444)
+    lateral_p.add_argument("--shell-type", dest="shell_type", default="powershell")
+    lateral_p.add_argument("--command", help="Command to execute")
+    lateral_p.add_argument("--mssql-method", default="xp_cmdshell",
+                           choices=["xp_cmdshell", "sp_oacreate"])
 
     # -- persist --
     persist_p = sub.add_parser("persist", help="Persistence modules")
     persist_p.add_argument("module", choices=[
         "golden-ticket", "silver-ticket", "skeleton-key",
-        "dsrm-backdoor", "sid-history",
+        "dsrm-backdoor", "dsrm-password", "sid-history",
     ])
-    persist_p.add_argument("--target", "-t", required=True)
-    persist_p.add_argument("--domain", "-d", required=True)
-    persist_p.add_argument("--krbtgt-hash",
-                           help="krbtgt NTLM hash for golden ticket")
-    persist_p.add_argument("--service-hash",
-                           help="Service account hash for silver ticket")
+    _add_common(persist_p)
+    persist_p.add_argument("--krbtgt-hash", help="krbtgt hash")
     persist_p.add_argument("--domain-sid", help="Domain SID")
+    persist_p.add_argument("--dsrm-action", default="info",
+                           choices=["info", "enable", "pth"])
+
+    # -- credential --
+    cred_p = sub.add_parser("credential", help="Credential extraction modules")
+    cred_p.add_argument("module", choices=[
+        "lsassy", "donpapi", "dploot", "pypykatz", "secretsdump",
+        "dpapi-decrypt", "gpp-decrypt", "lsass-methods",
+    ])
+    _add_common(cred_p, target_required=False)
+    cred_p.add_argument("--method", default="comsvcs", help="Dump method")
+    cred_p.add_argument("--dump-file", help="LSASS minidump file")
+    cred_p.add_argument("--dpapi-path", help="DPAPI blob path")
+    cred_p.add_argument("--cpassword", help="GPP cpassword hash")
+    cred_p.add_argument("--sysvol-path", help="SYSVOL path for GPP")
+    cred_p.add_argument("--lsass-method", default="comsvcs")
+    cred_p.add_argument("--generate", action="store_true",
+                        help="Generate command only")
+
+    # -- coercion --
+    coerce_p = sub.add_parser("coercion", help="NTLM coercion modules")
+    coerce_p.add_argument("module", choices=[
+        "petitpotam", "printerbug", "dfscoerce", "shadowcoerce",
+        "coercer", "webclient",
+    ])
+    _add_common(coerce_p)
+    coerce_p.add_argument("--listener", help="Capture/relay host")
+    coerce_p.add_argument("--scan-only", action="store_true")
+
+    # -- relay --
+    relay_p = sub.add_parser("relay", help="NTLM/Kerberos relay modules")
+    relay_p.add_argument("module", choices=[
+        "ntlmrelayx", "krbrelayx", "adcs-relay", "mitm6",
+    ])
+    _add_common(relay_p, target_required=False)
+    relay_p.add_argument("--relay-target", help="Relay target host")
+    relay_p.add_argument("--relay-attack", default="socks",
+                         choices=["ldap_delegate", "ldap_shadow", "ldap_rbcd",
+                                  "smb_exec", "http_adcs", "socks"])
+    relay_p.add_argument("--targets-file", help="Targets file")
+    relay_p.add_argument("--adcs-template", default="DomainController")
+    relay_p.add_argument("--interface", help="Network interface")
+
+    # -- acl --
+    acl_p = sub.add_parser("acl", help="ACL abuse modules")
+    acl_p.add_argument("module", choices=[
+        "dacl-edit", "writedacl", "writeowner", "add-computer",
+        "rbcd", "shadow-cred",
+    ])
+    _add_common(acl_p)
+    acl_p.add_argument("--target-dn", help="Target distinguished name")
+    acl_p.add_argument("--principal", help="Principal to grant rights to")
+    acl_p.add_argument("--right", default="genericall",
+                       help="ACL right to grant")
+    acl_p.add_argument("--target-computer", help="Target computer for RBCD")
+    acl_p.add_argument("--attacker-computer", help="Attacker machine account")
+    acl_p.add_argument("--target-account", help="Target for shadow credentials")
+    acl_p.add_argument("--computer-name", default="EVILPC$")
+    acl_p.add_argument("--computer-pass", default="P@ssw0rd123!")
+
+    # -- trust --
+    trust_p = sub.add_parser("trust", help="Trust abuse modules")
+    trust_p.add_argument("module", choices=[
+        "sid-history-inject", "trust-ticket",
+    ])
+    _add_common(trust_p)
+    trust_p.add_argument("--target-sid", help="SID to inject")
+    trust_p.add_argument("--parent-domain", help="Parent domain")
+    trust_p.add_argument("--trust-key", help="Inter-realm trust key")
+    trust_p.add_argument("--child-sid", help="Child domain SID")
+    trust_p.add_argument("--parent-sid", help="Parent domain SID")
+    trust_p.add_argument("--krbtgt-hash", help="krbtgt hash")
+
+    # -- spray --
+    spray_p = sub.add_parser("spray", help="Password spray modules")
+    spray_p.add_argument("module", choices=[
+        "password-spray", "kerberos-spray",
+    ])
+    _add_common(spray_p)
+    spray_p.add_argument("--users-file", help="User list file")
+    spray_p.add_argument("--passwords", help="Comma-separated passwords")
+    spray_p.add_argument("--password-list", help="Password list file")
+    spray_p.add_argument("--delay", type=int, default=30,
+                         help="Delay between rounds (seconds)")
+    spray_p.add_argument("--spray-protocol", default="ldap",
+                         choices=["ldap", "smb", "kerberos"])
+
+    # -- campaign --
+    campaign_p = sub.add_parser("campaign", help="Attack campaign orchestration")
+    campaign_p.add_argument("module", choices=[
+        "domain-takeover", "cert-abuse",
+    ])
+    _add_common(campaign_p)
+    campaign_p.add_argument("--auto", action="store_true",
+                            help="Run automated attack chain")
+    campaign_p.add_argument("--step", help="Execute specific step")
+    campaign_p.add_argument("--esc", help="ESC technique for cert-abuse")
+
+    # -- lolbins --
+    lol_p = sub.add_parser("lolbins", help="LOLBin payload generation")
+    lol_p.add_argument("module", choices=[
+        "certutil", "mshta", "rundll32", "wmic", "regsvr32", "msbuild",
+    ])
+    lol_p.add_argument("--target", "-t")
+    lol_p.add_argument("--domain", "-d", default=".")
+    lol_p.add_argument("--lhost", help="Listener host")
+    lol_p.add_argument("--lport", default="8080")
+    lol_p.add_argument("--command", default="calc.exe")
+    lol_p.add_argument("--generate", action="store_true")
+
+    # -- evasion --
+    evasion_p = sub.add_parser("evasion", help="Defense evasion modules")
+    evasion_p.add_argument("module", choices=[
+        "amsi-bypass", "etw-disable", "defender-disable",
+        "ppid-spoof", "clm-bypass",
+    ])
+    evasion_p.add_argument("--target", "-t")
+    evasion_p.add_argument("--domain", "-d", default=".")
+    evasion_p.add_argument("--amsi-technique", default="patch_amsi_dll")
+    evasion_p.add_argument("--etw-technique", default="patch_etw")
+    evasion_p.add_argument("--defender-tech", default="add_exclusion")
+    evasion_p.add_argument("--clm-technique", default="msbuild")
+    evasion_p.add_argument("--encode", action="store_true",
+                           help="Base64 encode payload")
+    evasion_p.add_argument("--ppid", type=int, help="Parent PID to spoof")
+
+    # -- byovd --
+    byovd_p = sub.add_parser("byovd", help="Bring Your Own Vulnerable Driver")
+    byovd_p.add_argument("module", choices=[
+        "driver-load", "pplfault", "callback-kill",
+    ])
+    byovd_p.add_argument("--target", "-t")
+    byovd_p.add_argument("--domain", "-d", default=".")
+    byovd_p.add_argument("--driver", help="Driver name")
+    byovd_p.add_argument("--driver-path", help="Path to driver file")
+    byovd_p.add_argument("--byovd-action", default="list",
+                         choices=["list", "load", "exploit"])
+
+    # -- privesc --
+    privesc_p = sub.add_parser("privesc", help="Privilege escalation modules")
+    privesc_p.add_argument("module", choices=[
+        "potato", "sebackup", "uac-bypass", "service-abuse",
+    ])
+    privesc_p.add_argument("--target", "-t")
+    privesc_p.add_argument("--domain", "-d", default=".")
+    privesc_p.add_argument("--potato", default="godpotato",
+                           help="Potato variant")
+    privesc_p.add_argument("--uac-technique", default="fodhelper")
+    privesc_p.add_argument("--command", default="cmd.exe")
+    privesc_p.add_argument("--service-name", help="Target service")
+    privesc_p.add_argument("--service-action", default="enumerate",
+                           choices=["enumerate", "exploit", "unquoted"])
+
+    # -- exploit --
+    exploit_p = sub.add_parser("exploit", help="Windows/AD exploit modules")
+    exploit_p.add_argument("module", choices=[
+        "zerologon", "printnightmare", "smbghost", "nopac",
+        "certifried", "petitpotam-unauth", "adcs-esc", "coerce-to-shell",
+    ])
+    _add_common(exploit_p)
+    exploit_p.add_argument("--listener", help="Capture/relay host")
+    exploit_p.add_argument("--dc-name", help="DC NetBIOS name")
+    exploit_p.add_argument("--dc-host", help="DC hostname")
+    exploit_p.add_argument("--dll-path", help="DLL path for PrintNightmare")
+    exploit_p.add_argument("--ca", help="Certificate Authority")
+    exploit_p.add_argument("--template", help="Certificate template")
+    exploit_p.add_argument("--esc", help="ESC technique number")
+    exploit_p.add_argument("--chain", default="coerce-rbcd-s4u",
+                           choices=["coerce-rbcd-s4u", "coerce-shadow-pkinit",
+                                    "coerce-adcs-esc8"])
+
+    # -- kernel --
+    kernel_p = sub.add_parser("kernel", help="Kernel exploitation modules")
+    kernel_p.add_argument("module", choices=[
+        "token-steal", "driver-exploit", "callback-enum",
+    ])
+    kernel_p.add_argument("--target", "-t")
+    kernel_p.add_argument("--domain", "-d", default=".")
+    kernel_p.add_argument("--driver", default="RTCore64")
+    kernel_p.add_argument("--kernel-action", default="info",
+                          choices=["info", "read", "write", "enumerate"])
+
+    # -- emulation --
+    emul_p = sub.add_parser("emulation", help="Threat emulation modules")
+    emul_p.add_argument("module", choices=[
+        "apt29", "custom", "purple-team", "atomic", "caldera",
+    ])
+    emul_p.add_argument("--target", "-t")
+    emul_p.add_argument("--domain", "-d", default=".")
+    emul_p.add_argument("--techniques", help="Comma-separated MITRE IDs")
+    emul_p.add_argument("--step", help="Emulation step number")
+    emul_p.add_argument("--check", help="Purple team check name")
+    emul_p.add_argument("--art-technique", help="Atomic Red Team technique")
+    emul_p.add_argument("--caldera-url", default="http://localhost:8888")
+    emul_p.add_argument("--caldera-action", default="info",
+                        choices=["info", "status", "agents", "operations"])
 
     # -- shell (session management) --
     shell_p = sub.add_parser("shell", help="Shell session management")
     shell_p.add_argument("module", choices=["sessions"])
     shell_p.add_argument("session_action", nargs="?", default="list",
-                         choices=["list", "interact", "kill", "background"],
-                         help="Session action (default: list)")
-    shell_p.add_argument("session_id", nargs="?", type=int, default=0,
-                         help="Session ID for interact/kill/background")
+                         choices=["list", "interact", "kill", "background"])
+    shell_p.add_argument("session_id", nargs="?", type=int, default=0)
 
     return p
 
