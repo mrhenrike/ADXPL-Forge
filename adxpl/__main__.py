@@ -19,7 +19,6 @@ def _build_parser() -> argparse.ArgumentParser:
 
     sub = p.add_subparsers(dest="command")
 
-    # -- common args helper --
     def _add_common(sp: argparse.ArgumentParser, *, target_required: bool = True) -> None:
         sp.add_argument("--target", "-t", required=target_required,
                         help="Target IP/hostname")
@@ -36,7 +35,8 @@ def _build_parser() -> argparse.ArgumentParser:
     enum_p.add_argument("module", choices=[
         "bloodhound", "bloodhound-collect", "ldap-enum", "spn-scan",
         "gpo-enum", "trust-map", "adcs-enum", "delegation-enum",
-        "laps-dump", "gmsa-dump",
+        "laps-dump", "gmsa-dump", "adrecon", "dns-enum", "maq-enum",
+        "plumhound", "ad-miner", "adacl-scanner",
     ])
     _add_common(enum_p)
     enum_p.add_argument("--collection", default="Default",
@@ -48,6 +48,7 @@ def _build_parser() -> argparse.ArgumentParser:
     attack_p.add_argument("module", choices=[
         "kerberoast", "kerberoast-adv", "asreproast", "adcs", "dcsync",
         "zerologon", "golden-ticket", "silver-ticket", "diamond-ticket",
+        "sapphire-ticket", "bad-successor",
     ])
     _add_common(attack_p)
     attack_p.add_argument("--krbtgt-hash", help="krbtgt hash")
@@ -65,7 +66,7 @@ def _build_parser() -> argparse.ArgumentParser:
     lateral_p = sub.add_parser("lateral", help="Lateral movement modules")
     lateral_p.add_argument("module", choices=[
         "pth", "ptt", "overpass-the-hash", "wmi-exec", "psexec", "smbexec",
-        "evil-winrm", "dcomexec", "mssql-exec",
+        "evil-winrm", "dcomexec", "mssql-exec", "atexec", "rdp-hijack",
     ])
     _add_common(lateral_p)
     lateral_p.add_argument("--shell", action="store_true",
@@ -82,18 +83,22 @@ def _build_parser() -> argparse.ArgumentParser:
     persist_p.add_argument("module", choices=[
         "golden-ticket", "silver-ticket", "skeleton-key",
         "dsrm-backdoor", "dsrm-password", "sid-history",
+        "diamond-ticket-persist", "dcshadow", "gpo-abuse",
     ])
     _add_common(persist_p)
     persist_p.add_argument("--krbtgt-hash", help="krbtgt hash")
     persist_p.add_argument("--domain-sid", help="Domain SID")
     persist_p.add_argument("--dsrm-action", default="info",
                            choices=["info", "enable", "pth"])
+    persist_p.add_argument("--target-dn", help="Target DN for GPO abuse")
+    persist_p.add_argument("--command", help="Command for GPO backdoor")
 
     # -- credential --
     cred_p = sub.add_parser("credential", help="Credential extraction modules")
     cred_p.add_argument("module", choices=[
         "lsassy", "donpapi", "dploot", "pypykatz", "secretsdump",
         "dpapi-decrypt", "gpp-decrypt", "lsass-methods",
+        "ntds-extract", "sam-dump", "cached-creds", "vault-extract",
     ])
     _add_common(cred_p, target_required=False)
     cred_p.add_argument("--method", default="comsvcs", help="Dump method")
@@ -109,16 +114,18 @@ def _build_parser() -> argparse.ArgumentParser:
     coerce_p = sub.add_parser("coercion", help="NTLM coercion modules")
     coerce_p.add_argument("module", choices=[
         "petitpotam", "printerbug", "dfscoerce", "shadowcoerce",
-        "coercer", "webclient",
+        "coercer", "webclient", "cheeseounce", "remotepotato",
+        "efspotato", "coerce-scanner",
     ])
     _add_common(coerce_p)
     coerce_p.add_argument("--listener", help="Capture/relay host")
     coerce_p.add_argument("--scan-only", action="store_true")
+    coerce_p.add_argument("--command", help="Command for Potato exploits")
 
     # -- relay --
     relay_p = sub.add_parser("relay", help="NTLM/Kerberos relay modules")
     relay_p.add_argument("module", choices=[
-        "ntlmrelayx", "krbrelayx", "adcs-relay", "mitm6",
+        "ntlmrelayx", "krbrelayx", "adcs-relay", "mitm6", "ntlm-theft",
     ])
     _add_common(relay_p, target_required=False)
     relay_p.add_argument("--relay-target", help="Relay target host")
@@ -128,12 +135,13 @@ def _build_parser() -> argparse.ArgumentParser:
     relay_p.add_argument("--targets-file", help="Targets file")
     relay_p.add_argument("--adcs-template", default="DomainController")
     relay_p.add_argument("--interface", help="Network interface")
+    relay_p.add_argument("--listener", help="Listener host")
 
     # -- acl --
     acl_p = sub.add_parser("acl", help="ACL abuse modules")
     acl_p.add_argument("module", choices=[
         "dacl-edit", "writedacl", "writeowner", "add-computer",
-        "rbcd", "shadow-cred",
+        "rbcd", "shadow-cred", "generic-write",
     ])
     _add_common(acl_p)
     acl_p.add_argument("--target-dn", help="Target distinguished name")
@@ -149,7 +157,8 @@ def _build_parser() -> argparse.ArgumentParser:
     # -- trust --
     trust_p = sub.add_parser("trust", help="Trust abuse modules")
     trust_p.add_argument("module", choices=[
-        "sid-history-inject", "trust-ticket",
+        "sid-history-inject", "trust-ticket", "extrasids",
+        "raise-child", "forest-trust", "trustpoc",
     ])
     _add_common(trust_p)
     trust_p.add_argument("--target-sid", help="SID to inject")
@@ -158,13 +167,14 @@ def _build_parser() -> argparse.ArgumentParser:
     trust_p.add_argument("--child-sid", help="Child domain SID")
     trust_p.add_argument("--parent-sid", help="Parent domain SID")
     trust_p.add_argument("--krbtgt-hash", help="krbtgt hash")
+    trust_p.add_argument("--aes-key", help="AES256 key for tickets")
 
     # -- spray --
     spray_p = sub.add_parser("spray", help="Password spray modules")
     spray_p.add_argument("module", choices=[
-        "password-spray", "kerberos-spray",
+        "password-spray", "kerberos-spray", "kerbrute", "username-gen",
     ])
-    _add_common(spray_p)
+    _add_common(spray_p, target_required=False)
     spray_p.add_argument("--users-file", help="User list file")
     spray_p.add_argument("--passwords", help="Comma-separated passwords")
     spray_p.add_argument("--password-list", help="Password list file")
@@ -176,18 +186,22 @@ def _build_parser() -> argparse.ArgumentParser:
     # -- campaign --
     campaign_p = sub.add_parser("campaign", help="Attack campaign orchestration")
     campaign_p.add_argument("module", choices=[
-        "domain-takeover", "cert-abuse",
+        "domain-takeover", "cert-abuse", "kill-chain",
+        "cred-validator", "flag-collector",
     ])
-    _add_common(campaign_p)
+    _add_common(campaign_p, target_required=False)
     campaign_p.add_argument("--auto", action="store_true",
                             help="Run automated attack chain")
     campaign_p.add_argument("--step", help="Execute specific step")
     campaign_p.add_argument("--esc", help="ESC technique for cert-abuse")
+    campaign_p.add_argument("--spray-protocol", default="smb",
+                            choices=["smb", "ldap", "kerberos", "winrm"])
 
     # -- lolbins --
     lol_p = sub.add_parser("lolbins", help="LOLBin payload generation")
     lol_p.add_argument("module", choices=[
         "certutil", "mshta", "rundll32", "wmic", "regsvr32", "msbuild",
+        "bitsadmin", "lolbin-scanner", "applocker-bypass",
     ])
     lol_p.add_argument("--target", "-t")
     lol_p.add_argument("--domain", "-d", default=".")
@@ -200,7 +214,7 @@ def _build_parser() -> argparse.ArgumentParser:
     evasion_p = sub.add_parser("evasion", help="Defense evasion modules")
     evasion_p.add_argument("module", choices=[
         "amsi-bypass", "etw-disable", "defender-disable",
-        "ppid-spoof", "clm-bypass",
+        "ppid-spoof", "clm-bypass", "scriptblock-bypass", "ps-cradle",
     ])
     evasion_p.add_argument("--target", "-t")
     evasion_p.add_argument("--domain", "-d", default=".")
@@ -211,6 +225,8 @@ def _build_parser() -> argparse.ArgumentParser:
     evasion_p.add_argument("--encode", action="store_true",
                            help="Base64 encode payload")
     evasion_p.add_argument("--ppid", type=int, help="Parent PID to spoof")
+    evasion_p.add_argument("--lhost", help="Listener host for cradles")
+    evasion_p.add_argument("--lport", default="8080")
 
     # -- byovd --
     byovd_p = sub.add_parser("byovd", help="Bring Your Own Vulnerable Driver")
@@ -228,9 +244,15 @@ def _build_parser() -> argparse.ArgumentParser:
     privesc_p = sub.add_parser("privesc", help="Privilege escalation modules")
     privesc_p.add_argument("module", choices=[
         "potato", "sebackup", "uac-bypass", "service-abuse",
+        "seimpersonate", "samaccountname", "setcb-priv",
+        "always-install-elevated", "unquoted-svc-path", "dll-hijack",
     ])
     privesc_p.add_argument("--target", "-t")
     privesc_p.add_argument("--domain", "-d", default=".")
+    privesc_p.add_argument("--dc-ip", help="Domain controller IP")
+    privesc_p.add_argument("--username", "-u", help="Username")
+    privesc_p.add_argument("--password", "-p", help="Password")
+    privesc_p.add_argument("--hashes", help="NTLM hash")
     privesc_p.add_argument("--potato", default="godpotato",
                            help="Potato variant")
     privesc_p.add_argument("--uac-technique", default="fodhelper")
@@ -238,12 +260,23 @@ def _build_parser() -> argparse.ArgumentParser:
     privesc_p.add_argument("--service-name", help="Target service")
     privesc_p.add_argument("--service-action", default="enumerate",
                            choices=["enumerate", "exploit", "unquoted"])
+    privesc_p.add_argument("--dc-name", help="DC NetBIOS name")
+    privesc_p.add_argument("--lhost", help="Listener host")
+    privesc_p.add_argument("--lport", default="4444")
 
     # -- exploit --
     exploit_p = sub.add_parser("exploit", help="Windows/AD exploit modules")
     exploit_p.add_argument("module", choices=[
         "zerologon", "printnightmare", "smbghost", "nopac",
         "certifried", "petitpotam-unauth", "adcs-esc", "coerce-to-shell",
+        "ms03-026", "ms06-040", "ms08-067", "ms14-068",
+        "ms15-034", "ms15-011", "ms16-032", "ms16-075",
+        "ms17-010", "eternalromance", "ms17-010-check",
+        "bluekeep", "drop-the-mic", "sigred",
+        "outlook-ntlm-leak", "ldapnightmare",
+        "kerb-session-abuse", "pac-abuse",
+        "kerb-dns-relay", "smb-reflection",
+        "netlogon-rce-2026", "adds-rce-2026",
     ])
     _add_common(exploit_p)
     exploit_p.add_argument("--listener", help="Capture/relay host")
@@ -261,6 +294,9 @@ def _build_parser() -> argparse.ArgumentParser:
     kernel_p = sub.add_parser("kernel", help="Kernel exploitation modules")
     kernel_p.add_argument("module", choices=[
         "token-steal", "driver-exploit", "callback-enum",
+        "kernel-cve-scanner", "hivenightmare",
+        "ms16-135", "cve-2018-8120", "cve-2021-1732",
+        "cve-2022-21882", "cve-2023-36874", "cve-2024-30088",
     ])
     kernel_p.add_argument("--target", "-t")
     kernel_p.add_argument("--domain", "-d", default=".")
@@ -272,6 +308,10 @@ def _build_parser() -> argparse.ArgumentParser:
     emul_p = sub.add_parser("emulation", help="Threat emulation modules")
     emul_p.add_argument("module", choices=[
         "apt29", "custom", "purple-team", "atomic", "caldera",
+        "ransomware-sim", "worm-spread-sim", "cred-stealer",
+        "ad-persistence-implant", "edr-evasion", "shellcode-loader",
+        "atomic-ad-tests", "caldera-ad-ops", "c2-bridge",
+        "malware-bazaar-intel",
     ])
     emul_p.add_argument("--target", "-t")
     emul_p.add_argument("--domain", "-d", default=".")
@@ -282,6 +322,52 @@ def _build_parser() -> argparse.ArgumentParser:
     emul_p.add_argument("--caldera-url", default="http://localhost:8888")
     emul_p.add_argument("--caldera-action", default="info",
                         choices=["info", "status", "agents", "operations"])
+
+    # -- adcs --
+    adcs_p = sub.add_parser("adcs", help="AD Certificate Services modules")
+    adcs_p.add_argument("module", choices=[
+        "pass-the-cert", "pkinit-tools", "adcs-esc-extended", "locksmith-scan",
+    ])
+    _add_common(adcs_p)
+    adcs_p.add_argument("--ca", help="Certificate Authority")
+    adcs_p.add_argument("--template", help="Certificate template/PFX path")
+    adcs_p.add_argument("--esc", help="ESC technique number (9-16)")
+
+    # -- audit --
+    audit_p = sub.add_parser("audit", help="AD security audit modules")
+    audit_p.add_argument("module", choices=[
+        "pingcastle", "adpeas", "linwinpwn", "deathstar",
+    ])
+    _add_common(audit_p, target_required=False)
+
+    # -- exchange --
+    exchange_p = sub.add_parser("exchange", help="Exchange / infrastructure modules")
+    exchange_p.add_argument("module", choices=[
+        "privexchange", "proxylogon", "proxyshell",
+    ])
+    _add_common(exchange_p)
+    exchange_p.add_argument("--listener", help="Attacker listener IP")
+
+    # -- sccm --
+    sccm_p = sub.add_parser("sccm", help="SCCM/MECM modules")
+    sccm_p.add_argument("module", choices=[
+        "sccm-enum", "sccm-abuse",
+    ])
+    _add_common(sccm_p, target_required=False)
+
+    # -- azuread --
+    azure_p = sub.add_parser("azuread", help="Azure AD / Entra ID modules")
+    azure_p.add_argument("module", choices=[
+        "azuread-enum", "azuread-tokens",
+    ])
+    _add_common(azure_p, target_required=False)
+
+    # -- impacket --
+    impacket_p = sub.add_parser("impacket", help="Impacket arsenal modules")
+    impacket_p.add_argument("module", choices=[
+        "reg",
+    ])
+    _add_common(impacket_p)
 
     # -- shell (session management) --
     shell_p = sub.add_parser("shell", help="Shell session management")
