@@ -25,6 +25,11 @@ _MODULE_MAP = {
         "plumhound": "adxpl.modules.enumeration.plumhound",
         "ad-miner": "adxpl.modules.enumeration.ad_miner",
         "adacl-scanner": "adxpl.modules.enumeration.adacl_scanner",
+        "windapsearch": "adxpl.modules.enumeration.windapsearch",
+        "ldapdomaindump": "adxpl.modules.enumeration.ldapdomaindump",
+        "pywerview": "adxpl.modules.enumeration.pywerview",
+        "acl-scanner": "adxpl.modules.enumeration.acl_scanner",
+        "adalanche": "adxpl.modules.enumeration.adalanche",
     },
     "attack": {
         "kerberoast": "adxpl.modules.attack.kerberoast",
@@ -38,6 +43,8 @@ _MODULE_MAP = {
         "diamond-ticket": "adxpl.modules.attack.diamond_ticket",
         "sapphire-ticket": "adxpl.modules.attack.sapphire_ticket",
         "bad-successor": "adxpl.modules.attack.bad_successor",
+        "unconstrained-deleg": "adxpl.modules.attack.unconstrained_deleg",
+        "constrained-deleg": "adxpl.modules.attack.constrained_deleg",
     },
     "lateral": {
         "pth": "adxpl.modules.lateral.pass_the_hash",
@@ -51,6 +58,7 @@ _MODULE_MAP = {
         "mssql-exec": "adxpl.modules.lateral.mssql_exec",
         "atexec": "adxpl.modules.lateral.atexec",
         "rdp-hijack": "adxpl.modules.lateral.rdp_hijack",
+        "ssh-lateral": "adxpl.modules.lateral.ssh_lateral",
     },
     "persist": {
         "golden-ticket": "adxpl.modules.persistence.golden_ticket",
@@ -62,6 +70,8 @@ _MODULE_MAP = {
         "diamond-ticket-persist": "adxpl.modules.persistence.diamond_ticket_persist",
         "dcshadow": "adxpl.modules.persistence.dcshadow",
         "gpo-abuse": "adxpl.modules.persistence.gpo_abuse",
+        "admin-sd-holder": "adxpl.modules.persistence.admin_sd_holder",
+        "machine-account": "adxpl.modules.persistence.machine_account",
     },
     "credential": {
         "lsassy": "adxpl.modules.credential.lsassy_dump",
@@ -76,6 +86,7 @@ _MODULE_MAP = {
         "sam-dump": "adxpl.modules.credential.sam_dump",
         "cached-creds": "adxpl.modules.credential.cached_creds",
         "vault-extract": "adxpl.modules.credential.vault_extract",
+        "wifi-creds": "adxpl.modules.credential.wifi_creds",
     },
     "coercion": {
         "petitpotam": "adxpl.modules.coercion.petitpotam",
@@ -95,6 +106,7 @@ _MODULE_MAP = {
         "adcs-relay": "adxpl.modules.relay.adcs_relay",
         "mitm6": "adxpl.modules.relay.mitm6_relay",
         "ntlm-theft": "adxpl.modules.relay.ntlm_theft",
+        "responder": "adxpl.modules.relay.responder",
     },
     "acl": {
         "dacl-edit": "adxpl.modules.acl.dacl_edit",
@@ -104,6 +116,8 @@ _MODULE_MAP = {
         "rbcd": "adxpl.modules.acl.rbcd_abuse",
         "shadow-cred": "adxpl.modules.acl.shadow_credentials",
         "generic-write": "adxpl.modules.acl.generic_write",
+        "force-change-pwd": "adxpl.modules.acl.force_change_pwd",
+        "bloodyad-ops": "adxpl.modules.acl.bloodyad_ops",
     },
     "trust": {
         "sid-history-inject": "adxpl.modules.trust.sid_history_inject",
@@ -255,6 +269,10 @@ _MODULE_MAP = {
     },
     "impacket": {
         "reg": "adxpl.modules.impacket.impacket_reg",
+        "dacledit": "adxpl.modules.impacket.impacket_dacledit",
+        "addcomputer": "adxpl.modules.impacket.impacket_addcomputer",
+        "finddeleg": "adxpl.modules.impacket.impacket_finddeleg",
+        "ntlmrelayx": "adxpl.modules.impacket.impacket_ntlmrelayx",
     },
     "shell": {
         "sessions": "adxpl.modules.lateral._sessions_cmd",
