@@ -1,6 +1,7 @@
 """GPP decrypt — Group Policy Preferences cpassword extraction."""
 from __future__ import annotations
-import base64, sys
+import base64
+import sys
 from typing import Any
 from Crypto.Cipher import AES
 

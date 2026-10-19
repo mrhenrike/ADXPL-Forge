@@ -21,7 +21,8 @@ def run(args: Any) -> int:
     print("[*] Machine Account Quota Enumeration")
     print("[*] Domain: {}".format(cred.domain))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     nxc = shutil.which("nxc") or shutil.which("netexec") or shutil.which("crackmapexec")
     if nxc:
         cmd = [nxc, "ldap", dc_ip or cred.domain, "-u", cred.username or "",

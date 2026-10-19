@@ -18,7 +18,8 @@ def run(args: Any) -> int:
 
     print("[*] AD Miner: BloodHound data mining and risk scoring")
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     adminer = shutil.which("AD-miner") or shutil.which("ad-miner") or shutil.which("ad_miner")
     if adminer:
         cmd = [adminer, "-b", "bolt://localhost:7687", "-u", "neo4j", "-p", "neo4jneo4j",

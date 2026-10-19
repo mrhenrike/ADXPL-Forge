@@ -1,6 +1,7 @@
 """AD password spray — multi-protocol (LDAP/SMB/Kerberos) with lockout-safe delays."""
 from __future__ import annotations
-import sys, time
+import sys
+import time
 from typing import Any
 from adxpl.core.credential import ADCredential
 

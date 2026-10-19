@@ -21,7 +21,8 @@ def run(args: Any) -> int:
 
     print("[*] raiseChild: auto-escalate {} -> {}".format(cred.domain, parent_domain or "parent domain"))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     raiser = shutil.which("raiseChild.py") or shutil.which("impacket-raiseChild")
     if not raiser:
         print("[!] raiseChild.py (impacket) not found")

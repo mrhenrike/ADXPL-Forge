@@ -21,7 +21,8 @@ def run(args: Any) -> int:
     print("[*] ADACLScanner: comprehensive ACL audit")
     print("[*] Domain: {}".format(cred.domain))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     scanner = shutil.which("ADACLScan.ps1") or shutil.which("adaclscanner")
     if scanner:
         cmd = ["pwsh", "-File", scanner, "-Base",

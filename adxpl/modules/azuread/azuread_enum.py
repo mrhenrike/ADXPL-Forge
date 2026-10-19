@@ -20,7 +20,8 @@ def run(args: Any) -> int:
     print("[*] Azure AD / Entra ID Enumeration")
     print("[*] Domain: {}".format(cred.domain))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     roadrecon = shutil.which("roadrecon")
     if roadrecon:
         cmd = [roadrecon, "gather", "-d", cred.domain]

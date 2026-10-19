@@ -21,7 +21,8 @@ def run(args: Any) -> int:
     print("[*] PKINITtools: PKINIT authentication tools")
     print("[*] Domain: {}".format(cred.domain))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     gettgtpkinit = shutil.which("gettgtpkinit.py") or shutil.which("gettgtpkinit")
     getnthash = shutil.which("getnthash.py") or shutil.which("getnthash")
 

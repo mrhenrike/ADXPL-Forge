@@ -1,6 +1,8 @@
 """ntlmrelayx automation — NTLM relay with auto-targeting and attack selection."""
 from __future__ import annotations
-import subprocess, sys, shutil
+import subprocess
+import sys
+import shutil
 from typing import Any
 from adxpl.core.credential import ADCredential
 

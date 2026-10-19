@@ -1,6 +1,7 @@
 """AMSI bypass — multiple techniques for Antimalware Scan Interface evasion."""
 from __future__ import annotations
-import base64, sys
+import base64
+import sys
 from typing import Any
 
 MANIFEST = {

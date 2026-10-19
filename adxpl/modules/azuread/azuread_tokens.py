@@ -30,7 +30,8 @@ def run(args: Any) -> int:
     print("  - TokenTactics: Invoke-RefreshToMSGraphToken")
     print("  - AADInternals: Get-AADIntAccessToken")
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     roadtx = shutil.which("roadtx")
     if roadtx:
         print("\n[*] ROADtx available. Use:")

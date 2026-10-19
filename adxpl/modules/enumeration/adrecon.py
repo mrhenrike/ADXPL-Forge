@@ -22,7 +22,8 @@ def run(args: Any) -> int:
     print("[*] adREcon: comprehensive AD reconnaissance")
     print("[*] Domain: {}  DC: {}".format(cred.domain, dc_ip or "auto"))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     adrecon = shutil.which("adrecon") or shutil.which("adrecon.ps1") or shutil.which("ADRecon.ps1")
     if adrecon:
         cmd = ["pwsh", "-File", adrecon, "-DomainController", dc_ip or "",

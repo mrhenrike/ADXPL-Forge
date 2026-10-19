@@ -21,7 +21,8 @@ def run(args: Any) -> int:
 
     print("[*] ATExec: Task Scheduler execution on {}".format(target))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     atexec = shutil.which("atexec.py") or shutil.which("impacket-atexec")
     if not atexec:
         print("[!] atexec.py (impacket) not found")

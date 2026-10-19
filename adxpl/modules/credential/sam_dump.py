@@ -20,7 +20,8 @@ def run(args: Any) -> int:
 
     print("[*] SAM Hash Dump: {}".format(target or "target"))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     secretsdump = shutil.which("secretsdump.py") or shutil.which("impacket-secretsdump")
     if not secretsdump:
         print("[!] secretsdump.py (impacket) not found")

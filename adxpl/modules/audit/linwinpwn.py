@@ -22,7 +22,9 @@ def run(args: Any) -> int:
     print("[*] linWinPwn: automated AD audit from Linux")
     print("[*] Domain: {}  DC: {}".format(cred.domain, dc_ip or "auto"))
 
-    import subprocess, shutil, os
+    import subprocess
+    import shutil
+    import os
     lwp = shutil.which("linWinPwn.sh") or shutil.which("linwinpwn")
 
     if not lwp:

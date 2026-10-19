@@ -56,7 +56,7 @@ def run(args: Any) -> int:
         " [interactive shell]" if shell_mode else ""))
 
     try:
-        from impacket.dcerpc.v5.dcomrt import DCOMConnection  # noqa: F401
+        from impacket.dcerpc.v5.dcomrt import DCOMConnection
     except ImportError:
         print("[!] impacket not installed", file=sys.stderr)
         return 1

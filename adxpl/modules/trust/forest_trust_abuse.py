@@ -22,7 +22,8 @@ def run(args: Any) -> int:
     print("[*] Forest Trust Abuse: {}".format(cred.domain))
     print("[*] Checking SID filtering configuration on forest trusts")
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     lookupsid = shutil.which("lookupsid.py") or shutil.which("impacket-lookupsid")
     if not lookupsid:
         print("[!] lookupsid.py (impacket) not found")

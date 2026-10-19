@@ -20,7 +20,8 @@ def run(args: Any) -> int:
     print("[*] DeathStar: automated Domain Admin path")
     print("[*] Uses BloodHound data to find and exploit shortest path to DA")
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     deathstar = shutil.which("DeathStar.py") or shutil.which("deathstar")
     if deathstar:
         cmd = [deathstar, "-u", "neo4j", "-p", "neo4jneo4j",

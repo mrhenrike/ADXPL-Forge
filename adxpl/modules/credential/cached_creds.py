@@ -20,7 +20,8 @@ def run(args: Any) -> int:
 
     print("[*] Cached Domain Credentials (DCC2/mscash2): {}".format(target or "target"))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     secretsdump = shutil.which("secretsdump.py") or shutil.which("impacket-secretsdump")
     if secretsdump:
         auth = cred.impacket_auth_string()

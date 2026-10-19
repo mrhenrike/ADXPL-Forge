@@ -27,7 +27,8 @@ def run(args: Any) -> int:
         print("[!] --krbtgt-hash required (AES256 key preferred)")
         return 1
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     ticketer = shutil.which("ticketer.py") or shutil.which("impacket-ticketer")
     if not ticketer:
         print("[!] ticketer.py (impacket) not found")

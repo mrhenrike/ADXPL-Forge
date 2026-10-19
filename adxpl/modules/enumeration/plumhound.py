@@ -18,7 +18,8 @@ def run(args: Any) -> int:
 
     print("[*] PlumHound: BloodHound data mining and reporting")
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     plumhound = shutil.which("PlumHound.py") or shutil.which("plumhound")
     if plumhound:
         cmd = [plumhound, "-x", "tasks/default.tasks", "-p", "neo4jneo4j",

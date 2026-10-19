@@ -20,7 +20,8 @@ def run(args: Any) -> int:
     print("[*] SCCM/MECM Exploitation")
     print("[*] Domain: {}".format(cred.domain))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     sccmhunter = shutil.which("sccmhunter") or shutil.which("sccmhunter.py")
     if sccmhunter:
         cmd = [sccmhunter, "admin", "-u", "{}\\{}".format(cred.domain, cred.username or ""),

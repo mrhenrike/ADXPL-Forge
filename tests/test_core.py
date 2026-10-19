@@ -6,12 +6,11 @@ import argparse
 import ast
 import importlib
 import os
-import sys
 
 
 def test_version():
-    from adxpl import __version__, __product__, __cli__
-    assert __version__ == "1.0.0"
+    from adxpl import __cli__, __product__, __version__
+    assert __version__ == "2.0.0"
     assert __product__ == "ADXPL-Forge"
     assert __cli__ == "axf"
 

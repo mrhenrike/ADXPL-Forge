@@ -22,7 +22,8 @@ def run(args: Any) -> int:
 
     print("[*] Coercion Scanner: testing all known methods against {}".format(target))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     coercer = shutil.which("Coercer") or shutil.which("coercer")
     if coercer:
         cmd = [coercer, "scan" if scan_only else "coerce",

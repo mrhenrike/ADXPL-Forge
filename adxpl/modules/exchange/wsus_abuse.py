@@ -22,7 +22,8 @@ def run(args: Any) -> int:
     print("[*] Target: {}".format(target))
     print("[*] Requires: write access to WSUS server or MITM position")
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     pywsus = shutil.which("pywsus") or shutil.which("pywsus.py")
     if pywsus:
         print("[*] pywsus found: {}".format(pywsus))

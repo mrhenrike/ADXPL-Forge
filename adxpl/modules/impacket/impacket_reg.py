@@ -21,7 +21,8 @@ def run(args: Any) -> int:
     print("[*] Impacket reg.py: remote registry operations")
     print("[*] Target: {}".format(target))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     reg = shutil.which("reg.py") or shutil.which("impacket-reg")
     if not reg:
         print("[!] reg.py (impacket) not found")

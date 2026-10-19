@@ -1,6 +1,8 @@
 """gMSA password dump — extract msDS-ManagedPassword from gMSA accounts."""
 from __future__ import annotations
-import sys, struct, hashlib
+import sys
+import struct
+import hashlib
 from typing import Any
 from adxpl.core.credential import ADCredential
 

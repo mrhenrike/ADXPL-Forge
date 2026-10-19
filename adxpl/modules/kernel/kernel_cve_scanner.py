@@ -18,7 +18,8 @@ def run(args: Any) -> int:
 
     print("[*] Kernel CVE Scanner: enumerate exploitable vulnerabilities")
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     wesng = shutil.which("wes.py") or shutil.which("wesng") or shutil.which("wes")
     if wesng:
         print("[*] Using WES-NG (Windows Exploit Suggester)")

@@ -22,7 +22,8 @@ def run(args: Any) -> int:
     print("[*] PassTheCert: LDAPS authentication with certificate")
     print("[*] Domain: {}  DC: {}".format(cred.domain, dc_ip or "auto"))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     ptc = shutil.which("passthecert.py") or shutil.which("PassTheCert.py")
     certipy = shutil.which("certipy") or shutil.which("certipy-ad")
 

@@ -1,6 +1,7 @@
 """Kerberos-based password spray — no LDAP lockout logs, pre-auth only."""
 from __future__ import annotations
-import sys, time
+import sys
+import time
 from typing import Any
 
 MANIFEST = {

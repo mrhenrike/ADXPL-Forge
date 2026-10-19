@@ -21,7 +21,8 @@ def run(args: Any) -> int:
     print("[*] PingCastle: AD Security Health Check")
     print("[*] Domain: {}".format(cred.domain))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     pingcastle = shutil.which("PingCastle.exe") or shutil.which("pingcastle")
     if pingcastle:
         cmd = [pingcastle, "--healthcheck", "--server", dc_ip or cred.domain]

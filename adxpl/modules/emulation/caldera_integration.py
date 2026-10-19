@@ -28,7 +28,8 @@ def run(args: Any) -> int:
         print("[!] --caldera-key required", file=sys.stderr)
         return 1
 
-    import urllib.request, json
+    import urllib.request
+    import json
     headers = {"KEY": api_key, "Content-Type": "application/json"}
 
     if action == "status":
