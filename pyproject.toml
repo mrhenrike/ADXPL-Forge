@@ -9,7 +9,7 @@ name = "adxpl"
 version = "2.1.0"
 description = "ADXPL-Forge (AXF) — Active Directory attack and audit framework with 219 modules across 25 categories. Enumeration, Kerberos, ADCS, lateral movement, credential theft, coercion, relay, ACL abuse, trust attacks, privilege escalation, kernel exploits, CVE exploits, LOLBins, evasion, BYOVD, emulation, and more."
 readme = { file = "README.md", content-type = "text/markdown" }
-license = { text = "MIT" }
+license = { text = "XSRL-1.0" }
 authors = [
     { name = "André Henrique", email = "henrique.santos@uniaogeek.com.br" },
 ]
