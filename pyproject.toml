@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "adxpl-forge"
-version = "2.0.0"
+version = "2.1.0"
 description = "ADXPL-Forge (AXF) — Active Directory attack and audit framework with 219 modules across 25 categories. Enumeration, Kerberos, ADCS, lateral movement, credential theft, coercion, relay, ACL abuse, trust attacks, privilege escalation, kernel exploits, CVE exploits, LOLBins, evasion, BYOVD, emulation, and more."
 readme = { file = "README.md", content-type = "text/markdown" }
 license = { text = "MIT" }

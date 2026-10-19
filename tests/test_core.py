@@ -10,7 +10,7 @@ import os
 
 def test_version():
     from adxpl import __cli__, __product__, __version__
-    assert __version__ == "2.0.0"
+    assert __version__ == "2.1.0"
     assert __product__ == "ADXPL-Forge"
     assert __cli__ == "axf"
 
