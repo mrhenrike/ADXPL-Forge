@@ -9,7 +9,10 @@ from __future__ import annotations
 import sys
 from typing import Any
 
-from adxpl.core.shell_mixin import get_session_manager
+try:
+    from adxpl.core.shell_mixin import get_session_manager
+except ImportError:
+    get_session_manager = None
 
 
 MANIFEST = {
