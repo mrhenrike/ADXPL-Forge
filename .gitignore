@@ -16,3 +16,20 @@ htmlcov/
 .ruff_cache/
 *.ccache
 *.kirbi
+
+# === Secrets & credentials — NEVER commit ===
+.env.*
+*.env
+.pypirc
+.netrc
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+id_rsa
+id_rsa.*
+*.credentials
+credentials.json
+secrets.json
