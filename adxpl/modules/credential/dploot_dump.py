@@ -1,6 +1,8 @@
 """dploot — DPAPI looting: masterkeys, credentials, browser, wifi."""
 from __future__ import annotations
-import subprocess, sys, shutil
+import subprocess
+import sys
+import shutil
 from typing import Any
 from adxpl.core.credential import ADCredential
 

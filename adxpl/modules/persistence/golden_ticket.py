@@ -62,7 +62,7 @@ def run(args: Any) -> int:
         ticketer = TICKETER("", args.domain, options)
         ticketer.run()
 
-        ccache_path = f"Administrator.ccache"
+        ccache_path = "Administrator.ccache"
         if os.path.isfile(ccache_path):
             print(f"[+] Golden Ticket saved: {ccache_path}")
             print(f"[*] Usage: export KRB5CCNAME={os.path.abspath(ccache_path)}")

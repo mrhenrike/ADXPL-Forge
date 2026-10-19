@@ -20,7 +20,8 @@ def run(args: Any) -> int:
     print("[*] Stormspotter: Azure AD attack graph exploration")
     print("[*] Domain: {}".format(cred.domain))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     stormspotter = shutil.which("stormspotter")
     if stormspotter:
         print("[*] Stormspotter found: {}".format(stormspotter))

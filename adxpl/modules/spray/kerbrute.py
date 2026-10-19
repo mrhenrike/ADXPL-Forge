@@ -23,7 +23,8 @@ def run(args: Any) -> int:
 
     print("[*] Kerbrute: Kerberos user enum + spray against {}".format(cred.domain))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     kerbrute = shutil.which("kerbrute")
     if not kerbrute:
         print("[!] kerbrute not found (Go binary required)")

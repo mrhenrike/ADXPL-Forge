@@ -23,7 +23,8 @@ def run(args: Any) -> int:
     print("[*] GenericWrite Abuse")
     print("[*] Target: {}".format(target_account or target_dn or "unspecified"))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     bloodyad = shutil.which("bloodyAD") or shutil.which("bloodyad")
     if bloodyad:
         cmd = [bloodyad, "-d", cred.domain, "-u", cred.username or ""]

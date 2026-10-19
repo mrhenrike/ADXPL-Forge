@@ -4,7 +4,9 @@ Collects DPAPI-protected secrets: browser passwords, WiFi keys,
 Windows Credentials, Vaults, Certificates, and more.
 """
 from __future__ import annotations
-import subprocess, sys, shutil
+import subprocess
+import sys
+import shutil
 from typing import Any
 from adxpl.core.credential import ADCredential
 

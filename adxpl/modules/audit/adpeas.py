@@ -21,7 +21,8 @@ def run(args: Any) -> int:
     print("[*] adPEAS: AD Privilege Escalation Attack Scanner")
     print("[*] Domain: {}".format(cred.domain))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     adpeas = shutil.which("adPEAS.ps1") or shutil.which("adpeas")
     if adpeas:
         cmd = ["pwsh", "-ep", "bypass", "-File", adpeas,

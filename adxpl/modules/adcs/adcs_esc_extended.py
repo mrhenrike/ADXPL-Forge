@@ -40,7 +40,8 @@ def run(args: Any) -> int:
         for num, desc in esc_map.items():
             print("  ESC{}: {}".format(num, desc))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     certipy = shutil.which("certipy") or shutil.which("certipy-ad")
     if certipy:
         print("\n[*] Certipy enumeration: certipy find -u {}@{} -dc-ip {}".format(

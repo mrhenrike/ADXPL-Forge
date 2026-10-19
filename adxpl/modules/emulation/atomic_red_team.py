@@ -1,6 +1,8 @@
 """Atomic Red Team integration — run atomic tests by technique ID."""
 from __future__ import annotations
-import subprocess, sys, shutil
+import subprocess
+import sys
+import shutil
 from typing import Any
 
 MANIFEST = {

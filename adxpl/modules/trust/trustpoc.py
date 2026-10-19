@@ -21,7 +21,8 @@ def run(args: Any) -> int:
     print("[*] Trust Key Extraction & Inter-Realm TGT Forging")
     print("[*] Domain: {}  DC: {}".format(cred.domain, dc_ip or "auto"))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     secretsdump = shutil.which("secretsdump.py") or shutil.which("impacket-secretsdump")
     if not secretsdump:
         print("[!] secretsdump.py (impacket) not found")

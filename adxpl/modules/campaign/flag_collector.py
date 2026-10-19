@@ -18,7 +18,9 @@ def run(args: Any) -> int:
 
     print("[*] Flag Collector: artifact persistence and tracking")
 
-    import os, json, time
+    import os
+    import json
+    import time
     flags_file = os.path.join(output, "flags.json")
 
     flags = {}

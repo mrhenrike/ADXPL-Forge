@@ -21,7 +21,8 @@ def run(args: Any) -> int:
     print("[*] GPO Abuse: Group Policy backdoor")
     print("[*] Domain: {}".format(cred.domain))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     pygpoabuse = shutil.which("pygpoabuse") or shutil.which("pygpoabuse.py")
     if pygpoabuse:
         cmd = [pygpoabuse, "{}/{}:{}".format(cred.domain, cred.username or "", cred.password or ""),

@@ -1,6 +1,8 @@
 """AD CS enumeration — certificate templates, CAs, ESC1-ESC8 detection."""
 from __future__ import annotations
-import subprocess, sys, shutil
+import subprocess
+import sys
+import shutil
 from typing import Any
 from adxpl.core.credential import ADCredential
 

@@ -21,7 +21,8 @@ def run(args: Any) -> int:
     print("[*] Locksmith: ADCS vulnerability scanner")
     print("[*] Domain: {}".format(cred.domain))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     locksmith = shutil.which("Invoke-Locksmith.ps1") or shutil.which("locksmith")
     certipy = shutil.which("certipy") or shutil.which("certipy-ad")
 

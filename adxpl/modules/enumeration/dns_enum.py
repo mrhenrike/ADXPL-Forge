@@ -20,7 +20,8 @@ def run(args: Any) -> int:
 
     print("[*] AD DNS Enumeration: {}".format(cred.domain))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     adidnsdump = shutil.which("adidnsdump")
     if adidnsdump:
         cmd = [adidnsdump, "-u", "{}\\{}".format(cred.domain, cred.username or "")]

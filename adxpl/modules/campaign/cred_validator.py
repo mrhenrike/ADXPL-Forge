@@ -21,7 +21,8 @@ def run(args: Any) -> int:
 
     print("[*] Credential Validator: {} protocol against {}".format(protocol, target or cred.domain))
 
-    import subprocess, shutil
+    import subprocess
+    import shutil
     nxc = shutil.which("nxc") or shutil.which("netexec") or shutil.which("crackmapexec")
     if not nxc:
         print("[!] NetExec/CrackMapExec not found")
