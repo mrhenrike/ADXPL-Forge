@@ -85,6 +85,7 @@ Homepage      = "https://github.com/mrhenrike/ADXPL-Forge"
 Repository    = "https://github.com/mrhenrike/ADXPL-Forge"
 Documentation = "https://github.com/mrhenrike/ADXPL-Forge/wiki"
 "Bug Tracker" = "https://github.com/mrhenrike/ADXPL-Forge/issues"
+Changelog     = "https://github.com/mrhenrike/ADXPL-Forge/releases"
 
 [project.scripts]
 axf   = "adxpl.__main__:main"
