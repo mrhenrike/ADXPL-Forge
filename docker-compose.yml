@@ -1,0 +1,9 @@
+services:
+  adxpl:
+    build: .
+    container_name: adxpl
+    network_mode: host
+    volumes:
+      - ./output:/opt/adxpl/output
+    environment:
+      - TERM=xterm-256color
