@@ -52,7 +52,7 @@ def test_frozen_dataclass():
     cred = ADCredential(username="user", domain="test.local")
     try:
         cred.username = "other"
-        assert False, "Should raise FrozenInstanceError"
+        raise AssertionError("Should raise FrozenInstanceError")
     except AttributeError:
         pass
 
