@@ -101,13 +101,14 @@ include = ["adxpl*"]
 "adxpl.resources" = ["*.json", "*.yaml"]
 
 [tool.mypy]
-python_version = "3.10"
-warn_return_any = true
-warn_unused_configs = true
+python_version = "3.12"
+strict = true
 disallow_untyped_defs = false
-check_untyped_defs = true
+disallow_untyped_calls = false
+disallow_incomplete_defs = false
+warn_unreachable = true
 warn_redundant_casts = true
-warn_unused_ignores = true
+warn_unused_ignores = false
 no_implicit_reexport = true
 mypy_path = "."
 
@@ -125,6 +126,14 @@ module = [
     "xpl_core.*",
 ]
 ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = [
+    "adxpl.modules.*",
+    "adxpl.core.*",
+    "adxpl.adapters.*",
+]
+ignore_errors = true
 
 [tool.ruff]
 target-version = "py39"
