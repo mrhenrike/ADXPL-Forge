@@ -1,6 +1,5 @@
 """Enumerate kernel CVEs exploráveis no alvo via systeminfo + KB matching."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -25,7 +24,7 @@ def run(args: Any) -> int:
         print("[*] Using WES-NG (Windows Exploit Suggester)")
         print("[*] Steps: 1. Collect systeminfo on target  2. Run wes.py systeminfo.txt")
         if target:
-            print("[*] Remote: impacket-smbexec <creds>@{} 'systeminfo > C:\\temp\\si.txt'".format(target))
+            print(f"[*] Remote: impacket-smbexec <creds>@{target} 'systeminfo > C:\\temp\\si.txt'")
         return 0
 
     print("[*] Tools for kernel CVE enumeration:")
@@ -47,6 +46,6 @@ def run(args: Any) -> int:
 
     print("\n[*] Known Windows kernel CVEs:")
     for name, cve, desc in known_kernel_cves:
-        print("  {} ({}) — {}".format(name, cve, desc))
+        print(f"  {name} ({cve}) — {desc}")
 
     return 0

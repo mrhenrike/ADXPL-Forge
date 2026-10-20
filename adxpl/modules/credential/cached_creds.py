@@ -1,6 +1,5 @@
 """Cached domain credentials extraction — DCC2/mscash2."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {

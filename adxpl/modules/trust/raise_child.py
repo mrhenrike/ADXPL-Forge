@@ -1,6 +1,5 @@
 """raiseChild — escalation automática child→parent domain."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -30,10 +29,10 @@ def run(args: Any) -> int:
 
     cmd = [raiser]
     if cred.password:
-        cmd += ["{}/{}:{}".format(cred.domain, cred.username, cred.password)]
+        cmd += [f"{cred.domain}/{cred.username}:{cred.password}"]
     elif cred.nthash:
         cmd += ["-hashes", "{}:{}".format(cred.lmhash or "", cred.nthash),
-                "{}/{}".format(cred.domain, cred.username)]
+                f"{cred.domain}/{cred.username}"]
     if target:
         cmd += ["-target-exec", target]
 

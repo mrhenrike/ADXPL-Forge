@@ -6,7 +6,6 @@ Higher-level attack modules (kerberoast, AS-REP roast, delegation abuse)
 consume this engine through stable public helpers.
 """
 
-from __future__ import annotations
 
 from .protocol import (
     EncryptionType,

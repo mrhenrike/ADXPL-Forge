@@ -1,6 +1,5 @@
 """ADCS ESC9-ESC16 — extended certificate abuse techniques."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -20,7 +19,7 @@ def run(args: Any) -> int:
     esc = getattr(args, "esc", None)
 
     print("[*] ADCS Extended ESC Exploitation (ESC9-ESC16)")
-    print("[*] Domain: {}".format(cred.domain))
+    print(f"[*] Domain: {cred.domain}")
 
     esc_map = {
         "9": "CT_FLAG_NO_SECURITY_EXTENSION — no szOID_NTDS_CA_SECURITY_EXT",
@@ -34,11 +33,11 @@ def run(args: Any) -> int:
     }
 
     if esc and esc in esc_map:
-        print("[*] ESC{}: {}".format(esc, esc_map[esc]))
+        print(f"[*] ESC{esc}: {esc_map[esc]}")
     else:
         print("[*] Extended ESC techniques:")
         for num, desc in esc_map.items():
-            print("  ESC{}: {}".format(num, desc))
+            print(f"  ESC{num}: {desc}")
 
     import subprocess
     import shutil

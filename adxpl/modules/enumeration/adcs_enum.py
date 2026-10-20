@@ -1,5 +1,4 @@
 """AD CS enumeration — certificate templates, CAs, ESC1-ESC8 detection."""
-from __future__ import annotations
 import subprocess
 import sys
 import shutil
@@ -21,18 +20,18 @@ def run(args: Any) -> int:
     dc_ip = getattr(args, "dc_ip", args.target)
     output_dir = getattr(args, "output", ".")
 
-    print("[*] AD CS enumeration → {}".format(dc_ip))
+    print(f"[*] AD CS enumeration → {dc_ip}")
 
     if shutil.which("certipy"):
         cmd = [
             "certipy", "find",
-            "-u", "{}@{}".format(cred.username, args.domain),
+            "-u", f"{cred.username}@{args.domain}",
             "-dc-ip", dc_ip, "-vulnerable",
         ]
         if cred.password:
             cmd.extend(["-p", cred.password])
         elif cred.has_hash:
-            cmd.extend(["-hashes", "{}:{}".format(cred.lm_hash, cred.nt_hash)])
+            cmd.extend(["-hashes", f"{cred.lm_hash}:{cred.nt_hash}"])
 
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=120, cwd=output_dir)
         print(result.stdout)
@@ -44,7 +43,7 @@ def run(args: Any) -> int:
     try:
         from impacket.ldap import ldap as imp_ldap
         base_dn = "CN=Configuration,DC=" + ",DC=".join(args.domain.split("."))
-        conn = imp_ldap.LDAPConnection("ldap://{}".format(dc_ip), base_dn)
+        conn = imp_ldap.LDAPConnection(f"ldap://{dc_ip}", base_dn)
         if cred.has_hash:
             conn.login(cred.username, "", cred.domain, cred.lm_hash, cred.nt_hash)
         else:
@@ -60,10 +59,10 @@ def run(args: Any) -> int:
             if hasattr(entry, "getComponentByName"):
                 templates.append(str(entry["attributes"].get("cn", "")))
 
-        print("[+] Found {} certificate templates".format(len(templates)))
+        print(f"[+] Found {len(templates)} certificate templates")
         for t in templates:
-            print("  - {}".format(t))
+            print(f"  - {t}")
         return 0
     except Exception as exc:
-        print("[-] ADCS enum error: {}".format(exc), file=sys.stderr)
+        print(f"[-] ADCS enum error: {exc}", file=sys.stderr)
         return 1

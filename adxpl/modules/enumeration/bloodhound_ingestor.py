@@ -1,12 +1,11 @@
 """BloodHound data collection via SharpHound/RustHound adapter."""
 
-from __future__ import annotations
 
 import json
 import os
 import subprocess
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timezone, UTC
 from typing import Any
 
 from adxpl.core.credential import ADCredential
@@ -98,7 +97,7 @@ def _fallback_ldap(target: str, domain: str, cred: ADCredential, output: str) ->
         for entry in conn.entries:
             results[key].append(json.loads(entry.entry_to_json()))
 
-    out_path = os.path.join(output, f"adxpl_enum_{datetime.now(timezone.utc).strftime('%Y%m%d_%H%M%S')}.json")
+    out_path = os.path.join(output, f"adxpl_enum_{datetime.now(UTC).strftime('%Y%m%d_%H%M%S')}.json")
     with open(out_path, "w") as fh:
         json.dump(results, fh, indent=2, default=str)
 

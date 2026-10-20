@@ -1,6 +1,5 @@
 """DeathStar — automated DA path via BloodHound attack graph."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {

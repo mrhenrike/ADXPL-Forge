@@ -1,12 +1,11 @@
 """ADCS abuse — ESC1-ESC12 via Certipy adapter or native LDAP enumeration."""
 
-from __future__ import annotations
 
 import json
 import os
 import subprocess
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timezone, UTC
 from typing import Any
 
 from adxpl.core.credential import ADCredential
@@ -112,7 +111,7 @@ def _native_adcs_enum(target: str, domain: str, cred: ADCredential, output: str)
     cas = [json.loads(e.entry_to_json()) for e in conn.entries]
 
     os.makedirs(output, exist_ok=True)
-    ts = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    ts = datetime.now(UTC).strftime("%Y%m%d_%H%M%S")
 
     report = {
         "domain": domain,

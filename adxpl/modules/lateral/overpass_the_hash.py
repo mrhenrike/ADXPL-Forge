@@ -1,6 +1,5 @@
 """Overpass-the-Hash — convert NTLM hash to Kerberos TGT."""
 
-from __future__ import annotations
 
 import os
 import sys

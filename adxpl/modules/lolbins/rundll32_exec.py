@@ -1,5 +1,4 @@
 """rundll32.exe LOLBin — DLL execution, proxy execution, comsvcs dump."""
-from __future__ import annotations
 import sys
 from typing import Any
 
@@ -36,7 +35,7 @@ def run(args: Any) -> int:
         exe_path=getattr(args, "exe_path", "<EXE_PATH>"),
     )
 
-    print("[*] rundll32.exe LOLBin ({}):".format(technique))
-    print("  {}".format(cmd))
+    print(f"[*] rundll32.exe LOLBin ({technique}):")
+    print(f"  {cmd}")
     print("\n[*] Available techniques: {}".format(", ".join(TECHNIQUES.keys())))
     return 0

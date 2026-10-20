@@ -1,6 +1,5 @@
 """Coleta e persistência de artefatos/flags de auditoria."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -36,7 +35,7 @@ def run(args: Any) -> int:
         }
         with open(flags_file, "w") as fh:
             json.dump(flags, fh, indent=2)
-        print("[+] Flag '{}' recorded".format(flag_name))
+        print(f"[+] Flag '{flag_name}' recorded")
     else:
         if flags:
             print("[*] Collected flags:")

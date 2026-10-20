@@ -1,6 +1,5 @@
 """CVE-2021-1732 — Win32k EoP (in-the-wild)."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -23,6 +22,6 @@ def run(args: Any) -> int:
     print("\n[*] Check: systeminfo | findstr /i 'OS Version'")
     print("[*] References: SecWiki/windows-kernel-exploits, GitHub PoC repos")
     if target:
-        print("[*] Target: {}".format(target))
+        print(f"[*] Target: {target}")
 
     return 0

@@ -1,6 +1,5 @@
 """AD DNS enumeration via LDAP — adidnsdump."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -18,7 +17,7 @@ def run(args: Any) -> int:
     cred = ADCredential.from_args(args)
     dc_ip = getattr(args, "dc_ip", None) or getattr(args, "target", None)
 
-    print("[*] AD DNS Enumeration: {}".format(cred.domain))
+    print(f"[*] AD DNS Enumeration: {cred.domain}")
 
     import subprocess
     import shutil

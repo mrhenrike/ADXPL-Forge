@@ -1,5 +1,4 @@
 """pypykatz — Mimikatz in Python: LSASS/registry/DPAPI parsing offline."""
-from __future__ import annotations
 import sys
 from typing import Any
 
@@ -25,7 +24,7 @@ def run(args: Any) -> int:
         print("[!] pypykatz not installed: pip install pypykatz", file=sys.stderr)
         return 1
 
-    print("[*] pypykatz parsing: {}".format(dump_file))
+    print(f"[*] pypykatz parsing: {dump_file}")
     try:
         result = pypykatz.parse_minidump_file(dump_file)
         for luid, session in result.logon_sessions.items():
@@ -37,5 +36,5 @@ def run(args: Any) -> int:
                     type(c).__name__))
         return 0
     except Exception as exc:
-        print("[-] pypykatz error: {}".format(exc), file=sys.stderr)
+        print(f"[-] pypykatz error: {exc}", file=sys.stderr)
         return 1

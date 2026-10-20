@@ -1,6 +1,5 @@
 """Tests for adxpl.core.ldap_engine."""
 
-from __future__ import annotations
 
 from types import SimpleNamespace
 

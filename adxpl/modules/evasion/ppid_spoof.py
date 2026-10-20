@@ -1,5 +1,4 @@
 """PPID spoofing — parent PID manipulation for process tree evasion."""
-from __future__ import annotations
 import sys
 from typing import Any
 
@@ -52,6 +51,6 @@ def run(args: Any) -> int:
         return 0
 
     ps = PS_TEMPLATE.format(ppid=ppid, cmd=command)
-    print("[*] PPID Spoof: {} under parent PID {}".format(command, ppid))
+    print(f"[*] PPID Spoof: {command} under parent PID {ppid}")
     print(ps)
     return 0

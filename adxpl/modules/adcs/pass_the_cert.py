@@ -1,6 +1,5 @@
 """PassTheCert — authenticate with a certificate to LDAPS."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {

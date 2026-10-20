@@ -1,6 +1,5 @@
 """SAM hashes multi-machine dump via remote registry."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {

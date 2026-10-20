@@ -1,5 +1,4 @@
 """AMSI bypass — multiple techniques for Antimalware Scan Interface evasion."""
-from __future__ import annotations
 import base64
 import sys
 from typing import Any
@@ -64,19 +63,19 @@ def run(args: Any) -> int:
     if technique == "list":
         print("[*] Available AMSI bypass techniques:")
         for k in BYPASSES:
-            print("  - {}".format(k))
+            print(f"  - {k}")
         return 0
 
     payload = BYPASSES.get(technique)
     if not payload:
-        print("[!] Unknown technique: {}".format(technique))
+        print(f"[!] Unknown technique: {technique}")
         return 1
 
     if encode:
         b64 = base64.b64encode(payload.encode("utf-16-le")).decode()
-        print("[*] AMSI bypass ({}) — encoded:".format(technique))
-        print("  powershell -enc {}".format(b64))
+        print(f"[*] AMSI bypass ({technique}) — encoded:")
+        print(f"  powershell -enc {b64}")
     else:
-        print("[*] AMSI bypass ({}):".format(technique))
-        print("  {}".format(payload))
+        print(f"[*] AMSI bypass ({technique}):")
+        print(f"  {payload}")
     return 0

