@@ -13,6 +13,12 @@ from typing import Any
 from adxpl import __product__, __version__
 from adxpl.core.dispatcher import _MODULE_MAP
 
+try:
+    from xpl_core.config import ForgeConfig
+    _HAS_CONFIG = True
+except ImportError:
+    _HAS_CONFIG = False
+
 
 # ---------------------------------------------------------------------------
 # Banner
@@ -159,6 +165,7 @@ class _Session:
         self.module_name: str | None = None
         self.module_path: str | None = None
         self.options: dict[str, str] = {}
+        self._config: ForgeConfig | None = ForgeConfig("adxpl") if _HAS_CONFIG else None
 
     @property
     def prompt(self) -> str:
@@ -179,6 +186,8 @@ class _Session:
         self.category = cat
         self.module_name = mod
         self.module_path = mod_path
+        if self._config:
+            self._config.set_val("last_module", f"{cat}/{mod}")
         return True
 
     def deselect(self) -> None:
