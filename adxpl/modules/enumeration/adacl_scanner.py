@@ -1,4 +1,4 @@
-"""ADACLScanner — ACL scanner with comprehensive reporting."""
+"""ADACLScanner  -  ACL scanner with comprehensive reporting."""
 
 from typing import Any
 

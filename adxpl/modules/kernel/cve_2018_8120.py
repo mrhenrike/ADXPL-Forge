@@ -1,4 +1,4 @@
-"""CVE-2018-8120 — Win32k null pointer deref."""
+"""CVE-2018-8120  -  Win32k null pointer deref."""
 
 from typing import Any
 
@@ -15,7 +15,7 @@ MANIFEST = {
 def run(args: Any) -> int:
     target = getattr(args, "target", None)
 
-    print("[*] CVE-2018-8120 — Win32k null pointer deref")
+    print("[*] CVE-2018-8120  -  Win32k null pointer deref")
     print("[*] Root cause: Win32k null pointer deref in NtUserSetImeInfoEx")
     print("[*] Requires local code execution on target")
 

@@ -1,4 +1,4 @@
-"""SID History injection — cross-trust escalation via SID history attribute."""
+"""SID History injection  -  cross-trust escalation via SID history attribute."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential

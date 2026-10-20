@@ -1,4 +1,4 @@
-"""Machine Account Quota enumeration — check ms-DS-MachineAccountQuota."""
+"""Machine Account Quota enumeration  -  check ms-DS-MachineAccountQuota."""
 
 from typing import Any
 

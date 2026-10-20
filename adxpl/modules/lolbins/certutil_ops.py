@@ -1,4 +1,4 @@
-"""certutil.exe LOLBin — download, encode, decode, hash verification."""
+"""certutil.exe LOLBin  -  download, encode, decode, hash verification."""
 import sys
 from typing import Any
 

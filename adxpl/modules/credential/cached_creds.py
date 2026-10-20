@@ -1,4 +1,4 @@
-"""Cached domain credentials extraction — DCC2/mscash2."""
+"""Cached domain credentials extraction  -  DCC2/mscash2."""
 
 from typing import Any
 

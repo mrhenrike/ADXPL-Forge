@@ -1,4 +1,4 @@
-"""WMIC LOLBin — remote/local execution, XSL script processing."""
+"""WMIC LOLBin  -  remote/local execution, XSL script processing."""
 import sys
 from typing import Any
 

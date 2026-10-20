@@ -1,4 +1,4 @@
-"""GPP decrypt — Group Policy Preferences cpassword extraction."""
+"""GPP decrypt  -  Group Policy Preferences cpassword extraction."""
 import base64
 import sys
 from typing import Any

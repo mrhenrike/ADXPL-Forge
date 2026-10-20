@@ -1,4 +1,4 @@
-"""Atomic Red Team integration — run atomic tests by technique ID."""
+"""Atomic Red Team integration  -  run atomic tests by technique ID."""
 import subprocess
 import sys
 import shutil

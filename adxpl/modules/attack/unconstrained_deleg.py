@@ -27,5 +27,5 @@ def run(args: Any) -> int:
 
     print("[*] Captura TGTs de hosts com unconstrained delegation ...")
     print(f"[*] Alvo: {target}, Usuário: {cred.username}")
-    print("[!] Implementação pendente — stub de integração")
+    print("[!] Implementação pendente  -  stub de integração")
     return 0

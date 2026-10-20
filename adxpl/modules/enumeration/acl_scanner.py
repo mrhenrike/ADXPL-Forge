@@ -27,5 +27,5 @@ def run(args: Any) -> int:
 
     print("[*] ACL scanner com teste real de permissões write/genericall em objetos AD ...")
     print(f"[*] Alvo: {target}, Usuário: {cred.username}")
-    print("[!] Implementação pendente — stub de integração")
+    print("[!] Implementação pendente  -  stub de integração")
     return 0

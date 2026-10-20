@@ -1,4 +1,4 @@
-"""raiseChild — escalation automática child→parent domain."""
+"""raiseChild  -  escalation automática child→parent domain."""
 
 from typing import Any
 

@@ -1,4 +1,4 @@
-"""MSBuild.exe LOLBin — inline task execution, AppLocker/CLM bypass."""
+"""MSBuild.exe LOLBin  -  inline task execution, AppLocker/CLM bypass."""
 import sys
 from typing import Any
 

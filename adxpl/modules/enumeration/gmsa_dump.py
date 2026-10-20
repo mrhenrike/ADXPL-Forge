@@ -1,4 +1,4 @@
-"""gMSA password dump — extract msDS-ManagedPassword from gMSA accounts."""
+"""gMSA password dump  -  extract msDS-ManagedPassword from gMSA accounts."""
 import sys
 import struct
 import hashlib

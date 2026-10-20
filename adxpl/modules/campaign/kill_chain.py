@@ -1,4 +1,4 @@
-"""Orquestração de kill chain AD automática — fase a fase com fallback."""
+"""Orquestração de kill chain AD automática  -  fase a fase com fallback."""
 
 from typing import Any
 

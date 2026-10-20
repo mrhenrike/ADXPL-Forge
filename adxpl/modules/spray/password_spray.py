@@ -1,4 +1,4 @@
-"""AD password spray — multi-protocol (LDAP/SMB/Kerberos) with lockout-safe delays."""
+"""AD password spray  -  multi-protocol (LDAP/SMB/Kerberos) with lockout-safe delays."""
 import sys
 import time
 from typing import Any
@@ -67,7 +67,7 @@ def run(args: Any) -> int:
                 if "logon_failure" in err or "invalid_credentials" in err:
                     pass
                 elif "account_locked" in err:
-                    print(f"[!] LOCKED: {user} — pausing spray")
+                    print(f"[!] LOCKED: {user}  -  pausing spray")
                     users.remove(user)
                 elif "password_must_change" in err:
                     print(f"[+] VALID (must change): {args.domain}\\{user} : {pw}")

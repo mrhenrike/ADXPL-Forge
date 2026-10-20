@@ -1,4 +1,4 @@
-"""Pass-the-Ticket — use Kerberos tickets for lateral movement."""
+"""Pass-the-Ticket  -  use Kerberos tickets for lateral movement."""
 
 
 import os
@@ -49,7 +49,7 @@ def run(args: Any) -> int:
         if creds:
             print(f"[+] TGT found for realm {args.domain.upper()}")
         else:
-            print("[*] No TGT — attempting with available service tickets")
+            print("[*] No TGT  -  attempting with available service tickets")
 
         smb = SMBConnection(args.target, args.target, sess_port=445)
         smb.kerberosLogin(

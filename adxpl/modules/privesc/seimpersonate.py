@@ -1,4 +1,4 @@
-"""SeImpersonatePrivilege abuse — Potato family (Juicy/Sweet/God/Rogue)."""
+"""SeImpersonatePrivilege abuse  -  Potato family (Juicy/Sweet/God/Rogue)."""
 
 from typing import Any
 

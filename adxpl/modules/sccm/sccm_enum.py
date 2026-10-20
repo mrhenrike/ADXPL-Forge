@@ -1,4 +1,4 @@
-"""SCCM/MECM enumeration — sites, NAA credentials, collections."""
+"""SCCM/MECM enumeration  -  sites, NAA credentials, collections."""
 
 from typing import Any
 

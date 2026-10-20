@@ -1,4 +1,4 @@
-"""Purple team detection checks — validate if blue team detects each technique."""
+"""Purple team detection checks  -  validate if blue team detects each technique."""
 import sys
 from typing import Any
 
@@ -46,7 +46,7 @@ def run(args: Any) -> int:
     if not check:
         print("[*] Purple Team Detection Checks:")
         for name, info in DETECTION_CHECKS.items():
-            print("\n  [{}] — {}".format(name, info["technique"]))
+            print("\n  [{}]  -  {}".format(name, info["technique"]))
             print("    Detection: {}".format(info["detection"]))
             print("    SIEM: {}".format(info["siem_query"]))
         return 0

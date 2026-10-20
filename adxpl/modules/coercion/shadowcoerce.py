@@ -1,4 +1,4 @@
-"""ShadowCoerce — NTLM coercion via MS-FSRVP IsPathSupported/IsPathShadowCopied."""
+"""ShadowCoerce  -  NTLM coercion via MS-FSRVP IsPathSupported/IsPathShadowCopied."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -58,7 +58,7 @@ def run(args: Any) -> int:
         except Exception:
             pass
 
-        print(f"[+] ShadowCoerce triggered — check relay on {listener}")
+        print(f"[+] ShadowCoerce triggered  -  check relay on {listener}")
         dce.disconnect()
         return 0
 

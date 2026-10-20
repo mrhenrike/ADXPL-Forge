@@ -27,5 +27,5 @@ def run(args: Any) -> int:
 
     print("[*] Machine account creation via MS-SAMR ou LDAPS ...")
     print(f"[*] Alvo: {target}, Usuário: {cred.username}")
-    print("[!] Implementação pendente — stub de integração")
+    print("[!] Implementação pendente  -  stub de integração")
     return 0

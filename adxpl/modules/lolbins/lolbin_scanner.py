@@ -1,4 +1,4 @@
-"""Enumeração de LOLBins disponíveis no alvo — mapeamento LOLBAS completo."""
+"""Enumeração de LOLBins disponíveis no alvo  -  mapeamento LOLBAS completo."""
 
 from typing import Any
 

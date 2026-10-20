@@ -1,4 +1,4 @@
-"""Weak service permissions abuse — modifiable services, unquoted paths, DLL hijack."""
+"""Weak service permissions abuse  -  modifiable services, unquoted paths, DLL hijack."""
 import sys
 from typing import Any
 
@@ -48,7 +48,7 @@ def run(args: Any) -> int:
         print("  2. Place payload at earlier path component:")
         print('     C:\\Program.exe')
         print('     C:\\Program Files\\My.exe')
-        print("  3. Restart service — payload runs as SYSTEM")
+        print("  3. Restart service  -  payload runs as SYSTEM")
         return 0
 
     print("[*] Use --service-action enumerate/exploit/unquoted")

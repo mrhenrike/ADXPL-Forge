@@ -10,7 +10,7 @@ from adxpl import __product__, __version__
 def _build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         prog="axf",
-        description=f"{__product__} v{__version__} — Active Directory attack and audit framework",
+        description=f"{__product__} v{__version__}  -  Active Directory attack and audit framework",
     )
     p.add_argument("--version", action="version",
                    version=f"{__product__} {__version__}")

@@ -1,4 +1,4 @@
-"""MITRE Caldera integration — orchestrate adversary emulation plans."""
+"""MITRE Caldera integration  -  orchestrate adversary emulation plans."""
 import sys
 from typing import Any
 
@@ -43,7 +43,7 @@ def run(args: Any) -> int:
         agents = json.loads(resp.read())
         print(f"[+] {len(agents)} active agents:")
         for a in agents:
-            print("  {} — {} ({})".format(a.get("paw", "?"), a.get("host", "?"), a.get("platform", "?")))
+            print("  {}  -  {} ({})".format(a.get("paw", "?"), a.get("host", "?"), a.get("platform", "?")))
         return 0
 
     return 0

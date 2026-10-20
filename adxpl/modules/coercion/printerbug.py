@@ -1,4 +1,4 @@
-"""PrinterBug / SpoolSample — coerce via MS-RPRN RpcRemoteFindFirstPrinterChangeNotificationEx."""
+"""PrinterBug / SpoolSample  -  coerce via MS-RPRN RpcRemoteFindFirstPrinterChangeNotificationEx."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -60,7 +60,7 @@ def run(args: Any) -> int:
         except Exception:
             pass
 
-        print(f"[+] PrinterBug triggered — check relay listener on {listener}")
+        print(f"[+] PrinterBug triggered  -  check relay listener on {listener}")
         dce.disconnect()
         return 0
 

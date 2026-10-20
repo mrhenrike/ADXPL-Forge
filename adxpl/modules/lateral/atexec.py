@@ -1,4 +1,4 @@
-"""ATExec — remote command execution via Windows Task Scheduler."""
+"""ATExec  -  remote command execution via Windows Task Scheduler."""
 
 from typing import Any
 

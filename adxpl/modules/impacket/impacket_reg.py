@@ -1,4 +1,4 @@
-"""Remote registry operations — SAM/SYSTEM/SECURITY hive extraction."""
+"""Remote registry operations  -  SAM/SYSTEM/SECURITY hive extraction."""
 
 from typing import Any
 

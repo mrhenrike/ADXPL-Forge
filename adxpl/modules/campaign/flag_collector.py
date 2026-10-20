@@ -40,7 +40,7 @@ def run(args: Any) -> int:
         if flags:
             print("[*] Collected flags:")
             for name, info in flags.items():
-                print("  [+] {} — {} ({})".format(name, info.get("domain"), info.get("timestamp")))
+                print("  [+] {}  -  {} ({})".format(name, info.get("domain"), info.get("timestamp")))
         else:
             print("[*] No flags collected yet. Use --step <flag_name> to record.")
 

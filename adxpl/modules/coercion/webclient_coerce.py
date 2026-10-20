@@ -1,4 +1,4 @@
-"""WebClient coercion — trigger WebDAV auth to capture NTLM over HTTP."""
+"""WebClient coercion  -  trigger WebDAV auth to capture NTLM over HTTP."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential

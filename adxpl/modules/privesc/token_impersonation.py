@@ -1,4 +1,4 @@
-"""Token impersonation — Potato family, PrintSpoofer, JuicyPotato, GodPotato."""
+"""Token impersonation  -  Potato family, PrintSpoofer, JuicyPotato, GodPotato."""
 import sys
 from typing import Any
 
@@ -54,7 +54,7 @@ def run(args: Any) -> int:
     if variant == "list":
         print("[*] Token impersonation variants:")
         for name, info in POTATO_VARIANTS.items():
-            print("  {} — {} ({})".format(name, info["targets"], info["requires"]))
+            print("  {}  -  {} ({})".format(name, info["targets"], info["requires"]))
         return 0
 
     info = POTATO_VARIANTS.get(variant, POTATO_VARIANTS["godpotato"])

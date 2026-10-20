@@ -1,4 +1,4 @@
-"""linWinPwn — all-in-one AD autopwn from Linux."""
+"""linWinPwn  -  all-in-one AD autopwn from Linux."""
 
 from typing import Any
 

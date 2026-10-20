@@ -1,4 +1,4 @@
-"""SeBackupPrivilege abuse — read any file, extract SAM/SYSTEM, DCSync."""
+"""SeBackupPrivilege abuse  -  read any file, extract SAM/SYSTEM, DCSync."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential

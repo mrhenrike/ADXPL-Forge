@@ -1,4 +1,4 @@
-"""PowerShell download cradles — IEX, WebClient, COM objects, certutil pipe."""
+"""PowerShell download cradles  -  IEX, WebClient, COM objects, certutil pipe."""
 
 from typing import Any
 

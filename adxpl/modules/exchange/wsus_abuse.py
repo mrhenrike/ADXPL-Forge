@@ -1,4 +1,4 @@
-"""WSUS injection — SharpWSUS/pywsus for code execution via Windows Update."""
+"""WSUS injection  -  SharpWSUS/pywsus for code execution via Windows Update."""
 
 from typing import Any
 

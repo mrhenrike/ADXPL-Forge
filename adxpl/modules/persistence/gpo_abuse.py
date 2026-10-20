@@ -1,4 +1,4 @@
-"""GPO abuse — backdoor via Group Policy Object modification."""
+"""GPO abuse  -  backdoor via Group Policy Object modification."""
 
 from typing import Any
 

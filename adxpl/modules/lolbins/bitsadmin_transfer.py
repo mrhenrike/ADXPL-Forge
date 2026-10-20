@@ -1,4 +1,4 @@
-"""bitsadmin.exe download and execute — background file transfer abuse."""
+"""bitsadmin.exe download and execute  -  background file transfer abuse."""
 
 from typing import Any
 

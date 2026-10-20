@@ -1,4 +1,4 @@
-"""PPID spoofing — parent PID manipulation for process tree evasion."""
+"""PPID spoofing  -  parent PID manipulation for process tree evasion."""
 import sys
 from typing import Any
 
@@ -40,14 +40,14 @@ def run(args: Any) -> int:
     generate = getattr(args, "generate", True)
 
     if not ppid:
-        print("[*] PPID Spoofing — generate payload:")
+        print("[*] PPID Spoofing  -  generate payload:")
         print("  --ppid <PID>  : Parent PID to spoof (e.g., explorer.exe PID)")
         print("  --command     : Command to spawn under spoofed parent")
         print()
         print("[*] Common parent targets:")
-        print("  explorer.exe  — user session (most natural)")
-        print("  svchost.exe   — service context")
-        print("  RuntimeBroker — UWP context")
+        print("  explorer.exe   -  user session (most natural)")
+        print("  svchost.exe    -  service context")
+        print("  RuntimeBroker  -  UWP context")
         return 0
 
     ps = PS_TEMPLATE.format(ppid=ppid, cmd=command)

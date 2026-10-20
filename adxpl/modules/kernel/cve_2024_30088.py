@@ -1,4 +1,4 @@
-"""CVE-2024-30088 — NtQueryInformationToken kernel race."""
+"""CVE-2024-30088  -  NtQueryInformationToken kernel race."""
 
 from typing import Any
 
@@ -15,7 +15,7 @@ MANIFEST = {
 def run(args: Any) -> int:
     target = getattr(args, "target", None)
 
-    print("[*] CVE-2024-30088 — NtQueryInformationToken kernel race")
+    print("[*] CVE-2024-30088  -  NtQueryInformationToken kernel race")
     print("[*] Root cause: Kernel race condition in NtQueryInformationToken")
     print("[*] Requires local code execution on target")
 

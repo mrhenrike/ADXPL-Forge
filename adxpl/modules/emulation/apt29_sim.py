@@ -1,4 +1,4 @@
-"""APT29 (Cozy Bear) technique simulation — MITRE ATT&CK emulation."""
+"""APT29 (Cozy Bear) technique simulation  -  MITRE ATT&CK emulation."""
 import sys
 from typing import Any
 
@@ -32,7 +32,7 @@ def run(args: Any) -> int:
     print()
 
     for tid, name, desc in APT29_TECHNIQUES:
-        print(f"  {tid} — {name} — {desc}")
+        print(f"  {tid}  -  {name}  -  {desc}")
 
     if step:
         idx = int(step) - 1

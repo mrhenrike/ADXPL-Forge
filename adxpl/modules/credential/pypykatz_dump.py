@@ -1,4 +1,4 @@
-"""pypykatz — Mimikatz in Python: LSASS/registry/DPAPI parsing offline."""
+"""pypykatz  -  Mimikatz in Python: LSASS/registry/DPAPI parsing offline."""
 import sys
 from typing import Any
 

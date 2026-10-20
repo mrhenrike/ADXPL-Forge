@@ -1,4 +1,4 @@
-"""Username generation from names — firstname.lastname patterns."""
+"""Username generation from names  -  firstname.lastname patterns."""
 
 from typing import Any
 

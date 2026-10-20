@@ -1,4 +1,4 @@
-"""Azure AD token abuse — PRT, refresh tokens, JWT manipulation."""
+"""Azure AD token abuse  -  PRT, refresh tokens, JWT manipulation."""
 
 from typing import Any
 

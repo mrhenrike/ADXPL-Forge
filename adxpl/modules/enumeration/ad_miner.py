@@ -1,4 +1,4 @@
-"""AD Miner — BloodHound data mining, scoring and attack path analysis."""
+"""AD Miner  -  BloodHound data mining, scoring and attack path analysis."""
 
 from typing import Any
 

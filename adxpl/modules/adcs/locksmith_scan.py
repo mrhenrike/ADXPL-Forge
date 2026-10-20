@@ -1,4 +1,4 @@
-"""Locksmith — ADCS vulnerability scanner for ESC1-ESC16."""
+"""Locksmith  -  ADCS vulnerability scanner for ESC1-ESC16."""
 
 from typing import Any
 

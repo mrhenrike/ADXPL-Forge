@@ -1,4 +1,4 @@
-"""dploot — DPAPI looting: masterkeys, credentials, browser, wifi."""
+"""dploot  -  DPAPI looting: masterkeys, credentials, browser, wifi."""
 import subprocess
 import sys
 import shutil

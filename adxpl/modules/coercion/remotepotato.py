@@ -1,4 +1,4 @@
-"""RemotePotato0 — cross-session NTLM relay → SYSTEM impersonation."""
+"""RemotePotato0  -  cross-session NTLM relay → SYSTEM impersonation."""
 
 from typing import Any
 

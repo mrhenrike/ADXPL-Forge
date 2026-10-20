@@ -1,4 +1,4 @@
-"""krbrelayx — Kerberos relay and RBCD/shadow credentials abuse."""
+"""krbrelayx  -  Kerberos relay and RBCD/shadow credentials abuse."""
 import subprocess
 import sys
 import shutil
@@ -21,7 +21,7 @@ def run(args: Any) -> int:
     mode = getattr(args, "krbrelay_mode", "rbcd")
 
     if not shutil.which("krbrelayx.py"):
-        print("[!] krbrelayx.py not found — pip install krbrelayx", file=sys.stderr)
+        print("[!] krbrelayx.py not found  -  pip install krbrelayx", file=sys.stderr)
         return 1
 
     cmd = ["krbrelayx.py"]

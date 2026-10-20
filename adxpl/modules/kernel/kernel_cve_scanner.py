@@ -46,6 +46,6 @@ def run(args: Any) -> int:
 
     print("\n[*] Known Windows kernel CVEs:")
     for name, cve, desc in known_kernel_cves:
-        print(f"  {name} ({cve}) — {desc}")
+        print(f"  {name} ({cve})  -  {desc}")
 
     return 0

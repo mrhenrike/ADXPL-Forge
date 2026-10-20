@@ -1,4 +1,4 @@
-"""GenericWrite abuse — modify target attributes for escalation."""
+"""GenericWrite abuse  -  modify target attributes for escalation."""
 
 from typing import Any
 

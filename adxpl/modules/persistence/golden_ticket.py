@@ -1,4 +1,4 @@
-"""Golden Ticket — forge TGT using krbtgt NTLM hash."""
+"""Golden Ticket  -  forge TGT using krbtgt NTLM hash."""
 
 
 import os

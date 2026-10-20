@@ -1,4 +1,4 @@
-"""DACL editor — modify AD object DACLs for privilege escalation."""
+"""DACL editor  -  modify AD object DACLs for privilege escalation."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential

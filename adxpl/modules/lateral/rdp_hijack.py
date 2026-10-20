@@ -1,4 +1,4 @@
-"""RDP session hijacking — take over disconnected RDP sessions."""
+"""RDP session hijacking  -  take over disconnected RDP sessions."""
 
 from typing import Any
 

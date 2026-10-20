@@ -1,4 +1,4 @@
-"""LAPS password dump — extract ms-Mcs-AdmPwd from computer objects."""
+"""LAPS password dump  -  extract ms-Mcs-AdmPwd from computer objects."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential

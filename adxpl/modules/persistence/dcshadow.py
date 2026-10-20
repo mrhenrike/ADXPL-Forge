@@ -1,4 +1,4 @@
-"""DCShadow — register rogue DC for stealthy AD modifications."""
+"""DCShadow  -  register rogue DC for stealthy AD modifications."""
 
 from typing import Any
 

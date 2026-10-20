@@ -1,4 +1,4 @@
-"""EfsPotato — MS-EFSR local privesc → SYSTEM (2008-2019)."""
+"""EfsPotato  -  MS-EFSR local privesc → SYSTEM (2008-2019)."""
 
 from typing import Any
 

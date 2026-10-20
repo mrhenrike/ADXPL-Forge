@@ -1,4 +1,4 @@
-"""NTLM theft file generation — create files that leak NTLMv2 hashes."""
+"""NTLM theft file generation  -  create files that leak NTLMv2 hashes."""
 
 from typing import Any
 

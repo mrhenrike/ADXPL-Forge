@@ -1,4 +1,4 @@
-"""ntlmrelayx automation — NTLM relay with auto-targeting and attack selection."""
+"""ntlmrelayx automation  -  NTLM relay with auto-targeting and attack selection."""
 import subprocess
 import sys
 import shutil
@@ -69,7 +69,7 @@ def run(args: Any) -> int:
     try:
         proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                 text=True, bufsize=1)
-        print(f"[+] ntlmrelayx running (PID {proc.pid}) — waiting for auth...")
+        print(f"[+] ntlmrelayx running (PID {proc.pid})  -  waiting for auth...")
         for line in proc.stdout:
             print(f"  {line.rstrip()}")
             if "authenticat" in line.lower() or "success" in line.lower():

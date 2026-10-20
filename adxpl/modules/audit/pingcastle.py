@@ -1,4 +1,4 @@
-"""PingCastle — AD security audit, risk scoring, compliance check."""
+"""PingCastle  -  AD security audit, risk scoring, compliance check."""
 
 from typing import Any
 

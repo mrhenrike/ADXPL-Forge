@@ -1,4 +1,4 @@
-"""ADCS ESC9-ESC16 — extended certificate abuse techniques."""
+"""ADCS ESC9-ESC16  -  extended certificate abuse techniques."""
 
 from typing import Any
 
@@ -22,14 +22,14 @@ def run(args: Any) -> int:
     print(f"[*] Domain: {cred.domain}")
 
     esc_map = {
-        "9": "CT_FLAG_NO_SECURITY_EXTENSION — no szOID_NTDS_CA_SECURITY_EXT",
-        "10": "Weak Certificate Mapping — StrongCertificateBindingEnforcement=0",
-        "11": "ICPR over RPC without encryption — relay NTLM to RPC CA",
-        "12": "CA on compromised host — issue arbitrary certs",
-        "13": "OID Group Link — issuancePolicyLink for auto group membership",
-        "14": "Explicit Key Mapping — GenericWrite on altSecurityIdentities",
-        "15": "EKUwu — schema v1 EKU injection for client auth",
-        "16": "CT_FLAG disabled at CA level — CA-level ESC9 equivalent",
+        "9": "CT_FLAG_NO_SECURITY_EXTENSION  -  no szOID_NTDS_CA_SECURITY_EXT",
+        "10": "Weak Certificate Mapping  -  StrongCertificateBindingEnforcement=0",
+        "11": "ICPR over RPC without encryption  -  relay NTLM to RPC CA",
+        "12": "CA on compromised host  -  issue arbitrary certs",
+        "13": "OID Group Link  -  issuancePolicyLink for auto group membership",
+        "14": "Explicit Key Mapping  -  GenericWrite on altSecurityIdentities",
+        "15": "EKUwu  -  schema v1 EKU injection for client auth",
+        "16": "CT_FLAG disabled at CA level  -  CA-level ESC9 equivalent",
     }
 
     if esc and esc in esc_map:

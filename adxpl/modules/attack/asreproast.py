@@ -1,4 +1,4 @@
-"""AS-REP roasting — extract hashes for accounts without pre-auth."""
+"""AS-REP roasting  -  extract hashes for accounts without pre-auth."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -67,10 +67,10 @@ def run(args: Any) -> int:
                 as_req = AS_REQ()
                 domain_upper = args.domain.upper()
 
-                print(f"  [*] {user} — requesting AS-REP...")
+                print(f"  [*] {user}  -  requesting AS-REP...")
                 roasted += 1
             except Exception as exc:
-                print(f"  [-] {user} — {exc}")
+                print(f"  [-] {user}  -  {exc}")
 
         if roasted > 0:
             print(f"\n[+] {roasted} AS-REP hashes obtained → {output_file}")

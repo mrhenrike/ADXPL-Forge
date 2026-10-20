@@ -1,4 +1,4 @@
-"""AD CS abuse campaign — ESC1-ESC8 detection and exploitation chain."""
+"""AD CS abuse campaign  -  ESC1-ESC8 detection and exploitation chain."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -35,7 +35,7 @@ def run(args: Any) -> int:
         print("[*] Step 1: Enumerate with certipy/adcs_enum")
         print("[*] Step 2: Choose ESC technique:")
         for k, v in ESC_TECHNIQUES.items():
-            print(f"  {k} — {v}")
+            print(f"  {k}  -  {v}")
         print("\n[*] Use --esc ESC1..ESC8 to execute specific technique")
         return 0
 

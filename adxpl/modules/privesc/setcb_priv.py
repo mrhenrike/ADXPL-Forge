@@ -1,4 +1,4 @@
-"""SeTcbPrivilege abuse — domain user → SYSTEM via token manipulation."""
+"""SeTcbPrivilege abuse  -  domain user → SYSTEM via token manipulation."""
 
 from typing import Any
 

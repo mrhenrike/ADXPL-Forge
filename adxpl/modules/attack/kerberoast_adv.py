@@ -1,4 +1,4 @@
-"""Kerberoasting avançado — targeted/AES/opsec-safe variants."""
+"""Kerberoasting avançado  -  targeted/AES/opsec-safe variants."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -68,7 +68,7 @@ def run(args: Any) -> int:
 
         print(f"[+] Found {len(spn_users)} kerberoastable accounts")
         for sam, spn in spn_users:
-            print(f"  {sam} — {spn}")
+            print(f"  {sam}  -  {spn}")
 
         print(f"[*] Requesting TGS tickets (etype={etype})...")
         print(f"[*] Output: {output_file}")

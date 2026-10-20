@@ -1,4 +1,4 @@
-"""Inter-realm trust ticket — forge referral tickets for cross-domain access."""
+"""Inter-realm trust ticket  -  forge referral tickets for cross-domain access."""
 import sys
 from typing import Any
 

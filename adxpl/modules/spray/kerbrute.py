@@ -1,4 +1,4 @@
-"""Kerberos brute-force — user enum + password spray via AS-REQ."""
+"""Kerberos brute-force  -  user enum + password spray via AS-REQ."""
 
 from typing import Any
 

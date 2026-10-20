@@ -1,4 +1,4 @@
-"""PowerView reimplementado em Python — find-*, get-*, invoke-*
+"""PowerView reimplementado em Python  -  find-*, get-*, invoke-*
 
 Author: Andre Henrique (@mrhenrike) | Uniao Geek
 """
@@ -25,7 +25,7 @@ def run(args: Any) -> int:
         print("[!] --target ou --dc obrigatório")
         return 1
 
-    print("[*] PowerView reimplementado em Python — find-*, get-*, invoke-* ...")
+    print("[*] PowerView reimplementado em Python  -  find-*, get-*, invoke-* ...")
     print(f"[*] Alvo: {target}, Usuário: {cred.username}")
-    print("[!] Implementação pendente — stub de integração")
+    print("[!] Implementação pendente  -  stub de integração")
     return 0

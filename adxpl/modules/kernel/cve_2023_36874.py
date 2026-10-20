@@ -1,4 +1,4 @@
-"""CVE-2023-36874 — Windows Error Reporting EoP."""
+"""CVE-2023-36874  -  Windows Error Reporting EoP."""
 
 from typing import Any
 
@@ -15,7 +15,7 @@ MANIFEST = {
 def run(args: Any) -> int:
     target = getattr(args, "target", None)
 
-    print("[*] CVE-2023-36874 — Windows Error Reporting EoP")
+    print("[*] CVE-2023-36874  -  Windows Error Reporting EoP")
     print("[*] Root cause: WER service impersonation via directory junction")
     print("[*] Requires local code execution on target")
 

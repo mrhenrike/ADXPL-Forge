@@ -1,4 +1,4 @@
-"""DLL search order hijacking — sideloading and phantom DLL injection."""
+"""DLL search order hijacking  -  sideloading and phantom DLL injection."""
 
 from typing import Any
 

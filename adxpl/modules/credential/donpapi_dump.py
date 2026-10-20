@@ -1,4 +1,4 @@
-"""DonPAPI — DPAPI + Credentials + Vaults + Certificates remotely.
+"""DonPAPI  -  DPAPI + Credentials + Vaults + Certificates remotely.
 
 Collects DPAPI-protected secrets: browser passwords, WiFi keys,
 Windows Credentials, Vaults, Certificates, and more.

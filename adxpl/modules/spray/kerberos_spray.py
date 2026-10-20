@@ -1,4 +1,4 @@
-"""Kerberos-based password spray — no LDAP lockout logs, pre-auth only."""
+"""Kerberos-based password spray  -  no LDAP lockout logs, pre-auth only."""
 import sys
 import time
 from typing import Any
@@ -54,7 +54,7 @@ def run(args: Any) -> int:
             elif "KDC_ERR_C_PRINCIPAL_UNKNOWN" in err:
                 pass
             else:
-                print(f"  [-] {user} — {err[:60]}")
+                print(f"  [-] {user}  -  {err[:60]}")
 
         if delay:
             time.sleep(delay)

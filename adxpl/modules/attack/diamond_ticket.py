@@ -1,4 +1,4 @@
-"""Diamond Ticket — modify legitimate TGT PAC for stealthier persistence."""
+"""Diamond Ticket  -  modify legitimate TGT PAC for stealthier persistence."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -31,7 +31,7 @@ def run(args: Any) -> int:
     print()
     print(f"[*] Step 1: Request legitimate TGT as {args.domain}\\{cred.username}")
     print("[*] Step 2: Decrypt PAC with krbtgt key")
-    print(f"[*] Step 3: Modify PAC — set RID={target_rid}, add group SIDs")
+    print(f"[*] Step 3: Modify PAC  -  set RID={target_rid}, add group SIDs")
     print("[*] Step 4: Re-sign PAC and re-encrypt TGT")
     print()
     print("[+] Diamond Ticket is stealthier than Golden Ticket:")

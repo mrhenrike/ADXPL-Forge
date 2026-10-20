@@ -1,4 +1,4 @@
-"""PassTheCert — authenticate with a certificate to LDAPS."""
+"""PassTheCert  -  authenticate with a certificate to LDAPS."""
 
 from typing import Any
 

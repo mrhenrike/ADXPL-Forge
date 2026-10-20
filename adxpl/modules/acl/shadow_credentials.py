@@ -1,4 +1,4 @@
-"""Shadow Credentials — abuse msDS-KeyCredentialLink for PKINIT auth."""
+"""Shadow Credentials  -  abuse msDS-KeyCredentialLink for PKINIT auth."""
 import subprocess
 import sys
 import shutil

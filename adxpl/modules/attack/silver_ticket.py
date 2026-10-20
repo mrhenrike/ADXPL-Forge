@@ -1,4 +1,4 @@
-"""Silver Ticket — forge TGS for specific service without krbtgt hash."""
+"""Silver Ticket  -  forge TGS for specific service without krbtgt hash."""
 import sys
 from typing import Any
 

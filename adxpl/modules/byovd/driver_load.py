@@ -1,4 +1,4 @@
-"""BYOVD driver loader — load vulnerable signed drivers for kernel access."""
+"""BYOVD driver loader  -  load vulnerable signed drivers for kernel access."""
 import sys
 from typing import Any
 
@@ -29,7 +29,7 @@ def run(args: Any) -> int:
     if action == "list":
         print("[*] Known vulnerable drivers:")
         for name, info in KNOWN_VULNERABLE_DRIVERS.items():
-            print("  {} ({}) — {} [{}]".format(
+            print("  {} ({})  -  {} [{}]".format(
                 name, info["file"], info["cap"], info["vuln"]))
         return 0
 

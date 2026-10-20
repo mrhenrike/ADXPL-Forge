@@ -1,4 +1,4 @@
-"""AD CS enumeration — certificate templates, CAs, ESC1-ESC8 detection."""
+"""AD CS enumeration  -  certificate templates, CAs, ESC1-ESC8 detection."""
 import subprocess
 import sys
 import shutil

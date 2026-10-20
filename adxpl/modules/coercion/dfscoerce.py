@@ -1,4 +1,4 @@
-"""DFSCoerce — NTLM coercion via MS-DFSNM NetrDfsRemoveStdRoot."""
+"""DFSCoerce  -  NTLM coercion via MS-DFSNM NetrDfsRemoveStdRoot."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -58,7 +58,7 @@ def run(args: Any) -> int:
         except Exception:
             pass
 
-        print(f"[+] DFSCoerce triggered — check relay on {listener}")
+        print(f"[+] DFSCoerce triggered  -  check relay on {listener}")
         dce.disconnect()
         return 0
 

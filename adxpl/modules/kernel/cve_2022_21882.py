@@ -1,4 +1,4 @@
-"""CVE-2022-21882 — Win32k use-after-free."""
+"""CVE-2022-21882  -  Win32k use-after-free."""
 
 from typing import Any
 
@@ -15,7 +15,7 @@ MANIFEST = {
 def run(args: Any) -> int:
     target = getattr(args, "target", None)
 
-    print("[*] CVE-2022-21882 — Win32k use-after-free")
+    print("[*] CVE-2022-21882  -  Win32k use-after-free")
     print("[*] Root cause: Win32k use-after-free in win32kfull!xxxCreateMenuPopupWindow")
     print("[*] Requires local code execution on target")
 

@@ -1,4 +1,4 @@
-"""Overpass-the-Hash — convert NTLM hash to Kerberos TGT."""
+"""Overpass-the-Hash  -  convert NTLM hash to Kerberos TGT."""
 
 
 import os

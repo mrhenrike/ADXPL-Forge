@@ -1,4 +1,4 @@
-"""SID History Injection — add privileged SID to a user's SID history for persistence."""
+"""SID History Injection  -  add privileged SID to a user's SID history for persistence."""
 
 
 import sys

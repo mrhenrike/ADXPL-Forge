@@ -1,4 +1,4 @@
-"""LDAP enumeration — users, groups, SPNs, delegation, password policy."""
+"""LDAP enumeration  -  users, groups, SPNs, delegation, password policy."""
 
 
 import json

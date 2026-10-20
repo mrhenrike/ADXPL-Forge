@@ -1,4 +1,4 @@
-"""Scan all 12+ coercion methods against target — report vulnerable interfaces."""
+"""Scan all 12+ coercion methods against target  -  report vulnerable interfaces."""
 
 from typing import Any
 

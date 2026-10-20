@@ -1,4 +1,4 @@
-"""adPEAS — AD Privilege Escalation Attack Scanner."""
+"""adPEAS  -  AD Privilege Escalation Attack Scanner."""
 
 from typing import Any
 

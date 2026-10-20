@@ -1,4 +1,4 @@
-"""Add machine account — exploit ms-DS-MachineAccountQuota for RBCD."""
+"""Add machine account  -  exploit ms-DS-MachineAccountQuota for RBCD."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential

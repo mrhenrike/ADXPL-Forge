@@ -1,4 +1,4 @@
-"""Delegation enumeration — unconstrained, constrained, RBCD detection."""
+"""Delegation enumeration  -  unconstrained, constrained, RBCD detection."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential

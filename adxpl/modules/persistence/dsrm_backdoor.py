@@ -1,4 +1,4 @@
-"""DSRM Backdoor — abuse Directory Services Restore Mode password for DC persistence."""
+"""DSRM Backdoor  -  abuse Directory Services Restore Mode password for DC persistence."""
 
 
 import sys

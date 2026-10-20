@@ -1,4 +1,4 @@
-"""Sapphire Ticket — S4U2Self+U2U PAC swap for stealthy impersonation."""
+"""Sapphire Ticket  -  S4U2Self+U2U PAC swap for stealthy impersonation."""
 
 from typing import Any
 
@@ -21,7 +21,7 @@ def run(args: Any) -> int:
 
     print("[*] Sapphire Ticket: S4U2Self + U2U PAC modification")
     print(f"[*] Domain: {cred.domain}  Impersonate: {impersonate}")
-    print("[*] Most stealthy ticket — uses real PAC from legitimate TGT")
+    print("[*] Most stealthy ticket  -  uses real PAC from legitimate TGT")
 
     if not krbtgt_hash:
         print("[!] --krbtgt-hash required (AES256 key for best OPSEC)")

@@ -1,4 +1,4 @@
-"""HiveNightmare/SeriousSAM — CVE-2021-36934: SAM/SYSTEM readable by users."""
+"""HiveNightmare/SeriousSAM  -  CVE-2021-36934: SAM/SYSTEM readable by users."""
 
 from typing import Any
 

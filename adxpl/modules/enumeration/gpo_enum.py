@@ -1,4 +1,4 @@
-"""GPO enumeration — list GPOs, linked OUs, and abuse paths."""
+"""GPO enumeration  -  list GPOs, linked OUs, and abuse paths."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -46,7 +46,7 @@ def run(args: Any) -> int:
         print(f"[+] Found {len(gpos)} GPOs:")
         for g in gpos:
             status = "enabled" if g["flags"] == "0" else "disabled"
-            print("  {} — {} [{}]".format(g["guid"], g["name"], status))
+            print("  {}  -  {} [{}]".format(g["guid"], g["name"], status))
         return 0
     except Exception as exc:
         print(f"[-] GPO enum error: {exc}", file=sys.stderr)

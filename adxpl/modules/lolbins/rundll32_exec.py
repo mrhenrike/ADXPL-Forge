@@ -1,4 +1,4 @@
-"""rundll32.exe LOLBin — DLL execution, proxy execution, comsvcs dump."""
+"""rundll32.exe LOLBin  -  DLL execution, proxy execution, comsvcs dump."""
 import sys
 from typing import Any
 

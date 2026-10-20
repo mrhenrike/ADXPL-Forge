@@ -1,4 +1,4 @@
-"""MSSQL exec — SQL Server command execution via xp_cmdshell / sp_oacreate."""
+"""MSSQL exec  -  SQL Server command execution via xp_cmdshell / sp_oacreate."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential

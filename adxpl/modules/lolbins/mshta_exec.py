@@ -1,4 +1,4 @@
-"""mshta.exe LOLBin — HTA execution for payload delivery."""
+"""mshta.exe LOLBin  -  HTA execution for payload delivery."""
 import sys
 from typing import Any
 

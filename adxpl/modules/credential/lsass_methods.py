@@ -65,7 +65,7 @@ def run(args: Any) -> int:
         print("[*] Executing dump command...")
         cmd = _generate_dump_cmd(method)
         print(f"[*] Command: {cmd[:80]}")
-        print("[!] Full remote execution chain not yet automated — use lsassy module for full pipeline")
+        print("[!] Full remote execution chain not yet automated  -  use lsassy module for full pipeline")
         conn.close()
         return 0
 

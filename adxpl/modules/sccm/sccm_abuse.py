@@ -1,4 +1,4 @@
-"""SCCM exploitation — NAA creds, client push, relay, takeover."""
+"""SCCM exploitation  -  NAA creds, client push, relay, takeover."""
 
 from typing import Any
 

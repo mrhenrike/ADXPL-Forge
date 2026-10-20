@@ -1,4 +1,4 @@
-"""PlumHound — BloodHound query automation and reporting."""
+"""PlumHound  -  BloodHound query automation and reporting."""
 
 from typing import Any
 

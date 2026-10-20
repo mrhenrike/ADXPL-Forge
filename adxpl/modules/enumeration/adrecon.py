@@ -1,4 +1,4 @@
-"""adREcon — AD security audit and reconnaissance report."""
+"""adREcon  -  AD security audit and reconnaissance report."""
 
 from typing import Any
 

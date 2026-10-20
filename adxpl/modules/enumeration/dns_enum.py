@@ -1,4 +1,4 @@
-"""AD DNS enumeration via LDAP — adidnsdump."""
+"""AD DNS enumeration via LDAP  -  adidnsdump."""
 
 from typing import Any
 

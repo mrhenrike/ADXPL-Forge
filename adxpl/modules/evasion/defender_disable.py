@@ -1,4 +1,4 @@
-"""Windows Defender evasion — disable, exclude, or tamper with Defender."""
+"""Windows Defender evasion  -  disable, exclude, or tamper with Defender."""
 import sys
 from typing import Any
 

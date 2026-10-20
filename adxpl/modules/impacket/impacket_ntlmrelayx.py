@@ -1,4 +1,4 @@
-"""NTLM relay framework — multi-target, multi-protocol, auto-escalation
+"""NTLM relay framework  -  multi-target, multi-protocol, auto-escalation
 
 Author: Andre Henrique (@mrhenrike) | Uniao Geek
 """
@@ -25,7 +25,7 @@ def run(args: Any) -> int:
         print("[!] --target ou --dc obrigatório")
         return 1
 
-    print("[*] NTLM relay framework — multi-target, multi-protocol, auto-escalation ...")
+    print("[*] NTLM relay framework  -  multi-target, multi-protocol, auto-escalation ...")
     print(f"[*] Alvo: {target}, Usuário: {cred.username}")
-    print("[!] Implementação pendente — stub de integração")
+    print("[!] Implementação pendente  -  stub de integração")
     return 0

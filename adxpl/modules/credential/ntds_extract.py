@@ -1,4 +1,4 @@
-"""NTDS.dit extraction — domain credential dump via VSS or DRSUAPI."""
+"""NTDS.dit extraction  -  domain credential dump via VSS or DRSUAPI."""
 
 from typing import Any
 

@@ -1,4 +1,4 @@
-"""Unquoted service path hijacking — DLL/EXE planting."""
+"""Unquoted service path hijacking  -  DLL/EXE planting."""
 
 from typing import Any
 

@@ -1,4 +1,4 @@
-"""CVE-2021-1732 — Win32k EoP (in-the-wild)."""
+"""CVE-2021-1732  -  Win32k EoP (in-the-wild)."""
 
 from typing import Any
 
@@ -15,7 +15,7 @@ MANIFEST = {
 def run(args: Any) -> int:
     target = getattr(args, "target", None)
 
-    print("[*] CVE-2021-1732 — Win32k EoP (in-the-wild)")
+    print("[*] CVE-2021-1732  -  Win32k EoP (in-the-wild)")
     print("[*] Root cause: Win32k type confusion callback via xxxClientAllocWindowClassExtraBytes")
     print("[*] Requires local code execution on target")
 

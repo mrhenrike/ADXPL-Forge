@@ -1,4 +1,4 @@
-"""Full domain takeover campaign — automated attack chain from user to DA."""
+"""Full domain takeover campaign  -  automated attack chain from user to DA."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -37,7 +37,7 @@ def run(args: Any) -> int:
     if not auto and not step:
         print("[*] Attack chain (use --step N or --auto):")
         for label, module, desc in ATTACK_CHAIN:
-            print(f"  {label} — {desc} ({module})")
+            print(f"  {label}  -  {desc} ({module})")
         print("\n[*] Use --auto for full automated chain")
         print("[*] Use --step 1..8 for specific step")
         return 0
@@ -46,7 +46,7 @@ def run(args: Any) -> int:
         idx = int(step) - 1
         if 0 <= idx < len(ATTACK_CHAIN):
             label, module, desc = ATTACK_CHAIN[idx]
-            print(f"[*] Executing step: {label} — {desc}")
+            print(f"[*] Executing step: {label}  -  {desc}")
             import importlib
             mod_path = f"adxpl.modules.{_module_to_path(module)}"
             try:
@@ -64,7 +64,7 @@ def run(args: Any) -> int:
             print(f"  {desc}")
             print(f"[*] Module: {module}")
             print("[*] (execute each step with --step N for controlled execution)")
-        print("\n[!] Auto mode prints the chain — execute steps individually for safety")
+        print("\n[!] Auto mode prints the chain  -  execute steps individually for safety")
     return 0
 
 

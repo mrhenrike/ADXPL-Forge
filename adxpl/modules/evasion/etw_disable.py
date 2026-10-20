@@ -1,4 +1,4 @@
-"""ETW (Event Tracing for Windows) disabling — blind defender logging."""
+"""ETW (Event Tracing for Windows) disabling  -  blind defender logging."""
 import sys
 from typing import Any
 

@@ -1,4 +1,4 @@
-"""EDR callback removal via vulnerable driver — blind EDR kernel callbacks."""
+"""EDR callback removal via vulnerable driver  -  blind EDR kernel callbacks."""
 import sys
 from typing import Any
 

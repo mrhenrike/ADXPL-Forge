@@ -1,4 +1,4 @@
-"""PrivExchange — Exchange NTLM relay → DCSync rights."""
+"""PrivExchange  -  Exchange NTLM relay → DCSync rights."""
 
 from typing import Any
 

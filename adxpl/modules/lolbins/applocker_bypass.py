@@ -1,4 +1,4 @@
-"""AppLocker/WDAC bypass via trusted binaries — MSBuild, regsvr32, CMSTP."""
+"""AppLocker/WDAC bypass via trusted binaries  -  MSBuild, regsvr32, CMSTP."""
 
 from typing import Any
 

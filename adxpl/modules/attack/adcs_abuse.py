@@ -1,4 +1,4 @@
-"""ADCS abuse — ESC1-ESC12 via Certipy adapter or native LDAP enumeration."""
+"""ADCS abuse  -  ESC1-ESC12 via Certipy adapter or native LDAP enumeration."""
 
 
 import json
@@ -33,7 +33,7 @@ ESC_DESCRIPTIONS = {
     "ESC9": "No security extension (szOID_NTDS_CA_SECURITY_EXT) on certificates",
     "ESC10": "Weak certificate mappings (registry or AD flags)",
     "ESC11": "NTLM relay to RPC enrollment endpoint (no encryption)",
-    "ESC12": "ADCS CA on YubiHSM — shell access allows key extraction",
+    "ESC12": "ADCS CA on YubiHSM  -  shell access allows key extraction",
 }
 
 
@@ -127,7 +127,7 @@ def _native_adcs_enum(target: str, domain: str, cred: ADCredential, output: str)
 
     print(f"[+] {len(templates)} templates, {len(cas)} CAs, {len(findings)} potential ESC findings")
     for f in findings:
-        print(f"  [!] {f['template']}: {f['esc']} — {f['description']}")
+        print(f"  [!] {f['template']}: {f['esc']}  -  {f['description']}")
     print(f"[+] Output: {out_path}")
     return 0
 

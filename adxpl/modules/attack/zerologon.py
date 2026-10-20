@@ -1,4 +1,4 @@
-"""Zerologon (CVE-2020-1472) — check and exploit Netlogon vulnerability."""
+"""Zerologon (CVE-2020-1472)  -  check and exploit Netlogon vulnerability."""
 
 
 import sys

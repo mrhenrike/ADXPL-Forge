@@ -1,4 +1,4 @@
-"""BadSuccessor — dMSA abuse for privilege escalation."""
+"""BadSuccessor  -  dMSA abuse for privilege escalation."""
 
 from typing import Any
 

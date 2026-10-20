@@ -1,4 +1,4 @@
-"""AMSI bypass — multiple techniques for Antimalware Scan Interface evasion."""
+"""AMSI bypass  -  multiple techniques for Antimalware Scan Interface evasion."""
 import base64
 import sys
 from typing import Any
@@ -73,7 +73,7 @@ def run(args: Any) -> int:
 
     if encode:
         b64 = base64.b64encode(payload.encode("utf-16-le")).decode()
-        print(f"[*] AMSI bypass ({technique}) — encoded:")
+        print(f"[*] AMSI bypass ({technique})  -  encoded:")
         print(f"  powershell -enc {b64}")
     else:
         print(f"[*] AMSI bypass ({technique}):")

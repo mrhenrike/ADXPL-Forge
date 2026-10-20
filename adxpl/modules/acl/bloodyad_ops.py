@@ -1,4 +1,4 @@
-"""BloodyAD framework integration — 40+ operações AD via LDAP/SAMR
+"""BloodyAD framework integration  -  40+ operações AD via LDAP/SAMR
 
 Author: Andre Henrique (@mrhenrike) | Uniao Geek
 """
@@ -25,7 +25,7 @@ def run(args: Any) -> int:
         print("[!] --target ou --dc obrigatório")
         return 1
 
-    print("[*] BloodyAD framework integration — 40+ operações AD via LDAP/SAMR ...")
+    print("[*] BloodyAD framework integration  -  40+ operações AD via LDAP/SAMR ...")
     print(f"[*] Alvo: {target}, Usuário: {cred.username}")
-    print("[!] Implementação pendente — stub de integração")
+    print("[!] Implementação pendente  -  stub de integração")
     return 0

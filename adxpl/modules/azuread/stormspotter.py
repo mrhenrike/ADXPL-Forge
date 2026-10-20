@@ -1,4 +1,4 @@
-"""Stormspotter — Azure AD attack graph exploration and visualization."""
+"""Stormspotter  -  Azure AD attack graph exploration and visualization."""
 
 from typing import Any
 

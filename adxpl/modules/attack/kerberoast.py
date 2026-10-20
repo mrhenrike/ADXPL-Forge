@@ -1,4 +1,4 @@
-"""Kerberoasting — request TGS for SPN accounts and extract hashes for offline cracking."""
+"""Kerberoasting  -  request TGS for SPN accounts and extract hashes for offline cracking."""
 
 
 import os

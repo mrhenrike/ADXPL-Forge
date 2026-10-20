@@ -1,4 +1,4 @@
-"""Kernel token steal — steal SYSTEM token via driver or exploit."""
+"""Kernel token steal  -  steal SYSTEM token via driver or exploit."""
 import sys
 from typing import Any
 

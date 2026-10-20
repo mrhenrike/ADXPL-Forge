@@ -1,4 +1,4 @@
-"""AlwaysInstallElevated registry abuse — MSI payload → SYSTEM."""
+"""AlwaysInstallElevated registry abuse  -  MSI payload → SYSTEM."""
 
 from typing import Any
 

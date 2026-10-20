@@ -1,4 +1,4 @@
-"""Azure AD/Entra ID enumeration — users, groups, apps, service principals."""
+"""Azure AD/Entra ID enumeration  -  users, groups, apps, service principals."""
 
 from typing import Any
 

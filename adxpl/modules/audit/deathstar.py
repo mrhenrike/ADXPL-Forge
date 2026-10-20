@@ -1,4 +1,4 @@
-"""DeathStar — automated DA path via BloodHound attack graph."""
+"""DeathStar  -  automated DA path via BloodHound attack graph."""
 
 from typing import Any
 

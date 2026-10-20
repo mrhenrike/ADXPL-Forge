@@ -1,4 +1,4 @@
-"""secretsdump — SAM/LSA/NTDS extraction via impacket."""
+"""secretsdump  -  SAM/LSA/NTDS extraction via impacket."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential

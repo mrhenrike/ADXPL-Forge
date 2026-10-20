@@ -1,4 +1,4 @@
-"""regsvr32.exe LOLBin — SCT script execution, AppLocker bypass."""
+"""regsvr32.exe LOLBin  -  SCT script execution, AppLocker bypass."""
 import sys
 from typing import Any
 

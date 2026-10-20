@@ -1,4 +1,4 @@
-"""AD CS relay — ESC8 HTTP enrollment relay for certificate theft."""
+"""AD CS relay  -  ESC8 HTTP enrollment relay for certificate theft."""
 import subprocess
 import sys
 import shutil

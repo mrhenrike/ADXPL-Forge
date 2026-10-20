@@ -1,4 +1,4 @@
-"""Diamond ticket persistence — modify legitimate TGTs for stealth."""
+"""Diamond ticket persistence  -  modify legitimate TGTs for stealth."""
 
 from typing import Any
 

@@ -1,4 +1,4 @@
-"""SPN (Service Principal Name) scan — enumerate Kerberoastable accounts."""
+"""SPN (Service Principal Name) scan  -  enumerate Kerberoastable accounts."""
 
 
 import json

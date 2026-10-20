@@ -1,4 +1,4 @@
-"""Silver Ticket — forge TGS for a specific service using its NTLM hash."""
+"""Silver Ticket  -  forge TGS for a specific service using its NTLM hash."""
 
 
 import os

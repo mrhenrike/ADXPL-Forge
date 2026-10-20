@@ -1,4 +1,4 @@
-"""Script Block Logging bypass — disable PS logging via registry/reflection."""
+"""Script Block Logging bypass  -  disable PS logging via registry/reflection."""
 
 from typing import Any
 

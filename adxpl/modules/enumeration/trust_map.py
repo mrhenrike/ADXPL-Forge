@@ -1,4 +1,4 @@
-"""AD trust enumeration — map inter-domain and inter-forest trusts."""
+"""AD trust enumeration  -  map inter-domain and inter-forest trusts."""
 
 
 import json

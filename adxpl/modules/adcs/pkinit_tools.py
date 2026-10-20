@@ -1,4 +1,4 @@
-"""PKINITtools — PKINIT authentication and TGT/NT hash recovery."""
+"""PKINITtools  -  PKINIT authentication and TGT/NT hash recovery."""
 
 from typing import Any
 
@@ -29,11 +29,11 @@ def run(args: Any) -> int:
         cmd = [gettgtpkinit, "-cert-pfx", "cert.pfx",
                "-dc-ip", dc_ip or "", "{}/{}".format(cred.domain, cred.username or ""),
                "output.ccache"]
-        print("[*] Step 1 — Get TGT via PKINIT:")
+        print("[*] Step 1  -  Get TGT via PKINIT:")
         print("[*] CMD: {}".format(" ".join(cmd)))
 
     if getnthash:
-        print("[*] Step 2 — Recover NT hash from TGT:")
+        print("[*] Step 2  -  Recover NT hash from TGT:")
         print("[*] CMD: getnthash.py -key <AS-REP-KEY> {}/{}".format(cred.domain, cred.username or ""))
 
     if not gettgtpkinit and not getnthash:

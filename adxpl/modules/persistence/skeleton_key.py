@@ -1,4 +1,4 @@
-"""Skeleton Key — inject master password into LSASS on DC."""
+"""Skeleton Key  -  inject master password into LSASS on DC."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -19,7 +19,7 @@ def run(args: Any) -> int:
     master_password = getattr(args, "skeleton_password", "mimikatz")
 
     print(f"[*] Skeleton Key injection → {target} (password: {master_password})")
-    print("[!] WARNING: This modifies LSASS on the DC — use with caution")
+    print("[!] WARNING: This modifies LSASS on the DC  -  use with caution")
     print("[!] Skeleton Key persists until DC reboot")
 
     try:

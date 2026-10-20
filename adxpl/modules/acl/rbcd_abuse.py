@@ -66,5 +66,5 @@ def run(args: Any) -> int:
             print(result.stdout)
             return result.returncode
 
-    print("[!] rbcd.py not found — use bloodyAD or manual LDAP", file=sys.stderr)
+    print("[!] rbcd.py not found  -  use bloodyAD or manual LDAP", file=sys.stderr)
     return 1
