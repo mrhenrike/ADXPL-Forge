@@ -4,7 +4,6 @@ Interactive WinRM shell using pypsrp/requests, no Ruby dependency.
 Supports file upload/download, PowerShell import, and AMSI bypass.
 """
 
-from __future__ import annotations
 
 import sys
 from typing import Any
@@ -42,9 +41,9 @@ class WinRMShell:
             return False
 
         scheme = "https" if self.ssl else "http"
-        self._url = "{}://{}:{}/wsman".format(scheme, self.target, self.port)
+        self._url = f"{scheme}://{self.target}:{self.port}/wsman"
         self._auth = HTTPBasicAuth(
-            "{}\\{}".format(self.cred.domain, self.cred.username)
+            f"{self.cred.domain}\\{self.cred.username}"
             if self.cred.domain else self.cred.username,
             self.cred.password or "",
         )
@@ -56,7 +55,7 @@ class WinRMShell:
             ' xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"'
             ' xmlns:wsman="http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd">'
             '<s:Header>'
-            '<wsa:To>{url}</wsa:To>'
+            f'<wsa:To>{self._url}</wsa:To>'
             '<wsman:ResourceURI>http://schemas.microsoft.com/wbem/wsman/1/wmi/root/cimv2/Win32_OperatingSystem</wsman:ResourceURI>'
             '<wsa:Action>http://schemas.xmlsoap.org/ws/2004/09/enumeration/Enumerate</wsa:Action>'
             '</s:Header>'
@@ -64,7 +63,7 @@ class WinRMShell:
             '<wsen:Enumerate xmlns:wsen="http://schemas.xmlsoap.org/ws/2004/09/enumeration"/>'
             '</s:Body>'
             '</s:Envelope>'
-        ).format(url=self._url)
+        )
 
         try:
             resp = self._req.post(
@@ -73,13 +72,12 @@ class WinRMShell:
                 timeout=10, verify=False,
             )
             if resp.status_code in (200, 401):
-                print("[+] WinRM connection to {} (port {})".format(
-                    self.target, self.port))
+                print(f"[+] WinRM connection to {self.target} (port {self.port})")
                 return resp.status_code == 200
-            print("[-] WinRM HTTP {}".format(resp.status_code))
+            print(f"[-] WinRM HTTP {resp.status_code}")
             return False
         except Exception as exc:
-            print("[-] WinRM connect failed: {}".format(exc))
+            print(f"[-] WinRM connect failed: {exc}")
             return False
 
     def execute(self, command: str) -> str:
@@ -90,7 +88,7 @@ class WinRMShell:
             ' xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing"'
             ' xmlns:wsman="http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd">'
             '<s:Header>'
-            '<wsa:To>{url}</wsa:To>'
+            f'<wsa:To>{self._url}</wsa:To>'
             '<wsman:ResourceURI>http://schemas.microsoft.com/wbem/wsman/1/windows/shell/cmd</wsman:ResourceURI>'
             '<wsa:Action>http://schemas.xmlsoap.org/ws/2004/09/transfer/Create</wsa:Action>'
             '</s:Header>'
@@ -101,7 +99,7 @@ class WinRMShell:
             '</rsp:Shell>'
             '</s:Body>'
             '</s:Envelope>'
-        ).format(url=self._url)
+        )
 
         try:
             resp = self._req.post(
@@ -115,7 +113,7 @@ class WinRMShell:
 
     def interact(self) -> None:
         """Interactive loop for WinRM."""
-        print("[*] Evil-WinRM shell @ {} -- type 'exit' to quit".format(self.target))
+        print(f"[*] Evil-WinRM shell @ {self.target} -- type 'exit' to quit")
         print("[*] AMSI bypass: Set-MpPreference -DisableRealtimeMonitoring $true")
         print()
 
@@ -145,8 +143,7 @@ def run(args: Any) -> int:
     port = int(getattr(args, "winrm_port", 5985))
     ssl = getattr(args, "ssl", False)
 
-    print("[*] Evil-WinRM → {} ({}\\{}) port {}".format(
-        args.target, args.domain, cred.username, port))
+    print(f"[*] Evil-WinRM → {args.target} ({args.domain}\\{cred.username}) port {port}")
 
     shell = WinRMShell(args.target, cred, port=port, ssl=ssl)
     if not shell.connect():

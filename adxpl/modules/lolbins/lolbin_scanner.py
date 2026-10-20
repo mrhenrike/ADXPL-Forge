@@ -1,6 +1,5 @@
 """Enumeração de LOLBins disponíveis no alvo — mapeamento LOLBAS completo."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -40,7 +39,7 @@ def run(args: Any) -> int:
     for name, info in lolbins.items():
         print("  {:20s} {:12s} {:40s}".format(name, info["mitre"], info["use"]))
 
-    print("\n[+] {} LOLBins cataloged".format(len(lolbins)))
+    print(f"\n[+] {len(lolbins)} LOLBins cataloged")
     if target:
-        print("[*] Remote enumeration against {} requires shell access".format(target))
+        print(f"[*] Remote enumeration against {target} requires shell access")
     return 0

@@ -1,6 +1,5 @@
 """EfsPotato — MS-EFSR local privesc → SYSTEM (2008-2019)."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -20,7 +19,7 @@ def run(args: Any) -> int:
     print("[*] Combines JuicyPotato + PrintSpoofer techniques via MS-EFSR")
     print("[*] Target OS: Windows Server 2008-2019, Windows 7-10")
 
-    print("\n[*] Usage: EfsPotato.exe {}".format(command))
+    print(f"\n[*] Usage: EfsPotato.exe {command}")
     print("[*] Requires: SeImpersonatePrivilege or SeAssignPrimaryTokenPrivilege")
     print("[*] Source: https://github.com/zcgonvh/EfsPotato")
 

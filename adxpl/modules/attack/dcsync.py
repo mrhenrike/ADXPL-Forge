@@ -1,10 +1,9 @@
 """DCSync — replicate AD objects to extract NTLM hashes via DRSUAPI."""
 
-from __future__ import annotations
 
 import os
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timezone, UTC
 from typing import Any
 
 from adxpl.core.credential import ADCredential
@@ -36,7 +35,7 @@ def run(args: Any) -> int:
         return 1
 
     os.makedirs(args.output, exist_ok=True)
-    ts = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    ts = datetime.now(UTC).strftime("%Y%m%d_%H%M%S")
     out_path = os.path.join(args.output, f"dcsync_{ts}")
 
     target_str = f"{args.domain}/{cred.username}"

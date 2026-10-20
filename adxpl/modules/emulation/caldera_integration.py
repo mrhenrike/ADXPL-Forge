@@ -1,5 +1,4 @@
 """MITRE Caldera integration — orchestrate adversary emulation plans."""
-from __future__ import annotations
 import sys
 from typing import Any
 
@@ -20,7 +19,7 @@ def run(args: Any) -> int:
 
     if action == "info":
         print("[*] MITRE Caldera integration")
-        print("[*] Caldera URL: {}".format(caldera_url))
+        print(f"[*] Caldera URL: {caldera_url}")
         print("[*] Actions: status, agents, operations, run")
         return 0
 
@@ -33,16 +32,16 @@ def run(args: Any) -> int:
     headers = {"KEY": api_key, "Content-Type": "application/json"}
 
     if action == "status":
-        req = urllib.request.Request("{}/api/v2/health".format(caldera_url), headers=headers)
+        req = urllib.request.Request(f"{caldera_url}/api/v2/health", headers=headers)
         resp = urllib.request.urlopen(req, timeout=10)
-        print("[+] Caldera status: {}".format(json.loads(resp.read())))
+        print(f"[+] Caldera status: {json.loads(resp.read())}")
         return 0
 
     if action == "agents":
-        req = urllib.request.Request("{}/api/v2/agents".format(caldera_url), headers=headers)
+        req = urllib.request.Request(f"{caldera_url}/api/v2/agents", headers=headers)
         resp = urllib.request.urlopen(req, timeout=10)
         agents = json.loads(resp.read())
-        print("[+] {} active agents:".format(len(agents)))
+        print(f"[+] {len(agents)} active agents:")
         for a in agents:
             print("  {} — {} ({})".format(a.get("paw", "?"), a.get("host", "?"), a.get("platform", "?")))
         return 0

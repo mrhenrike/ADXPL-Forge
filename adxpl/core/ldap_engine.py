@@ -4,7 +4,6 @@ Provides domain enumeration helpers: users, groups, computers, GPOs,
 OUs, trusts, ADCS objects, delegation flags and SPN queries.
 """
 
-from __future__ import annotations
 
 from dataclasses import dataclass, field
 from typing import Any

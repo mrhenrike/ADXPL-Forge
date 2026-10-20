@@ -1,6 +1,5 @@
 """Stormspotter — Azure AD attack graph exploration and visualization."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -18,14 +17,14 @@ def run(args: Any) -> int:
     cred = ADCredential.from_args(args)
 
     print("[*] Stormspotter: Azure AD attack graph exploration")
-    print("[*] Domain: {}".format(cred.domain))
+    print(f"[*] Domain: {cred.domain}")
 
     import subprocess
     import shutil
     stormspotter = shutil.which("stormspotter")
     if stormspotter:
-        print("[*] Stormspotter found: {}".format(stormspotter))
-        print("[*] Usage: stormspotter --tenant {}".format(cred.domain))
+        print(f"[*] Stormspotter found: {stormspotter}")
+        print(f"[*] Usage: stormspotter --tenant {cred.domain}")
     else:
         print("[!] Stormspotter not found")
         print("[*] Source: https://github.com/Azure/Stormspotter")

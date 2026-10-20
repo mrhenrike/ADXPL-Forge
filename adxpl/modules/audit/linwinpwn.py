@@ -1,6 +1,5 @@
 """linWinPwn — all-in-one AD autopwn from Linux."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {

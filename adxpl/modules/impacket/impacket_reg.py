@@ -1,6 +1,5 @@
 """Remote registry operations — SAM/SYSTEM/SECURITY hive extraction."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -19,7 +18,7 @@ def run(args: Any) -> int:
     target = getattr(args, "target", None)
 
     print("[*] Impacket reg.py: remote registry operations")
-    print("[*] Target: {}".format(target))
+    print(f"[*] Target: {target}")
 
     import subprocess
     import shutil

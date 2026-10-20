@@ -1,5 +1,4 @@
 """WMIC LOLBin — remote/local execution, XSL script processing."""
-from __future__ import annotations
 import sys
 from typing import Any
 
@@ -32,7 +31,7 @@ def run(args: Any) -> int:
         svc=getattr(args, "service_name", "EvilSvc"),
     )
 
-    print("[*] WMIC LOLBin ({}):".format(technique))
-    print("  {}".format(cmd))
+    print(f"[*] WMIC LOLBin ({technique}):")
+    print(f"  {cmd}")
     print("\n[*] Available techniques: {}".format(", ".join(TECHNIQUES.keys())))
     return 0

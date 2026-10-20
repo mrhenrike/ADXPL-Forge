@@ -1,6 +1,5 @@
 """Silver Ticket — forge TGS for a specific service using its NTLM hash."""
 
-from __future__ import annotations
 
 import os
 import sys

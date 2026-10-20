@@ -1,5 +1,4 @@
 """ETW (Event Tracing for Windows) disabling — blind defender logging."""
-from __future__ import annotations
 import sys
 from typing import Any
 
@@ -46,8 +45,8 @@ def run(args: Any) -> int:
         print("[!] Unknown: {} (available: {})".format(technique, ", ".join(TECHNIQUES.keys())))
         return 1
 
-    print("[*] ETW disable ({}):".format(technique))
-    print("  {}".format(payload))
+    print(f"[*] ETW disable ({technique}):")
+    print(f"  {payload}")
     print("\n[*] Restoring ETW (cleanup):")
     print("  - Reboot or restart ETW providers")
     return 0

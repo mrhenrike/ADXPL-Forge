@@ -1,5 +1,4 @@
 """APT29 (Cozy Bear) technique simulation — MITRE ATT&CK emulation."""
-from __future__ import annotations
 import sys
 from typing import Any
 
@@ -33,14 +32,14 @@ def run(args: Any) -> int:
     print()
 
     for tid, name, desc in APT29_TECHNIQUES:
-        print("  {} — {} — {}".format(tid, name, desc))
+        print(f"  {tid} — {name} — {desc}")
 
     if step:
         idx = int(step) - 1
         if 0 <= idx < len(APT29_TECHNIQUES):
             tid, name, desc = APT29_TECHNIQUES[idx]
-            print("\n[*] Simulating: {} ({})".format(tid, name))
-            print("[*] Description: {}".format(desc))
+            print(f"\n[*] Simulating: {tid} ({name})")
+            print(f"[*] Description: {desc}")
             print("[*] Execute corresponding ADXPL module for actual simulation")
 
     return 0

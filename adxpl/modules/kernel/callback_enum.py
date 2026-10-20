@@ -1,5 +1,4 @@
 """Kernel callback enumeration — list EDR/AV kernel callbacks."""
-from __future__ import annotations
 import sys
 from typing import Any
 
@@ -30,7 +29,7 @@ def run(args: Any) -> int:
     if action == "list_edrs":
         print("[*] Known EDR kernel drivers:")
         for drv, edr in KNOWN_EDR_DRIVERS.items():
-            print("  {} — {}".format(drv, edr))
+            print(f"  {drv} — {edr}")
         print("\n[*] Enumerate loaded: fltMC.exe")
         print("[*] Or: driverquery /v | findstr /i \"<edr_name>\"")
         return 0

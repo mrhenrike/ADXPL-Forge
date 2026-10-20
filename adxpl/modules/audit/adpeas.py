@@ -1,6 +1,5 @@
 """adPEAS — AD Privilege Escalation Attack Scanner."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -19,7 +18,7 @@ def run(args: Any) -> int:
     dc_ip = getattr(args, "dc_ip", None)
 
     print("[*] adPEAS: AD Privilege Escalation Attack Scanner")
-    print("[*] Domain: {}".format(cred.domain))
+    print(f"[*] Domain: {cred.domain}")
 
     import subprocess
     import shutil
@@ -30,7 +29,7 @@ def run(args: Any) -> int:
         if dc_ip:
             cmd += ["-Server", dc_ip]
         if cred.username:
-            cmd += ["-Username", "{}@{}".format(cred.username, cred.domain)]
+            cmd += ["-Username", f"{cred.username}@{cred.domain}"]
         if cred.password:
             cmd += ["-Password", cred.password]
         print("[*] CMD: {}".format(" ".join(cmd)))

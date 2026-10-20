@@ -3,7 +3,6 @@
 Author: Andre Henrique (@mrhenrike) | Uniao Geek
 """
 
-from __future__ import annotations
 
 from typing import Any
 

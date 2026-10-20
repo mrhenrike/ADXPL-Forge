@@ -7,7 +7,6 @@ Each ESC is a standalone check function returning a list of findings.
 The ``run()`` entry point dispatches by --esc flag or runs all.
 """
 
-from __future__ import annotations
 
 from dataclasses import dataclass
 from typing import Any

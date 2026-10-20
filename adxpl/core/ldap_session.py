@@ -1,6 +1,5 @@
 """LDAP session management for AD enumeration."""
 
-from __future__ import annotations
 
 from typing import TYPE_CHECKING
 

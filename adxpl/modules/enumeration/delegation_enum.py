@@ -1,5 +1,4 @@
 """Delegation enumeration — unconstrained, constrained, RBCD detection."""
-from __future__ import annotations
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -18,11 +17,11 @@ def run(args: Any) -> int:
     cred = ADCredential.from_args(args)
     dc_ip = getattr(args, "dc_ip", args.target)
 
-    print("[*] Delegation enumeration → {}".format(dc_ip))
+    print(f"[*] Delegation enumeration → {dc_ip}")
     try:
         from impacket.ldap import ldap as imp_ldap
         base_dn = "DC=" + ",DC=".join(args.domain.split("."))
-        conn = imp_ldap.LDAPConnection("ldap://{}".format(dc_ip), base_dn)
+        conn = imp_ldap.LDAPConnection(f"ldap://{dc_ip}", base_dn)
         if cred.has_hash:
             conn.login(cred.username, "", cred.domain, cred.lm_hash, cred.nt_hash)
         else:
@@ -46,7 +45,7 @@ def run(args: Any) -> int:
             if hasattr(entry, "getComponentByName"):
                 sam = str(entry["attributes"].get("sAMAccountName", ""))
                 spns = entry["attributes"].get("msDS-AllowedToDelegateTo", [])
-                print("  {} → {}".format(sam, spns))
+                print(f"  {sam} → {spns}")
 
         print("\n=== RBCD ===")
         entries = conn.search(searchBase=base_dn,
@@ -57,5 +56,5 @@ def run(args: Any) -> int:
                 print("  [!] {} has RBCD".format(entry["attributes"].get("sAMAccountName", "")))
         return 0
     except Exception as exc:
-        print("[-] Delegation enum error: {}".format(exc), file=sys.stderr)
+        print(f"[-] Delegation enum error: {exc}", file=sys.stderr)
         return 1

@@ -1,6 +1,5 @@
 """Kerberos brute-force — user enum + password spray via AS-REQ."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -21,7 +20,7 @@ def run(args: Any) -> int:
     passwords = getattr(args, "passwords", None)
     password_list = getattr(args, "password_list", None)
 
-    print("[*] Kerbrute: Kerberos user enum + spray against {}".format(cred.domain))
+    print(f"[*] Kerbrute: Kerberos user enum + spray against {cred.domain}")
 
     import subprocess
     import shutil

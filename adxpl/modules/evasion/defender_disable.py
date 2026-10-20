@@ -1,5 +1,4 @@
 """Windows Defender evasion — disable, exclude, or tamper with Defender."""
-from __future__ import annotations
 import sys
 from typing import Any
 
@@ -38,8 +37,8 @@ def run(args: Any) -> int:
     cmd = TECHNIQUES.get(technique, TECHNIQUES["add_exclusion"])
     cmd = cmd.format(path=path)
 
-    print("[*] Defender evasion ({}):".format(technique))
-    print("  {}".format(cmd))
+    print(f"[*] Defender evasion ({technique}):")
+    print(f"  {cmd}")
     print("\n[!] Requires local admin (most techniques)")
     print("[*] Available: {}".format(", ".join(TECHNIQUES.keys())))
     return 0
