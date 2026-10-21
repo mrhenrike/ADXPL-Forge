@@ -94,7 +94,7 @@ def run():
     except Exception as e:
         Color.pl('\n{!} {R}Error:{O} %s{W}' % str(e))
 
-        if Configuration.verbose > 0 or True:
+        if True:
             Color.pl('\n{!} {O}Full stack trace below')
             from traceback import format_exc
             Color.p('\n{!}    ')
