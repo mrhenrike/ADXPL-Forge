@@ -16,6 +16,38 @@ htmlcov/
 .ruff_cache/
 *.ccache
 *.kirbi
+.coveragerc
+.tox/
+
+# === Dev tooling ===
+tools/
+.githooks/
+Makefile
+
+# === Docker ===
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# === Documentos internos ===
+HANDOFF.md
+HANDOFF-AUDIT.md
+pypi-manifests/
+
+# === Temporarios e logs ===
+.tmp/
+.log/
+*.log
+
+# === IDE e sessoes ===
+.claude/
+.cursor/
+.idea/
+.vscode/
+*.swp
+
+# === OS ===
+.DS_Store
 
 # === Secrets & credentials — NEVER commit ===
 .env.*
