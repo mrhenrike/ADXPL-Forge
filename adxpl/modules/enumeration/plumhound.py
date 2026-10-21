@@ -1,6 +1,5 @@
-"""PlumHound — BloodHound query automation and reporting."""
+"""PlumHound  -  BloodHound query automation and reporting."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {

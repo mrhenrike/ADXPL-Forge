@@ -1,6 +1,5 @@
-"""Orquestração de kill chain AD automática — fase a fase com fallback."""
+"""Orquestração de kill chain AD automática  -  fase a fase com fallback."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -39,16 +38,16 @@ def run(args: Any) -> int:
         phase_num = int(step) if step.isdigit() else 0
         if 1 <= phase_num <= len(phases):
             name, cmd = phases[phase_num - 1]
-            print("[*] Executing phase: {}".format(name))
-            print("[*] Command: axf {}".format(cmd))
+            print(f"[*] Executing phase: {name}")
+            print(f"[*] Command: axf {cmd}")
         else:
-            print("[!] Invalid step: {} (1-{})".format(step, len(phases)))
+            print(f"[!] Invalid step: {step} (1-{len(phases)})")
             return 1
     else:
         print("[*] Kill chain phases:")
         for name, cmd in phases:
             status = "PENDING" if not auto else "QUEUED"
-            print("  [{}] {} -> axf {}".format(status, name, cmd))
+            print(f"  [{status}] {name} -> axf {cmd}")
 
     if auto:
         print("\n[!] Automated kill chain execution requires explicit operator control")

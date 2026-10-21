@@ -1,6 +1,5 @@
-"""Username generation from names — firstname.lastname patterns."""
+"""Username generation from names  -  firstname.lastname patterns."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -25,14 +24,14 @@ def run(args: Any) -> int:
 
     import os
     patterns = [
-        lambda f, l: "{}.{}".format(f, l),
-        lambda f, l: "{}{}".format(f[0], l),
-        lambda f, l: "{}{}".format(f, l[0]),
-        lambda f, l: "{}{}".format(f, l),
-        lambda f, l: "{}_{}".format(f, l),
-        lambda f, l: "{}".format(l),
-        lambda f, l: "{}-{}".format(f, l),
-        lambda f, l: "{}{}".format(f[:3], l[:3]),
+        lambda f, l: f"{f}.{l}",
+        lambda f, l: f"{f[0]}{l}",
+        lambda f, l: f"{f}{l[0]}",
+        lambda f, l: f"{f}{l}",
+        lambda f, l: f"{f}_{l}",
+        lambda f, l: f"{l}",
+        lambda f, l: f"{f}-{l}",
+        lambda f, l: f"{f[:3]}{l[:3]}",
     ]
 
     usernames = []
@@ -49,5 +48,5 @@ def run(args: Any) -> int:
     with open(out_path, "w") as fh:
         fh.write("\n".join(sorted(set(usernames))) + "\n")
 
-    print("[+] Generated {} unique usernames -> {}".format(len(set(usernames)), out_path))
+    print(f"[+] Generated {len(set(usernames))} unique usernames -> {out_path}")
     return 0

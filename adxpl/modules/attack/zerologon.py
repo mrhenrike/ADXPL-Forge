@@ -1,6 +1,5 @@
-"""Zerologon (CVE-2020-1472) — check and exploit Netlogon vulnerability."""
+"""Zerologon (CVE-2020-1472)  -  check and exploit Netlogon vulnerability."""
 
-from __future__ import annotations
 
 import sys
 from typing import Any

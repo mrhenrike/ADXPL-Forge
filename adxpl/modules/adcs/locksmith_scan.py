@@ -1,6 +1,5 @@
-"""Locksmith — ADCS vulnerability scanner for ESC1-ESC16."""
+"""Locksmith  -  ADCS vulnerability scanner for ESC1-ESC16."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -19,7 +18,7 @@ def run(args: Any) -> int:
     dc_ip = getattr(args, "dc_ip", None)
 
     print("[*] Locksmith: ADCS vulnerability scanner")
-    print("[*] Domain: {}".format(cred.domain))
+    print(f"[*] Domain: {cred.domain}")
 
     import subprocess
     import shutil

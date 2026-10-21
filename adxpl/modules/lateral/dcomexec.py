@@ -4,7 +4,6 @@ Uses MMC20.Application or ShellBrowserWindow DCOM objects
 for remote command execution with optional reverse shell.
 """
 
-from __future__ import annotations
 
 import sys
 from typing import Any
@@ -51,8 +50,8 @@ def _dcom_exec(target: str, cred: ADCredential, domain: str,
             target, cred.username, cred.password or "",
             domain, cred.lm_hash, cred.nt_hash,
         )
-        print("[+] DCOM connection established to {}".format(target))
-        print("[*] Executing: {}".format(command[:80]))
+        print(f"[+] DCOM connection established to {target}")
+        print(f"[*] Executing: {command[:80]}")
 
         if dcom_object == "mmc":
             from impacket.dcerpc.v5.dcom.wmi import (
@@ -72,7 +71,7 @@ def _dcom_exec(target: str, cred: ADCredential, domain: str,
         return True
 
     except Exception as exc:
-        print("[-] DCOMExec failed: {}".format(exc), file=sys.stderr)
+        print(f"[-] DCOMExec failed: {exc}", file=sys.stderr)
         return False
 
 

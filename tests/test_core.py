@@ -1,6 +1,5 @@
 """Tests for ADXPL-Forge core modules."""
 
-from __future__ import annotations
 
 import argparse
 import ast

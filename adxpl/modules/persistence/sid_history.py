@@ -1,6 +1,5 @@
-"""SID History Injection — add privileged SID to a user's SID history for persistence."""
+"""SID History Injection  -  add privileged SID to a user's SID history for persistence."""
 
-from __future__ import annotations
 
 import sys
 from typing import Any

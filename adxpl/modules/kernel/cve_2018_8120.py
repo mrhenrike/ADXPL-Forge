@@ -1,6 +1,5 @@
-"""CVE-2018-8120 — Win32k null pointer deref."""
+"""CVE-2018-8120  -  Win32k null pointer deref."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -16,13 +15,13 @@ MANIFEST = {
 def run(args: Any) -> int:
     target = getattr(args, "target", None)
 
-    print("[*] CVE-2018-8120 — Win32k null pointer deref")
+    print("[*] CVE-2018-8120  -  Win32k null pointer deref")
     print("[*] Root cause: Win32k null pointer deref in NtUserSetImeInfoEx")
     print("[*] Requires local code execution on target")
 
     print("\n[*] Check: systeminfo | findstr /i 'OS Version'")
     print("[*] References: SecWiki/windows-kernel-exploits, GitHub PoC repos")
     if target:
-        print("[*] Target: {}".format(target))
+        print(f"[*] Target: {target}")
 
     return 0

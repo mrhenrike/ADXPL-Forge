@@ -1,6 +1,5 @@
 """Golden Ticket + ExtraSIDs → Enterprise Admins no root domain."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {

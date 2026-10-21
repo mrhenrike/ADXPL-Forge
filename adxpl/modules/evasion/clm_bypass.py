@@ -1,5 +1,4 @@
 """CLM (Constrained Language Mode) bypass for PowerShell."""
-from __future__ import annotations
 import sys
 from typing import Any
 
@@ -41,7 +40,7 @@ def run(args: Any) -> int:
         print("[!] Unknown: {} (available: {})".format(technique, ", ".join(BYPASSES.keys())))
         return 1
 
-    print("[*] CLM bypass ({}):".format(technique))
-    print("  {}".format(payload))
+    print(f"[*] CLM bypass ({technique}):")
+    print(f"  {payload}")
     print("\n[*] Check current mode: $ExecutionContext.SessionState.LanguageMode")
     return 0

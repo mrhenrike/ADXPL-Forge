@@ -3,7 +3,6 @@
 Supports --shell for interactive PTY session after execution.
 """
 
-from __future__ import annotations
 
 import sys
 from typing import Any
@@ -77,5 +76,5 @@ def run(args: Any) -> int:
         print("[+] SMBExec command executed")
         return 0
     except Exception as exc:
-        print("[-] SMBExec failed: {}".format(exc), file=sys.stderr)
+        print(f"[-] SMBExec failed: {exc}", file=sys.stderr)
         return 1

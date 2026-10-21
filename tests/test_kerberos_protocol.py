@@ -1,6 +1,5 @@
 """Tests for adxpl.core.kerberos protocol engine."""
 
-from __future__ import annotations
 
 import struct
 

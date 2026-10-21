@@ -1,5 +1,4 @@
-"""Custom APT simulation — build attack chains from technique IDs."""
-from __future__ import annotations
+"""Custom APT simulation  -  build attack chains from technique IDs."""
 import sys
 from typing import Any
 
@@ -36,18 +35,18 @@ def run(args: Any) -> int:
     techniques = getattr(args, "techniques", None)
 
     if not techniques:
-        print("[*] Custom APT simulation — build chain from MITRE technique IDs")
+        print("[*] Custom APT simulation  -  build chain from MITRE technique IDs")
         print("[*] Usage: --techniques T1566.001,T1059.001,T1003.001,T1558.001")
         print()
         print("[*] Mapped techniques:")
         for tid, (cat, desc) in sorted(TECHNIQUE_MAP.items()):
-            print("  {} ({}) — {}".format(tid, cat, desc))
+            print(f"  {tid} ({cat})  -  {desc}")
         return 0
 
     chain = [t.strip() for t in techniques.split(",")]
-    print("[*] Custom attack chain ({} steps):".format(len(chain)))
+    print(f"[*] Custom attack chain ({len(chain)} steps):")
     for i, tid in enumerate(chain, 1):
         info = TECHNIQUE_MAP.get(tid, ("unknown", "unmapped technique"))
-        print("  Step {}: {} ({}) — {}".format(i, tid, info[0], info[1]))
+        print(f"  Step {i}: {tid} ({info[0]})  -  {info[1]}")
 
     return 0

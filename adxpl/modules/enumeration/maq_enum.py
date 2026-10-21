@@ -1,6 +1,5 @@
-"""Machine Account Quota enumeration — check ms-DS-MachineAccountQuota."""
+"""Machine Account Quota enumeration  -  check ms-DS-MachineAccountQuota."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -19,7 +18,7 @@ def run(args: Any) -> int:
     dc_ip = getattr(args, "dc_ip", None) or getattr(args, "target", None)
 
     print("[*] Machine Account Quota Enumeration")
-    print("[*] Domain: {}".format(cred.domain))
+    print(f"[*] Domain: {cred.domain}")
 
     import subprocess
     import shutil

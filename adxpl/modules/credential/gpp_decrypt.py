@@ -1,5 +1,4 @@
-"""GPP decrypt — Group Policy Preferences cpassword extraction."""
-from __future__ import annotations
+"""GPP decrypt  -  Group Policy Preferences cpassword extraction."""
 import base64
 import sys
 from typing import Any
@@ -38,10 +37,10 @@ def run(args: Any) -> int:
     if cpassword:
         try:
             plain = _decrypt_cpassword(cpassword)
-            print("[+] Decrypted GPP password: {}".format(plain))
+            print(f"[+] Decrypted GPP password: {plain}")
             return 0
         except Exception as exc:
-            print("[-] Decryption failed: {}".format(exc))
+            print(f"[-] Decryption failed: {exc}")
             return 1
 
     if sysvol_path:
@@ -56,11 +55,11 @@ def run(args: Any) -> int:
                     if cp:
                         plain = _decrypt_cpassword(cp)
                         user = prop.get("userName", prop.get("runAs", "?"))
-                        print("[+] {} → {} : {}".format(xml_file.name, user, plain))
+                        print(f"[+] {xml_file.name} → {user} : {plain}")
                         found += 1
             except Exception:
                 pass
-        print("[*] Found {} GPP credentials".format(found))
+        print(f"[*] Found {found} GPP credentials")
         return 0 if found > 0 else 1
 
     print("[!] --cpassword <hash> or --sysvol-path <path> required", file=sys.stderr)

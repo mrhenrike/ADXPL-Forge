@@ -1,6 +1,5 @@
 """Tests for adxpl.core.credential ADCredential handling."""
 
-from __future__ import annotations
 
 import argparse
 import sys

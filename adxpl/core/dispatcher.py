@@ -1,6 +1,5 @@
 """Route CLI commands to the appropriate module."""
 
-from __future__ import annotations
 
 import importlib
 import sys
@@ -286,13 +285,13 @@ def dispatch(args: Any) -> int:
 
     module_path = _MODULE_MAP.get(command, {}).get(module_name)
     if not module_path:
-        print("[!] Unknown module: {}/{}".format(command, module_name), file=sys.stderr)
+        print(f"[!] Unknown module: {command}/{module_name}", file=sys.stderr)
         return 1
 
     try:
         mod = importlib.import_module(module_path)
     except ImportError as exc:
-        print("[!] Failed to load {}: {}".format(module_path, exc), file=sys.stderr)
+        print(f"[!] Failed to load {module_path}: {exc}", file=sys.stderr)
         print("[*] Some modules require optional dependencies. Install with: pip install adxpl-forge[full]", file=sys.stderr)
         return 1
 

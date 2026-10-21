@@ -1,9 +1,8 @@
-"""DACL modification via impacket — grant/revoke AD permissions
+"""DACL modification via impacket  -  grant/revoke AD permissions
 
 Author: Andre Henrique (@mrhenrike) | Uniao Geek
 """
 
-from __future__ import annotations
 
 from typing import Any
 
@@ -26,7 +25,7 @@ def run(args: Any) -> int:
         print("[!] --target ou --dc obrigatório")
         return 1
 
-    print("[*] DACL modification via impacket — grant/revoke AD permissions ...")
+    print("[*] DACL modification via impacket  -  grant/revoke AD permissions ...")
     print(f"[*] Alvo: {target}, Usuário: {cred.username}")
-    print("[!] Implementação pendente — stub de integração")
+    print("[!] Implementação pendente  -  stub de integração")
     return 0

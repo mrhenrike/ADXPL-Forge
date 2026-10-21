@@ -1,6 +1,5 @@
-"""DLL search order hijacking — sideloading and phantom DLL injection."""
+"""DLL search order hijacking  -  sideloading and phantom DLL injection."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -33,6 +32,6 @@ def run(args: Any) -> int:
     phantoms = ["wlbsctrl.dll", "wgatray.dll", "ualapi.dll", "tsmsisrv.dll",
                 "TSVIPSrv.dll", "fxsst.dll", "msdmo.dll"]
     for dll in phantoms:
-        print("  - {}".format(dll))
+        print(f"  - {dll}")
 
     return 0

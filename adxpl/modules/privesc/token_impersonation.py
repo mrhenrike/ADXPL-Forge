@@ -1,5 +1,4 @@
-"""Token impersonation — Potato family, PrintSpoofer, JuicyPotato, GodPotato."""
-from __future__ import annotations
+"""Token impersonation  -  Potato family, PrintSpoofer, JuicyPotato, GodPotato."""
 import sys
 from typing import Any
 
@@ -55,15 +54,15 @@ def run(args: Any) -> int:
     if variant == "list":
         print("[*] Token impersonation variants:")
         for name, info in POTATO_VARIANTS.items():
-            print("  {} — {} ({})".format(name, info["targets"], info["requires"]))
+            print("  {}  -  {} ({})".format(name, info["targets"], info["requires"]))
         return 0
 
     info = POTATO_VARIANTS.get(variant, POTATO_VARIANTS["godpotato"])
     cmd = info["cmd"].format(cmd=command, port=port, clsid=clsid)
 
-    print("[*] Token impersonation: {} → SYSTEM".format(variant))
+    print(f"[*] Token impersonation: {variant} → SYSTEM")
     print("  Requires: {}".format(info["requires"]))
     print("  Targets:  {}".format(info["targets"]))
-    print("  Command:  {}".format(cmd))
+    print(f"  Command:  {cmd}")
     print("\n[*] Check privilege: whoami /priv | findstr Impersonate")
     return 0

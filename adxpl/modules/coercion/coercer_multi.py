@@ -1,5 +1,4 @@
-"""Multi-protocol coercion scanner — tests all known coercion methods."""
-from __future__ import annotations
+"""Multi-protocol coercion scanner  -  tests all known coercion methods."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -41,22 +40,22 @@ def run(args: Any) -> int:
             import importlib
             mod = importlib.import_module(module_path)
             if scan_only:
-                print("  [*] {} — module available".format(name))
+                print(f"  [*] {name}  -  module available")
                 results.append((name, "available"))
             else:
-                print("\n  [*] Trying {}...".format(name))
+                print(f"\n  [*] Trying {name}...")
                 rc = mod.run(args)
                 status = "success" if rc == 0 else "failed"
                 results.append((name, status))
         except ImportError:
             results.append((name, "module_missing"))
         except Exception as exc:
-            results.append((name, "error: {}".format(exc)))
+            results.append((name, f"error: {exc}"))
 
     print("\n[*] Coercion scan summary:")
     for name, status in results:
         marker = "+" if status == "success" else "-"
-        print("  [{}] {} — {}".format(marker, name, status))
+        print(f"  [{marker}] {name}  -  {status}")
 
     successes = sum(1 for _, s in results if s == "success")
     return 0 if successes > 0 or scan_only else 1

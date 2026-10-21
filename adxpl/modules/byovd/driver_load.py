@@ -1,5 +1,4 @@
-"""BYOVD driver loader — load vulnerable signed drivers for kernel access."""
-from __future__ import annotations
+"""BYOVD driver loader  -  load vulnerable signed drivers for kernel access."""
 import sys
 from typing import Any
 
@@ -30,7 +29,7 @@ def run(args: Any) -> int:
     if action == "list":
         print("[*] Known vulnerable drivers:")
         for name, info in KNOWN_VULNERABLE_DRIVERS.items():
-            print("  {} ({}) — {} [{}]".format(
+            print("  {} ({})  -  {} [{}]".format(
                 name, info["file"], info["cap"], info["vuln"]))
         return 0
 
@@ -40,9 +39,9 @@ def run(args: Any) -> int:
             return 1
 
         svc_name = driver or "VulnDrv"
-        print("[*] Loading driver: {} as service {}".format(driver_path, svc_name))
-        print("  sc create {} type=kernel binPath={}".format(svc_name, driver_path))
-        print("  sc start {}".format(svc_name))
+        print(f"[*] Loading driver: {driver_path} as service {svc_name}")
+        print(f"  sc create {svc_name} type=kernel binPath={driver_path}")
+        print(f"  sc start {svc_name}")
         print("\n[!] Requires local admin")
         return 0
 

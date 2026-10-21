@@ -1,5 +1,4 @@
-"""GPO enumeration — list GPOs, linked OUs, and abuse paths."""
-from __future__ import annotations
+"""GPO enumeration  -  list GPOs, linked OUs, and abuse paths."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -18,11 +17,11 @@ def run(args: Any) -> int:
     cred = ADCredential.from_args(args)
     dc_ip = getattr(args, "dc_ip", args.target)
 
-    print("[*] GPO enumeration → {}".format(dc_ip))
+    print(f"[*] GPO enumeration → {dc_ip}")
     try:
         from impacket.ldap import ldap as imp_ldap
         base_dn = "DC=" + ",DC=".join(args.domain.split("."))
-        conn = imp_ldap.LDAPConnection("ldap://{}".format(dc_ip), base_dn)
+        conn = imp_ldap.LDAPConnection(f"ldap://{dc_ip}", base_dn)
         if cred.has_hash:
             conn.login(cred.username, "", cred.domain, cred.lm_hash, cred.nt_hash)
         else:
@@ -44,11 +43,11 @@ def run(args: Any) -> int:
                     "flags": str(attrs.get("flags", "")),
                 })
 
-        print("[+] Found {} GPOs:".format(len(gpos)))
+        print(f"[+] Found {len(gpos)} GPOs:")
         for g in gpos:
             status = "enabled" if g["flags"] == "0" else "disabled"
-            print("  {} — {} [{}]".format(g["guid"], g["name"], status))
+            print("  {}  -  {} [{}]".format(g["guid"], g["name"], status))
         return 0
     except Exception as exc:
-        print("[-] GPO enum error: {}".format(exc), file=sys.stderr)
+        print(f"[-] GPO enum error: {exc}", file=sys.stderr)
         return 1

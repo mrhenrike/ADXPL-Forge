@@ -1,5 +1,4 @@
-"""certutil.exe LOLBin — download, encode, decode, hash verification."""
-from __future__ import annotations
+"""certutil.exe LOLBin  -  download, encode, decode, hash verification."""
 import sys
 from typing import Any
 
@@ -36,8 +35,8 @@ def run(args: Any) -> int:
 
     cmd = template.format(url=url or "<URL>", input=input_file or "<INPUT>",
                           output=output_file)
-    print("[*] certutil LOLBin ({}):".format(op))
-    print("  {}".format(cmd))
+    print(f"[*] certutil LOLBin ({op}):")
+    print(f"  {cmd}")
 
     if op == "download":
         print("\n[*] Cleanup: certutil.exe -urlcache -split -f \"{url}\" delete".format(url=url or "<URL>"))

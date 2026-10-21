@@ -1,10 +1,9 @@
-"""SPN (Service Principal Name) scan — enumerate Kerberoastable accounts."""
+"""SPN (Service Principal Name) scan  -  enumerate Kerberoastable accounts."""
 
-from __future__ import annotations
 
 import json
 import os
-from datetime import datetime, timezone
+from datetime import datetime, timezone, UTC
 from typing import Any
 
 from adxpl.core.credential import ADCredential
@@ -48,7 +47,7 @@ def run(args: Any) -> int:
         })
 
     os.makedirs(args.output, exist_ok=True)
-    ts = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    ts = datetime.now(UTC).strftime("%Y%m%d_%H%M%S")
     out_path = os.path.join(args.output, f"spn_scan_{ts}.json")
     with open(out_path, "w") as fh:
         json.dump(accounts, fh, indent=2, default=str)

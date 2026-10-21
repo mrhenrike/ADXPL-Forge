@@ -1,6 +1,5 @@
-"""BadSuccessor — dMSA abuse for privilege escalation."""
+"""BadSuccessor  -  dMSA abuse for privilege escalation."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -20,7 +19,7 @@ def run(args: Any) -> int:
     target_user = getattr(args, "target_user", None)
 
     print("[*] BadSuccessor: delegated Managed Service Account (dMSA) abuse")
-    print("[*] Domain: {}".format(cred.domain))
+    print(f"[*] Domain: {cred.domain}")
     print("[*] Creates dMSA with msDS-ManagedAccountPrecededByLink → inherits target's permissions")
 
     import subprocess

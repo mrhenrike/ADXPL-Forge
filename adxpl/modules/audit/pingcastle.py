@@ -1,6 +1,5 @@
-"""PingCastle — AD security audit, risk scoring, compliance check."""
+"""PingCastle  -  AD security audit, risk scoring, compliance check."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -19,7 +18,7 @@ def run(args: Any) -> int:
     dc_ip = getattr(args, "dc_ip", None)
 
     print("[*] PingCastle: AD Security Health Check")
-    print("[*] Domain: {}".format(cred.domain))
+    print(f"[*] Domain: {cred.domain}")
 
     import subprocess
     import shutil

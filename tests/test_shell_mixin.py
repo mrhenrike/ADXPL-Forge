@@ -1,6 +1,5 @@
 """Tests for adxpl.core.shell_mixin AD-specific shell staging."""
 
-from __future__ import annotations
 
 import pytest
 
@@ -19,6 +18,7 @@ from adxpl.core.shell_mixin import (
     get_session_manager,
     spawn_ad_shell,
 )
+
 
 def test_ad_shell_types_tuple():
     assert isinstance(AD_SHELL_TYPES, tuple)

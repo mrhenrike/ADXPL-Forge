@@ -1,6 +1,5 @@
-"""ATExec — remote command execution via Windows Task Scheduler."""
+"""ATExec  -  remote command execution via Windows Task Scheduler."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -19,7 +18,7 @@ def run(args: Any) -> int:
     target = getattr(args, "target", None)
     command = getattr(args, "command", "whoami")
 
-    print("[*] ATExec: Task Scheduler execution on {}".format(target))
+    print(f"[*] ATExec: Task Scheduler execution on {target}")
 
     import subprocess
     import shutil

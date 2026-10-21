@@ -1,6 +1,5 @@
-"""CVE-2016-7255 — Win32k.sys kernel EoP."""
+"""CVE-2016-7255  -  Win32k.sys kernel EoP."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -16,13 +15,13 @@ MANIFEST = {
 def run(args: Any) -> int:
     target = getattr(args, "target", None)
 
-    print("[*] CVE-2016-7255 — Win32k.sys kernel EoP")
+    print("[*] CVE-2016-7255  -  Win32k.sys kernel EoP")
     print("[*] Root cause: Win32k.sys type confusion in win32k!xxxNextWindow")
     print("[*] Requires local code execution on target")
 
     print("\n[*] Check: systeminfo | findstr /i 'OS Version'")
     print("[*] References: SecWiki/windows-kernel-exploits, GitHub PoC repos")
     if target:
-        print("[*] Target: {}".format(target))
+        print(f"[*] Target: {target}")
 
     return 0

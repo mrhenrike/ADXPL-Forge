@@ -4,7 +4,6 @@ Provides ``axf shell sessions`` to list, interact with,
 and manage active shell sessions.
 """
 
-from __future__ import annotations
 
 import sys
 from typing import Any
@@ -43,7 +42,7 @@ def run(args: Any) -> int:
             mgr.interact(sid)
             return 0
         except Exception as exc:
-            print("[-] {}".format(exc), file=sys.stderr)
+            print(f"[-] {exc}", file=sys.stderr)
             return 1
 
     if action == "kill":
@@ -53,9 +52,9 @@ def run(args: Any) -> int:
             return 1
         ok = mgr.close(sid)
         if ok:
-            print("[+] Session #{} closed".format(sid))
+            print(f"[+] Session #{sid} closed")
         else:
-            print("[-] Session #{} not found".format(sid))
+            print(f"[-] Session #{sid} not found")
         return 0 if ok else 1
 
     if action == "background":
@@ -65,11 +64,11 @@ def run(args: Any) -> int:
             return 1
         try:
             mgr.background(sid)
-            print("[*] Session #{} backgrounded".format(sid))
+            print(f"[*] Session #{sid} backgrounded")
             return 0
         except Exception as exc:
-            print("[-] {}".format(exc), file=sys.stderr)
+            print(f"[-] {exc}", file=sys.stderr)
             return 1
 
-    print("[!] Unknown session action: {}".format(action), file=sys.stderr)
+    print(f"[!] Unknown session action: {action}", file=sys.stderr)
     return 1

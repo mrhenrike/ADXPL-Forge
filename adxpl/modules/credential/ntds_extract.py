@@ -1,6 +1,5 @@
-"""NTDS.dit extraction — domain credential dump via VSS or DRSUAPI."""
+"""NTDS.dit extraction  -  domain credential dump via VSS or DRSUAPI."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -19,7 +18,7 @@ def run(args: Any) -> int:
     target = getattr(args, "target", None)
     dc_ip = getattr(args, "dc_ip", None) or target
 
-    print("[*] NTDS.dit Extraction: {}".format(dc_ip or cred.domain))
+    print(f"[*] NTDS.dit Extraction: {dc_ip or cred.domain}")
 
     import subprocess
     import shutil

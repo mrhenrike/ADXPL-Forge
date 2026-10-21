@@ -1,5 +1,4 @@
-"""Purple team detection checks — validate if blue team detects each technique."""
-from __future__ import annotations
+"""Purple team detection checks  -  validate if blue team detects each technique."""
 import sys
 from typing import Any
 
@@ -47,17 +46,17 @@ def run(args: Any) -> int:
     if not check:
         print("[*] Purple Team Detection Checks:")
         for name, info in DETECTION_CHECKS.items():
-            print("\n  [{}] — {}".format(name, info["technique"]))
+            print("\n  [{}]  -  {}".format(name, info["technique"]))
             print("    Detection: {}".format(info["detection"]))
             print("    SIEM: {}".format(info["siem_query"]))
         return 0
 
     info = DETECTION_CHECKS.get(check)
     if not info:
-        print("[!] Unknown check: {}".format(check))
+        print(f"[!] Unknown check: {check}")
         return 1
 
-    print("[*] Detection check: {}".format(check))
+    print(f"[*] Detection check: {check}")
     print("  Technique: {}".format(info["technique"]))
     print("  Detection: {}".format(info["detection"]))
     print("  SIEM query: {}".format(info["siem_query"]))

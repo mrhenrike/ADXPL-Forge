@@ -1,5 +1,4 @@
-"""MSBuild.exe LOLBin — inline task execution, AppLocker/CLM bypass."""
-from __future__ import annotations
+"""MSBuild.exe LOLBin  -  inline task execution, AppLocker/CLM bypass."""
 import sys
 from typing import Any
 

@@ -1,6 +1,5 @@
 """Ticket cache management: ccache import/export and kirbi conversion."""
 
-from __future__ import annotations
 
 import struct
 from dataclasses import dataclass, field

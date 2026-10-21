@@ -7,7 +7,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "adxpl"
 version = "2.1.0"
-description = "ADXPL-Forge (AXF) — Active Directory attack and audit framework with 219 modules across 25 categories. Enumeration, Kerberos, ADCS, lateral movement, credential theft, coercion, relay, ACL abuse, trust attacks, privilege escalation, kernel exploits, CVE exploits, LOLBins, evasion, BYOVD, emulation, and more."
+description = "ADXPL-Forge (AXF): Active Directory attack and audit framework with 219 modules across 25 categories. Enumeration, Kerberos, ADCS, lateral movement, credential theft, coercion, relay, ACL abuse, trust attacks, privilege escalation, kernel exploits, CVE exploits, LOLBins, evasion, BYOVD, emulation, and more."
 readme = { file = "README.md", content-type = "text/markdown" }
 license = { text = "XSRL-1.0" }
 authors = [
@@ -37,16 +37,13 @@ classifiers = [
     "Natural Language :: Portuguese (Brazilian)",
     "Operating System :: POSIX :: Linux",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
     "Topic :: Security",
     "Topic :: System :: Networking",
 ]
-requires-python = ">=3.9"
+requires-python = ">=3.12"
 dependencies = [
     "impacket>=0.12.0",
     "ldap3>=2.9",
@@ -101,7 +98,7 @@ include = ["adxpl*"]
 "adxpl.resources" = ["*.json", "*.yaml"]
 
 [tool.mypy]
-python_version = "3.10"
+python_version = "3.12"
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = false
@@ -127,7 +124,7 @@ module = [
 ignore_missing_imports = true
 
 [tool.ruff]
-target-version = "py39"
+target-version = "py312"
 line-length = 120
 exclude = []
 

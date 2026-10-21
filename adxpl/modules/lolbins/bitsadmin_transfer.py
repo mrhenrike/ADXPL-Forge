@@ -1,6 +1,5 @@
-"""bitsadmin.exe download and execute — background file transfer abuse."""
+"""bitsadmin.exe download and execute  -  background file transfer abuse."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -32,7 +31,7 @@ def run(args: Any) -> int:
 
     print("\n[*] BITSAdmin payloads:")
     for name, payload in payloads.items():
-        print("\n  [{}]".format(name))
-        print("  {}".format(payload))
+        print(f"\n  [{name}]")
+        print(f"  {payload}")
 
     return 0

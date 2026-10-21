@@ -1,5 +1,4 @@
-"""EDR callback removal via vulnerable driver — blind EDR kernel callbacks."""
-from __future__ import annotations
+"""EDR callback removal via vulnerable driver  -  blind EDR kernel callbacks."""
 import sys
 from typing import Any
 
@@ -30,7 +29,7 @@ def run(args: Any) -> int:
     if action == "list":
         print("[*] Kernel callback types that EDRs register:")
         for cb in CALLBACK_TYPES:
-            print("  - {}".format(cb))
+            print(f"  - {cb}")
         print("\n[*] Tools for callback enumeration:")
         print("  - EDRSandblast (enumerate + remove)")
         print("  - CheekyBlinder (RTCore64-based)")
@@ -38,17 +37,17 @@ def run(args: Any) -> int:
         return 0
 
     if action == "enumerate":
-        print("[*] Enumerating kernel callbacks via {} driver...".format(driver))
+        print(f"[*] Enumerating kernel callbacks via {driver} driver...")
         print("[*] This requires:")
         print("  1. Load vulnerable driver")
         print("  2. Read PspCreateProcessNotifyRoutine array")
         print("  3. Resolve callback addresses to driver names")
         if target_edr:
-            print("[*] Filtering for: {}".format(target_edr))
+            print(f"[*] Filtering for: {target_edr}")
         return 0
 
     if action == "remove":
-        print("[*] Removing EDR callbacks via {} driver:".format(driver))
+        print(f"[*] Removing EDR callbacks via {driver} driver:")
         print("  1. Enumerate callback array addresses")
         print("  2. For each EDR callback:")
         print("     a. Read callback struct from kernel memory")
@@ -56,9 +55,9 @@ def run(args: Any) -> int:
         print("     c. Or replace with a NOP stub")
         print("  3. EDR loses visibility into process/thread/image events")
         if target_edr:
-            print("\n[*] Targeting: {} callbacks only".format(target_edr))
+            print(f"\n[*] Targeting: {target_edr} callbacks only")
         print("\n[!] EDRSandblast command:")
-        print("  EDRSandblast.exe --usermode --kernelmode --driver {}".format(driver))
+        print(f"  EDRSandblast.exe --usermode --kernelmode --driver {driver}")
         return 0
 
     return 1
