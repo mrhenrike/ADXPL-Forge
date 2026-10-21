@@ -1,6 +1,5 @@
-"""adREcon — AD security audit and reconnaissance report."""
+"""adREcon  -  AD security audit and reconnaissance report."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -45,8 +44,8 @@ def run(args: Any) -> int:
                 cmd += ["-p", cred.password]
             elif cred.nthash:
                 cmd += ["-H", cred.nthash]
-            cmd += ["--{}".format(mod)]
-            print("[*] Enum: {}".format(mod))
+            cmd += [f"--{mod}"]
+            print(f"[*] Enum: {mod}")
             subprocess.run(cmd, capture_output=False, text=True)
         return 0
 

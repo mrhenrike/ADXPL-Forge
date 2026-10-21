@@ -1,6 +1,5 @@
-"""GPO abuse — backdoor via Group Policy Object modification."""
+"""GPO abuse  -  backdoor via Group Policy Object modification."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -19,7 +18,7 @@ def run(args: Any) -> int:
     dc_ip = getattr(args, "dc_ip", None)
 
     print("[*] GPO Abuse: Group Policy backdoor")
-    print("[*] Domain: {}".format(cred.domain))
+    print(f"[*] Domain: {cred.domain}")
 
     import subprocess
     import shutil
@@ -37,6 +36,5 @@ def run(args: Any) -> int:
 
     print("[!] pyGPOAbuse not found")
     print("[*] Install: pip install pygpoabuse")
-    print("[*] Manual: modify SYSVOL scripts in \\\\{}\\SYSVOL\\{}\\Policies\\".format(
-        cred.domain, cred.domain))
+    print(f"[*] Manual: modify SYSVOL scripts in \\\\{cred.domain}\\SYSVOL\\{cred.domain}\\Policies\\")
     return 1

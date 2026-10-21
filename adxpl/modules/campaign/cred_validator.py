@@ -1,6 +1,5 @@
 """Validação de credenciais em massa contra AD (SMB/LDAP/Kerberos)."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -19,7 +18,7 @@ def run(args: Any) -> int:
     target = getattr(args, "target", None)
     protocol = getattr(args, "spray_protocol", "smb")
 
-    print("[*] Credential Validator: {} protocol against {}".format(protocol, target or cred.domain))
+    print(f"[*] Credential Validator: {protocol} protocol against {target or cred.domain}")
 
     import subprocess
     import shutil

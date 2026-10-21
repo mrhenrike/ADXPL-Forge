@@ -1,5 +1,4 @@
-"""UAC bypass — multiple techniques for User Account Control evasion."""
-from __future__ import annotations
+"""UAC bypass  -  multiple techniques for User Account Control evasion."""
 import sys
 from typing import Any
 
@@ -53,17 +52,17 @@ def run(args: Any) -> int:
     if technique == "list":
         print("[*] UAC bypass techniques:")
         for name, info in TECHNIQUES.items():
-            print("  {} — {}".format(name, info["desc"]))
+            print("  {}  -  {}".format(name, info["desc"]))
         return 0
 
     info = TECHNIQUES.get(technique)
     if not info:
-        print("[!] Unknown: {}".format(technique))
+        print(f"[!] Unknown: {technique}")
         return 1
 
-    print("[*] UAC bypass: {} — {}".format(technique, info["desc"]))
+    print("[*] UAC bypass: {}  -  {}".format(technique, info["desc"]))
     for step in info["cmd"]:
-        print("  {}".format(step.format(cmd=command)))
+        print(f"  {step.format(cmd=command)}")
 
     print("\n[*] Cleanup:")
     if "ms-settings" in str(info["cmd"]):

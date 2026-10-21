@@ -1,6 +1,5 @@
 """MS-EVEN EventLog coercion via WebDAV → auth relay."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {

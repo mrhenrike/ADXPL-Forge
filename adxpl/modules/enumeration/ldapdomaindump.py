@@ -1,9 +1,8 @@
-"""Dump completo do domínio via LDAP — HTML/JSON/grep output
+"""Dump completo do domínio via LDAP  -  HTML/JSON/grep output
 
 Author: Andre Henrique (@mrhenrike) | Uniao Geek
 """
 
-from __future__ import annotations
 
 from typing import Any
 
@@ -26,7 +25,7 @@ def run(args: Any) -> int:
         print("[!] --target ou --dc obrigatório")
         return 1
 
-    print("[*] Dump completo do domínio via LDAP — HTML/JSON/grep output ...")
+    print("[*] Dump completo do domínio via LDAP  -  HTML/JSON/grep output ...")
     print(f"[*] Alvo: {target}, Usuário: {cred.username}")
-    print("[!] Implementação pendente — stub de integração")
+    print("[!] Implementação pendente  -  stub de integração")
     return 0

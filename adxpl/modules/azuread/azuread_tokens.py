@@ -1,6 +1,5 @@
-"""Azure AD token abuse — PRT, refresh tokens, JWT manipulation."""
+"""Azure AD token abuse  -  PRT, refresh tokens, JWT manipulation."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -18,7 +17,7 @@ def run(args: Any) -> int:
     cred = ADCredential.from_args(args)
 
     print("[*] Azure AD Token Abuse")
-    print("[*] Domain: {}".format(cred.domain))
+    print(f"[*] Domain: {cred.domain}")
 
     print("\n[*] Token types:")
     print("  - PRT (Primary Refresh Token): SSO token, cached on device")

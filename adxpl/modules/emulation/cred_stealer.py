@@ -1,6 +1,5 @@
 """Credential stealer emulation: LSASS dump, SAM, keylogger, browser."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -19,9 +18,9 @@ def run(args: Any) -> int:
 
     print("[*] Credential stealer emulation: LSASS dump, SAM, keylogger, browser")
     if target:
-        print("[*] Target: {}".format(target))
+        print(f"[*] Target: {target}")
     if techniques:
-        print("[*] Techniques: {}".format(techniques))
+        print(f"[*] Techniques: {techniques}")
 
     print("[*] Use --techniques <MITRE_IDs> to specify attack techniques")
     return 0

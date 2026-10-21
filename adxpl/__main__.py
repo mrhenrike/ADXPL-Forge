@@ -1,6 +1,5 @@
 """ADXPL-Forge CLI entrypoint."""
 
-from __future__ import annotations
 
 import argparse
 import sys
@@ -11,11 +10,10 @@ from adxpl import __product__, __version__
 def _build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
         prog="axf",
-        description="{} v{} — Active Directory attack and audit framework".format(
-            __product__, __version__),
+        description=f"{__product__} v{__version__}  -  Active Directory attack and audit framework",
     )
     p.add_argument("--version", action="version",
-                   version="{} {}".format(__product__, __version__))
+                   version=f"{__product__} {__version__}")
 
     sub = p.add_subparsers(dest="command")
 

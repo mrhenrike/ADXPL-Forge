@@ -1,6 +1,5 @@
 """Cross-forest trust exploitation via SID filtering bypass."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -19,7 +18,7 @@ def run(args: Any) -> int:
     target = getattr(args, "target", None)
     trust_key = getattr(args, "trust_key", None)
 
-    print("[*] Forest Trust Abuse: {}".format(cred.domain))
+    print(f"[*] Forest Trust Abuse: {cred.domain}")
     print("[*] Checking SID filtering configuration on forest trusts")
 
     import subprocess

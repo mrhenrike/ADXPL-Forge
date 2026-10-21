@@ -1,9 +1,8 @@
-"""Enumeração LDAP otimizada via windapsearch — delegation, admin groups, priv users
+"""Enumeração LDAP otimizada via windapsearch  -  delegation, admin groups, priv users
 
 Author: Andre Henrique (@mrhenrike) | Uniao Geek
 """
 
-from __future__ import annotations
 
 from typing import Any
 
@@ -26,7 +25,7 @@ def run(args: Any) -> int:
         print("[!] --target ou --dc obrigatório")
         return 1
 
-    print("[*] Enumeração LDAP otimizada via windapsearch — delegation, admin groups, priv users ...")
+    print("[*] Enumeração LDAP otimizada via windapsearch  -  delegation, admin groups, priv users ...")
     print(f"[*] Alvo: {target}, Usuário: {cred.username}")
-    print("[!] Implementação pendente — stub de integração")
+    print("[!] Implementação pendente  -  stub de integração")
     return 0

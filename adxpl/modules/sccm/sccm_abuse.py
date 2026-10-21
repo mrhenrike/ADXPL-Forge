@@ -1,6 +1,5 @@
-"""SCCM exploitation — NAA creds, client push, relay, takeover."""
+"""SCCM exploitation  -  NAA creds, client push, relay, takeover."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -18,7 +17,7 @@ def run(args: Any) -> int:
     cred = ADCredential.from_args(args)
 
     print("[*] SCCM/MECM Exploitation")
-    print("[*] Domain: {}".format(cred.domain))
+    print(f"[*] Domain: {cred.domain}")
 
     import subprocess
     import shutil

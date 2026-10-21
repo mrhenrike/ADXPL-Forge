@@ -1,6 +1,5 @@
-"""SeTcbPrivilege abuse — domain user → SYSTEM via token manipulation."""
+"""SeTcbPrivilege abuse  -  domain user → SYSTEM via token manipulation."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -25,7 +24,7 @@ def run(args: Any) -> int:
     print("  3. Token manipulation: duplicate SYSTEM token")
 
     print("\n[*] Check: whoami /priv | findstr SeTcb")
-    print("[*] Command to execute: {}".format(command))
+    print(f"[*] Command to execute: {command}")
     print("[*] Tool: https://github.com/AlessandroZ/tcb-lpe")
 
     return 0

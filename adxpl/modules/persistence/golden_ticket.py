@@ -1,6 +1,5 @@
-"""Golden Ticket — forge TGT using krbtgt NTLM hash."""
+"""Golden Ticket  -  forge TGT using krbtgt NTLM hash."""
 
-from __future__ import annotations
 
 import os
 import sys

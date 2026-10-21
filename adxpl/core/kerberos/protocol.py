@@ -1,6 +1,5 @@
 """Kerberos protocol primitives (ASN.1 construction and parsing)."""
 
-from __future__ import annotations
 
 import struct
 from dataclasses import dataclass, field

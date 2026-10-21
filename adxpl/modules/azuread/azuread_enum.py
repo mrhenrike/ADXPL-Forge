@@ -1,6 +1,5 @@
-"""Azure AD/Entra ID enumeration — users, groups, apps, service principals."""
+"""Azure AD/Entra ID enumeration  -  users, groups, apps, service principals."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -18,7 +17,7 @@ def run(args: Any) -> int:
     cred = ADCredential.from_args(args)
 
     print("[*] Azure AD / Entra ID Enumeration")
-    print("[*] Domain: {}".format(cred.domain))
+    print(f"[*] Domain: {cred.domain}")
 
     import subprocess
     import shutil
@@ -26,7 +25,7 @@ def run(args: Any) -> int:
     if roadrecon:
         cmd = [roadrecon, "gather", "-d", cred.domain]
         if cred.username and cred.password:
-            cmd += ["-u", "{}@{}".format(cred.username, cred.domain),
+            cmd += ["-u", f"{cred.username}@{cred.domain}",
                     "-p", cred.password]
         print("[*] CMD: {}".format(" ".join(cmd)))
         result = subprocess.run(cmd, capture_output=True, text=True)

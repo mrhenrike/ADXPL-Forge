@@ -1,6 +1,5 @@
-"""PKINITtools — PKINIT authentication and TGT/NT hash recovery."""
+"""PKINITtools  -  PKINIT authentication and TGT/NT hash recovery."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -19,7 +18,7 @@ def run(args: Any) -> int:
     dc_ip = getattr(args, "dc_ip", None)
 
     print("[*] PKINITtools: PKINIT authentication tools")
-    print("[*] Domain: {}".format(cred.domain))
+    print(f"[*] Domain: {cred.domain}")
 
     import subprocess
     import shutil
@@ -30,11 +29,11 @@ def run(args: Any) -> int:
         cmd = [gettgtpkinit, "-cert-pfx", "cert.pfx",
                "-dc-ip", dc_ip or "", "{}/{}".format(cred.domain, cred.username or ""),
                "output.ccache"]
-        print("[*] Step 1 — Get TGT via PKINIT:")
+        print("[*] Step 1  -  Get TGT via PKINIT:")
         print("[*] CMD: {}".format(" ".join(cmd)))
 
     if getnthash:
-        print("[*] Step 2 — Recover NT hash from TGT:")
+        print("[*] Step 2  -  Recover NT hash from TGT:")
         print("[*] CMD: getnthash.py -key <AS-REP-KEY> {}/{}".format(cred.domain, cred.username or ""))
 
     if not gettgtpkinit and not getnthash:

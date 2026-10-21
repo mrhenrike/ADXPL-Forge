@@ -1,6 +1,5 @@
 """Tests for adxpl.modules.adcs.esc_classic (ESC1-ESC8)."""
 
-from __future__ import annotations
 
 from adxpl.modules.adcs.esc_classic import (
     check_esc1,

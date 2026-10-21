@@ -1,6 +1,5 @@
 """Trust key extraction + inter-realm TGT forging."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {

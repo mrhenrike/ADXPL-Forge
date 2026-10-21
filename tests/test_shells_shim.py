@@ -1,6 +1,5 @@
 """Tests for adxpl.core.shells shim re-exporting from xpl-core."""
 
-from __future__ import annotations
 
 import pytest
 
@@ -16,6 +15,7 @@ if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
 from adxpl.core import shells
+
 
 def test_shim_imports_successfully():
     assert hasattr(shells, "ShellEngine")

@@ -1,5 +1,4 @@
 """BloodHound data collection via bloodhound-python or SharpHound equivalent."""
-from __future__ import annotations
 import subprocess
 import sys
 import shutil
@@ -34,17 +33,17 @@ def run(args: Any) -> int:
     if cred.password:
         cmd.extend(["-p", cred.password])
     elif cred.has_hash:
-        cmd.extend(["--hashes", "{}:{}".format(cred.lm_hash, cred.nt_hash)])
+        cmd.extend(["--hashes", f"{cred.lm_hash}:{cred.nt_hash}"])
 
-    print("[*] BloodHound collection: {} (method: {})".format(args.domain, collection))
+    print(f"[*] BloodHound collection: {args.domain} (method: {collection})")
     try:
         result = subprocess.run(cmd, capture_output=True, text=True, timeout=300, cwd=output_dir)
         print(result.stdout)
         if result.returncode != 0:
             print(result.stderr, file=sys.stderr)
         else:
-            print("[+] BloodHound data collected → {}".format(output_dir))
+            print(f"[+] BloodHound data collected → {output_dir}")
         return result.returncode
     except Exception as exc:
-        print("[-] BloodHound error: {}".format(exc), file=sys.stderr)
+        print(f"[-] BloodHound error: {exc}", file=sys.stderr)
         return 1

