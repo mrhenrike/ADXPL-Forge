@@ -84,8 +84,9 @@ Documentation = "https://github.com/mrhenrike/ADXPL-Forge/wiki"
 "Bug Tracker" = "https://github.com/mrhenrike/ADXPL-Forge/issues"
 
 [project.scripts]
-axf   = "adxpl.__main__:main"
-adxpl = "adxpl.__main__:main"
+axf       = "adxpl.__main__:main"
+adxpl     = "adxpl.__main__:main"
+adxpl-cli = "adxpl.interpreter:main"
 
 [tool.setuptools]
 license-files = []
