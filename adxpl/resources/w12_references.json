@@ -137,6 +137,4166 @@
       "description": "ligolo-ng: tunneling/pivoting TUN via Gvisor, arquitetura proxy+agent. Util para pivot via network devices em pentest. GPL-3.0 incompativel com BSD-3; usar como referencia/wrapper.",
       "license": "GPL-3.0",
       "priority": "Alta"
+    },
+    {
+      "id": "SRC-004",
+      "url": "https://www.orcarouter.ai/models/orca/orcacyber-zero-1.5",
+      "forge": "ADXPL|EmbedXPL|TupaXPL/Bench",
+      "description": "OrcaCyber Zero 1.5 remoto API; validar benchmarks e política de dados. Não considerá-lo offline.",
+      "license": "API comercial; pesos não demonstrados",
+      "priority": "Média",
+      "action": "B"
+    },
+    {
+      "id": "SRC-006",
+      "url": "https://github.com/morluto/rea",
+      "forge": "EmbedXPL|MalwareXPL|MobileXPL|TupaXPL/MalwareXPL",
+      "description": "REA: análise local MCP/CLI de binários, APK, firmware, tráfego, JS/.NET com evidência. Criar adaptador provenance-first.",
+      "license": "MIT + avisos de terceiros",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-011",
+      "url": "https://github.com/Cogensec/Gideon",
+      "forge": "ADXPL|TupaXPL/SOC",
+      "description": "Gideon: referência para agente SOC/Red Team auditável; comparar fluxo de evidências.",
+      "license": "licença não confirmada",
+      "priority": "Média",
+      "action": "B"
+    },
+    {
+      "id": "SRC-015",
+      "url": "https://github.com/HORKimhab/CVE-2026-61511",
+      "forge": "ADXPL|EmbedXPL/Web",
+      "description": "Terceira fonte vBulletin: README descreve draft/TODO; baixa evidência de PoC funcional.",
+      "license": "licença a revisar",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-019",
+      "url": "https://github.com/Armur-Ai/Pentest-Swarm-AI",
+      "forge": "ADXPL|EmbedXPL|TupaXPL/Agent Bench",
+      "description": "Pentest-Swarm-AI: estudar papeis de agentes e ReAct; AGPL impede copiar sem decisão jurídica.",
+      "license": "AGPL-3.0",
+      "priority": "Média",
+      "action": "B"
+    },
+    {
+      "id": "SRC-022",
+      "url": "https://github.com/glask1d/WebHawk",
+      "forge": "ADXPL|EmbedXPL/Web",
+      "description": "WebHawk: comparar crawler/fuzzer HTTP com módulos já existentes; métricas e licença pendentes.",
+      "license": "sem licença verificada",
+      "priority": "Média",
+      "action": "B"
+    },
+    {
+      "id": "SRC-023",
+      "url": "https://hackers-arise.com/open-source-intelligence-osint-gathering-information-on-a-whatsapp-account/",
+      "forge": "ADXPL|XPL-Intel/OSINT",
+      "description": "WhatsApp OSINT: inventariar fontes lícitas e evidências públicas; privacidade e consentimento.",
+      "license": "direitos autorais do artigo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-028",
+      "url": "https://github.com/abraxas/pfsense-qinq-parent-if",
+      "forge": "ADXPL|EmbedXPL/pfSense",
+      "description": "Abraxas pfsense-qinq-parent-if: condição específica de pfSense CE 2.9.0-DEVELOPMENT, geralmente com sessão WebGUI/permissões. Reconstruir casos negativos e assessor read-only.",
+      "license": "AGPL-3.0 observado na série; verificar por repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-029",
+      "url": "https://github.com/abraxas/pfsense-openvpn-wizard-crlf",
+      "forge": "ADXPL|EmbedXPL/pfSense",
+      "description": "Abraxas pfsense-openvpn-wizard-crlf: condição específica de pfSense CE 2.9.0-DEVELOPMENT, geralmente com sessão WebGUI/permissões. Reconstruir casos negativos e assessor read-only.",
+      "license": "AGPL-3.0 observado na série; verificar por repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-030",
+      "url": "https://github.com/abraxas/pfsense-carp-vhid",
+      "forge": "ADXPL|EmbedXPL/pfSense",
+      "description": "Abraxas pfsense-carp-vhid: condição específica de pfSense CE 2.9.0-DEVELOPMENT, geralmente com sessão WebGUI/permissões. Reconstruir casos negativos e assessor read-only.",
+      "license": "AGPL-3.0 observado na série; verificar por repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-031",
+      "url": "https://github.com/abraxas/pfsense-limiter-number",
+      "forge": "ADXPL|EmbedXPL/pfSense",
+      "description": "Abraxas pfsense-limiter-number: condição específica de pfSense CE 2.9.0-DEVELOPMENT, geralmente com sessão WebGUI/permissões. Reconstruir casos negativos e assessor read-only.",
+      "license": "AGPL-3.0 observado na série; verificar por repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-032",
+      "url": "https://github.com/abraxas/pfsense-ipsec-login-banner",
+      "forge": "ADXPL|EmbedXPL/pfSense",
+      "description": "Abraxas pfsense-ipsec-login-banner: condição específica de pfSense CE 2.9.0-DEVELOPMENT, geralmente com sessão WebGUI/permissões. Reconstruir casos negativos e assessor read-only.",
+      "license": "AGPL-3.0 observado na série; verificar por repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-038",
+      "url": "https://github.com/M-med/Active-Directory-Simulation-Attack-",
+      "forge": "ADXPL/Purple Team",
+      "description": "Laboratório AD + Wazuh: regras de detecção e cobertura ATT&CK com hardening; reproduzir somente em laboratório.",
+      "license": "licença verificar",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-045",
+      "url": "https://www.bleepingcomputer.com/news/security/anthropic-warns-self-replicating-ai-could-spread-to-your-smart-devices/",
+      "forge": "ADXPL|EmbedXPL|IndustrialXPL|WirelessXPL/IoT Defense",
+      "description": "Autorreprodução em IoT é hipótese de risco; experimento não demonstrou worm fim a fim; foco em detecção de movimentação.",
+      "license": "pesquisa Anthropic",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-047",
+      "url": "https://www.youtube.com/watch?v=PcFcKGWfgcg",
+      "forge": "ADXPL|EmbedXPL/Web",
+      "description": "Vídeo SSRF: item didático; a transcrição completa não foi validada.",
+      "license": "YouTube autor a verificar",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-048",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html",
+      "forge": "ADXPL|EmbedXPL/Web Defense",
+      "description": "OWASP SSRF Prevention: use como modelo de controles e testes de regressão de validadores.",
+      "license": "OWASP; licença do site/projeto verificar",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-049",
+      "url": "https://portswigger.net/web-security/ssrf",
+      "forge": "EmbedXPL|MobileXPL/Web",
+      "description": "PortSwigger SSRF Academy: casos de teste em laboratório e critérios de detecção.",
+      "license": "PortSwigger Academy; copyright",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-060",
+      "url": "https://github.com/abraxas/pfsense-api-enroll-json-ssh",
+      "forge": "ADXPL|EmbedXPL/pfSense Plus",
+      "description": "Abraxas pfsense-api-enroll-json-ssh: auditoria de controle de acesso, confidencialidade de chaves, identidade TLS ou autorização MIM. Distinguir mock de pfSense real.",
+      "license": "AGPL-3.0 confirmado em amostras; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-061",
+      "url": "https://github.com/abraxas/pfsense-api-enroll-autoadd",
+      "forge": "ADXPL|EmbedXPL/pfSense Plus",
+      "description": "Abraxas pfsense-api-enroll-autoadd: auditoria de controle de acesso, confidencialidade de chaves, identidade TLS ou autorização MIM. Distinguir mock de pfSense real.",
+      "license": "AGPL-3.0 confirmado em amostras; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-062",
+      "url": "https://github.com/abraxas/pfsense-api-unix-sock-noauth",
+      "forge": "ADXPL|EmbedXPL/pfSense Plus",
+      "description": "Abraxas pfsense-api-unix-sock-noauth: auditoria de controle de acesso, confidencialidade de chaves, identidade TLS ou autorização MIM. Distinguir mock de pfSense real.",
+      "license": "AGPL-3.0 confirmado em amostras; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-063",
+      "url": "https://github.com/abraxas/pfsense-api-export-key-get",
+      "forge": "ADXPL|EmbedXPL/pfSense Plus",
+      "description": "Abraxas pfsense-api-export-key-get: auditoria de controle de acesso, confidencialidade de chaves, identidade TLS ou autorização MIM. Distinguir mock de pfSense real.",
+      "license": "AGPL-3.0 confirmado em amostras; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-064",
+      "url": "https://github.com/abraxas/pfsense-api-acme-key-dump",
+      "forge": "ADXPL|EmbedXPL/pfSense Plus",
+      "description": "Abraxas pfsense-api-acme-key-dump: auditoria de controle de acesso, confidencialidade de chaves, identidade TLS ou autorização MIM. Distinguir mock de pfSense real.",
+      "license": "AGPL-3.0 confirmado em amostras; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-065",
+      "url": "https://github.com/abraxas/pfsense-api-fleet-jwt",
+      "forge": "ADXPL|EmbedXPL/pfSense Plus",
+      "description": "Abraxas pfsense-api-fleet-jwt: auditoria de controle de acesso, confidencialidade de chaves, identidade TLS ou autorização MIM. Distinguir mock de pfSense real.",
+      "license": "AGPL-3.0 confirmado em amostras; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-066",
+      "url": "https://github.com/abraxas/pfsense-api-acb-userkey",
+      "forge": "ADXPL|EmbedXPL/pfSense Plus",
+      "description": "Abraxas pfsense-api-acb-userkey: auditoria de controle de acesso, confidencialidade de chaves, identidade TLS ou autorização MIM. Distinguir mock de pfSense real.",
+      "license": "AGPL-3.0 confirmado em amostras; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-067",
+      "url": "https://github.com/abraxas/pfsense-api-snort-file-join",
+      "forge": "ADXPL|EmbedXPL/pfSense Plus",
+      "description": "Abraxas pfsense-api-snort-file-join: auditoria de controle de acesso, confidencialidade de chaves, identidade TLS ou autorização MIM. Distinguir mock de pfSense real.",
+      "license": "AGPL-3.0 confirmado em amostras; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-068",
+      "url": "https://github.com/abraxas/pfsense-api-example-ssl-verify",
+      "forge": "ADXPL|EmbedXPL/pfSense Plus",
+      "description": "Abraxas pfsense-api-example-ssl-verify: auditoria de controle de acesso, confidencialidade de chaves, identidade TLS ou autorização MIM. Distinguir mock de pfSense real.",
+      "license": "AGPL-3.0 confirmado em amostras; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-069",
+      "url": "https://abraxaslabs.tech/research/pfsense-api-nexus-mim",
+      "forge": "ADXPL|EmbedXPL/pfSense Plus",
+      "description": "Série Abraxas pfSense Plus MIM/API: artigo indisponível; validar resultados nos repos e produto correto.",
+      "license": "copyright de artigo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-070",
+      "url": "https://github.com/abraxas/pfsense-wireless-clone",
+      "forge": "ADXPL|EmbedXPL|WirelessXPL/pfSense CE",
+      "description": "Abraxas pfsense-wireless-clone: investigar validação de configuração/sink em pfSense CE 2.9.0-DEVELOPMENT, autenticação e permissões, com simulador local. Sem importar exploit executável.",
+      "license": "AGPL-3.0 observado na série; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-071",
+      "url": "https://github.com/abraxas/pfsense-assign-if-add",
+      "forge": "ADXPL|EmbedXPL/pfSense CE",
+      "description": "Abraxas pfsense-assign-if-add: investigar validação de configuração/sink em pfSense CE 2.9.0-DEVELOPMENT, autenticação e permissões, com simulador local. Sem importar exploit executável.",
+      "license": "AGPL-3.0 observado na série; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-072",
+      "url": "https://github.com/abraxas/pfsense-gw-ipv6-zone",
+      "forge": "ADXPL|EmbedXPL/pfSense CE",
+      "description": "Abraxas pfsense-gw-ipv6-zone: investigar validação de configuração/sink em pfSense CE 2.9.0-DEVELOPMENT, autenticação e permissões, com simulador local. Sem importar exploit executável.",
+      "license": "AGPL-3.0 observado na série; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-073",
+      "url": "https://github.com/abraxas/pfsense-timezone-phpini",
+      "forge": "ADXPL|EmbedXPL/pfSense CE",
+      "description": "Abraxas pfsense-timezone-phpini: investigar validação de configuração/sink em pfSense CE 2.9.0-DEVELOPMENT, autenticação e permissões, com simulador local. Sem importar exploit executável.",
+      "license": "AGPL-3.0 observado na série; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-074",
+      "url": "https://github.com/abraxas/pfsense-sshguard-crlf",
+      "forge": "ADXPL|EmbedXPL/pfSense CE",
+      "description": "Abraxas pfsense-sshguard-crlf: investigar validação de configuração/sink em pfSense CE 2.9.0-DEVELOPMENT, autenticação e permissões, com simulador local. Sem importar exploit executável.",
+      "license": "AGPL-3.0 observado na série; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-075",
+      "url": "https://github.com/abraxas/pfsense-l2tp-radius-mpd",
+      "forge": "ADXPL|EmbedXPL/pfSense CE",
+      "description": "Abraxas pfsense-l2tp-radius-mpd: investigar validação de configuração/sink em pfSense CE 2.9.0-DEVELOPMENT, autenticação e permissões, com simulador local. Sem importar exploit executável.",
+      "license": "AGPL-3.0 observado na série; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-076",
+      "url": "https://github.com/abraxas/pfsense-pppoe-cron",
+      "forge": "ADXPL|EmbedXPL/pfSense CE",
+      "description": "Abraxas pfsense-pppoe-cron: investigar validação de configuração/sink em pfSense CE 2.9.0-DEVELOPMENT, autenticação e permissões, com simulador local. Sem importar exploit executável.",
+      "license": "AGPL-3.0 observado na série; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-077",
+      "url": "https://github.com/abraxas/pfsense-pppoe-secret-bang",
+      "forge": "ADXPL|EmbedXPL/pfSense CE",
+      "description": "Abraxas pfsense-pppoe-secret-bang: investigar validação de configuração/sink em pfSense CE 2.9.0-DEVELOPMENT, autenticação e permissões, com simulador local. Sem importar exploit executável.",
+      "license": "AGPL-3.0 observado na série; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-078",
+      "url": "https://github.com/abraxas/pfsense-cp-ha-pfctl",
+      "forge": "ADXPL|EmbedXPL/pfSense CE",
+      "description": "Abraxas pfsense-cp-ha-pfctl: investigar validação de configuração/sink em pfSense CE 2.9.0-DEVELOPMENT, autenticação e permissões, com simulador local. Sem importar exploit executável.",
+      "license": "AGPL-3.0 observado na série; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-079",
+      "url": "https://github.com/abraxas/pfsense-unbound-sock-timeout",
+      "forge": "ADXPL|EmbedXPL/pfSense CE",
+      "description": "Abraxas pfsense-unbound-sock-timeout: investigar validação de configuração/sink em pfSense CE 2.9.0-DEVELOPMENT, autenticação e permissões, com simulador local. Sem importar exploit executável.",
+      "license": "AGPL-3.0 observado na série; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-080",
+      "url": "https://github.com/abraxas/pfsense-unbound-acl-crlf",
+      "forge": "ADXPL|EmbedXPL/pfSense CE",
+      "description": "Abraxas pfsense-unbound-acl-crlf: investigar validação de configuração/sink em pfSense CE 2.9.0-DEVELOPMENT, autenticação e permissões, com simulador local. Sem importar exploit executável.",
+      "license": "AGPL-3.0 observado na série; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-081",
+      "url": "https://github.com/abraxas/pfsense-ovpn-connect-eval",
+      "forge": "ADXPL|EmbedXPL/pfSense CE",
+      "description": "Abraxas pfsense-ovpn-connect-eval: investigar validação de configuração/sink em pfSense CE 2.9.0-DEVELOPMENT, autenticação e permissões, com simulador local. Sem importar exploit executável.",
+      "license": "AGPL-3.0 observado na série; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-082",
+      "url": "https://github.com/abraxas/pfsense-ovpn-learn-cn",
+      "forge": "ADXPL|EmbedXPL/pfSense CE",
+      "description": "Abraxas pfsense-ovpn-learn-cn: investigar validação de configuração/sink em pfSense CE 2.9.0-DEVELOPMENT, autenticação e permissões, com simulador local. Sem importar exploit executável.",
+      "license": "AGPL-3.0 observado na série; revisar repo",
+      "priority": "Média",
+      "action": "P"
+    },
+    {
+      "id": "SRC-095",
+      "url": "https://github.com/VE3NEA/OmniRig",
+      "forge": "MobileXPL|WirelessXPL/RF",
+      "description": "OmniRig: controle de transceptores de rádio via COM/CAT; referência para integração de controle de rigs em cenários RF/SDR.",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "B"
+    },
+    {
+      "id": "SRC-111",
+      "url": "https://github.com/MichaelDim02/intelligence-wordlist-generator",
+      "forge": "ADXPL|WordlistXPL/OSINT",
+      "description": "intelligence-wordlist-generator: combinador de keywords OSINT para geração de wordlists.",
+      "license": "GPL-3.0",
+      "priority": "Média",
+      "action": "B"
+    },
+    {
+      "id": "SRC-120",
+      "url": "https://github.com/hashcat/hashcat-utils",
+      "forge": "ADXPL|WordlistXPL/Utilidades",
+      "description": "hashcat-utils: operações de lista (splitlen, rli, rules_optimize); ferramentas auxiliares.",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "B"
+    },
+    {
+      "id": "SRC-124",
+      "url": "https://github.com/dropbox/zxcvbn",
+      "forge": "ADXPL|WordlistXPL/Estimativa",
+      "description": "zxcvbn: estimativa de força e entropia de senhas; referência para módulo wlf score.",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "B"
+    },
+    {
+      "id": "SRC-129",
+      "url": "https://github.com/chocapikk/cewlai",
+      "forge": "ADXPL|WordlistXPL/OSINT AI",
+      "description": "cewlai: wordlists OSINT assistidas por IA; geração de listas contextuais via LLM.",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "B"
+    },
+    {
+      "id": "SRC-152",
+      "url": "https://github.com/iamj0ker/bypass-403",
+      "forge": "ADXPL|EmbedXPL/Web",
+      "description": "Bypass 403 via headers/paths/verbs; 2275 stars; útil para recon web",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-155",
+      "url": "https://github.com/Malwation/malware-ioc",
+      "forge": "ADXPL|MalwareXPL/Threat-Intel",
+      "description": "IOCs de investigações de malware; referência para threat intel",
+      "license": "Apache-2.0",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-156",
+      "url": "https://github.com/Malwation/sentello",
+      "forge": "ADXPL|MalwareXPL/Malware-Research",
+      "description": "Simulador de técnicas anti-evasion/anti-analysis de malware; 75 stars",
+      "license": "GPL-3.0",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-159",
+      "url": "https://github.com/PyroTek3/ActiveDirectory",
+      "forge": "ADXPL/AD",
+      "description": "Scripts PowerShell para Active Directory; referência para lab AD",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-161",
+      "url": "https://github.com/skraft9/quarry-vrc",
+      "forge": "ADXPL/Pentest",
+      "description": "Quarry: vulnerability discovery at scale com agentic AI + HackerOne; 134 stars",
+      "license": "Apache-2.0",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-214",
+      "url": "https://github.com/D4Vinci/PasteJacker",
+      "forge": "ADXPL/Pentest",
+      "description": "Hacking systems with the automation of PasteJacking attacks.; 401 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-215",
+      "url": "https://github.com/toxydose/Duckyspark",
+      "forge": "ADXPL|EmbedXPL|IndustrialXPL/IoT/Embedded",
+      "description": "Translator from USB-Rubber-Ducky payloads to a Digispark code.; 233 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-216",
+      "url": "https://github.com/Chocapikk/CVE-2023-22515",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2023-22515: Confluence Broken Access Control Exploit; 153 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-217",
+      "url": "https://github.com/Chocapikk/CVE-2023-4966",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Sensitive information disclosure in NetScaler ADC and NetScaler Gateway when configured as a Gateway (VPN virtual server; 78 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-218",
+      "url": "https://github.com/dinosn/wp2shell-lab",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Non-destructive detector + Docker lab for wp2shell (CVE-2026-63030 REST /batch/v1 route confusion + CVE-2026-60137 autho; 64 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-219",
+      "url": "https://github.com/dinosn/givewp-cve-2026-82222-rce-lab",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Authorized Docker lab and clean PoC for validating CVE-2026-82222 RCE in GiveWP 4.16.5.1 and the 4.16.7.2 fix.; 16 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-220",
+      "url": "https://github.com/0x4m4/first-strike-alert",
+      "forge": "ADXPL/CTF",
+      "description": "First Strike Alert - A dystopian-themed CTFd first blood announcer with automatic sound playback and fullscreen announce; 14 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-221",
+      "url": "https://github.com/dinosn/liferay-ga4-rce-research",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Security research on Liferay CE 7.0.3 GA4: pre-auth RCE as root (CVE-2020-7961 class) reproduced end-to-end; plus 16 mor; 7 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-222",
+      "url": "https://github.com/tc4dy/ironshell-x86",
+      "forge": "ADXPL|EmbedXPL|IndustrialXPL/IoT/Embedded",
+      "description": "Bare-metal x86 shellcode execution & analysis environment in pure 16-bit Assembly. 2-stage bootloader; TUI shell; 8 inje; 5 stars",
+      "license": "GPL-3.0",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-224",
+      "url": "https://github.com/shinthink/CVE-2026-58480",
+      "forge": "ADXPL|WirelessXPL/Wireless",
+      "description": "CVE-2026-58480 / CVE-2026-15158  -  Unauthenticated RCE in Blocksy Companion Pro < 2.1.47 (300K+ installs). Pre-auth arbit; 3 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-225",
+      "url": "https://github.com/shinthink/CVE-2026-66066",
+      "forge": "ADXPL|FirewallXPL/Firewall/WAF",
+      "description": "CVE-2026-66066  -  KindaRails2Shell: Rails Active Storage/libvips Arbitrary File Read → RCE. MATLAB/HDF5 dual-identity fil; 1 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-226",
+      "url": "https://github.com/HORKimhab/CVE-Ubiquiti",
+      "forge": "ADXPL|EmbedXPL/Router",
+      "description": "CVE-2026-77542; CVE-2026-77543; CVE-2026-77545; CVE-2026-77550; CVE-2026-77551; CVE-2026-77552; CVE-2026-77553; CVE-2026; 0 stars",
+      "license": "NOASSERTION",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-227",
+      "url": "https://github.com/Chocapikk/CVE-2023-29357",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Microsoft SharePoint Server Elevation of Privilege Vulnerability; 237 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-228",
+      "url": "https://github.com/dinosn/mikrotrick-poc",
+      "forge": "ADXPL|EmbedXPL/Router",
+      "description": "CVE-2026-67276 RouterOS SSH public-key authentication bypass lab PoC; 100 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-229",
+      "url": "https://github.com/Chocapikk/CVE-2023-6553",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Backup Migration <= 1.3.7 - Unauthenticated Remote Code Execution; 87 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-230",
+      "url": "https://github.com/SnailSploit/The-LLM-Red-Teamer-s-Playbook",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "A diagnostic methodology for bypassing LLM defense layers  -  from input filters to persistent memory exploitation.; 55 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-231",
+      "url": "https://github.com/Chocapikk/CVE-2024-8504",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "VICIdial Unauthenticated SQLi to RCE Exploit (CVE-2024-8503 and CVE-2024-8504); 44 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-233",
+      "url": "https://github.com/HORKimhab/poc-cve-collection",
+      "forge": "ADXPL|WirelessXPL/Wireless",
+      "description": "🧪 Collects CVE PoCs and backs them up to the Internet Archive when they are unavailable on GitHub.; 16 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-234",
+      "url": "https://github.com/SnailSploit/KubeRoast",
+      "forge": "ADXPL|CloudXPL|WirelessXPL/Wireless",
+      "description": "From-scratch; red-team-oriented Kubernetes misconfiguration & attack-path scanner. Fast; readable; and opinionated towar; 8 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-235",
+      "url": "https://github.com/0x4m4/m0xblood-ctfd-theme",
+      "forge": "ADXPL|EmbedXPL|IndustrialXPL/IoT/Embedded",
+      "description": "A dark; cyberpunk-inspired CTFd theme with red accents and animated elements; 5 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-236",
+      "url": "https://github.com/shinthink/CVE-2026-49049",
+      "forge": "ADXPL/AD",
+      "description": "Read-only vulnerability scanner for CVE-2026-49049  -  Helix3 Joomla plugin unauthenticated AJAX handler; 4 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-237",
+      "url": "https://github.com/0x4m4/arena.0x4m4.com",
+      "forge": "ADXPL/CTF",
+      "description": "CTF Training Platform; 3 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-238",
+      "url": "https://github.com/tc4dy/CVE-2026-57821-PoC-Exploit",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "🔐 CVE-2026-57821 - Apache Fineract SQL Injection Toolkit 📚 Two Python scripts for authorized security testing: verifier.; 3 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-239",
+      "url": "https://github.com/shinthink/magento-polyshell",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "PolyShell (APSB25-94)  -  Magento 2 Unauthenticated File Upload RCE Exploit | GIF89a polyglot bypass | guest-cart REST API; 2 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-240",
+      "url": "https://github.com/tc4dy/CVE-2026-64638-PoC-Exploit",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-64638 - WordPress Security Assessment Suite (CVSS 8.9) | WordPress 4.7.0-7.0.2 pentest toolkit. Includes vulner; 1 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-241",
+      "url": "https://github.com/shinthink/CVE-2026-65761",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "EasyStore Joomla Pre-Auth SQL Injection via filter_sortby Direction (CVE-2026-65761; CVSS 9.3); 1 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-242",
+      "url": "https://github.com/HORKimhab/CVE-2026-13181-CVE-2026-13182-CVE-2026-13183-CVE-2026-13184",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-13181; CVE-2026-13182; CVE-2026-13183; CVE-2026-13184; 0 stars",
+      "license": "NOASSERTION",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-243",
+      "url": "https://github.com/shinthink/CVE-2026-65883",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Aimy Captcha-Less Form Guard Joomla Component PHP Object Injection RCE. clfgd XOR keystream recovery + unserialize(). CV; 0 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-244",
+      "url": "https://github.com/shinthink/wp-ssrf-cloud-metadata",
+      "forge": "ADXPL|CloudXPL/Cloud",
+      "description": "WordPress Core SSRF via Cloud Metadata Endpoint Bypass in wp_http_validate_url(); 0 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-249",
+      "url": "https://github.com/Armur-Ai/vibescan",
+      "forge": "ADXPL|FirewallXPL/Firewall/WAF",
+      "description": "Security scanner for AI-generated ('vibe-coded') code. Runs    SAST; DAST; and sandboxed exploit simulation across 15+  ; 92 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-250",
+      "url": "https://github.com/BitterSecurity/Vigilo",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "An AI hacker for Web3 Smart Contract. for bug bounties; Audit contest; offensive security research; and real-world explo; 71 stars",
+      "license": "NOASSERTION",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-251",
+      "url": "https://github.com/dinosn/security-research-orchestrator-prompt",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "High-assurance; artifact-agnostic prompt for authorized security labs; exploit-chain research; PoC validation; and evide; 45 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-253",
+      "url": "https://github.com/Chocapikk/CVE-2024-21893-to-CVE-2024-21887",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2024-21893 to CVE-2024-21887 Exploit Toolkit; 27 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-254",
+      "url": "https://github.com/scadastrangelove/rust-in-peace",
+      "forge": "IndustrialXPL|MobileXPL/OT/ICS",
+      "description": "Agent-assisted vulnerability research across Rust; Android APKs; and AI agents: independent discovery; skeptical triage;; 25 stars",
+      "license": "Apache-2.0",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-255",
+      "url": "https://github.com/SnailSploit/Awesome-Snail-OSINT",
+      "forge": "ADXPL|EmbedXPL/Web",
+      "description": "an Awesome List of OSINT Resources; 17 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-257",
+      "url": "https://github.com/tc4dy/CVE-2026-65643-PoC-Toolkit",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-65643 - cPanel Domain Parking RCE Toolkit (CVSS 8.7) | Red/Blue Team suite for unpatched cPanel & WHM 11.x (110; 13 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-258",
+      "url": "https://github.com/codeb0ssx/Ultimate-wp2shell",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "wp2shell  -  Pre-authentication RCE in WordPress Core (CVE-2026-60137 + CVE-2026-63030). Chains an SQL injection in author; 10 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-260",
+      "url": "https://github.com/shinthink/CVE-2026-3891",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Pix for WooCommerce Unauthenticated File Upload via certificate_crt_path Parameter | CVSS 9.8; 4 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-261",
+      "url": "https://github.com/tc4dy/BlindEye",
+      "forge": "ADXPL|EmbedXPL|IndustrialXPL/IoT/Embedded",
+      "description": " Advanced-Scan; Basic OSINT tool scanning 580+ platforms with 50+ username variations. Multi-threaded; bilingual support; 3 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-262",
+      "url": "https://github.com/tc4dy/CVE-2026-29000-PoC-Exploit",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-29000 - pac4j-jwt Authentication Bypass (CVSS 10.0). One-click admin forge via public key JWE wrapping. Leaks c; 3 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-263",
+      "url": "https://github.com/codeb0ssx/CVE-2025-68645-PoC",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Academic proof-of-concept demonstrating CVE-2025-68645 for authorized security research.; 2 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-264",
+      "url": "https://github.com/shinthink/CVE-2026-48939",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Pre-auth arbitrary file upload RCE exploit for iCagenda Joomla extension < 4.0.8 (CVSS 10.0); 2 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-265",
+      "url": "https://github.com/dinosn/cve-2026-103849-blockstrap-lab",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-103849 (BlockStrap) reproduction lab: unauthenticated {{block}} injection on Magento 2.4.9 via guest GraphQL; A; 1 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-266",
+      "url": "https://github.com/shinthink/CVE-2026-61424",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "DJ-Classifieds Joomla Component Unauthenticated File Upload RCE. 3-string filter bypass via PHP short tags. CVSS 10.0 | ; 1 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-267",
+      "url": "https://github.com/dinosn/CVE-2026-33453",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Apache Camel 4.18.0  -  CVE Security Assessment: 3 critical vulnerabilities with working PoC exploits (CVE-2026-33453; CVE; 0 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-268",
+      "url": "https://github.com/dinosn/cve-2019-6250-lab",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "End-to-end pre-auth RCE lab for CVE-2019-6250 (libzmq <= 4.3.0; ZMTP/2.0 wire-protocol); 0 stars",
+      "license": "NOASSERTION",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-269",
+      "url": "https://github.com/HORKimhab/Cisco-CVE-2026-20303-More",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-20303; CVE-2026-20304; CVE-2026-20310; CVE-2026-20312; CVE-2026-20313; 0 stars",
+      "license": "NOASSERTION",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-270",
+      "url": "https://github.com/shinthink/CVE-2026-54390",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-54390  -  JTL Shop Smarty SSTI RCE | Pre-Auth Template Injection via fetch('string:' . ) | 5.2.0-5.7.1; 0 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-280",
+      "url": "https://github.com/nil0x42/awesome-hacker-note-taking",
+      "forge": "ADXPL/Pentest",
+      "description": "Awesome note-taking apps for hackers & pentesters !; 395 stars",
+      "license": "CC0-1.0",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-281",
+      "url": "https://github.com/D4Vinci/Clickjacking-Tester",
+      "forge": "ADXPL|WirelessXPL/Wireless",
+      "description": "A python script designed to check if the website if vulnerable of clickjacking and create a poc; 161 stars",
+      "license": "GPL-3.0",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-282",
+      "url": "https://github.com/dinosn/CVE-2022-22963",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2022-22963 PoC ; 117 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-283",
+      "url": "https://github.com/almounah/go-buena-clr",
+      "forge": "ADXPL/Pentest",
+      "description": "Good CLR Host with Native patchless AMSI Bypass; 115 stars",
+      "license": "WTFPL",
+      "priority": "Média",
+      "action": "F"
+    },
+    {
+      "id": "SRC-285",
+      "url": "https://github.com/Chocapikk/CVE-2024-3273",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "D-Link NAS CVE-2024-3273 Exploit Tool; 100 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-286",
+      "url": "https://github.com/assetnote/cpanel2shell-scanner",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "High fidelity scanner for CVE-2026-41940 (cPanel & WHM authentication bypass); 92 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-287",
+      "url": "https://github.com/dinosn/CVE-2024-20931",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2024-20931; this is the bypass of the patch of CVE-2023-21839; 61 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-288",
+      "url": "https://github.com/Chocapikk/pgread",
+      "forge": "ADXPL/Forensics",
+      "description": "Read PostgreSQL data files without credentials - forensics; data recovery; and security research tool; 50 stars",
+      "license": "WTFPL",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-289",
+      "url": "https://github.com/dinosn/log4j-4255",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "End-to-end Docker lab reproducing Apache log4j2 #4255  -  FilteredObjectInputStream allowlist bypass via java.rmi.Marshall; 28 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-290",
+      "url": "https://github.com/S12cybersecurity/AD-Pentest",
+      "forge": "ADXPL/AD",
+      "description": "Pentesting Tools to Automatize Active Directory Hacking; 21 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-291",
+      "url": "https://github.com/S12cybersecurity/CTF-s",
+      "forge": "ADXPL/Pentest",
+      "description": "Github repository with Write Up; AutoPwn; Tools; Videos of CTF's from HackTheBox and TryHackMe; 19 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-292",
+      "url": "https://github.com/scadastrangelove/agent-audit",
+      "forge": "ADXPL|IndustrialXPL|MobileXPL/OT/ICS",
+      "description": "Forensic auditor for local AI coding agents (Claude Code; Codex CLI; OpenClaw) and project-surface scanner for repos con; 15 stars",
+      "license": "NOASSERTION",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-293",
+      "url": "https://github.com/dinosn/cve-2026-87902-wordpress-lfi-lab",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Reproduction lab + URL-list scanner + PoC for CVE-2026-87902 / GHSA-7hp8-65ch-5whp  -  WordPress get_page_template() unaut; 14 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-295",
+      "url": "https://github.com/dinosn/apache-activemq-rce-research",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Apache ActiveMQ Classic RCE research: CVE-2026-34197 / CVE-2026-42588 bypass chain + hardened-6.2.6 audit findings + Cro; 9 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-296",
+      "url": "https://github.com/Chocapikk/CVE-2022-40684",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Fortinet Critical Authentication Bypass Vulnerability (CVE-2022-40684) [ Mass Exploit ]; 7 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-297",
+      "url": "https://github.com/tc4dy/CVE-2026-58048-PoC-Exploit",
+      "forge": "ADXPL/AD",
+      "description": "CVE-2026-58048 - cPanel Root SQL Execution Toolkit (CVSS 9.4) | Full Red/Blue Team Toolkit suite for unpatched cPanel & ; 6 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-298",
+      "url": "https://github.com/SnailSploit/justdastit",
+      "forge": "ADXPL|EmbedXPL/Web",
+      "description": "The Burp You Can Afford  -  Open-source CLI DAST toolkit; 6 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-299",
+      "url": "https://github.com/Chocapikk/CVE-2022-27925-Revshell",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Python Script to exploit Zimbra Auth Bypass + RCE (CVE-2022-27925); 5 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-300",
+      "url": "https://github.com/dinosn/cve-2026-71362-magento-lab",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "One-command Docker lab reproducing CVE-2026-71362 (Adobe Commerce / Magento Open Source customer-session identity-switch; 5 stars",
+      "license": "NOASSERTION",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-301",
+      "url": "https://github.com/codeb0ssx/CVE-2025-14847-PoC",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Academic proof-of-concept demonstrating CVE-2025-14847 for authorized security research.; 4 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-302",
+      "url": "https://github.com/morluto/rea-h4cker-reversing-resources",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "This repository is maintained by Omar Santos (@santosomar) and includes thousands of resources related to ethical hackin; 4 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "F"
+    },
+    {
+      "id": "SRC-303",
+      "url": "https://github.com/shinthink/CVE-2026-8713",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Pre-auth path traversal to arbitrary file delete in Avada (Fusion) Builder <= 3.15.3 leading to RCE (CVSS 9.1); 4 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-304",
+      "url": "https://github.com/SnailSploit/SnailSploit_Recon_extension",
+      "forge": "ADXPL|WirelessXPL/Wireless",
+      "description": "SnailSploit Recon is a passive collector. It silently captures everything as you browse  -  scripts; API calls; forms; hea; 4 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-305",
+      "url": "https://github.com/Armur-Ai/homebrew-tap",
+      "forge": "ADXPL/Pentest",
+      "description": "Homebrew tap for Pentest Swarm AI  -  install with: brew install Armur-Ai/tap/pentestswarm; 2 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-307",
+      "url": "https://github.com/tc4dy/CVE-2026-14762-PoC-Exploit",
+      "forge": "ADXPL|WirelessXPL/Wireless",
+      "description": "CVE-2026-14762 exploit for Hotel & Tourism Reservation 1.0. Time-based blind SQL injection via /admin/rooms.php?delete. ; 2 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-308",
+      "url": "https://github.com/shinthink/CVE-2026-14894",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Super Forms Unauthenticated File Upload RCE | CVSS 9.8; 2 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-309",
+      "url": "https://github.com/shinthink/CVE-2026-56291",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Balbooa Forms (com_baforms) < 2.4.1  -  Unauthenticated File Upload to RCE via form.uploadAttachmentFile | CVSS 9.8 | CISA; 2 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-310",
+      "url": "https://github.com/codeb0ssx/CVE-2026-70559-PoC",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-70559; 1 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-311",
+      "url": "https://github.com/codeb0ssx/CVE-2026-21445-PoC",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Academic proof-of-concept demonstrating CVE-2026-21445 [LangFlow] for authorized security research.; 1 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-312",
+      "url": "https://github.com/morluto/rea-embedded-security",
+      "forge": "ADXPL|EmbedXPL|IndustrialXPL/IoT/Embedded",
+      "description": "Curated list of embedded security tools and resources: firmware analysis; reverse engineering; hardware hacking; IoT sec; 1 stars",
+      "license": "CC0-1.0",
+      "priority": "Média",
+      "action": "F"
+    },
+    {
+      "id": "SRC-313",
+      "url": "https://github.com/codeb0ssx/CVE-2026-72898-PoC",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-72898 - Metabase; 0 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-314",
+      "url": "https://github.com/codeb0ssx/Metabase-0day",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Security research and authorized testing PoC for a Metabase zero-day vulnerability. Intended for defensive research; det; 0 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-315",
+      "url": "https://github.com/codeb0ssx/CVE-2026-15583-PoC",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Academic proof-of-concept demonstrating CVE-2026-15583 for authorized security research.; 0 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-316",
+      "url": "https://github.com/codeb0ssx/CVE-2026-46442-PoC",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Academic proof-of-concept demonstrating CVE-2026-46442 for authorized security research.; 0 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-317",
+      "url": "https://github.com/HORKimhab/CVE-2026-19912-CVE-2026-19913-CVE-2026-19914",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-19912; CVE-2026-19913; CVE-2026-19914; 0 stars",
+      "license": "NOASSERTION",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-318",
+      "url": "https://github.com/shinthink/CVE-2026-13001",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Podlove Podcast Publisher Unauthenticated File Upload RCE via is_image() vs extract_file_extension() Mismatch | CVSS 9.8; 0 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-319",
+      "url": "https://github.com/SnailSploit/CVE-2025-9776",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2025-9776  -  CatFolders WordPress Plugin: Authenticated SQL Injection via CSV Import | POC + Walkthrough; 0 stars",
+      "license": "NOASSERTION",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-320",
+      "url": "https://github.com/SnailSploit/CVE-2025-11171",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2025-11171; 0 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-322",
+      "url": "https://github.com/D4Vinci/PyFlooder",
+      "forge": "ADXPL/General",
+      "description": "A http flood python script that could stop a normal website in 10s; 404 stars",
+      "license": "GPL-3.0",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-323",
+      "url": "https://github.com/RUB-SysSec/Microcode",
+      "forge": "ADXPL/Reverse-Engineering",
+      "description": "Microcode Updates for the USENIX 2017 paper: Reverse Engineering x86 Processor Microcode; 356 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-325",
+      "url": "https://github.com/MorDavid/DonPwner",
+      "forge": "ADXPL/CTF",
+      "description": "Advanced Domain Controller attack and credential analysis tool leveraging DonPAPI database; 265 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-327",
+      "url": "https://github.com/iphelix/ida-sploiter",
+      "forge": "ADXPL|WirelessXPL/Wireless",
+      "description": "IDA Sploiter is a plugin for Hex-Ray's IDA Pro disassembler designed to enhance IDA's capabilities as an exploit develop; 199 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-328",
+      "url": "https://github.com/MorDavid/vCenterHound",
+      "forge": "ADXPL|WirelessXPL/Wireless",
+      "description": "Collect infrastructure and permissions data from vCenter and export it as a BloodHound‑compatible graph using Custom Nod; 187 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-329",
+      "url": "https://github.com/assetnote/exploits",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Repository to store exploits created by Assetnotes Security Research team; 183 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-330",
+      "url": "https://github.com/Lakr233/iOSreExtension",
+      "forge": "ADXPL|MobileXPL/Mobile",
+      "description": "A fast and elegant extension for VSCode used for iOSre projects.; 155 stars",
+      "license": "Apache-2.0",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-331",
+      "url": "https://github.com/Chocapikk/CVE-2024-45519",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Zimbra - Remote Command Execution (CVE-2024-45519); 140 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-335",
+      "url": "https://github.com/iphelix/exploits-defi",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Collection of PoCs and exploits for DeFi and other Ethereum projects; 83 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-338",
+      "url": "https://github.com/nikaiw/CVE-2021-4034",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "PoC for CVE-2021-4034; 59 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-339",
+      "url": "https://github.com/Chocapikk/CVE-2024-21887",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "A command injection vulnerability in web components of Ivanti Connect Secure (9.x; 22.x) and Ivanti Policy Secure (9.x; ; 58 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-384",
+      "url": "https://github.com/assetnote/batchql",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "GraphQL security auditing script with a focus on performing batch GraphQL queries and mutations; 423 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-386",
+      "url": "https://github.com/S12cybersecurity/RDPCredentialStealer",
+      "forge": "ADXPL|MalwareXPL/Malware/Threat-Intel",
+      "description": "RDPCredentialStealer it's an implant that steal credentials provided by users in RDP using API Hooking with Detours in C; 285 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-389",
+      "url": "https://github.com/RUB-SysSec/loki",
+      "forge": "ADXPL/General",
+      "description": "Hardening code obfuscation against automated attacks; 230 stars",
+      "license": "AGPL-3.0",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-390",
+      "url": "https://github.com/RUB-SysSec/Nyx",
+      "forge": "ADXPL/Exploit-Dev",
+      "description": "USENIX 2021 - Nyx: Greybox Hypervisor Fuzzing using Fast Snapshots and Affine Types; 208 stars",
+      "license": "GPL-2.0",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-392",
+      "url": "https://github.com/Chocapikk/CVE-2024-25600",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Unauthenticated Remote Code Execution - Bricks <= 1.9.6; 183 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-393",
+      "url": "https://github.com/RUB-SysSec/nautilus",
+      "forge": "ADXPL/Exploit-Dev",
+      "description": "a grammar based feedback fuzzer; 168 stars",
+      "license": "Apache-2.0",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-394",
+      "url": "https://github.com/MichaelDim02/houndsniff",
+      "forge": "ADXPL/Pentest",
+      "description": "Hash identification program.; 151 stars",
+      "license": "GPL-3.0",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-395",
+      "url": "https://github.com/PyroTek3/ADLab",
+      "forge": "ADXPL/AD",
+      "description": "Location of some Active Directory lab scripts I have created and find useful; 148 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-396",
+      "url": "https://github.com/nil0x42/dnsanity",
+      "forge": "ADXPL/Reverse-Engineering",
+      "description": "High-performance DNS validator using template-based verification; 134 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-397",
+      "url": "https://github.com/D4Vinci/bugz-tools",
+      "forge": "ADXPL/Pentest",
+      "description": "A collection of tools I wrote for bug bounty or hacking and don't mind publishing it :smile:; 130 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-398",
+      "url": "https://github.com/almounah/orsted",
+      "forge": "ADXPL/General",
+      "description": "Orsted C2 Framework; 125 stars",
+      "license": "GPL-3.0",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-399",
+      "url": "https://github.com/assetnote/hopgoblin",
+      "forge": "ADXPL/Pentest",
+      "description": "Adobe Experience Manager (AEM) hacking toolkit; 119 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-401",
+      "url": "https://github.com/digininja/vuLnDAP",
+      "forge": "ADXPL|WirelessXPL/Wireless",
+      "description": "A vulnerable LDAP based web app written in Golang; 83 stars",
+      "license": "GPL-3.0",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-403",
+      "url": "https://github.com/S12cybersecurity/RedNeuron",
+      "forge": "ADXPL|MalwareXPL/Malware/Threat-Intel",
+      "description": "RedNeuron - Framework Creator of Malware  focused in attacking Windows but created to execute framework in Linux 👾; 76 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-405",
+      "url": "https://github.com/dinosn/mariadb-13-rce-lab",
+      "forge": "EmbedXPL|MobileXPL/Web",
+      "description": "MariaDB 13.0.1-rc RCE lab  -  priv-esc + heap UAF + JOP chain to system() as uid 999(mysql) on stock Docker image. Found w; 68 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-506",
+      "url": "https://github.com/Lakr233/GitLab-License-Generator",
+      "forge": "ADXPL/General",
+      "description": "Generate GitLab License For Self-Hosted/Private Instances; 494 stars",
+      "license": "WTFPL",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-507",
+      "url": "https://github.com/Lakr233/Sentry",
+      "forge": "ADXPL/Forensics",
+      "description": "A powerful macOS security monitoring application that detects unauthorized access attempts and records video evidence fo; 347 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-508",
+      "url": "https://github.com/RUB-SysSec/syntia",
+      "forge": "ADXPL/General",
+      "description": "Program synthesis based deobfuscation framework for the USENIX 2017 paper 'Syntia: Synthesizing the Semantics of Obfusca; 322 stars",
+      "license": "GPL-2.0",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-510",
+      "url": "https://github.com/JustVugg/lumabri",
+      "forge": "ADXPL/General",
+      "description": "Run large AI models across your computers and servers. Powered by Colibri. Pure C.; 183 stars",
+      "license": "Apache-2.0",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-511",
+      "url": "https://github.com/javirandor/anthropic-tokenizer",
+      "forge": "ADXPL/Exploit-Dev",
+      "description": "Approximation of the Claude 3 tokenizer by inspecting generation stream; 173 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-513",
+      "url": "https://github.com/RUB-SysSec/aurora",
+      "forge": "ADXPL/General",
+      "description": "Usenix Security 2021 - AURORA: Statistical Crash Analysis for Automated Root Cause Explanation; 162 stars",
+      "license": "AGPL-3.0",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-514",
+      "url": "https://github.com/Lakr233/iphone-mcp",
+      "forge": "MobileXPL|WirelessXPL/Wireless",
+      "description": "A Model Context Protocol (MCP) server for automating iPhone tasks with Appium. Supports app control; UI interactions; an; 137 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-515",
+      "url": "https://github.com/JustVugg/nanoeuler",
+      "forge": "ADXPL/Exploit-Dev",
+      "description": "GPT-2-style LLM built from scratch in C/CUDA with hand-written backprop; BPE tokenizer; FlashAttention; pretraining; and; 125 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-516",
+      "url": "https://github.com/iphelix/ida-patcher",
+      "forge": "ADXPL|WirelessXPL/Wireless",
+      "description": "IDA Patcher is a plugin for Hex-Ray's IDA Pro disassembler designed to enhance IDA's ability to patch binary files and m; 119 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-517",
+      "url": "https://github.com/lyogavin/Pistachio",
+      "forge": "ADXPL/General",
+      "description": "Low latency; strong consistency; fault tolerant distributed key value store. Colocate data and compute to achieve best p; 116 stars",
+      "license": "Apache-2.0",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-518",
+      "url": "https://github.com/S12cybersecurity/GhostShell",
+      "forge": "ADXPL/General",
+      "description": "Interactive shell to execute commands anonymously using Proxychains and Tor; 115 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-519",
+      "url": "https://github.com/RUB-SysSec/EthBMC",
+      "forge": "ADXPL/General",
+      "description": "The code repository for the 2020 Usenix Security paper 'EthBMC: A Bounded Model Checker for Smart Contracts'; 107 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-520",
+      "url": "https://github.com/Chocapikk/CVE-2024-36401",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "GeoServer Remote Code Execution; 89 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-522",
+      "url": "https://github.com/RUB-SysSec/Hypercube",
+      "forge": "ADXPL/Exploit-Dev",
+      "description": "NDSS 2020 - HYPER-CUBE: High-Dimensional Hypervisor Fuzzing; 69 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-523",
+      "url": "https://github.com/Chocapikk/pwncat-vl",
+      "forge": "ADXPL/CTF",
+      "description": "Fancy reverse and bind shell handler; 66 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "F"
+    },
+    {
+      "id": "SRC-524",
+      "url": "https://github.com/dinosn/hikvision",
+      "forge": "ADXPL|IndustrialXPL/Surveillance",
+      "description": "Hikvision log4j PoC; 66 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-525",
+      "url": "https://github.com/iphelix/sslmap",
+      "forge": "ADXPL/Pentest",
+      "description": "SSLMap - TLS/SSL cipher suite scanner.; 65 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-526",
+      "url": "https://github.com/0x4m4/0xCipherLink",
+      "forge": "ADXPL/General",
+      "description": "0xCipherLink ensures safe and encrypted file sharing using AES-256 encryption and PBKDF2 key derivation. With a user-fri; 64 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-527",
+      "url": "https://github.com/S12cybersecurity/ShadowByte-Botnet",
+      "forge": "ADXPL|MalwareXPL/Malware/Threat-Intel",
+      "description": "Complete Botnet Infrastucture with Malicious C&C Server And Malware Agents to infect Windows OS; 64 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-528",
+      "url": "https://github.com/RUB-SysSec/gadget_synthesis",
+      "forge": "ADXPL/Exploit-Dev",
+      "description": "Esorics 2021 - Towards Automating Code-Reuse Attacks Using Synthesized Gadget Chains; 60 stars",
+      "license": "AGPL-3.0",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-531",
+      "url": "https://github.com/vxcontrol/kali-linux-image",
+      "forge": "ADXPL/Pentest",
+      "description": "Lightweight Kali Linux Docker images with curated CLI penetration testing tools for headless environments; 56 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-532",
+      "url": "https://github.com/D4Vinci/AdflyUrlGrabber",
+      "forge": "ADXPL/General",
+      "description": "A python script designed to grab the original url from an adfly url without opening it :D; 55 stars",
+      "license": "GPL-3.0",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-612",
+      "url": "https://github.com/D4Vinci/Chrome-Extractor",
+      "forge": "ADXPL/General",
+      "description": "Python script that will extract all saved passwords from your google chrome database on windows only; 86 stars",
+      "license": "GPL-3.0",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-613",
+      "url": "https://github.com/S12cybersecurity/S12URootkit",
+      "forge": "ADXPL/General",
+      "description": "User Mode Windows Rootkit; 86 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-615",
+      "url": "https://github.com/S12cybersecurity/LokiRAT",
+      "forge": "ADXPL|MalwareXPL/Malware/Threat-Intel",
+      "description": "Multi-component Remote Access Trojan: C++ client (victim); C# server; and Angular frontend. ; 74 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-616",
+      "url": "https://github.com/S12cybersecurity/Admin2Sys",
+      "forge": "ADXPL/Pentest",
+      "description": "A Windows token-theft utility that enumerates SYSTEM processes; duplicates their access token; and spawns a new process ; 66 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-617",
+      "url": "https://github.com/MarginResearch/dalvik",
+      "forge": "ADXPL|WirelessXPL/Wireless",
+      "description": "Dalvik bytecode disassembler and graph view; 65 stars",
+      "license": "Apache-2.0",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-619",
+      "url": "https://github.com/mukul975/mcp-windows-automation",
+      "forge": "ADXPL/Exploit-Dev",
+      "description": "🚀 AI-Powered Windows Automation Server using Model Context Protocol (MCP) | Control Windows apps; automate tasks; and ma; 59 stars",
+      "license": "MIT",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-620",
+      "url": "https://github.com/RUB-SysSec/NEMO",
+      "forge": "ADXPL/General",
+      "description": "Modeling Password Guessability Using Markov Models; 58 stars",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-667",
+      "url": "https://github.com/maxDcb/C2Implant",
+      "forge": "ADXPL|MalwareXPL/C2/Implant",
+      "description": "C2Implant: Windows C++ Beacon para Exploration C2",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-669",
+      "url": "https://github.com/grisuno/beacon",
+      "forge": "ADXPL|MalwareXPL/C2/Beacon",
+      "description": "BlackBasalt: lightweight Windows pure C Beacon para LazyOwn RedTeam C2",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-683",
+      "url": "https://github.com/index-login/MobileRE-Skill",
+      "forge": "MobileXPL/Mobile/RE",
+      "description": "MobileRE-Skill: AI-agent skill set para mobile reverse engineering; Frida/unpacking/DEX",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-684",
+      "url": "https://github.com/firerpa/lamda",
+      "forge": "MobileXPL/Android",
+      "description": "LAMDA: Android automation e dynamic-analysis tool; atualizado 2026",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-691",
+      "url": "https://github.com/0xHossam/Killer",
+      "forge": "ADXPL|FirewallXPL/Evasion",
+      "description": "Killer: tool bypass AV/EDR com técnicas evasivas; usado por Patchwork group",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-693",
+      "url": "https://github.com/Gadzhovski/TRACE-Forensic-Toolkit",
+      "forge": "ADXPL/Forensics",
+      "description": "TRACE: desktop GUI para disk images/file carving/timelines/YARA/Sigma; atualizado 2026",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-694",
+      "url": "https://github.com/EmadAbedini/Dumplyzer",
+      "forge": "ADXPL/Forensics",
+      "description": "Dumplyzer: plataforma Python de memory forensics para DFIR e threat hunting; atualizado 2026",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-695",
+      "url": "https://github.com/x746b/mem_forensics-mcp",
+      "forge": "ADXPL/Forensics",
+      "description": "mem_forensics-mcp: MCP server Rust para memory forensics; combina velocidade Rust com Vol3",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-698",
+      "url": "https://github.com/0x27/linux.mira",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "linux.mira em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-700",
+      "url": "https://github.com/0xMarcio/pocindex",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "pocindex em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-701",
+      "url": "https://github.com/0xNikilite/oborom",
+      "forge": "ADXPL/Arsenal",
+      "description": "oborom em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-702",
+      "url": "https://github.com/ab-jonathankennard/nmap-ssh-regresshion",
+      "forge": "ADXPL/Pentest",
+      "description": "nmap-ssh-regresshion em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-703",
+      "url": "https://github.com/AdithyaaSivamal/PLAGUE-V",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "PLAGUE-V em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-704",
+      "url": "https://github.com/al7araziruby-jpg/CVE-2024-6387-OpenSSH-Analysis",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2024-6387-OpenSSH-Analysis em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-705",
+      "url": "https://github.com/alex14324/ssh_poc2024",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "ssh_poc2024 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-706",
+      "url": "https://github.com/alirezac0/CVE-2022-27502",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2022-27502 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-707",
+      "url": "https://github.com/almogopp/OpenSSH-CVE-2024-6387-Fix",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "OpenSSH-CVE-2024-6387-Fix em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-709",
+      "url": "https://github.com/AvivShabtay/BlackEnergyDriver",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "BlackEnergyDriver em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-710",
+      "url": "https://github.com/ayoubfaouzi/al-khaser",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "al-khaser em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-711",
+      "url": "https://github.com/B4ntGrim/Vuln_Remediation_MegaQuagga",
+      "forge": "ADXPL/General",
+      "description": "Vuln_Remediation_MegaQuagga em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-712",
+      "url": "https://github.com/babyshen/routeros-CVE-2018-14847-bytheway",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "routeros-CVE-2018-14847-bytheway em $RECYCLE.BIN/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-713",
+      "url": "https://github.com/bilawalsidhu/gods-eye-view",
+      "forge": "ADXPL/Arsenal",
+      "description": "gods-eye-view em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-714",
+      "url": "https://github.com/bl4ckarch/CVE-2023-42326",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2023-42326 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-715",
+      "url": "https://github.com/bob-reis/claude-pentest-skills",
+      "forge": "ADXPL/Pentest",
+      "description": "claude-pentest-skills em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-716",
+      "url": "https://github.com/cado-security/DFIR_Resources_Industroyer2",
+      "forge": "ADXPL/Research",
+      "description": "DFIR_Resources_Industroyer2 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-717",
+      "url": "https://github.com/chris-ritsen/samsung-tv-roo",
+      "forge": "ADXPL/Arsenal",
+      "description": "samsung-tv-roo em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-718",
+      "url": "https://github.com/Crawping/malware",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "malware em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-719",
+      "url": "https://github.com/d6fault/APTF",
+      "forge": "ADXPL/Arsenal",
+      "description": "APTF em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-720",
+      "url": "https://github.com/d6fault/CVE-2026-95675",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-95675 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-721",
+      "url": "https://github.com/d6fault/Evil-Moodle",
+      "forge": "ADXPL/Arsenal",
+      "description": "Evil-Moodle em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-722",
+      "url": "https://github.com/DanielAvinoam/BlackEnergyV2-Driver-Reverse-Engineerin",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "BlackEnergyV2-Driver-Reverse-Engineerin em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-723",
+      "url": "https://github.com/daniiltekunov26/RegreSSHion-VM",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "RegreSSHion-VM em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-724",
+      "url": "https://github.com/darkbytehunter/CVE-2024-22120-RCE-with-gopher",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2024-22120-RCE-with-gopher em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-725",
+      "url": "https://github.com/DeathShotXD/Comment2Shell",
+      "forge": "ADXPL/Arsenal",
+      "description": "Comment2Shell em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-726",
+      "url": "https://github.com/DelspoN/CVE-2024-57376",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2024-57376 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-727",
+      "url": "https://github.com/detiuaveiro/aas24-aas-malware-aas-malware-pe",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "aas24-aas-malware-aas-malware-pe em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-728",
+      "url": "https://github.com/djayaGit/cve-2023-20198-poc-cisco",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "cve-2023-20198-poc-cisco em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-729",
+      "url": "https://github.com/Doux-x/CVE-2024-6387-analysis",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2024-6387-analysis em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-730",
+      "url": "https://github.com/dream434/CVE-2024-6387",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2024-6387 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-731",
+      "url": "https://github.com/Endermanch/MalwareDatabase",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "MalwareDatabase em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-732",
+      "url": "https://github.com/EQSTLab/CVE-2024-46538",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2024-46538 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-733",
+      "url": "https://github.com/Esamgold/ICS-TRISIS-TRITON-SIS",
+      "forge": "ADXPL/Research",
+      "description": "ICS-TRISIS-TRITON-SIS em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-734",
+      "url": "https://github.com/EvergreenCartoons/SenselessViolence",
+      "forge": "ADXPL/Arsenal",
+      "description": "SenselessViolence em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-735",
+      "url": "https://github.com/FloatTech/ZeroBot-Plugin",
+      "forge": "ADXPL/Research",
+      "description": "ZeroBot-Plugin em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-736",
+      "url": "https://github.com/Fomovet/cve-2025-29384",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "cve-2025-29384 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-737",
+      "url": "https://github.com/fortra/CVE-2024-6769",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2024-6769 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-738",
+      "url": "https://github.com/FoundTL/D-Link-R95-BE9500",
+      "forge": "ADXPL/Arsenal",
+      "description": "D-Link-R95-BE9500 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-739",
+      "url": "https://github.com/FoundTL/RG-EW3000GX",
+      "forge": "ADXPL/Arsenal",
+      "description": "RG-EW3000GX em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-740",
+      "url": "https://github.com/FoundTL/TP-LINK-TL-WAR2600L",
+      "forge": "ADXPL/Arsenal",
+      "description": "TP-LINK-TL-WAR2600L em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-741",
+      "url": "https://github.com/G4sul1n/Cisco-IOS-XE-CVE-2023-20198",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Cisco-IOS-XE-CVE-2023-20198 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-742",
+      "url": "https://github.com/gamegame1236/malwaredatabase",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "malwaredatabase em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-743",
+      "url": "https://github.com/Gberegbe/infrastructure-security-automation",
+      "forge": "ADXPL/General",
+      "description": "infrastructure-security-automation em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-744",
+      "url": "https://github.com/gbrindisi/malware",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "malware em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-745",
+      "url": "https://github.com/gh-ost00/IOT-Vulnerable_POC",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "IOT-Vulnerable_POC em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-746",
+      "url": "https://github.com/hacefresko/CVE-2025-40634",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2025-40634 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-747",
+      "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "forge": "ADXPL/Arsenal",
+      "description": "MoneyPrinterTurbo em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-748",
+      "url": "https://github.com/helviojunior/adbca",
+      "forge": "ADXPL/Arsenal",
+      "description": "adbca em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-749",
+      "url": "https://github.com/helviojunior/addrfinder",
+      "forge": "ADXPL/Arsenal",
+      "description": "addrfinder em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-750",
+      "url": "https://github.com/helviojunior/ansi2image",
+      "forge": "ADXPL/Arsenal",
+      "description": "ansi2image em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-751",
+      "url": "https://github.com/helviojunior/ansible-ad",
+      "forge": "ADXPL/Arsenal",
+      "description": "ansible-ad em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-752",
+      "url": "https://github.com/helviojunior/ansible-collection",
+      "forge": "ADXPL/Arsenal",
+      "description": "ansible-collection em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-753",
+      "url": "https://github.com/helviojunior/ansible-vmware-floppy",
+      "forge": "ADXPL/Arsenal",
+      "description": "ansible-vmware-floppy em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-754",
+      "url": "https://github.com/helviojunior/ansible-vmware-ubuntu",
+      "forge": "ADXPL/Arsenal",
+      "description": "ansible-vmware-ubuntu em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-755",
+      "url": "https://github.com/helviojunior/ansible-vmware-windows",
+      "forge": "ADXPL/AD/Windows",
+      "description": "ansible-vmware-windows em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-756",
+      "url": "https://github.com/helviojunior/ascii_encoder",
+      "forge": "ADXPL/Arsenal",
+      "description": "ascii_encoder em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-757",
+      "url": "https://github.com/helviojunior/asm-simulator",
+      "forge": "ADXPL/Arsenal",
+      "description": "asm-simulator em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-758",
+      "url": "https://github.com/helviojunior/avsniper",
+      "forge": "ADXPL/Arsenal",
+      "description": "avsniper em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-760",
+      "url": "https://github.com/helviojunior/certcrawler",
+      "forge": "ADXPL/Arsenal",
+      "description": "certcrawler em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-761",
+      "url": "https://github.com/helviojunior/cheat_shee",
+      "forge": "ADXPL/Arsenal",
+      "description": "cheat_shee em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-762",
+      "url": "https://github.com/helviojunior/corta-certo",
+      "forge": "ADXPL/Arsenal",
+      "description": "corta-certo em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-763",
+      "url": "https://github.com/helviojunior/ctf",
+      "forge": "ADXPL/General",
+      "description": "ctf em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-764",
+      "url": "https://github.com/helviojunior/ddns",
+      "forge": "ADXPL/Arsenal",
+      "description": "ddns em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-765",
+      "url": "https://github.com/helviojunior/digital-document-checker",
+      "forge": "ADXPL/Arsenal",
+      "description": "digital-document-checker em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-766",
+      "url": "https://github.com/helviojunior/EncodedReverseShell",
+      "forge": "ADXPL/General",
+      "description": "EncodedReverseShell em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-767",
+      "url": "https://github.com/helviojunior/enumdns",
+      "forge": "ADXPL/Arsenal",
+      "description": "enumdns em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-768",
+      "url": "https://github.com/helviojunior/exploits",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "exploits em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-769",
+      "url": "https://github.com/helviojunior/fifine-d6-plugins",
+      "forge": "ADXPL/Arsenal",
+      "description": "fifine-d6-plugins em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-770",
+      "url": "https://github.com/helviojunior/filecrawler",
+      "forge": "ADXPL/Arsenal",
+      "description": "filecrawler em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-771",
+      "url": "https://github.com/helviojunior/frida-fusion",
+      "forge": "MobileXPL/Mobile",
+      "description": "frida-fusion em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-772",
+      "url": "https://github.com/helviojunior/frida-fusion-community-modules",
+      "forge": "MobileXPL/Mobile",
+      "description": "frida-fusion-community-modules em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-773",
+      "url": "https://github.com/helviojunior/gopathresolver",
+      "forge": "ADXPL/Arsenal",
+      "description": "gopathresolver em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-774",
+      "url": "https://github.com/helviojunior/helviojunior",
+      "forge": "ADXPL/Arsenal",
+      "description": "helviojunior em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-775",
+      "url": "https://github.com/helviojunior/helviojunior.github.io",
+      "forge": "ADXPL/Arsenal",
+      "description": "helviojunior.github.io em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-776",
+      "url": "https://github.com/helviojunior/hookchain",
+      "forge": "ADXPL/Arsenal",
+      "description": "hookchain em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-777",
+      "url": "https://github.com/helviojunior/infrachar",
+      "forge": "ADXPL/Arsenal",
+      "description": "infrachar em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-778",
+      "url": "https://github.com/helviojunior/intelparser",
+      "forge": "ADXPL/Arsenal",
+      "description": "intelparser em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-779",
+      "url": "https://github.com/helviojunior/knowsmore",
+      "forge": "ADXPL/Arsenal",
+      "description": "knowsmore em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-780",
+      "url": "https://github.com/helviojunior/libs",
+      "forge": "ADXPL/Arsenal",
+      "description": "libs em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-781",
+      "url": "https://github.com/helviojunior/live_bufferoverflow",
+      "forge": "ADXPL/Exploit-Dev",
+      "description": "live_bufferoverflow em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-782",
+      "url": "https://github.com/helviojunior/loadtes",
+      "forge": "ADXPL/Arsenal",
+      "description": "loadtes em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-783",
+      "url": "https://github.com/helviojunior/m5stack-captive-portal",
+      "forge": "ADXPL/Arsenal",
+      "description": "m5stack-captive-portal em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-784",
+      "url": "https://github.com/helviojunior/metasploit_modules",
+      "forge": "ADXPL/Arsenal",
+      "description": "metasploit_modules em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-785",
+      "url": "https://github.com/helviojunior/netsim",
+      "forge": "ADXPL/Arsenal",
+      "description": "netsim em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-786",
+      "url": "https://github.com/helviojunior/opensearch_docker",
+      "forge": "ADXPL/Arsenal",
+      "description": "opensearch_docker em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-787",
+      "url": "https://github.com/helviojunior/pcapraptor",
+      "forge": "ADXPL/Arsenal",
+      "description": "pcapraptor em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-788",
+      "url": "https://github.com/helviojunior/photo-editor",
+      "forge": "ADXPL/Arsenal",
+      "description": "photo-editor em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-789",
+      "url": "https://github.com/helviojunior/Presentations",
+      "forge": "ADXPL/Arsenal",
+      "description": "Presentations em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-790",
+      "url": "https://github.com/helviojunior/pycca",
+      "forge": "ADXPL/Arsenal",
+      "description": "pycca em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-791",
+      "url": "https://github.com/helviojunior/randmap",
+      "forge": "ADXPL/Arsenal",
+      "description": "randmap em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-792",
+      "url": "https://github.com/helviojunior/raspsec",
+      "forge": "ADXPL/Arsenal",
+      "description": "raspsec em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-793",
+      "url": "https://github.com/helviojunior/RemoteSho",
+      "forge": "ADXPL/Arsenal",
+      "description": "RemoteSho em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-794",
+      "url": "https://github.com/helviojunior/safeid",
+      "forge": "ADXPL/Arsenal",
+      "description": "safeid em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-795",
+      "url": "https://github.com/helviojunior/shellcodetester",
+      "forge": "ADXPL/Exploit-Dev",
+      "description": "shellcodetester em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-796",
+      "url": "https://github.com/helviojunior/sprayshark",
+      "forge": "ADXPL/Arsenal",
+      "description": "sprayshark em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-797",
+      "url": "https://github.com/helviojunior/turbosearch",
+      "forge": "ADXPL/Arsenal",
+      "description": "turbosearch em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-798",
+      "url": "https://github.com/helviojunior/vetti_alexa",
+      "forge": "ADXPL/Arsenal",
+      "description": "vetti_alexa em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-799",
+      "url": "https://github.com/helviojunior/WaveGenerator",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "WaveGenerator em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-800",
+      "url": "https://github.com/helviojunior/webfinder",
+      "forge": "ADXPL/Arsenal",
+      "description": "webfinder em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-801",
+      "url": "https://github.com/helviojunior/wol-scheduler",
+      "forge": "ADXPL/Arsenal",
+      "description": "wol-scheduler em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-802",
+      "url": "https://github.com/helviojunior/xamarin_sslunpinnin",
+      "forge": "ADXPL/Arsenal",
+      "description": "xamarin_sslunpinnin em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-803",
+      "url": "https://github.com/identity-threat-labs/Article-RegreSSHion-CVE-2024-6387",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Article-RegreSSHion-CVE-2024-6387 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-804",
+      "url": "https://github.com/identity-threat-labs/CVE-2024-6387-Vulnerability-Checker",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2024-6387-Vulnerability-Checker em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-805",
+      "url": "https://github.com/invictushacker/BlackEnergy-Challenge",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "BlackEnergy-Challenge em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-806",
+      "url": "https://github.com/irsdl/ysone",
+      "forge": "ADXPL/Arsenal",
+      "description": "ysone em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-807",
+      "url": "https://github.com/isec-tugraz/meltdown",
+      "forge": "ADXPL/Arsenal",
+      "description": "meltdown em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-808",
+      "url": "https://github.com/jaydenblair/CVE-2014-4688-pfsense",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2014-4688-pfsense em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-809",
+      "url": "https://github.com/jgamblin/Mirai-Source-Code",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "Mirai-Source-Code em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-810",
+      "url": "https://github.com/joshuagodwin7929/Purple-Team-Automation",
+      "forge": "ADXPL/Arsenal",
+      "description": "Purple-Team-Automation em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-811",
+      "url": "https://github.com/joy4hezus/Triton-Botne",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "Triton-Botne em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-812",
+      "url": "https://github.com/jpillora/chisel",
+      "forge": "ADXPL/Arsenal",
+      "description": "chisel em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-813",
+      "url": "https://github.com/K3ysTr0K3R/CVE-2019-17382-EXPLOIT",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2019-17382-EXPLOIT em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-814",
+      "url": "https://github.com/k4m3/graylog-expor",
+      "forge": "ADXPL/Arsenal",
+      "description": "graylog-expor em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-815",
+      "url": "https://github.com/k4m3/k4scan",
+      "forge": "ADXPL/Arsenal",
+      "description": "k4scan em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-816",
+      "url": "https://github.com/k4m3/LAB",
+      "forge": "ADXPL/Arsenal",
+      "description": "LAB em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-817",
+      "url": "https://github.com/k4m3/MemoryAnalysis",
+      "forge": "ADXPL/Arsenal",
+      "description": "MemoryAnalysis em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-818",
+      "url": "https://github.com/k4m3/TA-mitre-atteck",
+      "forge": "ADXPL/Arsenal",
+      "description": "TA-mitre-atteck em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-819",
+      "url": "https://github.com/kalvin-net/NoLimit-Secu-RegreSSHion",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "NoLimit-Secu-RegreSSHion em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-820",
+      "url": "https://github.com/kenballus/sigsan",
+      "forge": "ADXPL/Arsenal",
+      "description": "sigsan em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-821",
+      "url": "https://github.com/kn0x0x/CVE-2025-32756-POC",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2025-32756-POC em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-822",
+      "url": "https://github.com/Koenkk/autosub-sync",
+      "forge": "ADXPL/Arsenal",
+      "description": "autosub-sync em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-823",
+      "url": "https://github.com/Koenkk/docker-compose-exercise",
+      "forge": "ADXPL/Arsenal",
+      "description": "docker-compose-exercise em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-825",
+      "url": "https://github.com/Koenkk/Koenkk",
+      "forge": "ADXPL/Arsenal",
+      "description": "Koenkk em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-826",
+      "url": "https://github.com/Koenkk/manifests",
+      "forge": "ADXPL/Arsenal",
+      "description": "manifests em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-827",
+      "url": "https://github.com/Koenkk/NeticaPy",
+      "forge": "ADXPL/Arsenal",
+      "description": "NeticaPy em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-829",
+      "url": "https://github.com/Koenkk/py_compile_demo",
+      "forge": "ADXPL/Arsenal",
+      "description": "py_compile_demo em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-830",
+      "url": "https://github.com/Koenkk/react-hot-loader-problem",
+      "forge": "ADXPL/Arsenal",
+      "description": "react-hot-loader-problem em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-831",
+      "url": "https://github.com/Koenkk/release-please-tes",
+      "forge": "ADXPL/Arsenal",
+      "description": "release-please-tes em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-832",
+      "url": "https://github.com/Koenkk/rpi-docker-backup",
+      "forge": "ADXPL/Arsenal",
+      "description": "rpi-docker-backup em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-833",
+      "url": "https://github.com/Koenkk/rpi-zoneminder",
+      "forge": "ADXPL/Arsenal",
+      "description": "rpi-zoneminder em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-835",
+      "url": "https://github.com/Koenkk/TimeWaster",
+      "forge": "ADXPL/Arsenal",
+      "description": "TimeWaster em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-836",
+      "url": "https://github.com/Koenkk/vite-plugin-federation-issue",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "vite-plugin-federation-issue em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-837",
+      "url": "https://github.com/Koenkk/whb",
+      "forge": "ADXPL/Arsenal",
+      "description": "whb em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-838",
+      "url": "https://github.com/Koenkk/XMLMerge",
+      "forge": "ADXPL/Arsenal",
+      "description": "XMLMerge em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-849",
+      "url": "https://github.com/l0lsec/CVE-2026-12960",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-12960 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-850",
+      "url": "https://github.com/Lakr233/vphone-cl",
+      "forge": "MobileXPL/Mobile",
+      "description": "vphone-cl em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-851",
+      "url": "https://github.com/langeaustin/RegresshionCVE",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "RegresshionCVE em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-853",
+      "url": "https://github.com/latent-spaces/bra",
+      "forge": "ADXPL/Arsenal",
+      "description": "bra em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-854",
+      "url": "https://github.com/lflare/cve-2024-6387-poc",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "cve-2024-6387-poc em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-855",
+      "url": "https://github.com/m0n3ef/regreSSHion-Checker",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "regreSSHion-Checker em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-856",
+      "url": "https://github.com/mamoe/mira",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "mira em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-858",
+      "url": "https://github.com/materaj2/malware-analysis-writeups",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "malware-analysis-writeups em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-859",
+      "url": "https://github.com/minanagehsalalma/cve-2026-34473-unauthenticated-dos-zte-routers",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "cve-2026-34473-unauthenticated-dos-zte-routers em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-860",
+      "url": "https://github.com/moften/regreSSHion-CVE-2024-6387",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "regreSSHion-CVE-2024-6387 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-861",
+      "url": "https://github.com/moscajs/aedes",
+      "forge": "ADXPL/Arsenal",
+      "description": "aedes em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-862",
+      "url": "https://github.com/mrhenrike/ctf-challengers",
+      "forge": "ADXPL/Research",
+      "description": "ctf-challengers em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-870",
+      "url": "https://github.com/mrhenrike/PCAPTrafficAnalysis",
+      "forge": "ADXPL/Arsenal",
+      "description": "PCAPTrafficAnalysis em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-871",
+      "url": "https://github.com/mrhenrike/TupaXPL-Forge",
+      "forge": "ADXPL/Research",
+      "description": "TupaXPL-Forge em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-874",
+      "url": "https://github.com/murrez/adb-spread-loader",
+      "forge": "ADXPL/Arsenal",
+      "description": "adb-spread-loader em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-875",
+      "url": "https://github.com/murrez/CVE-2026-12227",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-12227 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-876",
+      "url": "https://github.com/murrez/CVE-2026-13355",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-13355 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-877",
+      "url": "https://github.com/murrez/CVE-2026-14281",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-14281 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-878",
+      "url": "https://github.com/murrez/CVE-2026-19658",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-19658 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-879",
+      "url": "https://github.com/murrez/CVE-2026-41940",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-41940 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-880",
+      "url": "https://github.com/murrez/CVE-2026-48842",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-48842 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-881",
+      "url": "https://github.com/murrez/CVE-2026-6433",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-6433 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-882",
+      "url": "https://github.com/murrez/CVE-2026-8181",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-8181 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-883",
+      "url": "https://github.com/murrez/CVE-2026-89055",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-89055 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-884",
+      "url": "https://github.com/murrez/CVE-2026-92229",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-92229 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-885",
+      "url": "https://github.com/murrez/HP-HPLIP-Mass-CVE-checker-2026-09-",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "HP-HPLIP-Mass-CVE-checker-2026-09- em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-886",
+      "url": "https://github.com/murrez/Mass-Mirai-IoT-Explo",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Mass-Mirai-IoT-Explo em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-887",
+      "url": "https://github.com/mustakimur/COIN-Attacks",
+      "forge": "ADXPL/Research",
+      "description": "COIN-Attacks em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-888",
+      "url": "https://github.com/nicocha30/ligolo-n",
+      "forge": "ADXPL/Arsenal",
+      "description": "ligolo-n em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-889",
+      "url": "https://github.com/nollium/CVE-2024-9264",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2024-9264 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-890",
+      "url": "https://github.com/nomi-sec/PoC-in-GitHub",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "PoC-in-GitHub em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-891",
+      "url": "https://github.com/note0577/CVE-2014-4688-NodeJs-Explo",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2014-4688-NodeJs-Explo em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-892",
+      "url": "https://github.com/NozomiNetworks/8821cu-20210916",
+      "forge": "ADXPL/Research",
+      "description": "8821cu-20210916 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-893",
+      "url": "https://github.com/NozomiNetworks/blackhat22-uwb-rtls",
+      "forge": "ADXPL/Research",
+      "description": "blackhat22-uwb-rtls em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-894",
+      "url": "https://github.com/NozomiNetworks/blackhat23-melsof",
+      "forge": "ADXPL/Research",
+      "description": "blackhat23-melsof em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-895",
+      "url": "https://github.com/NozomiNetworks/cti-taxii-server",
+      "forge": "ADXPL/Research",
+      "description": "cti-taxii-server em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-896",
+      "url": "https://github.com/NozomiNetworks/cvelis",
+      "forge": "ADXPL/Research",
+      "description": "cvelis em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-897",
+      "url": "https://github.com/NozomiNetworks/freebsd_panic",
+      "forge": "ADXPL/Research",
+      "description": "freebsd_panic em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-898",
+      "url": "https://github.com/NozomiNetworks/gopsutil",
+      "forge": "ADXPL/Research",
+      "description": "gopsutil em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-899",
+      "url": "https://github.com/NozomiNetworks/greyenergy-unpacker",
+      "forge": "ADXPL/Research",
+      "description": "greyenergy-unpacker em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-900",
+      "url": "https://github.com/NozomiNetworks/otter-cache",
+      "forge": "ADXPL/Research",
+      "description": "otter-cache em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-901",
+      "url": "https://github.com/NozomiNetworks/pe",
+      "forge": "ADXPL/Research",
+      "description": "pe em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-902",
+      "url": "https://github.com/NozomiNetworks/pkcs7",
+      "forge": "ADXPL/Research",
+      "description": "pkcs7 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-903",
+      "url": "https://github.com/NozomiNetworks/promptu",
+      "forge": "ADXPL/Research",
+      "description": "promptu em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-904",
+      "url": "https://github.com/NozomiNetworks/pywinbox",
+      "forge": "ADXPL/Research",
+      "description": "pywinbox em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-905",
+      "url": "https://github.com/NozomiNetworks/stix-tools",
+      "forge": "ADXPL/Research",
+      "description": "stix-tools em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-906",
+      "url": "https://github.com/NozomiNetworks/tricotools",
+      "forge": "ADXPL/Research",
+      "description": "tricotools em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-907",
+      "url": "https://github.com/NozomiNetworks/turnstyle",
+      "forge": "ADXPL/Research",
+      "description": "turnstyle em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-908",
+      "url": "https://github.com/NozomiNetworks/upx-executables",
+      "forge": "ADXPL/Research",
+      "description": "upx-executables em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-909",
+      "url": "https://github.com/NozomiNetworks/upx-recovery-tool",
+      "forge": "ADXPL/Research",
+      "description": "upx-recovery-tool em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-910",
+      "url": "https://github.com/NozomiNetworks/urgent-11",
+      "forge": "ADXPL/Research",
+      "description": "urgent-11 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-911",
+      "url": "https://github.com/NozomiNetworks/validator",
+      "forge": "ADXPL/Research",
+      "description": "validator em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-912",
+      "url": "https://github.com/NozomiNetworks/WinRM",
+      "forge": "ADXPL/Research",
+      "description": "WinRM em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-913",
+      "url": "https://github.com/objective-see/Malware",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "Malware em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-914",
+      "url": "https://github.com/offensive-security/exploitdb",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "exploitdb em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-915",
+      "url": "https://github.com/oseasfr/Scanner_CVE_OpenSSH",
+      "forge": "ADXPL/Pentest",
+      "description": "Scanner_CVE_OpenSSH em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-916",
+      "url": "https://github.com/OWASP/joomscan",
+      "forge": "ADXPL/Research",
+      "description": "joomscan em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-917",
+      "url": "https://github.com/privlabs/CVE-2025-69690-CVE-2025-69691",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2025-69690-CVE-2025-69691 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-918",
+      "url": "https://github.com/qilingframework/qilin",
+      "forge": "ADXPL/Research",
+      "description": "qilin em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-919",
+      "url": "https://github.com/R0fM1a/malware",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "malware em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-920",
+      "url": "https://github.com/radxa-pkg/aic8800",
+      "forge": "ADXPL/Research",
+      "description": "aic8800 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-921",
+      "url": "https://github.com/RamadhanAmizudin/malware",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "malware em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-923",
+      "url": "https://github.com/rapid7/reco",
+      "forge": "ADXPL/Arsenal",
+      "description": "reco em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-924",
+      "url": "https://github.com/redcanaryco/atomic-red-team",
+      "forge": "ADXPL/Campaign",
+      "description": "atomic-red-team em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-925",
+      "url": "https://github.com/redpack-kr/CVE-2024-5243-pwn2own-toronto-2023",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2024-5243-pwn2own-toronto-2023 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-926",
+      "url": "https://github.com/remmons-r7/rapid7-CVE-2026-15409",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "rapid7-CVE-2026-15409 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-927",
+      "url": "https://github.com/ryxie143/malware",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "malware em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-929",
+      "url": "https://github.com/s1d6point7bugcrowd/CVE-2024-6387-Race-Condition-in-Signal-Handling-for-OpenSSH",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2024-6387-Race-Condition-in-Signal-Handling-for-OpenSSH em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-930",
+      "url": "https://github.com/S3v3n-JG/CVE-2026-76460",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-76460 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-931",
+      "url": "https://github.com/S3v3n-JG/CVE-2026-76461",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-76461 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-932",
+      "url": "https://github.com/screetsec/TheFatRa",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "TheFatRa em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-933",
+      "url": "https://github.com/sec4us-class01/chall001",
+      "forge": "ADXPL/Arsenal",
+      "description": "chall001 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-934",
+      "url": "https://github.com/sec4us-class01/lab001",
+      "forge": "ADXPL/Arsenal",
+      "description": "lab001 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-935",
+      "url": "https://github.com/sec4us-class01/lab002",
+      "forge": "ADXPL/Arsenal",
+      "description": "lab002 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-936",
+      "url": "https://github.com/sec4us-class01/lab003",
+      "forge": "ADXPL/Arsenal",
+      "description": "lab003 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-937",
+      "url": "https://github.com/sec4us-class01/lab004",
+      "forge": "ADXPL/Arsenal",
+      "description": "lab004 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-938",
+      "url": "https://github.com/sec4us-class01/oidc01",
+      "forge": "ADXPL/Arsenal",
+      "description": "oidc01 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-939",
+      "url": "https://github.com/sec4us-class01/teste001",
+      "forge": "ADXPL/Arsenal",
+      "description": "teste001 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-940",
+      "url": "https://github.com/sec4us-training/cheatsheets",
+      "forge": "ADXPL/Arsenal",
+      "description": "cheatsheets em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-941",
+      "url": "https://github.com/sec4us-training/treinamento-devsecops",
+      "forge": "ADXPL/Arsenal",
+      "description": "treinamento-devsecops em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-942",
+      "url": "https://github.com/sec4us-training/web_api_exploitation",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "web_api_exploitation em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-943",
+      "url": "https://github.com/sec4us-training/web-api-linux",
+      "forge": "ADXPL/Arsenal",
+      "description": "web-api-linux em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-944",
+      "url": "https://github.com/sec4us-training/wiki-sec4us.github.io",
+      "forge": "ADXPL/Arsenal",
+      "description": "wiki-sec4us.github.io em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-945",
+      "url": "https://github.com/SecarmaLabs/Indushell",
+      "forge": "ADXPL/Research",
+      "description": "Indushell em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-946",
+      "url": "https://github.com/sfewer-r7/BrotherVulnerabilities",
+      "forge": "ADXPL/General",
+      "description": "BrotherVulnerabilities em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-947",
+      "url": "https://github.com/sfewer-r7/LorexExplo",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "LorexExplo em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-948",
+      "url": "https://github.com/Sincan2/regreSSHion",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "regreSSHion em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-950",
+      "url": "https://github.com/StevenBlack/hosts",
+      "forge": "ADXPL/Research",
+      "description": "hosts em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-951",
+      "url": "https://github.com/SySS-Research/Seth",
+      "forge": "ADXPL/Arsenal",
+      "description": "Seth em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-952",
+      "url": "https://github.com/sz3/cfc",
+      "forge": "ADXPL/Arsenal",
+      "description": "cfc em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-953",
+      "url": "https://github.com/tenable/esp32_image_parser",
+      "forge": "ADXPL/Arsenal",
+      "description": "esp32_image_parser em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-954",
+      "url": "https://github.com/tenable/poc",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "poc em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-955",
+      "url": "https://github.com/tenable/pyTenable",
+      "forge": "ADXPL/Arsenal",
+      "description": "pyTenable em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-958",
+      "url": "https://github.com/tenable/terrascan",
+      "forge": "ADXPL/Arsenal",
+      "description": "terrascan em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-959",
+      "url": "https://github.com/throwaway96/faultmanager-autoroo",
+      "forge": "ADXPL/Arsenal",
+      "description": "faultmanager-autoroo em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-961",
+      "url": "https://github.com/umair-aziz025/dahua-cve-research",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "dahua-cve-research em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-962",
+      "url": "https://github.com/uttekaraaru/triton-threat-intelligence-repor",
+      "forge": "ADXPL/Research",
+      "description": "triton-threat-intelligence-repor em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-963",
+      "url": "https://github.com/uziii2208/CVE-2025-33073",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2025-33073 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-964",
+      "url": "https://github.com/vulhub/vulhub",
+      "forge": "ADXPL/Arsenal",
+      "description": "vulhub em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-965",
+      "url": "https://github.com/vxunderground/MalwareSourceCode",
+      "forge": "ADXPL|MalwareXPL/Malware",
+      "description": "MalwareSourceCode em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-966",
+      "url": "https://github.com/watchdog1337/CVE-2024-42327_Zabbix_SQLI",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2024-42327_Zabbix_SQLI em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-967",
+      "url": "https://github.com/watchtowrlabs/Citrix-Virtual-Apps-XEN-Explo",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Citrix-Virtual-Apps-XEN-Explo em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-968",
+      "url": "https://github.com/watchtowrlabs/CVE-2024-4577",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2024-4577 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-969",
+      "url": "https://github.com/watchtowrlabs/Fortijump-Exploit-CVE-2024-47575",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "Fortijump-Exploit-CVE-2024-47575 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-970",
+      "url": "https://github.com/watchtowrlabs/juniper-rce_cve-2023-36844",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "juniper-rce_cve-2023-36844 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-971",
+      "url": "https://github.com/watchtowrlabs/watchTowr-vs-Check-Point-CVE-2026-50751",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "watchTowr-vs-Check-Point-CVE-2026-50751 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-972",
+      "url": "https://github.com/watchtowrlabs/watchTowr-vs-Citrix-Netscaler-PreAuth-RCE-CVE-2026-8452",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "watchTowr-vs-Citrix-Netscaler-PreAuth-RCE-CVE-2026-8452 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-973",
+      "url": "https://github.com/watchtowrlabs/watchTowr-vs-cPanel-WHM-AuthBypass-to-RCE.py",
+      "forge": "ADXPL/Arsenal",
+      "description": "watchTowr-vs-cPanel-WHM-AuthBypass-to-RCE.py em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-974",
+      "url": "https://github.com/watchtowrlabs/watchTowr-vs-f5-bigip-PreAuth-RCE-CVE-2026-94127",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "watchTowr-vs-f5-bigip-PreAuth-RCE-CVE-2026-94127 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-975",
+      "url": "https://github.com/watchtowrlabs/watchTowr-vs-FortiWeb-CVE-2025-25257",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "watchTowr-vs-FortiWeb-CVE-2025-25257 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-976",
+      "url": "https://github.com/watchtowrlabs/watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "watchTowr-vs-Ivanti-Sentry-RCE-CVE-2026-10520-CVE-2026-10523 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-977",
+      "url": "https://github.com/watchtowrlabs/watchTowr-vs-Netscaler-CVE-2026-8451",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "watchTowr-vs-Netscaler-CVE-2026-8451 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-978",
+      "url": "https://github.com/watchtowrlabs/watchTowr-vs-Progress-ShareFile-CVE-2026-2699",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "watchTowr-vs-Progress-ShareFile-CVE-2026-2699 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-979",
+      "url": "https://github.com/watchtowrlabs/watchTowr-vs-Splunk-CVE-2026-20253",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "watchTowr-vs-Splunk-CVE-2026-20253 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-980",
+      "url": "https://github.com/watchtowrlabs/watchtowr-vs-telnetd-CVE-2026-32746",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "watchtowr-vs-telnetd-CVE-2026-32746 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-981",
+      "url": "https://github.com/watchtowrlabs/watchTowr-vs-WatchGuard-CVE-2025-9242",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "watchTowr-vs-WatchGuard-CVE-2025-9242 em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-982",
+      "url": "https://github.com/wiggels/regresshion-check",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "regresshion-check em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-983",
+      "url": "https://github.com/x64dbg/x64db",
+      "forge": "ADXPL/Research",
+      "description": "x64db em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-984",
+      "url": "https://github.com/xaitax/CVE-2024-6387_Check",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2024-6387_Check em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-985",
+      "url": "https://github.com/X-Projetion/CVE-2023-4596-OpenSSH-Multi-Checker",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2023-4596-OpenSSH-Multi-Checker em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-986",
+      "url": "https://github.com/xyh4ck/iot_poc",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "iot_poc em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-987",
+      "url": "https://github.com/ytisf/theZoo",
+      "forge": "ADXPL/Research",
+      "description": "theZoo em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-988",
+      "url": "https://github.com/z3k0sec/CVE-2024-9264-RCE-Explo",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2024-9264-RCE-Explo em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-989",
+      "url": "https://github.com/zgzhang/cve-2024-6387-poc",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "cve-2024-6387-poc em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "A"
+    },
+    {
+      "id": "SRC-990",
+      "url": "https://github.com/zhaoxuya520/reverse-skill",
+      "forge": "ADXPL/General",
+      "description": "reverse-skill em Projects/",
+      "license": "N/A",
+      "priority": "Média",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-1022",
+      "url": "https://github.com/Ignitetechnologies/Impacket-for-Pentester",
+      "forge": "ADXPL/AD-Pentest",
+      "description": "Impacket-for-Pentester: cheatsheet/referencia para ADXPL docs. Tecnicas: PsExec, AtExec, mssqlclient, SecretsDump, DACLEdit, smbexec. ADXPL ja tem integracao Impacket; complementar como documentacao.",
+      "license": "nao especificada; verificar",
+      "priority": "Media",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-1049",
+      "url": "https://hackers-arise.com/artificial-intelligence-ai-in-cybersecurity-part-29-creating-isolated-autonomous-agents-for-hacking-with-nemoclaw/",
+      "forge": "TupaXPL|ADXPL/RedTeam-AI",
+      "description": "NemoClaw (NVIDIA): sandboxing para agentes AI autonomos ofensivos. Artigo ensina uso como plataforma isolada para hacking agents. Repo: github.com/nvidia/nemoclaw (14k stars, Apache 2.0).",
+      "license": "N/A (artigo)",
+      "priority": "Media",
+      "action": "Q"
+    },
+    {
+      "id": "SRC-1057",
+      "url": "https://github.com/yogsec/API-Pentesting-Tools",
+      "forge": "ADXPL/API-Pentest",
+      "description": "API-Pentesting-Tools: colecao curada de ferramentas pentest para APIs REST e GraphQL. Bug bounty e security research. MIT compativel BSD-3.",
+      "license": "MIT",
+      "priority": "Media",
+      "action": "Q"
     }
-  ]
+  ],
+  "total_alta": 17,
+  "total_media": 462
 }
