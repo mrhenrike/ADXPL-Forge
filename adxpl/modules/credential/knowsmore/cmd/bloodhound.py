@@ -321,13 +321,13 @@ class Bloodhound(CmdBase):
                            metavar='[tasks]',
                            type=int,
                            default=6,
-                           dest=f'tasks',
+                           dest='tasks',
                            help=Color.s('number of connects in parallel (per host, default: 6)'))
 
         flags.add_argument('--enable-group-chain',
                            action='store_true',
                            default=False,
-                           dest=f'chain_enabled',
+                           dest='chain_enabled',
                            help=Color.s('Enable group chain calculation.'))
 
         flags.add_argument('-u',
@@ -335,7 +335,7 @@ class Bloodhound(CmdBase):
                            metavar='[neo4j username]',
                            type=str,
                            default='neo4j',
-                           dest=f'neo4j_username',
+                           dest='neo4j_username',
                            help=Color.s('Neo4j Username to mark host/users as owned. (default: neo4j)'))
 
         flags.add_argument('-p',
@@ -343,7 +343,7 @@ class Bloodhound(CmdBase):
                            metavar='[neo4j password]',
                            type=str,
                            default='neo4j',
-                           dest=f'neo4j_password',
+                           dest='neo4j_password',
                            help=Color.s('Neo4j Password to mark host/users as owned. (default: neo4j)'))
 
         flags.add_argument('-d',
@@ -351,13 +351,13 @@ class Bloodhound(CmdBase):
                            metavar='[neo4j database]',
                            type=str,
                            default='neo4j',
-                           dest=f'neo4j_database',
+                           dest='neo4j_database',
                            help=Color.s('Neo4j Database to mark host/users as owned. (default: neo4j)'))
 
         flags.add_argument('--force',
                            action='store_true',
                            default=False,
-                           dest=f'force',
+                           dest='force',
                            help=Color.s('Enable group chain calculation.'))
 
     def add_commands(self, cmds: _ArgumentGroup):
@@ -365,21 +365,21 @@ class Bloodhound(CmdBase):
                           action='store',
                           metavar='[bloodhound file]',
                           type=str,
-                          dest=f'bhfile',
+                          dest='bhfile',
                           help=Color.s('BloodHound file. Available parses: {G}.zip{W} and {G}.json{W}'))
 
         cmds.add_argument('--mark-owned',
                           action='store',
                           metavar='[neo4j host and port]',
                           type=str,
-                          dest=f'neo4j_host',
+                          dest='neo4j_host',
                           help=Color.s('BloodHound Neo4j Database. host:port'))
 
         cmds.add_argument('--sync-to',
                           action='store',
                           metavar='[neo4j host and port]',
                           type=str,
-                          dest=f'neo4j_host2',
+                          dest='neo4j_host2',
                           help=Color.s('BloodHound Neo4j Database. host:port'))
 
     def load_from_arguments(self, args: Namespace) -> bool:
@@ -1050,7 +1050,7 @@ class Bloodhound(CmdBase):
                         ]
 
                         for option, member_type, edge_name in options:
-                            if option in ou and ou[option]:
+                            if ou.get(option):
                                 targets = ou[option]
                                 for target in targets:
                                     self.db.insert_or_update_bloodhound_edge(
@@ -1064,7 +1064,7 @@ class Bloodhound(CmdBase):
                                         props=dict(source=oid, target=target)
                                     )
 
-                        if 'Links' in ou and ou['Links']:
+                        if ou.get('Links'):
                             for gpo in ou['Links']:
                                 self.db.insert_or_update_bloodhound_edge(
                                     source=oid,
@@ -1211,7 +1211,7 @@ class Bloodhound(CmdBase):
                         ]
 
                         for option, member_type, edge_name in options:
-                            if option in domain and domain[option]:
+                            if domain.get(option):
                                 targets = domain[option]
                                 for target in targets:
                                     self.db.insert_or_update_bloodhound_edge(
@@ -1225,7 +1225,7 @@ class Bloodhound(CmdBase):
                                         props=dict(source=oid, target=target)
                                     )
 
-                        if 'Links' in domain and domain['Links']:
+                        if domain.get('Links'):
                             for gpo in domain['Links']:
                                 self.db.insert_or_update_bloodhound_edge(
                                     source=oid,

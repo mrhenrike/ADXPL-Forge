@@ -9,7 +9,12 @@ except (ValueError, ImportError) as e:
     raise Exception('You may need to run KnowsMore from the root directory (which includes README.md)', e)
 
 
-import sys, datetime, time, os, requests, socket
+import sys
+import datetime
+import time
+import os
+import requests
+import socket
 from .util.color import Color
 from .util.logger import Logger
 from .util.tools import Tools

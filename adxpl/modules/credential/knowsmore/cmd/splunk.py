@@ -39,13 +39,13 @@ class Splunk(CmdBase):
         flags.add_argument('--include-password',
                            action='store_true',
                            default=False,
-                           dest=f'include_password',
+                           dest='include_password',
                            help=Color.s('Include clear text passwords and his hashes. (default: False)'))
 
         flags.add_argument('--cracked-only',
                            action='store_true',
                            default=False,
-                           dest=f'cracked_only',
+                           dest='cracked_only',
                            help=Color.s('Integrate cracked data only. (default: False)'))
 
     def add_commands(self, cmds: _ArgumentGroup):
@@ -53,14 +53,14 @@ class Splunk(CmdBase):
                           action='store',
                           metavar='[text]',
                           type=str,
-                          dest=f'txt_token',
+                          dest='txt_token',
                           help=Color.s('API Token to integrate'))
 
         cmds.add_argument('--url',
                           action='store',
                           metavar='[text]',
                           type=str,
-                          dest=f'txt_url',
+                          dest='txt_url',
                           help=Color.s('URL to Splunk'))
 
     def load_from_arguments(self, args: Namespace) -> bool:

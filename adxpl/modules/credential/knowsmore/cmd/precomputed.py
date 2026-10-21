@@ -31,7 +31,7 @@ class PreComputed(CmdBase):
                           action='store',
                           metavar='[password file]',
                           type=str,
-                          dest=f'pwd_file',
+                          dest='pwd_file',
                           help=Color.s('Text file with a password list. Each line is one password'))
 
     def load_from_arguments(self, args: Namespace) -> bool:

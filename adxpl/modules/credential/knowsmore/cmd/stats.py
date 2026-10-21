@@ -31,14 +31,14 @@ class Stats(CmdBase):
         flags.add_argument('--save-to',
                            action='store',
                            default='',
-                           dest=f'out_file',
+                           dest='out_file',
                            help=Color.s(
                                'Output file to save JSON data'))
 
         flags.add_argument('--save-to-img',
                            action='store',
                            default='',
-                           dest=f'out_path',
+                           dest='out_path',
                            help=Color.s(
                                'Output path to save PNG files'))
 

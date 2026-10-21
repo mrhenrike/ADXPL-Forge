@@ -41,13 +41,13 @@ class JsonExport(CmdBase):
         flags.add_argument('--include-password',
                            action='store_true',
                            default=False,
-                           dest=f'include_password',
+                           dest='include_password',
                            help=Color.s('Include clear text passwords and his hashes. (default: False)'))
 
         flags.add_argument('--cracked-only',
                            action='store_true',
                            default=False,
-                           dest=f'cracked_only',
+                           dest='cracked_only',
                            help=Color.s('Integrate cracked data only. (default: False)'))
 
     def add_commands(self, cmds: _ArgumentGroup):
@@ -55,7 +55,7 @@ class JsonExport(CmdBase):
                           action='store',
                           metavar='[file name]',
                           type=str,
-                          dest=f'out_file',
+                          dest='out_file',
                           help=Color.s('File path to save'))
 
     def load_from_arguments(self, args: Namespace) -> bool:

@@ -1,13 +1,8 @@
 """Tests for adxpl.interpreter REPL."""
 
-import io
-import sys
 from unittest.mock import patch
 
-import pytest
-
-from adxpl.interpreter import _Session, _Completer, _BANNER, main
-
+from adxpl.interpreter import _BANNER, _Completer, _Session, main
 
 # ---------------------------------------------------------------------------
 # _Session tests

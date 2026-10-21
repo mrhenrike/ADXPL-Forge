@@ -36,20 +36,20 @@ class Find(CmdBase):
         flags.add_argument('-o', '--save-to',
                            action='store',
                            default='',
-                           dest=f'out_file',
+                           dest='out_file',
                            help=Color.s(
                                'Output file to save JSON data'))
 
         flags.add_argument('--cracked-only',
                            action='store_true',
                            default=False,
-                           dest=f'cracked_only',
+                           dest='cracked_only',
                            help=Color.s('Find cracked data only'))
 
         flags.add_argument('--json',
                            action='store_true',
                            default=False,
-                           dest=f'json_format',
+                           dest='json_format',
                            help=Color.s('Output in JSON format instead of text table'))
 
     def add_commands(self, cmds: _ArgumentGroup):
@@ -57,14 +57,14 @@ class Find(CmdBase):
                           action='store',
                           metavar='[text]',
                           type=str,
-                          dest=f'txt_find',
+                          dest='txt_find',
                           help=Color.s('Text to look for at all columns'))
 
         cmds.add_argument('--password',
                           action='store',
                           metavar='[text]',
                           type=str,
-                          dest=f'txt_pwd_find',
+                          dest='txt_pwd_find',
                           help=Color.s('Text to look for in password field only'))
 
     def load_from_arguments(self, args: Namespace) -> bool:

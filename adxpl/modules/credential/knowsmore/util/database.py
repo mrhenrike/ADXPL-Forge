@@ -2,9 +2,11 @@
 # -*- coding: UTF-8 -*-
 import math
 import shutil
-import sys, os.path
+import sys
+import os.path
 import sqlite3
-import string, base64
+import string
+import base64
 from functools import reduce
 from sqlite3 import Connection, OperationalError, IntegrityError, ProgrammingError
 
@@ -36,7 +38,7 @@ def connect(func):
         if not isinstance(self, Database):
             raise Exception('The connect decorator cannot be used outside of Database class')
 
-        conn = kwargs.get('conn', None) if kwargs is not None else None
+        conn = kwargs.get('conn') if kwargs is not None else None
         if conn is None:
             conn = self.connect_to_db()
 
@@ -108,14 +110,14 @@ class Database(object):
         if c.rowcount == 0:
             table_name = self.scrub(table_name)
             f_columns = self.constraints[table_name]
-            f_values = tuple([kwargs.get(c, None) for c in f_columns],)
+            f_values = tuple([kwargs.get(c) for c in f_columns],)
             args = {k: v for k, v in kwargs.items() if k not in exclude_on_update}
             (u_columns, u_values) = self.parse_args(args)
 
             sql = f"UPDATE {table_name} SET "
             sql += "{}".format(', '.join([f'{col} = ?' for col in u_columns]))
             if len(f_columns) > 0:
-                sql += " WHERE {}".format(f' and '.join([f'{col} = ?' for col in f_columns]))
+                sql += " WHERE {}".format(' and '.join([f'{col} = ?' for col in f_columns]))
             c = conn.execute(sql, tuple(u_values + f_values, ))
             conn.commit()
 

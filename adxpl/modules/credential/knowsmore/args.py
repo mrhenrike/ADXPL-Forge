@@ -6,7 +6,9 @@ from .cmdbase import CmdBase
 from .module import Module
 from .util.color import Color
 
-import argparse, sys, os
+import argparse
+import sys
+import os
 
 
 class Arguments(object):
@@ -80,7 +82,7 @@ class Arguments(object):
                            metavar='[company name]',
                            type=str,
                            default='',
-                           dest=f'company',
+                           dest='company',
                            help=Color.s('Company name to calculate password similarity'))
 
         flags.add_argument('--db',
@@ -88,7 +90,7 @@ class Arguments(object):
                            metavar='[sqlite file]',
                            type=str,
                            default='./knowsmore.db',
-                           dest=f'dbfile',
+                           dest='dbfile',
                            help=Color.s('Filename to save the correlations data. (default: {G}./knowsmore.db{W})'))
 
         flags.add_argument('-h', '--help',
@@ -113,7 +115,7 @@ class Arguments(object):
 
     def get_usage(self, module: CmdBase = None):
         if module is None:
-            return f'''
+            return '''
     knowsmore module [flags]'''
         else:
             return f'''
