@@ -25,7 +25,8 @@ class Password(object):
     def __init__(self, ntlm_hash: str, clear_text: str):
 
         if (ntlm_hash is None or ntlm_hash == '') and clear_text is not None and clear_text != '':
-            import hashlib, binascii
+            import hashlib
+            import binascii
             hash = hashlib.new('md4', clear_text.encode('utf-16le')).digest()
             ntlm_hash = binascii.hexlify(hash)
             if isinstance(ntlm_hash, bytes):

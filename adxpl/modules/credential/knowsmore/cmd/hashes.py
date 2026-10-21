@@ -37,7 +37,7 @@ class NTLMHash(CmdBase):
         flags.add_argument('-format',
                            action='store',
                            default='secretsdump',
-                           dest=f'file_format',
+                           dest='file_format',
                            help=Color.s(
                                'Specify NTLM hashes format (default: {G}secretsdump{W}). Available methods: {G}secretsdump{W}'))
 
@@ -46,28 +46,28 @@ class NTLMHash(CmdBase):
                           action='store',
                           metavar='[hashes file]',
                           type=str,
-                          dest=f'export_file',
+                          dest='export_file',
                           help=Color.s('NTLM hashes filename.'))
 
         cmds.add_argument('--import-ntds',
                           action='store',
                           metavar='[hashes file]',
                           type=str,
-                          dest=f'ntlmfile',
+                          dest='ntlmfile',
                           help=Color.s('NTLM hashes filename.'))
 
         cmds.add_argument('--import-cracked',
                           action='store',
                           metavar='[cracked file]',
                           type=str,
-                          dest=f'crackedfile',
+                          dest='crackedfile',
                           help=Color.s('Hashcat cracked hashes filename. (format: {G}hash{R}:{G}password{W})'))
 
         cmds.add_argument('--export-cracked',
                           action='store',
                           metavar='[cracked file]',
                           type=str,
-                          dest=f'export_cracked_file',
+                          dest='export_cracked_file',
                           help=Color.s('Hashcat cracked hashes filename. (format: {G}hash{R}:{G}password{W})'))
 
         cmds.add_argument('--add-password',
@@ -75,7 +75,7 @@ class NTLMHash(CmdBase):
                           metavar='[clear text password]',
                           type=str,
                           default='',
-                          dest=f'password',
+                          dest='password',
                           help=Color.s('Add clear text password to database'))
 
     def load_from_arguments(self, args: Namespace) -> bool:

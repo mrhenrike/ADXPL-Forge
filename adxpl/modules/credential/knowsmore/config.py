@@ -1,7 +1,19 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 
-import os, subprocess, socket, re, requests, errno, sys, time, json, signal, base64, hashlib, random
+import os
+import subprocess
+import socket
+import re
+import requests
+import errno
+import sys
+import time
+import json
+import signal
+import base64
+import hashlib
+import random
 from pathlib import Path
 from urllib.parse import urlparse
 

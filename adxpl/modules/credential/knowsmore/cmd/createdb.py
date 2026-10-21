@@ -22,7 +22,7 @@ class CreateDb(CmdBase):
         flags.add_argument('--force',
                            action='store_true',
                            default=False,
-                           dest=f'force',
+                           dest='force',
                            help=Color.s('Force overwrite SQLite local database'))
 
     def add_commands(self, cmds: _ArgumentGroup):

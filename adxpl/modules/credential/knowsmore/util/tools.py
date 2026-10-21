@@ -3,7 +3,10 @@
 import base64
 import datetime
 import os
-import string, random, sys, re
+import string
+import random
+import sys
+import re
 import unicodedata
 from ansi2image.ansi2image import Ansi2Image
 from tabulate import _table_formats, tabulate, TableFormat, Line, DataRow

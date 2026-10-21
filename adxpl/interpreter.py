@@ -176,7 +176,7 @@ class _Session:
     def select(self, path: str) -> bool:
         """Select a module by category/name path. Returns True on success."""
         if "/" not in path:
-            print(f"[!] Formato: use <category>/<module>")
+            print("[!] Formato: use <category>/<module>")
             return False
         cat, mod = path.split("/", 1)
         mod_path = _MODULE_MAP.get(cat, {}).get(mod)
@@ -414,7 +414,7 @@ def _repl() -> int:
             _cmd_search(args)
         elif cmd == "clear":
             # Safe: hardcoded command, no user input
-            os.system("clear" if os.name != "nt" else "cls")  # noqa: S605
+            os.system("clear" if os.name != "nt" else "cls")
         else:
             print(f"[!] Comando desconhecido: {cmd}. Digite 'help' para ajuda.")
 

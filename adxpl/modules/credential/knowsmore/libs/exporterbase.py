@@ -113,7 +113,7 @@ class ExporterBase(KnowsMoreDB):
 
                     for k in ["lastlogon", "pwdlastset"]:
                         try:
-                            if properties.get(k, None) is not None and isinstance(properties[k], int):
+                            if properties.get(k) is not None and isinstance(properties[k], int):
                                 properties[k] = datetime(1970, 1, 1, 0, 0, 0, tzinfo=None) + timedelta(seconds=int(properties[k]))
                         except:
                             pass

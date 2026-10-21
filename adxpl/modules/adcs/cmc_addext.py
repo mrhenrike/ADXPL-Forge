@@ -136,7 +136,7 @@ def run(args: Any) -> int:
 
         if result.returncode == 0 and os.path.isfile(output):
             print(f"\n[+] Forged certificate saved to: {output}")
-            print(f"[*] Authenticate with:")
+            print("[*] Authenticate with:")
             print(f"    certipy auth -pfx {output} -password {pfx_pass}")
         return result.returncode
 

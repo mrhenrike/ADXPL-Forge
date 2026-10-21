@@ -26,7 +26,7 @@ class Wipe(CmdBase):
         flags.add_argument('--pre-computed-only',
                            action='store_true',
                            default=False,
-                           dest=f'pre_computed_only',
+                           dest='pre_computed_only',
                            help=Color.s(
                                'Wipe just pre computed passwords(default: {G}false{W}).{W}'))
 

@@ -34,7 +34,7 @@ class UserPass(CmdBase):
                           metavar='[username]',
                           type=str,
                           default='',
-                          dest=f'username',
+                          dest='username',
                           help=Color.s('Username'))
 
         cmds.add_argument('--password',
@@ -42,7 +42,7 @@ class UserPass(CmdBase):
                           metavar='[clear text password]',
                           type=str,
                           default='',
-                          dest=f'password',
+                          dest='password',
                           help=Color.s('Clear text password'))
 
     def load_from_arguments(self, args: Namespace) -> bool:

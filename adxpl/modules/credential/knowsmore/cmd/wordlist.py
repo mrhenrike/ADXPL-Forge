@@ -56,20 +56,20 @@ class WordList(CmdBase):
         flags.add_argument('--batch',
                            action='store_true',
                            default=False,
-                           dest=f'batch',
+                           dest='batch',
                            help=Color.s(
                                'Never ask for user input, use the default behavior'))
 
         flags.add_argument('--append',
                            action='store_true',
                            default=False,
-                           dest=f'append_file',
+                           dest='append_file',
                            help=Color.s(
                                'Append to the output file'))
 
     def add_commands(self, cmds: _ArgumentGroup):
         cmds.add_argument('--name', action='store', dest='name', help='Name')
-        cmds.add_argument('-o', '--out-file', action='store', default='', dest=f'out_file',
+        cmds.add_argument('-o', '--out-file', action='store', default='', dest='out_file',
                           help=Color.s('Write generate wordlist to a file'))
         cmds.add_argument('-min', '--min-lenght', default=1, type=int, dest='min_lenght',
                           help='Minumin word lenght')

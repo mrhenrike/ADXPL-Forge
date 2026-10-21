@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 # -*- coding: UTF-8 -*-
 import datetime
-import sys, os.path
+import sys
+import os.path
 import sqlite3
-import string, base64
+import string
+import base64
 import json
 import hashlib
 from sqlite3 import Connection, OperationalError, IntegrityError, ProgrammingError
