@@ -17,7 +17,7 @@ def test_module_map_categories():
         "coercion", "relay", "acl", "trust", "spray",
         "campaign", "lolbins", "evasion", "byovd", "privesc",
         "exploit", "kernel", "emulation", "adcs", "audit",
-        "exchange", "sccm", "azuread", "impacket", "shell",
+        "exchange", "sccm", "impacket", "shell",
     }
     assert set(_MODULE_MAP.keys()) == expected
 

@@ -261,11 +261,6 @@ _MODULE_MAP = {
         "sccm-enum": "adxpl.modules.sccm.sccm_enum",
         "sccm-abuse": "adxpl.modules.sccm.sccm_abuse",
     },
-    "azuread": {
-        "azuread-enum": "adxpl.modules.azuread.azuread_enum",
-        "azuread-tokens": "adxpl.modules.azuread.azuread_tokens",
-        "stormspotter": "adxpl.modules.azuread.stormspotter",
-    },
     "impacket": {
         "reg": "adxpl.modules.impacket.impacket_reg",
         "dacledit": "adxpl.modules.impacket.impacket_dacledit",

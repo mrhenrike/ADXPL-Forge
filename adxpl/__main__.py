@@ -362,13 +362,6 @@ def _build_parser() -> argparse.ArgumentParser:
     ])
     _add_common(sccm_p, target_required=False)
 
-    # -- azuread --
-    azure_p = sub.add_parser("azuread", help="Azure AD / Entra ID modules")
-    azure_p.add_argument("module", choices=[
-        "azuread-enum", "azuread-tokens", "stormspotter",
-    ])
-    _add_common(azure_p, target_required=False)
-
     # -- impacket --
     impacket_p = sub.add_parser("impacket", help="Impacket arsenal modules")
     impacket_p.add_argument("module", choices=[
