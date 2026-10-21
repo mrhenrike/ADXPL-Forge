@@ -1,0 +1,142 @@
+{
+  "wave": "12",
+  "generated": "2026-10-21",
+  "references": [
+    {
+      "id": "SRC-157",
+      "url": "https://github.com/mukul975/Anthropic-Cybersecurity-Skills",
+      "forge": "ADXPL|TupaXPL/Skills",
+      "description": "817 skills cybersec para AI agents; 34661 stars; mapeado MITRE/NIST/D3FEND",
+      "license": "Apache-2.0",
+      "priority": "Alta"
+    },
+    {
+      "id": "SRC-162",
+      "url": "https://github.com/SnailSploit/Claude-Red",
+      "forge": "ADXPL|EmbedXPL|TupaXPL/Skills",
+      "description": "Claude-Red: biblioteca de skills ofensivas para Claude; 7604 stars",
+      "license": "MIT",
+      "priority": "Alta"
+    },
+    {
+      "id": "SRC-196",
+      "url": "https://github.com/HORKimhab/CVE-Chamilo-LMS",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "CVE-2026-61578; CVE-2026-61582; CVE-2026-61583; CVE-2026-61584; CVE-2026-61585; CVE-2026-61587; CVE-2026-61600; CVE-2026; 0 stars",
+      "license": "NOASSERTION",
+      "priority": "Alta"
+    },
+    {
+      "id": "SRC-246",
+      "url": "https://github.com/assetnote/react2shell-scanner",
+      "forge": "ADXPL/Exploit/CVE",
+      "description": "High Fidelity Detection Mechanism for RSC/Next.js RCE (CVE-2025-55182 & CVE-2025-66478); 2453 stars",
+      "license": "N/A",
+      "priority": "Alta"
+    },
+    {
+      "id": "SRC-272",
+      "url": "https://github.com/assetnote/nowafpls",
+      "forge": "ADXPL|FirewallXPL/Firewall/WAF",
+      "description": "Burp Plugin to Bypass WAFs through the insertion of Junk Data; 1520 stars",
+      "license": "N/A",
+      "priority": "Alta"
+    },
+    {
+      "id": "SRC-274",
+      "url": "https://github.com/MorDavid/NetworkHound",
+      "forge": "ADXPL|WirelessXPL/Wireless",
+      "description": "Advanced Active Directory network topology analyzer with SMB validation; multiple authentication methods (password/NTLM/; 842 stars",
+      "license": "N/A",
+      "priority": "Alta"
+    },
+    {
+      "id": "SRC-277",
+      "url": "https://github.com/RUB-SysSec/kAFL",
+      "forge": "ADXPL/Exploit-Dev",
+      "description": "Code for the USENIX 2017 paper: kAFL: Hardware-Assisted Feedback Fuzzing for OS Kernels; 596 stars",
+      "license": "GPL-2.0",
+      "priority": "Alta"
+    },
+    {
+      "id": "SRC-380",
+      "url": "https://github.com/iphelix/dnschef",
+      "forge": "ADXPL|MalwareXPL/Malware/Threat-Intel",
+      "description": "DNSChef - DNS proxy for Penetration Testers and Malware Analysts; 1075 stars",
+      "license": "BSD-3-Clause",
+      "priority": "Alta"
+    },
+    {
+      "id": "SRC-382",
+      "url": "https://github.com/PyroTek3/PowerShell-AD-Recon",
+      "forge": "ADXPL/AD",
+      "description": "PowerShell Scripts I find useful; 780 stars",
+      "license": "BSD-3-Clause",
+      "priority": "Alta"
+    },
+    {
+      "id": "SRC-383",
+      "url": "https://github.com/D4Vinci/Cuteit",
+      "forge": "ADXPL/General",
+      "description": "IP obfuscator made to make a malicious ip a bit cuter; 546 stars",
+      "license": "GPL-3.0",
+      "priority": "Alta"
+    },
+    {
+      "id": "SRC-501",
+      "url": "https://github.com/Lakr233/NotchDrop",
+      "forge": "ADXPL/Exploit-Dev",
+      "description": "Use your MacBook's notch like Dynamic Island for temporary storing files and AirDrop; 2127 stars",
+      "license": "MIT",
+      "priority": "Alta"
+    },
+    {
+      "id": "SRC-502",
+      "url": "https://github.com/RUB-SysSec/DroneSecurity",
+      "forge": "ADXPL/General",
+      "description": "DroneSecurity (NDSS 2023); 1328 stars",
+      "license": "AGPL-3.0",
+      "priority": "Alta"
+    },
+    {
+      "id": "SRC-504",
+      "url": "https://github.com/MorDavid/FlareTunnel",
+      "forge": "ADXPL/General",
+      "description": "Proxy system that routes traffic through Cloudflare Workers for IP rotation and anonymity; 651 stars",
+      "license": "N/A",
+      "priority": "Alta"
+    },
+    {
+      "id": "SRC-645",
+      "url": "https://github.com/ncxcy/iOS-26.5-lockdownd-vulns",
+      "forge": "ADXPL|MobileXPL/Exploit/CVE",
+      "description": "Lista de vulns lockdownd em iOS 26.5; 21 stars",
+      "license": "MIT",
+      "priority": "Alta"
+    },
+    {
+      "id": "SRC-668",
+      "url": "https://github.com/dn9uy3n/Modern-Red-Team-Infrastructure",
+      "forge": "ADXPL/Red-Team",
+      "description": "Modern Red Team Infrastructure: arquitetura integrando plataformas e tooling profissional",
+      "license": "N/A",
+      "priority": "Alta"
+    },
+    {
+      "id": "SRC-690",
+      "url": "https://github.com/tkmru/awesome-edr-bypass",
+      "forge": "ADXPL|FirewallXPL/Evasion",
+      "description": "Awesome EDR Bypass: curated resources para ethical hacking; atualizado 2026",
+      "license": "N/A",
+      "priority": "Alta"
+    },
+    {
+      "id": "SRC-1048",
+      "url": "https://github.com/nicocha30/ligolo-ng",
+      "forge": "ADXPL/PostExploit-Pivoting",
+      "description": "ligolo-ng: tunneling/pivoting TUN via Gvisor, arquitetura proxy+agent. Util para pivot via network devices em pentest. GPL-3.0 incompativel com BSD-3; usar como referencia/wrapper.",
+      "license": "GPL-3.0",
+      "priority": "Alta"
+    }
+  ]
+}
